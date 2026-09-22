@@ -5,10 +5,12 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import HeroSlider from "./components/HeroSlider";
 import HowWeWork from "./components/HowWeWork";
+import ImageGallery from "./components/ImageGallery";
 import LatestBlogs from "./components/LatestBlogs";
 import OurExperts from "./components/OurExperts";
 import ServiceSection1 from "./components/ServiceSection1";
 import ServiceSection2 from "./components/ServiceSection2";
+import StrokesReels from "./components/StrokesReels";
 import Testimonials from "./components/Testimonials";
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
         <OurExperts />
         <Testimonials />
         <LatestBlogs />
+        <StrokesReels />
+        <ImageGallery />
       </main>
       <Footer />
     </>

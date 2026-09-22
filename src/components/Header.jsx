@@ -107,14 +107,14 @@ const Header = () => {
           {/* Quote Button */}
           <a
             href="#quote"
-            className="ml-8 flex h-[39px] items-center gap-2 whitespace-nowrap rounded-full bg-[#58d26f] px-4 text-[16px] font-bold text-white shadow-sm transition-all duration-200 hover:bg-[#46c45e] hover:shadow-md xl:ml-9"
+            className="ml-8 flex h-[39px] items-center gap-2 whitespace-nowrap rounded-full bg-[#DAC322] px-4 text-[16px] font-bold text-black shadow-sm transition-all duration-200 hover:bg-[#46c45e] hover:shadow-md xl:ml-9"
           >
             <span>Get A Quote</span>
 
-            <span className="flex h-[18px] w-[18px] items-center justify-center rounded-full bg-white/20">
+            <span className="flex h-[18px] w-[18px] items-center justify-center rounded-full bg-black/20">
               <svg
                 viewBox="0 0 20 20"
-                className="h-[15px] w-[15px] fill-none stroke-white stroke-[2]"
+                className="h-[15px] w-[15px] fill-none stroke-black stroke-[2]"
               >
                 <path d="M4 10h11" />
                 <path d="M11 6l4 4-4 4" />
@@ -239,14 +239,14 @@ const Header = () => {
           <a
             href="#quote"
             onClick={() => setMobileMenuOpen(false)}
-            className="mt-5 flex h-11 w-full items-center justify-center gap-2 rounded-full bg-[#58d26f] font-bold text-white transition-colors hover:bg-[#46c45e]"
+            className="mt-5 flex h-11 w-full items-center justify-center gap-2 rounded-full bg-[#DAC322] font-bold text-black transition-colors hover:bg-[#46c45e]"
           >
             <span>Get A Quote</span>
 
-            <span className="flex h-[19px] w-[19px] items-center justify-center rounded-full bg-white/20">
+            <span className="flex h-[19px] w-[19px] items-center justify-center rounded-full bg-black/20">
               <svg
                 viewBox="0 0 20 20"
-                className="h-[15px] w-[15px] fill-none stroke-white stroke-[2]"
+                className="h-[15px] w-[15px] fill-none stroke-black stroke-[2]"
               >
                 <path d="M4 10h11" />
                 <path d="M11 6l4 4-4 4" />
