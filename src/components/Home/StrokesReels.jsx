@@ -1,12 +1,12 @@
 import React from "react";
-import stroke1 from "../assets/Reels/strokes-1.mp4";
-import stroke2 from "../assets/Reels/strokes-2.mp4";
-import stroke3 from "../assets/Reels/strokes-3.mp4";
-import stroke4 from "../assets/Reels/strokes-4.mp4";
-import stroke5 from "../assets/Reels/strokes-5.mp4";
-import stroke6 from "../assets/Reels/strokes-6.mp4";
-import stroke7 from "../assets/Reels/strokes-7.mp4";
-import stroke8 from "../assets/Reels/strokes-8.mp4";
+import stroke1 from "../../assets/Reels/strokes-1.mp4";
+import stroke2 from "../../assets/Reels/strokes-2.mp4";
+import stroke3 from "../../assets/Reels/strokes-3.mp4";
+import stroke4 from "../../assets/Reels/strokes-4.mp4";
+import stroke5 from "../../assets/Reels/strokes-5.mp4";
+import stroke6 from "../../assets/Reels/strokes-6.mp4";
+import stroke7 from "../../assets/Reels/strokes-7.mp4";
+import stroke8 from "../../assets/Reels/strokes-8.mp4";
 
 const StrokesReels = () => {
   const videoItems = [

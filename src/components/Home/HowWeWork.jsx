@@ -1,4 +1,5 @@
-import processImage from "../assets/how-we-work.png";
+import React from "react";
+import processImage from "../../assets/how-we-work.png";
 
 const processSteps = [
   {

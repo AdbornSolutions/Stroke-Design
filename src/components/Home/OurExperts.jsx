@@ -1,5 +1,5 @@
 import React from "react";
-import expertsImage from "../assets/experts.png";
+import expertsImage from "../../assets/experts.png";
 
 const OurExperts = () => {
   return (

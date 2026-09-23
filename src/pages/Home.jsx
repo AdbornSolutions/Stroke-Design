@@ -1,14 +1,14 @@
-import AboutIntro from "../components/AboutIntro";
-import AboutSection from "../components/AboutSection";
-import HeroSlider from "../components/HeroSlider";
-import HowWeWork from "../components/HowWeWork";
-import ImageGallery from "../components/ImageGallery";
-import LatestBlogs from "../components/LatestBlogs";
-import OurExperts from "../components/OurExperts";
-import ServiceSection1 from "../components/ServiceSection1";
-import ServiceSection2 from "../components/ServiceSection2";
-import StrokesReels from "../components/StrokesReels";
-import Testimonials from "../components/Testimonials";
+import AboutIntro from "../components/Home/AboutIntro";
+import AboutSection from "../components/Home/AboutSection";
+import HeroSlider from "../components/Home/HeroSlider";
+import HowWeWork from "../components/Home/HowWeWork";
+import ImageGallery from "../components/Home/ImageGallery";
+import LatestBlogs from "../components/Home/LatestBlogs";
+import OurExperts from "../components/Home/OurExperts";
+import ServiceSection1 from "../components/Home/ServiceSection1";
+import ServiceSection2 from "../components/Home/ServiceSection2";
+import StrokesReels from "../components/Home/StrokesReels";
+import Testimonials from "../components/Home/Testimonials";
 
 const Home = () => {
   return (

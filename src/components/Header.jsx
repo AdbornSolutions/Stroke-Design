@@ -1,18 +1,83 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import logo from "../assets/Stroke_logo.png";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
 
+  const location = useLocation();
+
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
     setServicesOpen(false);
   };
 
+  /*
+   * =====================================================
+   * ACTIVE ROUTE CHECK
+   * =====================================================
+   */
+
+  const isServicesActive =
+    location.pathname === "/services" ||
+    location.pathname.startsWith("/services/");
+
+  const isActive = (path) => {
+    if (path === "/") {
+      return location.pathname === "/";
+    }
+
+    return (
+      location.pathname === path || location.pathname.startsWith(`${path}/`)
+    );
+  };
+
+  /*
+   * =====================================================
+   * DESKTOP NAV LINK CLASS
+   * =====================================================
+   */
+
+  const desktopNavClass = (active) => `
+    relative
+    whitespace-nowrap
+    py-2
+    font-serif
+    text-[18px]
+    font-bold
+    transition-colors
+    duration-200
+
+    ${active ? "text-[#d6bc22]" : "text-[#f3f1f1] hover:text-[#d6bc22]"}
+  `;
+
+  /*
+   * =====================================================
+   * MOBILE NAV LINK CLASS
+   * =====================================================
+   */
+
+  const mobileNavClass = (active) => `
+    block
+    border-b
+    border-white/10
+    py-4
+    font-serif
+    text-[17px]
+    font-bold
+    transition-colors
+    duration-200
+
+    ${active ? "text-[#d6bc22]" : "text-white hover:text-[#d6bc22]"}
+  `;
+
   return (
     <header className="sticky top-0 z-[100] w-full bg-[#302e2e]">
+      {/* =====================================================
+          NAVBAR
+      ====================================================== */}
+
       <nav
         className="
           mx-auto
@@ -56,115 +121,102 @@ const Header = () => {
 
         <div className="ml-auto hidden items-center xl:flex">
           <div className="flex items-center gap-x-7 xl:gap-x-8">
-            {/* HOME */}
+            {/* =================================================
+                HOME
+            ================================================== */}
 
-            <Link
-              to="/"
-              className="
-                relative
-                py-2
-                font-serif
-                text-[18px]
-                font-bold
-                text-[#f3f1f1]
-                transition-colors
-                duration-200
-                hover:text-[#d6bc22]
-              "
-            >
+            <NavLink to="/" className={() => desktopNavClass(isActive("/"))}>
               Home
-              {/* Active underline */}
-              <span
-                className="
-                  absolute
-                  bottom-0
-                  left-0
-                  h-[2px]
-                  w-full
-                  bg-[#d6bc22]
-                "
-              />
-            </Link>
-
-            {/* ABOUT */}
-
-            <Link
-              to="/about"
-              className="
-                py-2
-                font-serif
-                text-[18px]
-                font-bold
-                text-[#f3f1f1]
-                transition-colors
-                duration-200
-                hover:text-[#d6bc22]
-              "
-            >
-              About us
-            </Link>
+              {/* ACTIVE UNDERLINE */}
+              {isActive("/") && (
+                <span
+                  className="
+                    absolute
+                    bottom-0
+                    left-0
+                    h-[2px]
+                    w-full
+                    bg-[#d6bc22]
+                  "
+                />
+              )}
+            </NavLink>
 
             {/* =================================================
-    SERVICES DROPDOWN + PAGE LINK
-================================================== */}
+                ABOUT
+            ================================================== */}
+
+            <NavLink
+              to="/about"
+              className={() => desktopNavClass(isActive("/about"))}
+            >
+              About us
+              {isActive("/about") && (
+                <span
+                  className="
+                    absolute
+                    bottom-0
+                    left-0
+                    h-[2px]
+                    w-full
+                    bg-[#d6bc22]
+                  "
+                />
+              )}
+            </NavLink>
+
+            {/* =================================================
+                SERVICES
+                PAGE LINK + DROPDOWN
+            ================================================== */}
 
             <div className="group relative flex items-center">
-              {/* SERVICES PAGE LINK */}
 
-              <Link
+              <NavLink
                 to="/services"
-                className="
-      flex
-      cursor-pointer
-      items-center
-      py-2
-      font-serif
-      text-[18px]
-      font-bold
-      text-[#f3f1f1]
-
-      transition-colors
-      duration-200
-
-      hover:text-[#d6bc22]
-    "
+                className={() => desktopNavClass(isServicesActive)}
               >
                 Services
-              </Link>
-
-              {/* DROPDOWN ARROW */}
+                {isServicesActive && (
+                  <span
+                    className="
+                      absolute
+                      bottom-0
+                      left-0
+                      h-[2px]
+                      w-full
+                      bg-[#d6bc22]
+                    "
+                  />
+                )}
+              </NavLink>
 
               <button
                 type="button"
                 aria-label="Open Services menu"
                 className="
-      ml-1
-      flex
-      h-8
-      w-6
-      cursor-pointer
-      items-center
-      justify-center
-
-      text-[#f3f1f1]
-
-      transition-colors
-      duration-200
-
-      hover:text-[#d6bc22]
-    "
+                  ml-1
+                  flex
+                  h-8
+                  w-6
+                  cursor-pointer
+                  items-center
+                  justify-center
+                  text-[#f3f1f1]
+                  transition-colors
+                  duration-200
+                  hover:text-[#d6bc22]
+                "
               >
                 <svg
                   className="
-        h-3
-        w-3
-        fill-current
-
-        transition-transform
-        duration-200
-
-        group-hover:rotate-180
-      "
+                    h-3
+                    w-3
+                    fill-current
+                    transition-transform
+                    duration-200
+                    group-hover:rotate-180
+                  "
                   viewBox="0 0 12 8"
                   aria-hidden="true"
                 >
@@ -173,120 +225,121 @@ const Header = () => {
               </button>
 
               {/* =================================================
-      DESKTOP DROPDOWN
-  ================================================== */}
+                  DESKTOP SERVICES DROPDOWN
+              ================================================== */}
 
               <div
                 className="
-      invisible
-      absolute
-      left-0
-      top-full
-      z-[200]
-
-      mt-2
-      w-56
-
-      translate-y-2
-
-      rounded-md
-
-      bg-[#302e2e]
-
-      p-2
-
-      opacity-0
-
-      shadow-xl
-
-      transition-all
-      duration-200
-
-      group-hover:visible
-      group-hover:translate-y-0
-      group-hover:opacity-100
-    "
+                  invisible
+                  absolute
+                  left-0
+                  top-full
+                  z-[200]
+                  mt-2
+                  w-56
+                  translate-y-2
+                  rounded-md
+                  bg-[#302e2e]
+                  p-2
+                  opacity-0
+                  shadow-xl
+                  transition-all
+                  duration-200
+                  group-hover:visible
+                  group-hover:translate-y-0
+                  group-hover:opacity-100
+                "
               >
-                {/* Interior Design */}
+                <NavLink
+                  to="/services/commercial"
+                  className={({ isActive }) => `
+                    block
+                    rounded
+                    px-4
+                    py-3
+                    font-serif
+                    text-[16px]
+                    font-semibold
+                    transition-colors
+                    duration-200
 
-                <Link
-                  to="/services/interior-design"
-                  className="
-        block
-        rounded
-
-        px-4
-        py-3
-
-        font-serif
-        text-[16px]
-        font-semibold
-
-        text-white
-
-        transition-colors
-        duration-200
-
-        hover:bg-white/10
-        hover:text-[#d6bc22]
-      "
+                    ${
+                      isActive
+                        ? "bg-white/10 text-[#d6bc22]"
+                        : "text-white hover:bg-white/10 hover:text-[#d6bc22]"
+                    }
+                  `}
                 >
-                  Interior Design
-                </Link>
+                  Commercial
+                </NavLink>
 
-                {/* Architecture */}
+                <NavLink
+                  to="/services/residential"
+                  className={({ isActive }) => `
+                    block
+                    rounded
+                    px-4
+                    py-3
+                    font-serif
+                    text-[16px]
+                    font-semibold
+                    transition-colors
+                    duration-200
 
-                <Link
-                  to="/services/architecture"
-                  className="
-        block
-        rounded
-
-        px-4
-        py-3
-
-        font-serif
-        text-[16px]
-        font-semibold
-
-        text-white
-
-        transition-colors
-        duration-200
-
-        hover:bg-white/10
-        hover:text-[#d6bc22]
-      "
+                    ${
+                      isActive
+                        ? "bg-white/10 text-[#d6bc22]"
+                        : "text-white hover:bg-white/10 hover:text-[#d6bc22]"
+                    }
+                  `}
                 >
-                  Architecture
-                </Link>
+                  Residential
+                </NavLink>
 
-                {/* Project Management */}
+                <NavLink
+                  to="/services/exterior"
+                  className={({ isActive }) => `
+                    block
+                    rounded
+                    px-4
+                    py-3
+                    font-serif
+                    text-[16px]
+                    font-semibold
+                    transition-colors
+                    duration-200
 
-                <Link
-                  to="/services/project-management"
-                  className="
-        block
-        rounded
-
-        px-4
-        py-3
-
-        font-serif
-        text-[16px]
-        font-semibold
-
-        text-white
-
-        transition-colors
-        duration-200
-
-        hover:bg-white/10
-        hover:text-[#d6bc22]
-      "
+                    ${
+                      isActive
+                        ? "bg-white/10 text-[#d6bc22]"
+                        : "text-white hover:bg-white/10 hover:text-[#d6bc22]"
+                    }
+                  `}
                 >
-                  Project Management
-                </Link>
+                  Exterior
+                </NavLink>
+                <NavLink
+                  to="/services/interior"
+                  className={({ isActive }) => `
+                    block
+                    rounded
+                    px-4
+                    py-3
+                    font-serif
+                    text-[16px]
+                    font-semibold
+                    transition-colors
+                    duration-200
+
+                    ${
+                      isActive
+                        ? "bg-white/10 text-[#d6bc22]"
+                        : "text-white hover:bg-white/10 hover:text-[#d6bc22]"
+                    }
+                  `}
+                >
+                  Interior
+                </NavLink>
               </div>
             </div>
 
@@ -294,106 +347,116 @@ const Header = () => {
                 BLOG
             ================================================== */}
 
-            <Link
+            <NavLink
               to="/blog"
-              className="
-                whitespace-nowrap
-                py-2
-                font-serif
-                text-[18px]
-                font-bold
-                text-[#f3f1f1]
-                transition-colors
-                duration-200
-                hover:text-[#d6bc22]
-              "
+              className={() => desktopNavClass(isActive("/blog"))}
             >
               Blog
-            </Link>
+              {isActive("/blog") && (
+                <span
+                  className="
+                    absolute
+                    bottom-0
+                    left-0
+                    h-[2px]
+                    w-full
+                    bg-[#d6bc22]
+                  "
+                />
+              )}
+            </NavLink>
 
             {/* =================================================
                 AWARDS
             ================================================== */}
 
-            <Link
+            <NavLink
               to="/awardpublication"
-              className="
-                whitespace-nowrap
-                py-2
-                font-serif
-                text-[18px]
-                font-bold
-                text-[#f3f1f1]
-                transition-colors
-                duration-200
-                hover:text-[#d6bc22]
-              "
+              className={() => desktopNavClass(isActive("/awardpublication"))}
             >
               Awards & Publication
-            </Link>
+              {isActive("/awardpublication") && (
+                <span
+                  className="
+                    absolute
+                    bottom-0
+                    left-0
+                    h-[2px]
+                    w-full
+                    bg-[#d6bc22]
+                  "
+                />
+              )}
+            </NavLink>
 
             {/* =================================================
                 PROJECTS
             ================================================== */}
 
-            <Link
+            <NavLink
               to="/projects"
-              className="
-                whitespace-nowrap
-                py-2
-                font-serif
-                text-[18px]
-                font-bold
-                text-[#f3f1f1]
-                transition-colors
-                duration-200
-                hover:text-[#d6bc22]
-              "
+              className={() => desktopNavClass(isActive("/projects"))}
             >
               Projects
-            </Link>
+              {isActive("/projects") && (
+                <span
+                  className="
+                    absolute
+                    bottom-0
+                    left-0
+                    h-[2px]
+                    w-full
+                    bg-[#d6bc22]
+                  "
+                />
+              )}
+            </NavLink>
 
             {/* =================================================
                 GALLERY
             ================================================== */}
 
-            <Link
+            <NavLink
               to="/gallery"
-              className="
-                whitespace-nowrap
-                py-2
-                font-serif
-                text-[18px]
-                font-bold
-                text-[#f3f1f1]
-                transition-colors
-                duration-200
-                hover:text-[#d6bc22]
-              "
+              className={() => desktopNavClass(isActive("/gallery"))}
             >
               Gallery
-            </Link>
+              {isActive("/gallery") && (
+                <span
+                  className="
+                    absolute
+                    bottom-0
+                    left-0
+                    h-[2px]
+                    w-full
+                    bg-[#d6bc22]
+                  "
+                />
+              )}
+            </NavLink>
 
             {/* =================================================
                 CONTACT
             ================================================== */}
 
-            <Link
+            <NavLink
               to="/contact"
-              className="
-                whitespace-nowrap
-                py-2
-                font-serif
-                text-[18px]
-                font-bold
-                text-[#f3f1f1]
-                transition-colors
-                duration-200
-                hover:text-[#d6bc22]
-              "
+              className={() => desktopNavClass(isActive("/contact"))}
             >
               Contact
-            </Link>
+              {isActive("/contact") && (
+                <span
+                  className="
+                    absolute
+                    bottom-0
+                    left-0
+                    h-[2px]
+                    w-full
+                    bg-[#d6bc22]
+                  "
+                />
+              )}
+            </NavLink>
           </div>
 
           {/* =================================================
@@ -416,13 +479,10 @@ const Header = () => {
               font-bold
               text-black
               shadow-sm
-
               transition-all
               duration-200
-
               hover:bg-[#46c45e]
               hover:shadow-md
-
               xl:ml-9
             "
           >
@@ -528,96 +588,92 @@ const Header = () => {
           border-t
           border-white/10
           bg-[#302e2e]
-
           transition-all
           duration-300
-
           xl:hidden
 
           ${mobileMenuOpen ? "max-h-[900px] opacity-100" : "max-h-0 opacity-0"}
         `}
       >
         <div className="px-5 pb-6 pt-3 sm:px-8">
-          {/* HOME */}
-
-          <Link
-            to="/"
-            onClick={closeMobileMenu}
-            className="
-              block
-              border-b
-              border-white/10
-              py-4
-              font-serif
-              text-[17px]
-              font-bold
-              text-[#d6bc22]
-            "
-          >
-            Home
-          </Link>
-
-          {/* ABOUT */}
-
-          <Link
-            to="/about"
-            onClick={closeMobileMenu}
-            className="
-              block
-              border-b
-              border-white/10
-              py-4
-              font-serif
-              text-[17px]
-              font-bold
-              text-white
-
-              hover:text-[#d6bc22]
-            "
-          >
-            About us
-          </Link>
-
           {/* =================================================
-              MOBILE SERVICES
+              HOME
           ================================================== */}
 
-          <div className="border-b border-white/10">
-            <button
-              type="button"
-              onClick={() => setServicesOpen((prev) => !prev)}
-              className="
-                flex
-                w-full
-                cursor-pointer
-                items-center
-                justify-between
-                py-4
-                font-serif
-                text-[17px]
-                font-bold
-                text-white
-              "
-            >
-              <span>Services</span>
+          <NavLink
+            to="/"
+            onClick={closeMobileMenu}
+            className={() => mobileNavClass(isActive("/"))}
+          >
+            Home
+          </NavLink>
 
-              <svg
+          <NavLink
+            to="/about"
+            onClick={closeMobileMenu}
+            className={() => mobileNavClass(isActive("/about"))}
+          >
+            About us
+          </NavLink>
+
+          <div className="border-b border-white/10">
+            <div className="flex items-center">
+              {/* SERVICES PAGE LINK */}
+
+              <NavLink
+                to="/services"
+                onClick={closeMobileMenu}
                 className={`
-                  h-3
-                  w-3
-                  fill-current
-                  transition-transform
+                  flex-1
+                  py-4
+                  font-serif
+                  text-[17px]
+                  font-bold
+                  transition-colors
                   duration-200
 
-                  ${servicesOpen ? "rotate-180" : ""}
+                  ${
+                    isServicesActive
+                      ? "text-[#d6bc22]"
+                      : "text-white hover:text-[#d6bc22]"
+                  }
                 `}
-                viewBox="0 0 12 8"
               >
-                <path d="M1 1.5L6 6.5L11 1.5" />
-              </svg>
-            </button>
+                Services
+              </NavLink>
 
-            {/* Services Submenu */}
+              {/* MOBILE DROPDOWN BUTTON */}
+
+              <button
+                type="button"
+                onClick={() => setServicesOpen((prev) => !prev)}
+                aria-label="Open Services submenu"
+                className="
+                  flex
+                  h-10
+                  w-10
+                  cursor-pointer
+                  items-center
+                  justify-center
+                  text-white
+                "
+              >
+                <svg
+                  className={`
+                    h-3
+                    w-3
+                    fill-current
+                    transition-transform
+                    duration-200
+
+                    ${servicesOpen ? "rotate-180" : ""}
+                  `}
+                  viewBox="0 0 12 8"
+                >
+                  <path d="M1 1.5L6 6.5L11 1.5" />
+                </svg>
+              </button>
+            </div>
 
             <div
               className={`
@@ -632,169 +688,139 @@ const Header = () => {
                 }
               `}
             >
-              <Link
-                to="/services"
+              <NavLink
+                to="/services/commercial"
                 onClick={closeMobileMenu}
-                className="
+                className={({ isActive }) => `
                   block
                   px-4
                   py-3
                   font-serif
                   text-[15px]
-                  text-white/80
-                  hover:text-[#d6bc22]
-                "
-              >
-                Interior Design
-              </Link>
+                  transition-colors
+                  duration-200
 
-              <Link
-                to="/services"
-                onClick={closeMobileMenu}
-                className="
-                  block
-                  px-4
-                  py-3
-                  font-serif
-                  text-[15px]
-                  text-white/80
-                  hover:text-[#d6bc22]
-                "
+                  ${
+                    isActive
+                      ? "text-[#d6bc22]"
+                      : "text-white/80 hover:text-[#d6bc22]"
+                  }
+                `}
               >
-                Architecture
-              </Link>
+                Commercial
+              </NavLink>
 
-              <Link
-                to="/services"
+              <NavLink
+                to="/services/residential"
                 onClick={closeMobileMenu}
-                className="
+                className={({ isActive }) => `
                   block
                   px-4
                   py-3
                   font-serif
                   text-[15px]
-                  text-white/80
-                  hover:text-[#d6bc22]
-                "
+                  transition-colors
+                  duration-200
+
+                  ${
+                    isActive
+                      ? "text-[#d6bc22]"
+                      : "text-white/80 hover:text-[#d6bc22]"
+                  }
+                `}
               >
-                Project Management
-              </Link>
+                Residential
+              </NavLink>
+
+              <NavLink
+                to="/services/Exterior"
+                onClick={closeMobileMenu}
+                className={({ isActive }) => `
+                  block
+                  px-4
+                  py-3
+                  font-serif
+                  text-[15px]
+                  transition-colors
+                  duration-200
+
+                  ${
+                    isActive
+                      ? "text-[#d6bc22]"
+                      : "text-white/80 hover:text-[#d6bc22]"
+                  }
+                `}
+              >
+                Exterior
+              </NavLink>
+
+              <NavLink
+                to="/services/Interior"
+                onClick={closeMobileMenu}
+                className={({ isActive }) => `
+                  block
+                  px-4
+                  py-3
+                  font-serif
+                  text-[15px]
+                  transition-colors
+                  duration-200
+
+                  ${
+                    isActive
+                      ? "text-[#d6bc22]"
+                      : "text-white/80 hover:text-[#d6bc22]"
+                  }
+                `}
+              >
+                Interior
+              </NavLink>
             </div>
           </div>
 
-          {/* =================================================
-              BLOG
-          ================================================== */}
-
-          <Link
+          <NavLink
             to="/blog"
             onClick={closeMobileMenu}
-            className="
-              block
-              border-b
-              border-white/10
-              py-4
-              font-serif
-              text-[17px]
-              font-bold
-              text-white
-              hover:text-[#d6bc22]
-            "
+            className={() => mobileNavClass(isActive("/blog"))}
           >
             Blog
-          </Link>
+          </NavLink>
 
-          {/* =================================================
-              AWARDS
-          ================================================== */}
-
-          <Link
+          <NavLink
             to="/awardpublication"
             onClick={closeMobileMenu}
-            className="
-              block
-              border-b
-              border-white/10
-              py-4
-              font-serif
-              text-[17px]
-              font-bold
-              text-white
-              hover:text-[#d6bc22]
-            "
+            className={() => mobileNavClass(isActive("/awardpublication"))}
           >
             Awards & Publication
-          </Link>
+          </NavLink>
 
           {/* =================================================
               PROJECTS
           ================================================== */}
 
-          <Link
+          <NavLink
             to="/projects"
             onClick={closeMobileMenu}
-            className="
-              block
-              border-b
-              border-white/10
-              py-4
-              font-serif
-              text-[17px]
-              font-bold
-              text-white
-              hover:text-[#d6bc22]
-            "
+            className={() => mobileNavClass(isActive("/projects"))}
           >
             Projects
-          </Link>
+          </NavLink>
 
-          {/* =================================================
-              GALLERY
-          ================================================== */}
-
-          <Link
+          <NavLink
             to="/gallery"
             onClick={closeMobileMenu}
-            className="
-              block
-              border-b
-              border-white/10
-              py-4
-              font-serif
-              text-[17px]
-              font-bold
-              text-white
-              hover:text-[#d6bc22]
-            "
+            className={() => mobileNavClass(isActive("/gallery"))}
           >
             Gallery
-          </Link>
+          </NavLink>
 
-          {/* =================================================
-              CONTACT
-          ================================================== */}
-
-          <Link
+          <NavLink
             to="/contact"
             onClick={closeMobileMenu}
-            className="
-              block
-              border-b
-              border-white/10
-              py-4
-              font-serif
-              text-[17px]
-              font-bold
-              text-white
-              hover:text-[#d6bc22]
-            "
+            className={() => mobileNavClass(isActive("/contact"))}
           >
             Contact
-          </Link>
-
-          {/* =================================================
-              MOBILE QUOTE BUTTON
-          ================================================== */}
+          </NavLink>
 
           <Link
             to="/contact"
@@ -811,10 +837,8 @@ const Header = () => {
               bg-[#DAC322]
               font-bold
               text-black
-
               transition-colors
               duration-200
-
               hover:bg-[#46c45e]
             "
           >

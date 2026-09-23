@@ -1,12 +1,12 @@
 import React from "react";
 import ProjectHero from "../components/Projects/ProjectHero";
-// import OurProjects from "../components/Projects/OurProjects";
+import OurProject from "../components/Projects/OurProject";
 
 const Projects = () => {
     return (
         <div>
             <ProjectHero />
-            {/* <OurProjects /> */}
+            <OurProject />
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import ServiceHero from "../components/Services/ServiceHero";
-import HowWeWork from "../components/HowWeWork";
-import ImageGallery from "../components/ImageGallery";
+import HowWeWork from "../components/Home/HowWeWork";
+import ImageGallery from "../components/Home/ImageGallery";
 import OurServices from "../components/Services/OurServices";
 
 const Services = () => {

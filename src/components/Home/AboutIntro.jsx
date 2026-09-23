@@ -1,7 +1,7 @@
 import React from "react";
 
-import backgroundImage from "../assets/about-bg.png";
-import interiorImage from "../assets/about-interior.png";
+import backgroundImage from "../../assets/about-bg.png";
+import interiorImage from "../../assets/about-interior.png";
 
 const stats = [
   {
@@ -58,11 +58,6 @@ const AboutIntro = () => {
           />
 
         </div>
-
-
-        {/* =================================================
-            INTRO CONTENT
-        ================================================== */}
 
         <div
           className="

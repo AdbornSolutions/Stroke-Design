@@ -1,11 +1,12 @@
-import contacthero from "../../assets/about-hero.png";
+import termshero from "../../assets/about-hero.png";
 
-const ContactHero = () => {
+const TermsHero = () => {
   return (
     <section className="relative min-h-[511px] w-full overflow-hidden">
+
       <img
-        src={contacthero}
-        alt="Contact"
+        src={termshero}
+        alt="Terms & Conditions"
         className="
           absolute
           inset-0
@@ -51,6 +52,7 @@ const ContactHero = () => {
           xl:pb-[55px]
         "
       >
+
         <h1
           className="
             m-0
@@ -72,7 +74,7 @@ const ContactHero = () => {
             max-sm:text-[42px]
           "
         >
-          Contact
+          Terms & Conditions
         </h1>
 
         <div
@@ -101,11 +103,11 @@ const ContactHero = () => {
 
           <span className="mx-[4px]">/</span>
 
-          <span>Contact</span>
+          <span>Terms & Conditions</span>
         </div>
       </div>
     </section>
   );
 };
 
-export default ContactHero;
+export default TermsHero;

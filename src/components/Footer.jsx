@@ -20,17 +20,10 @@ const Footer = () => {
 
   return (
     <footer className="w-full bg-[#302e2e] font-serif text-white">
-      {/* =========================
-          MAIN FOOTER
-      ========================== */}
       <div className="mx-auto w-full max-w-[1250px] px-6 py-12 sm:px-8 md:py-14 lg:px-10 lg:py-14 xl:px-0">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.25fr_1fr_1fr_1.45fr] lg:gap-12 xl:gap-16">
 
-          {/* =========================
-              BRAND SECTION
-          ========================== */}
           <div className="flex flex-col">
-            {/* Logo */}
             <a
               href="#home"
               className="mb-5 flex h-[50px] w-[43px] items-center"
@@ -42,16 +35,13 @@ const Footer = () => {
               />
             </a>
 
-            {/* Tagline */}
             <p className="max-w-[230px] text-[17px] font-bold leading-7 text-white">
               We build Your comfortable
               <br />
               space
             </p>
 
-            {/* Social Icons */}
             <div className="mt-4 flex items-center gap-2">
-              {/* Facebook */}
               <a
                 href="#facebook"
                 aria-label="Facebook"
@@ -65,7 +55,6 @@ const Footer = () => {
                 </svg>
               </a>
 
-              {/* Instagram */}
               <a
                 href="#instagram"
                 aria-label="Instagram"
@@ -92,7 +81,6 @@ const Footer = () => {
                 </svg>
               </a>
 
-              {/* LinkedIn */}
               <a
                 href="#linkedin"
                 aria-label="LinkedIn"
@@ -108,9 +96,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* =========================
-              MENU
-          ========================== */}
           <div>
             <h3 className="mb-5 text-[28px] leading-none font-normal">
               Menu
@@ -130,9 +115,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* =========================
-              POLICY
-          ========================== */}
           <div>
             <h3 className="mb-5 text-[28px] leading-none font-normal">
               policy
@@ -152,9 +134,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* =========================
-              CONTACT DETAILS
-          ========================== */}
           <div>
             <h3 className="mb-5 text-[28px] leading-none font-normal">
               Contact Details
@@ -177,7 +156,6 @@ const Footer = () => {
                 <span>+91 9325054113</span>
               </a>
 
-              {/* Phone 2 */}
               <a
                 href="tel:+919860344023"
                 className="flex items-start gap-3 text-[16px] leading-5 text-white transition-colors hover:text-[#d1af48]"
@@ -192,7 +170,6 @@ const Footer = () => {
                 <span>+91 9860344023</span>
               </a>
 
-              {/* Address */}
               <div className="flex items-start gap-3 text-[16px] leading-6 text-white">
                 <svg
                   viewBox="0 0 24 24"
@@ -219,9 +196,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* =========================
-          COPYRIGHT
-      ========================== */}
       <div className="border-t border-black/70">
         <div className="mx-auto flex min-h-[47px] w-full max-w-[1250px] items-center justify-center px-5 py-3 text-center">
           <p className="m-0 text-[16px] leading-6 text-white sm:text-[17px]">
