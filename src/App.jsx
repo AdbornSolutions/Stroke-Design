@@ -1,35 +1,30 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import AboutIntro from "./components/AboutIntro";
-import AboutSection from "./components/AboutSection";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import HeroSlider from "./components/HeroSlider";
-import HowWeWork from "./components/HowWeWork";
-import ImageGallery from "./components/ImageGallery";
-import LatestBlogs from "./components/LatestBlogs";
-import OurExperts from "./components/OurExperts";
-import ServiceSection1 from "./components/ServiceSection1";
-import ServiceSection2 from "./components/ServiceSection2";
-import StrokesReels from "./components/StrokesReels";
-import Testimonials from "./components/Testimonials";
+import About from "./pages/About";
+import AwardPublication from "./pages/AwardPublication";
+import Blog from "./pages/Blog";
+import Contact from "./pages/Contact";
+import Gallery from "./pages/Gallery";
+import Home from "./pages/Home";
+import Services from "./pages/Services";
+import Projects from "./pages/Projects";
 
 function App() {
   return (
     <>
       <Header />
-      <main>
-        <HeroSlider />
-        <AboutSection />
-        <ServiceSection1 />
-        <AboutIntro />
-        <ServiceSection2 />
-        <HowWeWork />
-        <OurExperts />
-        <Testimonials />
-        <LatestBlogs />
-        <StrokesReels />
-        <ImageGallery />
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/awardpublication" element={<AwardPublication />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
       <Footer />
     </>
   );
