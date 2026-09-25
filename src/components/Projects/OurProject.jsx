@@ -1,96 +1,96 @@
 import React from "react";
-
-/* =========================================================
-   PROJECTS DATA
-========================================================= */
+import AmitParekhImage from "../../assets/Amit Parekh/image1.jpg";
+import AnandChandakImage from "../../assets/Anand Chandak/Image1.jpg";
+import PrakashAmarshetiwarImage from "../../assets/Prakash Amarshetiwar/Image1.jpg";
+import SwatibenShahImage from "../../assets/Swatiben Shah/Image1.jpg";
+import DARSHANHouseImage from "../../assets/DARSHAN House/Image1.jpg";
+import JainMandirImage from "../../assets/Jain Mandir Exterior and Interior/Image1.jpg";
+import JaiswalTataCapitalImage from "../../assets/jaiswal tata capital/Image1.jpg";
+import RoninBunglowImage from "../../assets/Ronin Bunglow/Image1.jpg";
+// import InteriorDesignImage from "../../assets/" 
 
 const projects = [
   {
     id: 1,
-    title: "Residential Interior Design",
+    title: "Amit Parekh",
     description:
-      "Tailored design projects for private homes, including room makeovers and complete home transformations.",
-    image: "/images/projects/residential-interior.jpg",
+      "Tailored design services for private homes, including room makeovers and complete home transformations.",
+    image: AmitParekhImage,
     column: "left",
   },
 
   {
     id: 2,
-    title: "Commercial Interior Design",
+    title: "Anand Chandak",
     description:
       "Designing functional and attractive interiors for businesses, including offices, retail spaces, and hospitality venues.",
-    image: "/images/projects/commercial-interior.jpg",
+    image: AnandChandakImage,
     column: "center",
   },
 
   {
     id: 3,
-    title: "Interior Design Consultation",
+    title: "Prakash Amarshetiwar",
     description:
       "Providing professional advice on concepts, color schemes & material selection.",
-    image: "/images/projects/interior-consultation.jpg",
+    image: PrakashAmarshetiwarImage,
     column: "right",
   },
 
   {
     id: 4,
-    title: "Architecture Design",
+    title: "Swatiben Shah",
     description:
-      "Thoughtful architectural planning that combines functionality, aesthetics and the character of every project.",
-    image: "/images/projects/architecture.jpg",
+      "Extending design services to outdoor spaces such as gardens, patios, and decks.",
+    image: SwatibenShahImage,
     column: "left",
   },
 
   {
     id: 5,
-    title: "Hospitality Interior Design",
+    title: "DARSHAN House",
     description:
-      "Creating memorable hospitality environments with carefully considered layouts, materials and design details.",
-    image: "/images/projects/hospitality.jpg",
+      "Overhauling existing spaces to modernize and improve functionality and aesthetics.",
+    image: DARSHANHouseImage,
     column: "center",
   },
 
   {
     id: 6,
-    title: "Kitchen Interior Design",
+    title: "Jain Mandir Exterior and Interior",
     description:
-      "Functional kitchen spaces designed around comfort, storage, usability and contemporary aesthetics.",
-    image: "/images/projects/kitchen.jpg",
+      "Realistic 3D visualizations to help you envision your space before it’s build in real life. There are a variety…",
+    image: JainMandirImage,
     column: "right",
   },
 
   {
     id: 7,
-    title: "Office Interior Design",
+    title: "Jaiswal Tata Capital",
     description:
-      "Modern workplace interiors designed to improve productivity, comfort and the overall working experience.",
-    image: "/images/projects/office.jpg",
+      "Tailored design services for private homes, including room makeovers and complete home transformations.",
+    image: JaiswalTataCapitalImage,
     column: "left",
   },
 
   {
     id: 8,
-    title: "Retail Interior Design",
+    title: "Ronin Bunglow",
     description:
-      "Strategic retail environments that combine visual identity, customer experience and practical functionality.",
-    image: "/images/projects/retail.jpg",
+      "Designing functional and attractive interiors for businesses, including offices, retail spaces, and hospitality venues.",
+    image: RoninBunglowImage,
     column: "center",
   },
 
   {
     id: 9,
-    title: "Project Management",
+    title: "Interior Design Consultation",
     description:
-      "End-to-end project coordination ensuring design execution, quality and timely completion.",
+      "Providing professional advice on concepts, color schemes & material selection.",
     image: "/images/projects/project-management.jpg",
     column: "right",
   },
 ];
-
-
-/* =========================================================
-   PROJECT CARD
-========================================================= */
 
 const ProjectCard = ({
   title,
@@ -145,9 +145,6 @@ const ProjectCard = ({
 
       </div>
 
-
-      {/* CONTENT */}
-
       <div className="pt-[2px]">
 
         <h3
@@ -167,7 +164,6 @@ const ProjectCard = ({
         >
           {title}
         </h3>
-
 
         <p
           className="
@@ -195,27 +191,9 @@ const ProjectCard = ({
   );
 };
 
-
-/* =========================================================
-   MAIN COMPONENT
-========================================================= */
-
 const OurProject = () => {
   return (
     <>
-      {/* =====================================================
-          GOOGLE FONT
-      ====================================================== */}
-
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap');
-      `}</style>
-
-
-      {/* =====================================================
-          OUR projects SECTION
-      ====================================================== */}
-
       <section
         className="
           relative
@@ -240,11 +218,6 @@ const OurProject = () => {
         "
       >
 
-
-        {/* ===================================================
-            HEADER
-        ==================================================== */}
-
         <div
           className="
             mx-auto
@@ -260,11 +233,6 @@ const OurProject = () => {
           "
         >
 
-
-          {/* =================================================
-              LEFT DECORATION
-          ================================================== */}
-
           <div
             className="
               relative
@@ -275,8 +243,6 @@ const OurProject = () => {
               max-[767px]:w-[150px]
             "
           >
-
-            {/* Horizontal line */}
 
             <span
               className="
@@ -296,9 +262,6 @@ const OurProject = () => {
               "
             />
 
-
-            {/* Vertical line */}
-
             <span
               className="
                 absolute
@@ -314,11 +277,6 @@ const OurProject = () => {
                 max-[767px]:h-[67px]
               "
             />
-
-
-            {/* =================================================
-                BADGE
-            ================================================== */}
 
             <div
               className="
@@ -384,11 +342,6 @@ const OurProject = () => {
 
           </div>
 
-
-          {/* =================================================
-              MAIN HEADING
-          ================================================== */}
-
           <div
             className="
               w-full
@@ -442,11 +395,6 @@ const OurProject = () => {
 
           </div>
 
-
-          {/* =================================================
-              DESCRIPTION
-          ================================================== */}
-
           <div
             className="
               w-full
@@ -475,29 +423,6 @@ const OurProject = () => {
 
         </div>
 
-
-        {/* =====================================================
-            BOTTOM DECORATIVE LINE
-        ====================================================== */}
-
-        <span
-          className="
-            absolute
-            bottom-0
-            left-[56.3%]
-            h-3
-            w-px
-            bg-[#8D8D8D]
-
-            max-[767px]:hidden
-          "
-        />
-
-
-        {/* =====================================================
-            projects GRID
-        ====================================================== */}
-
         <div
           className="
             mx-auto
@@ -518,11 +443,6 @@ const OurProject = () => {
             max-[767px]:gap-y-[35px]
           "
         >
-
-
-          {/* =================================================
-              LEFT COLUMN
-          ================================================== */}
 
           <div
             className="
@@ -556,11 +476,6 @@ const OurProject = () => {
 
           </div>
 
-
-          {/* =================================================
-              CENTER COLUMN
-          ================================================== */}
-
           <div
             className="
               flex
@@ -592,11 +507,6 @@ const OurProject = () => {
             />
 
           </div>
-
-
-          {/* =================================================
-              RIGHT COLUMN
-          ================================================== */}
 
           <div
             className="

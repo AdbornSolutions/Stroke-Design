@@ -513,29 +513,6 @@ const AboutSection = () => {
         </div>
 
       </div>
-
-
-      {/* =====================================================
-          BOTTOM DECORATIVE LINE
-      ====================================================== */}
-
-      <div
-        className="
-          absolute
-          bottom-0
-          left-[56.3%]
-
-          hidden
-
-          h-[12px]
-          w-px
-
-          bg-[#8D8D8D]
-
-          lg:block
-        "
-      />
-
     </section>
   );
 };

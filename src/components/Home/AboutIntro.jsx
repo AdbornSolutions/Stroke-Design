@@ -31,10 +31,6 @@ const AboutIntro = () => {
       className="w-full overflow-hidden"
     >
 
-      {/* =====================================================
-          ABOUT INTRO / HERO
-      ====================================================== */}
-
       <div
         className="
           relative

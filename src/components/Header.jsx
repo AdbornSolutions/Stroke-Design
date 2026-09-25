@@ -33,12 +33,6 @@ const Header = () => {
     );
   };
 
-  /*
-   * =====================================================
-   * DESKTOP NAV LINK CLASS
-   * =====================================================
-   */
-
   const desktopNavClass = (active) => `
     relative
     whitespace-nowrap
@@ -51,12 +45,6 @@ const Header = () => {
 
     ${active ? "text-[#d6bc22]" : "text-[#f3f1f1] hover:text-[#d6bc22]"}
   `;
-
-  /*
-   * =====================================================
-   * MOBILE NAV LINK CLASS
-   * =====================================================
-   */
 
   const mobileNavClass = (active) => `
     block
