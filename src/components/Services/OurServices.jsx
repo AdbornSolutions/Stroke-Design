@@ -1,10 +1,9 @@
-import React from "react";
-import ResidentialImage from "../../assets/Residential/Image1.jpg";
 import CommercialImage from "../../assets/Commercial/Image1.jpg";
-import InteriorImage from "../../assets/INTERIOR/Image1.jpg";
 import ExteriorImage from "../../assets/EXTERIOR/Image1.jpg";
 import Interior2D3DImage from "../../assets/Interior 2D3D Layouts/Image8.jpg";
+import InteriorImage from "../../assets/INTERIOR/Image1.jpg";
 import RenovationImage from "../../assets/Renovation And Remodeling/Image4.jpg";
+import ResidentialImage from "../../assets/Residential/Image1.jpg";
 
 const services = [
   {
@@ -68,13 +67,7 @@ const services = [
   },
 ];
 
-const ServiceCard = ({
-  title,
-  description,
-  image,
-  link,
-  tall = false,
-}) => {
+const ServiceCard = ({ title, description, image, link, tall = false }) => {
   return (
     <a
       href={link}
@@ -175,10 +168,6 @@ const ServiceCard = ({
 const OurServices = () => {
   return (
     <>
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap');
-      `}</style>
-
       <section
         className="
           relative
@@ -204,188 +193,206 @@ const OurServices = () => {
       >
         <div
           className="
-            mx-auto
-            grid
-            w-full
-            max-w-[1400px]
-            grid-cols-[clamp(220px,22%,305px)_minmax(500px,1fr)_clamp(280px,30%,390px)]
-            items-start
+    relative
+    mx-auto
+    grid
+    w-full
+    max-w-[1400px]
+    grid-cols-[clamp(220px,22%,305px)_minmax(0,1fr)_clamp(280px,30%,390px)]
+    items-start
 
-            max-[1024px]:grid-cols-[150px_minmax(0,1fr)_205px]
+    px-4
+    sm:px-6
+    md:px-8
+    lg:px-10
+    xl:px-12
 
-            max-[767px]:block
-          "
+    max-[1024px]:grid-cols-[150px_minmax(0,1fr)_205px]
+
+    max-[767px]:block
+  "
         >
+          {/* =================================================
+      LEFT DECORATIVE AREA
+  ================================================== */}
+
           <div
             className="
-              relative
-              h-[115px]
-              w-full
+      relative
+      h-[115px]
+      w-full
 
-              max-[767px]:h-[75px]
-              max-[767px]:w-[150px]
-            "
+      max-[767px]:h-[75px]
+      max-[767px]:w-[150px]
+    "
           >
             <span
               className="
-                absolute
-                left-0
-                top-[33px]
-                h-px
-                w-full
-                bg-[#BDBDBD]
+        absolute
+        left-0
+        top-[33px]
+        h-px
+        w-full
+        bg-[#BDBDBD]
 
-                max-[767px]:left-[-20px]
-                max-[767px]:top-[21px]
-                max-[767px]:w-[170px]
+        max-[767px]:left-[-20px]
+        max-[767px]:top-[21px]
+        max-[767px]:w-[170px]
 
-                max-[480px]:left-[-16px]
-                max-[480px]:w-[166px]
-              "
+        max-[480px]:left-[-16px]
+        max-[480px]:w-[166px]
+      "
             />
 
             <span
               className="
-                absolute
-                left-[72%]
-                top-0
-                h-[112px]
-                w-px
-                bg-[#C6C6C6]
+        absolute
+        left-[72%]
+        top-0
+        h-[112px]
+        w-px
+        bg-[#C6C6C6]
 
-                max-[1024px]:left-[106px]
+        max-[1024px]:left-[106px]
 
-                max-[767px]:left-[106px]
-                max-[767px]:h-[67px]
-              "
+        max-[767px]:left-[106px]
+        max-[767px]:h-[67px]
+      "
             />
 
             <div
               className="
-                absolute
-                left-[1px]
-                top-[42px]
-                z-[5]
+        absolute
+        left-[1px]
+        top-[42px]
+        z-[5]
 
-                inline-flex
-                items-center
-                justify-center
-                gap-[5px]
+        inline-flex
+        items-center
+        justify-center
+        gap-[5px]
 
-                whitespace-nowrap
-                rounded-full
+        whitespace-nowrap
+        rounded-full
 
-                border
-                border-[#CAA05C]
+        border
+        border-[#CAA05C]
 
-                bg-white
+        bg-white
 
-                px-[7px]
-                py-1
+        px-[7px]
+        py-1
 
-                font-['Playfair_Display',Georgia,serif]
-                text-[14px]
-                font-semibold
-                leading-none
+        font-['Playfair_Display',Georgia,serif]
+        text-[14px]
+        font-semibold
+        leading-none
 
-                text-[#1E1E1E]
+        text-[#1E1E1E]
 
-                max-[1024px]:px-[7px]
-                max-[1024px]:py-1
-                max-[1024px]:text-[10px]
+        max-[1024px]:px-[7px]
+        max-[1024px]:py-1
+        max-[1024px]:text-[10px]
 
-                max-[767px]:left-0
-                max-[767px]:top-8
-                max-[767px]:px-2
-                max-[767px]:py-1
-                max-[767px]:text-[11px]
-              "
+        max-[767px]:left-0
+        max-[767px]:top-8
+        max-[767px]:px-2
+        max-[767px]:py-1
+        max-[767px]:text-[11px]
+      "
             >
               <span
                 className="
-                  block
-                  h-2
-                  w-2
-                  shrink-0
-                  rounded-full
-                  bg-[#111111]
+          block
+          h-2
+          w-2
+          shrink-0
+          rounded-full
+          bg-[#111111]
 
-                  max-[767px]:h-[7px]
-                  max-[767px]:w-[7px]
-                "
+          max-[767px]:h-[7px]
+          max-[767px]:w-[7px]
+        "
               />
 
               <span>Our Services</span>
             </div>
           </div>
 
+          {/* =================================================
+      MAIN HEADING
+  ================================================== */}
+
           <div
             className="
-              w-full
-              px-0
-              pt-[43px]
+      w-full
+      px-0
+      pt-[43px]
 
-              max-[1024px]:pt-[46px]
+      max-[1024px]:pt-[46px]
 
-              max-[767px]:px-0
-              max-[767px]:pb-0
-              max-[767px]:pt-[11px]
-            "
+      max-[767px]:px-0
+      max-[767px]:pb-0
+      max-[767px]:pt-[11px]
+    "
           >
             <h2
               className="
-                m-0
-                p-0
+        m-0
+        p-0
 
-                font-['Playfair_Display',Georgia,'Times_New_Roman',serif]
-                text-[clamp(34px,3.15vw,48px)]
-                font-bold
-                leading-[1.12]
-                tracking-normal
-                text-black
+        font-['Playfair_Display',Georgia,'Times_New_Roman',serif]
+        text-[clamp(34px,3.15vw,48px)]
+        font-bold
+        leading-[1.12]
+        tracking-normal
+        text-black
 
-                max-[1024px]:text-[25px]
+        max-[1024px]:text-[25px]
 
-                max-[767px]:text-[27px]
-                max-[767px]:leading-[1.12]
+        max-[767px]:text-[27px]
+        max-[767px]:leading-[1.12]
 
-                max-[480px]:text-[25px]
-              "
+        max-[480px]:text-[25px]
+      "
             >
               <span
                 className="
-                  block
-                  whitespace-nowrap
+          block
+          whitespace-nowrap
 
-                  max-[767px]:whitespace-normal
-                "
+          max-[767px]:whitespace-normal
+        "
               >
-                Explore our{" "}
-                <span className="text-[#CAA05C]">services</span>
+                Explore our <span className="text-[#CAA05C]">services</span>
               </span>
             </h2>
           </div>
 
+          {/* =================================================
+      DESCRIPTION
+  ================================================== */}
+
           <div
             className="
-              w-full
-              pt-[111px]
+      w-full
+      pt-[111px]
 
-              max-[767px]:hidden
-            "
+      max-[767px]:hidden
+    "
           >
             <p
               className="
-                m-0
-                max-w-[330px]
-                p-0
+        m-0
+        max-w-[330px]
+        p-0
 
-                font-['Arial',Helvetica,sans-serif]
-                text-[clamp(12px,1.05vw,16px)]
-                font-normal
-                leading-[1.15]
-                text-black
-              "
+        font-['Arial',Helvetica,sans-serif]
+        text-[clamp(12px,1.05vw,16px)]
+        font-normal
+        leading-[1.15]
+        text-black
+      "
             >
               Transforming spaces through thoughtful architecture and interior
               design.

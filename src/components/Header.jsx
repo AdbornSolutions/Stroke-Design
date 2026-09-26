@@ -83,7 +83,6 @@ const Header = () => {
               h-[50px]
               w-auto
               object-contain
-
               sm:h-[52px]
             "
           />

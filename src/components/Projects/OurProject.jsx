@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import AmitParekhImage from "../../assets/Amit Parekh/image1.jpg";
 import AnandChandakImage from "../../assets/Anand Chandak/Image1.jpg";
 import DARSHANHouseImage from "../../assets/DARSHAN House/Image1.jpg";
+import InteriorImage from "../../assets/INTERIOR/Image1.jpg";
 import JainMandirImage from "../../assets/Jain Mandir Exterior and Interior/Image1.jpg";
 import JaiswalTataCapitalImage from "../../assets/jaiswal tata capital/Image1.jpg";
 import PrakashAmarshetiwarImage from "../../assets/Prakash Amarshetiwar/Image1.jpg";
 import RoninBunglowImage from "../../assets/Ronin Bunglow/Image1.jpg";
 import SwatibenShahImage from "../../assets/Swatiben Shah/Image1.jpg";
-import InteriorImage from "../../assets/INTERIOR/Image1.jpg";
 const projects = [
   {
     id: 1,

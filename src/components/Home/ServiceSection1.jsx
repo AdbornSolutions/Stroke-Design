@@ -56,307 +56,321 @@ const ServiceSection1 = () => {
         w-full
         overflow-visible
         bg-[#F7F7F7]
+        px-4
+        py-[20px]
+        pb-[30px]
+
+        sm:px-6
+        sm:py-[25px]
+
+        md:px-[38px]
+        md:py-[30px]
+        md:pb-[35px]
+
+        lg:px-10
+        lg:py-[30px]
+        lg:pb-[24px]
       "
     >
-      {/* =====================================================
-          SERVICES HEADER
-      ====================================================== */}
+<div
+  className="
+    relative
+    mx-auto
+    grid
+    w-full
+    max-w-[1400px]
+    items-start
 
-      <div
+    px-4
+    py-[20px]
+    pb-[30px]
+
+    sm:px-6
+
+    md:px-8
+    md:py-[30px]
+    md:pb-[25px]
+
+    lg:px-10
+    lg:grid-cols-[clamp(220px,22%,305px)_minmax(0,1fr)_clamp(280px,30%,390px)]
+    lg:pb-[24px]
+
+    xl:px-12
+  "
+>
+  {/* =====================================================
+      LEFT DECORATIVE AREA
+  ====================================================== */}
+
+  <div
+    className="
+      relative
+      hidden
+      h-[115px]
+      w-full
+
+      lg:block
+    "
+  >
+    {/* Horizontal Line */}
+    <div
+      className="
+        absolute
+        left-0
+        top-[33px]
+        h-px
+        w-full
+        bg-[#BDBDBD]
+      "
+    />
+
+    {/* Vertical Line */}
+    <div
+      className="
+        absolute
+        left-[72%]
+        top-0
+        h-[112px]
+        w-px
+        bg-[#C6C6C6]
+      "
+    />
+
+    {/* Our Services Badge */}
+    <div
+      className="
+        absolute
+        left-[1px]
+        top-[42px]
+        z-10
+
+        inline-flex
+        items-center
+        justify-center
+        gap-[5px]
+
+        whitespace-nowrap
+        rounded-full
+
+        border
+        border-[#CAA05C]
+
+        bg-white
+
+        px-[9px]
+        py-[5px]
+
+        font-['Playfair_Display']
+        text-[14px]
+        font-semibold
+        leading-none
+        text-[#1E1E1E]
+      "
+    >
+      <span
         className="
-          relative
-          mx-auto
-          grid
-          w-full
-          max-w-[1400px]
-          items-start
+          block
+          h-[8px]
+          w-[8px]
+          shrink-0
+          rounded-full
+          bg-[#111111]
+        "
+      />
 
-          px-4
-          py-[20px]
-          pb-[30px]
+      <span>Our Services</span>
+    </div>
+  </div>
 
-          sm:px-6
-          md:px-[38px]
-          md:py-[30px]
-          md:pb-[25px]
+  {/* =====================================================
+      MOBILE DECORATIVE AREA
+  ====================================================== */}
 
-          lg:grid-cols-[clamp(220px,22%,305px)_minmax(500px,1fr)_clamp(280px,30%,390px)]
-          lg:px-10
-          lg:pb-[24px]
+  <div
+    className="
+      relative
+      block
+      h-[75px]
+      w-full
+      max-w-[150px]
+
+      lg:hidden
+    "
+  >
+    {/* Horizontal Line */}
+    <div
+      className="
+        absolute
+        left-[-16px]
+        top-[21px]
+        h-px
+        w-[calc(100%+16px)]
+        bg-[#BDBDBD]
+
+        min-[481px]:left-[-20px]
+        min-[481px]:w-[170px]
+      "
+    />
+
+    {/* Vertical Line */}
+    <div
+      className="
+        absolute
+        left-[106px]
+        top-0
+        h-[67px]
+        w-px
+        bg-[#C6C6C6]
+    "
+    />
+
+    {/* Badge */}
+    <div
+      className="
+        absolute
+        left-0
+        top-[32px]
+        z-10
+
+        inline-flex
+        items-center
+        justify-center
+        gap-[5px]
+
+        whitespace-nowrap
+        rounded-full
+
+        border
+        border-[#CAA05C]
+
+        bg-white
+
+        px-[8px]
+        py-[4px]
+
+        font-['Playfair_Display']
+        text-[11px]
+        font-semibold
+        leading-none
+        text-[#1E1E1E]
+
+        min-[481px]:text-[12px]
+      "
+    >
+      <span
+        className="
+          block
+          h-[7px]
+          w-[7px]
+          shrink-0
+          rounded-full
+          bg-[#111111]
+        "
+      />
+
+      <span>Our Services</span>
+    </div>
+  </div>
+
+  {/* =====================================================
+      MAIN HEADING
+  ====================================================== */}
+
+  <div
+    className="
+      w-full
+      pt-[11px]
+
+      lg:col-start-2
+      lg:pt-[43px]
+      lg:pr-[20px]
+    "
+  >
+    <h2
+      className="
+        m-0
+        p-0
+
+        font-['Playfair_Display']
+        text-[25px]
+        font-bold
+        leading-[1.18]
+        tracking-normal
+        text-black
+
+        sm:text-[27px]
+        md:text-[30px]
+
+        lg:text-[clamp(34px,3.15vw,48px)]
+        lg:leading-[1.12]
+      "
+    >
+      {/* First Line */}
+      <span
+        className="
+          block
+          whitespace-normal
+
+          lg:whitespace-nowrap
         "
       >
-        {/* =====================================================
-            LEFT DECORATIVE AREA
-        ====================================================== */}
+        Explore our
+      </span>
 
-        <div
-          className="
-            relative
-            hidden
-            h-[115px]
-            w-full
+      {/* Second Line */}
+      <span
+        className="
+          block
+          whitespace-normal
+          text-[#CAA05C]
 
-            lg:block
-          "
-        >
-          {/* Horizontal Line */}
-          <div
-            className="
-              absolute
-              left-0
-              top-[33px]
-              h-px
-              w-full
-              bg-[#BDBDBD]
-            "
-          />
+          lg:whitespace-nowrap
+        "
+      >
+        comprehensive services
+      </span>
+    </h2>
+  </div>
 
-          {/* Vertical Line */}
-          <div
-            className="
-              absolute
-              left-[72%]
-              top-0
-              h-[112px]
-              w-px
-              bg-[#C6C6C6]
-            "
-          />
+  {/* =====================================================
+      DESCRIPTION
+  ====================================================== */}
 
-          {/* Our Services Badge */}
-          <div
-            className="
-              absolute
-              left-[1px]
-              top-[42px]
-              z-10
+  <div
+    className="
+      w-full
+      pt-[24px]
 
-              inline-flex
-              items-center
-              justify-center
-              gap-[5px]
+      lg:col-start-3
+      lg:pt-[111px]
+    "
+  >
+    <p
+      className="
+        m-0
+        w-full
+        max-w-[500px]
 
-              whitespace-nowrap
-              rounded-full
+        font-[Arial,sans-serif]
+        text-[14px]
+        font-normal
+        leading-[1.3]
+        tracking-normal
+        text-black
 
-              border
-              border-[#CAA05C]
+        sm:text-[15px]
 
-              bg-white
-
-              px-[9px]
-              py-[5px]
-
-              font-['Playfair_Display']
-              text-[14px]
-              font-semibold
-              leading-none
-              text-[#1E1E1E]
-            "
-          >
-            <span
-              className="
-                block
-                h-[8px]
-                w-[8px]
-                shrink-0
-                rounded-full
-                bg-[#111111]
-              "
-            />
-
-            <span>Our Services</span>
-          </div>
-        </div>
-
-        {/* =====================================================
-            MOBILE DECORATIVE AREA
-        ====================================================== */}
-
-        <div
-          className="
-            relative
-            block
-            h-[75px]
-            w-[150px]
-
-            lg:hidden
-          "
-        >
-          {/* Horizontal Line */}
-          <div
-            className="
-              absolute
-              left-[-20px]
-              top-[21px]
-              h-px
-              w-[170px]
-              bg-[#BDBDBD]
-
-              max-[480px]:left-[-16px]
-              max-[480px]:w-[166px]
-            "
-          />
-
-          {/* Vertical Line */}
-          <div
-            className="
-              absolute
-              left-[106px]
-              top-0
-              h-[67px]
-              w-px
-              bg-[#C6C6C6]
-            "
-          />
-
-          {/* Badge */}
-          <div
-            className="
-              absolute
-              left-0
-              top-[32px]
-              z-10
-
-              inline-flex
-              items-center
-              justify-center
-              gap-[5px]
-
-              whitespace-nowrap
-              rounded-full
-
-              border
-              border-[#CAA05C]
-
-              bg-white
-
-              px-[8px]
-              py-[4px]
-
-              font-['Playfair_Display']
-              text-[11px]
-              font-semibold
-              leading-none
-              text-[#1E1E1E]
-
-              max-[480px]:text-[11px]
-            "
-          >
-            <span
-              className="
-                block
-                h-[7px]
-                w-[7px]
-                shrink-0
-                rounded-full
-                bg-[#111111]
-              "
-            />
-
-            <span>Our Services</span>
-          </div>
-        </div>
-
-        {/* =====================================================
-            MAIN HEADING
-        ====================================================== */}
-
-        <div
-          className="
-            w-full
-            pt-[11px]
-
-            lg:col-start-2
-            lg:pt-[43px]
-            lg:pr-[20px]
-          "
-        >
-          <h2
-            className="
-              m-0
-              p-0
-
-              font-['Playfair_Display']
-              text-[25px]
-              font-bold
-              leading-[1.18]
-              tracking-normal
-              text-black
-
-              sm:text-[27px]
-              md:text-[30px]
-
-              lg:text-[clamp(34px,3.15vw,48px)]
-              lg:leading-[1.12]
-            "
-          >
-            {/* First Line */}
-            <span
-              className="
-                block
-                whitespace-normal
-
-                lg:whitespace-nowrap
-              "
-            >
-              Explore our
-            </span>
-
-            {/* Second Line */}
-            <span
-              className="
-                block
-                text-[#CAA05C]
-                whitespace-normal
-
-                lg:whitespace-nowrap
-              "
-            >
-              comprehensive services
-            </span>
-          </h2>
-        </div>
-
-        {/* =====================================================
-            DESCRIPTION
-        ====================================================== */}
-
-        <div
-          className="
-            w-full
-            pt-[24px]
-
-            lg:col-start-3
-            lg:pt-[111px]
-          "
-        >
-          <p
-            className="
-              m-0
-              w-full
-              max-w-[500px]
-
-              font-[Arial,sans-serif]
-              text-[14px]
-              font-normal
-              leading-[1.3]
-              tracking-normal
-              text-black
-
-              sm:text-[15px]
-
-              lg:max-w-[330px]
-              lg:text-[clamp(12px,1.05vw,16px)]
-              lg:leading-[1.15]
-            "
-          >
-            We specialize in transforming visions into reality. Explore our
-            portfolio of innovative architectural and interior design projects
-            crafted with precision.
-          </p>
-        </div>
-      </div>
+        lg:max-w-[330px]
+        lg:text-[clamp(12px,1.05vw,16px)]
+        lg:leading-[1.15]
+      "
+    >
+      We specialize in transforming visions into reality. Explore our
+      portfolio of innovative architectural and interior design projects
+      crafted with precision.
+    </p>
+  </div>
+</div>
 
       {/* =====================================================
           STACKING SERVICES CARDS

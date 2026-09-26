@@ -310,8 +310,8 @@ const Testimonials = () => {
           grid-cols-[clamp(149px,21vw,302px)_minmax(0,1fr)]
           items-start
           px-[clamp(38px,5vw,72px)]
-          pt-0
-          pb-[12px]
+          pt-20
+          pb-20
 
           max-[1024px]:grid-cols-[149px_minmax(0,1fr)]
           max-[1024px]:px-[38px]

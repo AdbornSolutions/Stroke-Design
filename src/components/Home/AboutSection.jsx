@@ -1,5 +1,3 @@
-import React from "react";
-
 import about1 from "../../assets/about-1.png";
 import about2 from "../../assets/about-2.png";
 import about3 from "../../assets/about-3.png";
@@ -29,314 +27,240 @@ const AboutSection = () => {
         lg:pb-[24px]
       "
     >
-
       {/* =====================================================
           MAIN WRAPPER
       ====================================================== */}
 
-      <div
-        className="
-          relative
-          mx-auto
-          grid
+      <div className="w-full">
+        <div
+          className="
+      relative
+      mx-auto
+      grid
+      w-full
+      max-w-[1400px]
+      items-start
+      px-4
+      sm:px-6
+      md:px-8
+      lg:px-10
+      xl:px-12
+
+      lg:grid-cols-[clamp(220px,22%,305px)_minmax(0,1fr)_clamp(280px,30%,390px)]
+    "
+        >
+          {/* =====================================================
+        LEFT DECORATIVE AREA
+    ====================================================== */}
+
+          <div
+            className="
+        relative
+        hidden
+        h-[115px]
+        w-full
+
+        lg:block
+      "
+          >
+            {/* Horizontal Line */}
+            <div
+              className="
+          absolute
+          left-0
+          top-[33px]
+          h-px
           w-full
-          max-w-[1400px]
-          items-start
-
-          lg:grid-cols-[clamp(220px,22%,305px)_minmax(500px,1fr)_clamp(280px,30%,390px)]
+          bg-[#BDBDBD]
         "
-      >
-
-        {/* =====================================================
-            LEFT DECORATIVE AREA
-        ====================================================== */}
-
-        <div
-          className="
-            relative
-            hidden
-            h-[115px]
-            w-full
-
-            lg:block
-          "
-        >
-
-          {/* Horizontal Line */}
-          <div
-            className="
-              absolute
-              left-0
-              top-[33px]
-              h-px
-              w-full
-              bg-[#BDBDBD]
-            "
-          />
-
-          {/* Vertical Line */}
-          <div
-            className="
-              absolute
-              left-[72%]
-              top-0
-              h-[112px]
-              w-px
-              bg-[#C6C6C6]
-            "
-          />
-
-          {/* About Us Badge */}
-          <div
-            className="
-              absolute
-              left-[1px]
-              top-[42px]
-              z-10
-
-              inline-flex
-              items-center
-              justify-center
-              gap-[5px]
-
-              whitespace-nowrap
-              rounded-full
-
-              border
-              border-[#CAA05C]
-
-              bg-white
-
-              px-[9px]
-              py-[5px]
-
-              font-['Playfair_Display']
-              text-[14px]
-              font-semibold
-              leading-none
-              text-[#1E1E1E]
-            "
-          >
-
-            {/* Dot */}
-            <span
-              className="
-                block
-                h-[8px]
-                w-[8px]
-                shrink-0
-                rounded-full
-                bg-[#111111]
-              "
             />
 
-            <span>
-              About us
-            </span>
+            {/* Vertical Line */}
+            <div
+              className="
+          absolute
+          left-[72%]
+          top-0
+          h-[112px]
+          w-px
+          bg-[#C6C6C6]
+        "
+            />
 
-          </div>
-
-        </div>
-
-
-        {/* =====================================================
-            MOBILE DECORATIVE AREA
-        ====================================================== */}
-
-        <div
-          className="
-            relative
+            {/* About Us Badge */}
+            <div
+              className="
+          absolute
+          left-[1px]
+          top-[42px]
+          z-10
+          inline-flex
+          items-center
+          justify-center
+          gap-[5px]
+          whitespace-nowrap
+          rounded-full
+          border
+          border-[#CAA05C]
+          bg-white
+          px-[9px]
+          py-[5px]
+          font-['Playfair_Display']
+          text-[14px]
+          font-semibold
+          leading-none
+          text-[#1E1E1E]
+        "
+            >
+              <span
+                className="
             block
-            h-[75px]
-            w-[150px]
-
-            lg:hidden
+            h-[8px]
+            w-[8px]
+            shrink-0
+            rounded-full
+            bg-[#111111]
           "
-        >
+              />
 
-          {/* Horizontal Line */}
-          <div
-            className="
-              absolute
-              left-[-20px]
-              top-[21px]
-              h-px
-              w-[170px]
-              bg-[#BDBDBD]
-
-              sm:left-[-20px]
-              sm:w-[170px]
-            "
-          />
-
-          {/* Vertical Line */}
-          <div
-            className="
-              absolute
-              left-[106px]
-              top-0
-              h-[67px]
-              w-px
-              bg-[#C6C6C6]
-            "
-          />
-
-          {/* Mobile Badge */}
-          <div
-            className="
-              absolute
-              left-0
-              top-[32px]
-              z-10
-
-              inline-flex
-              items-center
-              justify-center
-              gap-[5px]
-
-              whitespace-nowrap
-              rounded-full
-
-              border
-              border-[#CAA05C]
-
-              bg-white
-
-              px-[8px]
-              py-[4px]
-
-              font-['Playfair_Display']
-              text-[11px]
-              font-semibold
-              leading-none
-              text-[#1E1E1E]
-
-              min-[481px]:text-[12px]
-            "
-          >
-
-            <span
-              className="
-                block
-                h-[7px]
-                w-[7px]
-                shrink-0
-                rounded-full
-                bg-[#111111]
-              "
-            />
-
-            <span>
-              About us
-            </span>
-
+              <span>About us</span>
+            </div>
           </div>
 
-        </div>
+          {/* =====================================================
+        MOBILE DECORATIVE AREA
+    ====================================================== */}
 
-
-        {/* =====================================================
-            MAIN HEADING
-        ====================================================== */}
-
-        <div
-          className="
-            w-full
-            pt-[11px]
-
-            lg:col-start-2
-            lg:pt-[43px]
-            lg:pr-[20px]
-          "
-        >
-
-          <h2
+          <div
             className="
-              m-0
-              p-0
+        relative
+        block
+        h-[75px]
+        w-full
+        max-w-[150px]
 
-              font-['Playfair_Display']
-              font-bold
-
-              text-[25px]
-              leading-[1.12]
-              tracking-normal
-              text-black
-
-              sm:text-[27px]
-
-              md:text-[30px]
-
-              lg:text-[clamp(34px,3.15vw,48px)]
-              lg:leading-[1.12]
-            "
+        lg:hidden
+      "
           >
-
-            {/* =================================================
-                FIRST LINE
-            ================================================== */}
-
-            <span
+            {/* Horizontal Line */}
+            <div
               className="
-                block
+          absolute
+          left-[-16px]
+          top-[21px]
+          h-px
+          w-[calc(100%+16px)]
+          bg-[#BDBDBD]
+        "
+            />
 
-                lg:whitespace-nowrap
-              "
-            >
-
-              <span>
-                We Shape{" "}
-              </span>
-
-              <span className="text-[#CAA05C]">
-                Interior Design,
-              </span>
-
-            </span>
-
-
-            {/* =================================================
-                SECOND LINE
-            ================================================== */}
-
-            <span
+            {/* Vertical Line */}
+            <div
               className="
-                block
+          absolute
+          left-[106px]
+          top-0
+          h-[67px]
+          w-px
+          bg-[#C6C6C6]
+        "
+            />
 
-                lg:whitespace-nowrap
-              "
+            {/* Mobile Badge */}
+            <div
+              className="
+          absolute
+          left-0
+          top-[32px]
+          z-10
+          inline-flex
+          items-center
+          justify-center
+          gap-[5px]
+          whitespace-nowrap
+          rounded-full
+          border
+          border-[#CAA05C]
+          bg-white
+          px-[8px]
+          py-[4px]
+          font-['Playfair_Display']
+          text-[11px]
+          font-semibold
+          leading-none
+          text-[#1E1E1E]
+          min-[481px]:text-[12px]
+        "
             >
+              <span
+                className="
+            block
+            h-[7px]
+            w-[7px]
+            shrink-0
+            rounded-full
+            bg-[#111111]
+          "
+              />
 
-              <span className="text-[#CAA05C]">
-                Crafting
+              <span>About us</span>
+            </div>
+          </div>
+
+          {/* =====================================================
+        MAIN HEADING
+    ====================================================== */}
+
+          <div
+            className="
+        w-full
+        pt-[11px]
+
+        lg:col-start-2
+        lg:pt-[43px]
+        lg:pr-[20px]
+      "
+          >
+            <h2
+              className="
+          m-0
+          p-0
+
+          font-['Playfair_Display']
+          font-bold
+
+          text-[25px]
+          leading-[1.12]
+          tracking-normal
+          text-black
+
+          sm:text-[27px]
+          md:text-[30px]
+
+          lg:text-[clamp(34px,3.15vw,48px)]
+          lg:leading-[1.12]
+        "
+            >
+              {/* FIRST LINE */}
+              <span className="block lg:whitespace-nowrap">
+                <span>We Shape </span>
+                <span className="text-[#CAA05C]">Interior Design,</span>
               </span>
 
-              <span>
-                {" "}Timeless and Inspiring
+              {/* SECOND LINE */}
+              <span className="block lg:whitespace-nowrap">
+                <span className="text-[#CAA05C]">Crafting</span>
+
+                <span> Timeless and Inspiring</span>
+
+                <br className="hidden lg:block" />
+
+                <span> Spaces</span>
               </span>
-
-              <br className="hidden lg:block" />
-
-              <span>
-                {" "}Spaces
-              </span>
-
-            </span>
-
-          </h2>
-
+            </h2>
+          </div>
         </div>
-
-
-        {/* =====================================================
-            RIGHT EMPTY COLUMN
-            Preserves original 3-column layout
-        ====================================================== */}
-
-        <div className="hidden lg:block" />
-
       </div>
-
 
       {/* =====================================================
           IMAGE GRID
@@ -371,7 +295,6 @@ const AboutSection = () => {
           xl:gap-11
         "
       >
-
         {/* =====================================================
             IMAGE 1
         ====================================================== */}
@@ -385,7 +308,6 @@ const AboutSection = () => {
             lg:mt-4
           "
         >
-
           <div
             className="
               group
@@ -394,7 +316,6 @@ const AboutSection = () => {
               rounded-[12px]
             "
           >
-
             <img
               src={about1}
               alt="Interior living room design"
@@ -413,11 +334,8 @@ const AboutSection = () => {
                 group-hover:scale-[1.03]
               "
             />
-
           </div>
-
         </div>
-
 
         {/* =====================================================
             IMAGE 2
@@ -432,7 +350,6 @@ const AboutSection = () => {
             lg:mt-16
           "
         >
-
           <div
             className="
               group
@@ -441,7 +358,6 @@ const AboutSection = () => {
               rounded-[12px]
             "
           >
-
             <img
               src={about2}
               alt="Luxury bedroom interior"
@@ -460,11 +376,8 @@ const AboutSection = () => {
                 group-hover:scale-[1.03]
               "
             />
-
           </div>
-
         </div>
-
 
         {/* =====================================================
             IMAGE 3
@@ -479,7 +392,6 @@ const AboutSection = () => {
             lg:mt-24
           "
         >
-
           <div
             className="
               group
@@ -488,7 +400,6 @@ const AboutSection = () => {
               rounded-[12px]
             "
           >
-
             <img
               src={about3}
               alt="Modern kitchen interior"
@@ -507,11 +418,8 @@ const AboutSection = () => {
                 group-hover:scale-[1.03]
               "
             />
-
           </div>
-
         </div>
-
       </div>
     </section>
   );

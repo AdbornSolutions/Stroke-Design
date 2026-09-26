@@ -1,19 +1,14 @@
-import React from "react";
-
 import AwardWinningProject1 from "../../assets/AwardWinningProject1.png";
 import AwardWinningProject2 from "../../assets/AwardWinningProject2.png";
 import AwardWinningProject3 from "../../assets/AwardWinningProject3.png";
 
 const AwardWinningProjects = () => {
   const projects = {
-    main:
-      AwardWinningProject1,
+    main: AwardWinningProject1,
 
-    topRight:
-      AwardWinningProject2,
+    topRight: AwardWinningProject2,
 
-    bottomRight:
-      AwardWinningProject3,
+    bottomRight: AwardWinningProject3,
   };
 
   return (
@@ -24,6 +19,7 @@ const AwardWinningProjects = () => {
           w-full
           overflow-hidden
           bg-white
+          mt-12
 
           px-[40px]
           pt-[30px]
@@ -40,233 +36,177 @@ const AwardWinningProjects = () => {
           max-[480px]:pt-[20px]
         "
       >
-
         {/* ======================================================
             HEADER
         ====================================================== */}
 
         <div
+        className="
+    relative
+    w-full
+    overflow-hidden
+    px-4
+    pt-[30px]
+    pb-10
+
+    sm:px-6
+    md:px-8
+    lg:px-10
+    xl:px-12
+  "
+      >
+        <div
           className="
-            mx-auto
-            grid
-            w-full
-            max-w-[1400px]
+      mx-auto
+      grid
+      w-full
+      max-w-[1260px]
+      grid-cols-[150px_minmax(0,1fr)_205px]
+      items-start
 
-            grid-cols-[150px_minmax(0,1fr)_205px]
-
-            items-start
-
-            min-[1025px]:
-              grid-cols-[clamp(220px,22%,305px)_minmax(500px,1fr)_clamp(280px,30%,390px)]
-
-            max-[1024px]:
-              grid-cols-[150px_minmax(0,1fr)_205px]
-
-            max-[767px]:
-              block
-          "
+      max-[767px]:grid-cols-1
+    "
         >
-
-          {/* ====================================================
-              LEFT DECORATIVE AREA
-          ==================================================== */}
+          {/* =================================================
+        LEFT DECORATION
+    ================================================= */}
 
           <div
             className="
-              relative
-              h-[115px]
-              w-full
+        relative
+        h-[115px]
+        w-full
 
-              before:absolute
-              before:left-0
-              before:top-[33px]
-              before:h-px
-              before:w-[150px]
-              before:bg-[#BDBDBD]
-              before:content-['']
+        before:absolute
+        before:left-0
+        before:top-[33px]
+        before:h-px
+        before:w-[150px]
+        before:bg-[#BDBDBD]
+        before:content-['']
 
-              after:absolute
-              after:left-[106px]
-              after:top-0
-              after:h-[112px]
-              after:w-px
-              after:bg-[#C6C6C6]
-              after:content-['']
+        after:absolute
+        after:left-[106px]
+        after:top-0
+        after:h-[112px]
+        after:w-px
+        after:bg-[#C6C6C6]
+        after:content-['']
 
-              min-[1025px]:
-                before:w-full
+        lg:after:left-[72%]
+        lg:before:w-full
 
-              min-[1025px]:
-                after:left-[72%]
-
-              max-[767px]:
-                h-[75px]
-
-              max-[767px]:
-                before:left-[-20px]
-
-              max-[767px]:
-                before:top-[21px]
-
-              max-[767px]:
-                before:w-[170px]
-
-              max-[767px]:
-                after:left-[106px]
-
-              max-[767px]:
-                after:h-[67px]
-
-              max-[480px]:
-                before:left-[-16px]
-
-              max-[480px]:
-                before:w-[166px]
-            "
+        max-[767px]:h-[75px]
+        max-[767px]:before:left-[-20px]
+        max-[767px]:before:top-[21px]
+        max-[767px]:before:w-[170px]
+        max-[767px]:after:left-[106px]
+        max-[767px]:after:h-[67px]
+      "
           >
-
-            {/* ==================================================
-                PROJECTS BADGE
-            ================================================== */}
+            {/* Badge */}
 
             <div
               className="
-                absolute
-                left-[1px]
-                top-[42px]
-                z-10
+          absolute
+          left-[1px]
+          top-[42px]
+          z-10
 
-                inline-flex
-                items-center
-                justify-center
+          inline-flex
+          min-h-[25px]
+          items-center
+          justify-center
+          gap-[5px]
 
-                gap-[5px]
+          whitespace-nowrap
 
-                whitespace-nowrap
+          rounded-full
+          border
+          border-[#CAA05C]
 
-                rounded-full
-                border
-                border-[#CAA05C]
+          bg-white
 
-                bg-white
+          px-[7px]
+          py-[4px]
+          pl-[5px]
 
-                px-[7px]
-                py-[4px]
-                pl-[5px]
+          font-['Playfair_Display',Georgia,serif]
+          text-[10px]
+          font-semibold
+          leading-none
+          text-[#1E1E1E]
 
-                font-['Playfair_Display',Georgia,serif]
-                text-[10px]
-                font-semibold
-                leading-none
+          lg:px-[9px]
+          lg:py-[5px]
+          lg:pl-[6px]
+          lg:text-[14px]
 
-                text-[#1E1E1E]
-
-                min-[1025px]:
-                  px-[9px]
-                  py-[5px]
-                  pl-[6px]
-                  text-[14px]
-
-                max-[767px]:
-                  left-0
-                  top-[32px]
-                  px-[8px]
-                  py-[4px]
-                  pl-[5px]
-                  text-[11px]
-
-                max-[480px]:
-                  text-[10px]
-              "
+          max-[767px]:left-0
+          max-[767px]:top-[32px]
+          max-[767px]:text-[11px]
+        "
             >
-
               <span
                 className="
-                  block
-                  h-[7px]
-                  w-[7px]
-                  shrink-0
-                  rounded-full
-                  bg-[#111111]
+            block
+            h-[7px]
+            w-[7px]
+            shrink-0
+            rounded-full
+            bg-[#111111]
 
-                  min-[1025px]:
-                    h-[8px]
-                    w-[8px]
-                "
+            lg:h-[8px]
+            lg:w-[8px]
+          "
               />
 
               <span>Projects</span>
-
             </div>
           </div>
 
-
-          {/* ====================================================
-              MAIN HEADING
-          ==================================================== */}
+          {/* =================================================
+        MAIN HEADING
+    ================================================= */}
 
           <div
             className="
-              w-full
+        w-full
+        px-0
+        pt-[46px]
 
-              pt-[46px]
-
-              min-[1025px]:
-                pt-[43px]
-
-              max-[1024px]:
-                pt-[43px]
-
-              max-[767px]:
-                pt-[11px]
-            "
+        lg:pt-[43px]
+        max-[767px]:pt-[11px]
+      "
           >
-
-            <h1
+            <h2
               className="
-                m-0
-                p-0
+          m-0
+          p-0
 
-                font-['Playfair_Display',Georgia,'Times_New_Roman',serif]
+          font-['Playfair_Display',Georgia,'Times_New_Roman',serif]
+          text-[25px]
+          font-bold
+          leading-[1.18]
+          tracking-normal
+          text-black
 
-                text-[25px]
-                font-bold
-                leading-[1.18]
+          lg:text-[clamp(34px,3.15vw,48px)]
+          lg:leading-[1.12]
 
-                tracking-normal
-
-                text-black
-
-                whitespace-nowrap
-
-                min-[1025px]:
-                  text-[clamp(34px,3.15vw,48px)]
-                  leading-[1.12]
-
-                max-[1024px]:
-                  text-[32px]
-
-                max-[767px]:
-                  whitespace-normal
-                  text-[27px]
-                  leading-[1.12]
-
-                max-[480px]:
-                  text-[25px]
-              "
+          max-[767px]:whitespace-normal
+          max-[767px]:text-[27px]
+          max-[767px]:leading-[1.12]
+          max-[480px]:text-[25px]
+        "
             >
-              Award Winning Projects
-            </h1>
-
+              <span className="block whitespace-nowrap max-[767px]:whitespace-normal">
+                Award Winning Projects
+              </span>
+            </h2>
           </div>
-
-
-          {/* Empty third column */}
-
-          <div className="hidden min-[768px]:block" />
-
         </div>
-
+      </div>
 
         {/* ========================================================
             PROJECT IMAGE GRID
@@ -279,7 +219,7 @@ const AwardWinningProjects = () => {
 
             grid
             w-full
-            max-w-[1210px]
+            max-w-[1310px]
 
             grid-cols-[1fr_0.98fr]
 
@@ -297,7 +237,6 @@ const AwardWinningProjects = () => {
               gap-[14px]
           "
         >
-
           {/* ====================================================
               LEFT LARGE IMAGE
           ==================================================== */}
@@ -327,7 +266,6 @@ const AwardWinningProjects = () => {
                 aspect-[1.05/1]
             "
           >
-
             <img
               src={projects.main}
               alt="Award winning interior design project"
@@ -346,9 +284,7 @@ const AwardWinningProjects = () => {
                 hover:scale-[1.02]
               "
             />
-
           </div>
-
 
           {/* ====================================================
               RIGHT COLUMN
@@ -365,7 +301,6 @@ const AwardWinningProjects = () => {
                 gap-[14px]
             "
           >
-
             {/* ==================================================
                 TOP RIGHT IMAGE
             ================================================== */}
@@ -396,7 +331,6 @@ const AwardWinningProjects = () => {
                   aspect-[1.8/1]
               "
             >
-
               <img
                 src={projects.topRight}
                 alt="Award winning residential interior"
@@ -415,9 +349,7 @@ const AwardWinningProjects = () => {
                   hover:scale-[1.02]
                 "
               />
-
             </div>
-
 
             {/* ==================================================
                 BOTTOM RIGHT IMAGE
@@ -449,7 +381,6 @@ const AwardWinningProjects = () => {
                   aspect-[1.8/1]
               "
             >
-
               <img
                 src={projects.bottomRight}
                 alt="Award winning interior design"
@@ -468,13 +399,9 @@ const AwardWinningProjects = () => {
                   hover:scale-[1.02]
                 "
               />
-
             </div>
-
           </div>
-
         </div>
-
       </section>
     </>
   );

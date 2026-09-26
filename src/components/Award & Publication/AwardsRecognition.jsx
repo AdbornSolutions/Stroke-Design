@@ -1,5 +1,3 @@
-import React from "react";
-
 const AwardsRecognition = () => {
   const awards = [
     {
@@ -21,167 +19,173 @@ const AwardsRecognition = () => {
 
   return (
     <section className="w-full overflow-hidden bg-white">
-
-      {/* =====================================================
-          AWARDS HEADER
-      ===================================================== */}
-
       <div
         className="
-          relative
-          w-full
-          overflow-hidden
-          px-[40px]
-          pt-[30px]
-          pb-[24px]
+    relative
+    w-full
+    overflow-hidden
+    px-4
+    pt-[30px]
+    pb-10
 
-          sm:px-[40px]
-
-          md:px-[38px]
-
-          lg:px-[40px]
-
-          xl:px-[5vw]
-        "
+    sm:px-6
+    md:px-8
+    lg:px-10
+    xl:px-12
+  "
       >
         <div
           className="
-            mx-auto
-            grid
-            w-full
-            max-w-[1400px]
-            grid-cols-[150px_minmax(0,1fr)_205px]
-            items-start
-          "
-        >
+      mx-auto
+      grid
+      w-full
+      max-w-[1260px]
+      grid-cols-[150px_minmax(0,1fr)_205px]
+      items-start
 
+      max-[767px]:grid-cols-1
+    "
+        >
           {/* =================================================
-              LEFT DECORATION
-          ================================================= */}
+        LEFT DECORATION
+    ================================================= */}
 
           <div
             className="
-              relative
-              h-[115px]
-              w-full
+        relative
+        h-[115px]
+        w-full
 
-              before:absolute
-              before:left-0
-              before:top-[33px]
-              before:h-px
-              before:w-[150px]
-              before:bg-[#BDBDBD]
-              before:content-['']
+        before:absolute
+        before:left-0
+        before:top-[33px]
+        before:h-px
+        before:w-[150px]
+        before:bg-[#BDBDBD]
+        before:content-['']
 
-              after:absolute
-              after:left-[106px]
-              after:top-0
-              after:h-[112px]
-              after:w-px
-              after:bg-[#C6C6C6]
-              after:content-['']
+        after:absolute
+        after:left-[106px]
+        after:top-0
+        after:h-[112px]
+        after:w-px
+        after:bg-[#C6C6C6]
+        after:content-['']
 
-              lg:after:left-[72%]
-              lg:before:w-full
-            "
+        lg:after:left-[72%]
+        lg:before:w-full
+
+        max-[767px]:h-[75px]
+        max-[767px]:before:left-[-20px]
+        max-[767px]:before:top-[21px]
+        max-[767px]:before:w-[170px]
+        max-[767px]:after:left-[106px]
+        max-[767px]:after:h-[67px]
+      "
           >
-
             {/* Badge */}
 
             <div
               className="
-                absolute
-                left-[1px]
-                top-[42px]
-                z-10
+          absolute
+          left-[1px]
+          top-[42px]
+          z-10
 
-                inline-flex
-                min-h-[25px]
-                items-center
-                justify-center
-                gap-[5px]
+          inline-flex
+          min-h-[25px]
+          items-center
+          justify-center
+          gap-[5px]
 
-                whitespace-nowrap
+          whitespace-nowrap
 
-                rounded-full
-                border
-                border-[#CAA05C]
+          rounded-full
+          border
+          border-[#CAA05C]
 
-                bg-white
+          bg-white
 
-                px-[7px]
-                py-[4px]
-                pl-[5px]
+          px-[7px]
+          py-[4px]
+          pl-[5px]
 
-                font-['Playfair_Display',Georgia,serif]
-                text-[10px]
-                font-semibold
-                leading-none
-                text-[#1E1E1E]
+          font-['Playfair_Display',Georgia,serif]
+          text-[10px]
+          font-semibold
+          leading-none
+          text-[#1E1E1E]
 
-                lg:px-[9px]
-                lg:py-[5px]
-                lg:pl-[6px]
-                lg:text-[14px]
-              "
+          lg:px-[9px]
+          lg:py-[5px]
+          lg:pl-[6px]
+          lg:text-[14px]
+
+          max-[767px]:left-0
+          max-[767px]:top-[32px]
+          max-[767px]:text-[11px]
+        "
             >
               <span
                 className="
-                  block
-                  h-[7px]
-                  w-[7px]
-                  shrink-0
-                  rounded-full
-                  bg-[#111111]
+            block
+            h-[7px]
+            w-[7px]
+            shrink-0
+            rounded-full
+            bg-[#111111]
 
-                  lg:h-[8px]
-                  lg:w-[8px]
-                "
+            lg:h-[8px]
+            lg:w-[8px]
+          "
               />
 
               <span>Honors</span>
             </div>
           </div>
 
-
           {/* =================================================
-              MAIN HEADING
-          ================================================= */}
+        MAIN HEADING
+    ================================================= */}
 
           <div
             className="
-              w-full
-              px-0
-              pt-[46px]
+        w-full
+        px-0
+        pt-[46px]
 
-              lg:pt-[43px]
-            "
+        lg:pt-[43px]
+        max-[767px]:pt-[11px]
+      "
           >
             <h2
               className="
-                m-0
-                p-0
+          m-0
+          p-0
 
-                font-['Playfair_Display',Georgia,'Times_New_Roman',serif]
-                text-[25px]
-                font-bold
-                leading-[1.18]
-                tracking-normal
-                text-black
+          font-['Playfair_Display',Georgia,'Times_New_Roman',serif]
+          text-[25px]
+          font-bold
+          leading-[1.18]
+          tracking-normal
+          text-black
 
-                lg:text-[clamp(34px,3.15vw,48px)]
-                lg:leading-[1.12]
-              "
+          lg:text-[clamp(34px,3.15vw,48px)]
+          lg:leading-[1.12]
+
+          max-[767px]:whitespace-normal
+          max-[767px]:text-[27px]
+          max-[767px]:leading-[1.12]
+          max-[480px]:text-[25px]
+        "
             >
-              <span className="block whitespace-nowrap max-md:whitespace-normal">
+              <span className="block whitespace-nowrap max-[767px]:whitespace-normal">
                 Awards &amp; Recognition
               </span>
             </h2>
           </div>
-
         </div>
       </div>
-
 
       {/* =====================================================
           AWARDS CARDS
@@ -218,7 +222,6 @@ const AwardsRecognition = () => {
             lg:gap-[30px]
           "
         >
-
           {awards.map((award) => (
             <article
               key={award.year}
@@ -251,7 +254,6 @@ const AwardsRecognition = () => {
                 lg:px-[20px]
               "
             >
-
               {/* YEAR */}
 
               <h3
@@ -271,11 +273,9 @@ const AwardsRecognition = () => {
                 {award.year}
               </h3>
 
-
               {/* TITLE + LINE */}
 
               <div className="mt-[28px]">
-
                 <h4
                   className="
                     m-0
@@ -300,9 +300,7 @@ const AwardsRecognition = () => {
                 >
                   {award.title}
                 </h4>
-
               </div>
-
 
               {/* ORGANIZATION */}
 
@@ -323,13 +321,10 @@ const AwardsRecognition = () => {
               >
                 {award.organization}
               </p>
-
             </article>
           ))}
-
         </div>
       </div>
-
     </section>
   );
 };

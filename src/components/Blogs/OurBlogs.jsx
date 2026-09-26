@@ -1,10 +1,10 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 
-import RecentPost1 from "../../assets/RecentPost.png"
-import RecentPost2 from "../../assets/RecentPost2.png"
-import ModernBedroom1 from "../../assets/ModernBedroom1.png"
-import ModernBedroom2 from "../../assets/ModernBedroom2.png"
+import ModernBedroom1 from "../../assets/ModernBedroom1.png";
+import ModernBedroom2 from "../../assets/ModernBedroom2.png";
+import RecentPost1 from "../../assets/RecentPost.png";
+import RecentPost2 from "../../assets/RecentPost2.png";
 
 const OurBlogs = () => {
   const posts = [
@@ -53,10 +53,6 @@ const OurBlogs = () => {
     },
   ];
 
-  /* =========================================================
-     CATEGORIES
-  ========================================================= */
-
   const categories = [
     "Accessories",
     "Electrical & Lighting",
@@ -65,10 +61,6 @@ const OurBlogs = () => {
     "Uncategorized",
     "Ware Accessories",
   ];
-
-  /* =========================================================
-     SEARCH
-  ========================================================= */
 
   const [search, setSearch] = useState("");
 
@@ -88,18 +80,7 @@ const OurBlogs = () => {
     });
   }, [search]);
 
-  /* =========================================================
-     RECENT POSTS
-  ========================================================= */
-
   const recentPosts = filteredPosts.slice(0, 2);
-
-  /* =========================================================
-     RIGHT COLUMN POSTS
-
-     Only first 2 blog posts are shown.
-  ========================================================= */
-
   const rightColumnPosts = filteredPosts.slice(0, 2);
 
   return (
@@ -128,12 +109,14 @@ const OurBlogs = () => {
 
           lg:grid-cols-[48%_52%]
           xl:grid-cols-[50%_50%]
+
+          px-4
+      sm:px-6
+      md:px-8
+      lg:px-10
+      xl:px-12
         "
       >
-        {/* =====================================================
-            LEFT SIDEBAR
-        ===================================================== */}
-
         <aside
           className="
             w-full
@@ -143,10 +126,6 @@ const OurBlogs = () => {
             xl:pr-12
           "
         >
-          {/* =================================================
-              SEARCH
-          ================================================= */}
-
           <div className="mb-5">
             <h2
               className="
@@ -231,21 +210,13 @@ const OurBlogs = () => {
                     stroke-[2.8]
                   "
                 >
-                  <circle
-                    cx="10.8"
-                    cy="10.8"
-                    r="6.8"
-                  />
+                  <circle cx="10.8" cy="10.8" r="6.8" />
 
                   <path d="M16 16l5 5" />
                 </svg>
               </button>
             </div>
           </div>
-
-          {/* =================================================
-              CATEGORIES
-          ================================================= */}
 
           <div className="mb-6">
             <h2
@@ -301,10 +272,6 @@ const OurBlogs = () => {
             </div>
           </div>
 
-          {/* =================================================
-              RECENT POSTS
-          ================================================= */}
-
           <div>
             <h2
               className="
@@ -343,8 +310,6 @@ const OurBlogs = () => {
                     max-sm:gap-x-4
                   "
                 >
-                  {/* RECENT IMAGE */}
-
                   <div
                     className="
                       h-[120px]
@@ -461,10 +426,6 @@ const OurBlogs = () => {
           </div>
         </aside>
 
-        {/* =====================================================
-            RIGHT COLUMN
-        ===================================================== */}
-
         <main
           className="
             mt-10
@@ -475,21 +436,9 @@ const OurBlogs = () => {
         >
           {rightColumnPosts.length > 0 ? (
             <div className="w-full">
-
-              {/* =================================================
-                  TWO BLOG POSTS
-              ================================================= */}
-
               <div className="space-y-20">
                 {rightColumnPosts.map((post, index) => (
-                  <article
-                    key={post.id}
-                    className="w-full"
-                  >
-                    {/* =========================================
-                        BLOG IMAGE
-                    ========================================== */}
-
+                  <article key={post.id} className="w-full">
                     <Link
                       to={`/blog/${post.slug}`}
                       className="
@@ -520,11 +469,7 @@ const OurBlogs = () => {
                         <img
                           src={post.image}
                           alt={post.title}
-                          loading={
-                            index === 0
-                              ? "eager"
-                              : "lazy"
-                          }
+                          loading={index === 0 ? "eager" : "lazy"}
                           className="
                             h-full
                             w-full
@@ -540,10 +485,6 @@ const OurBlogs = () => {
                       </div>
                     </Link>
 
-                    {/* =========================================
-                        META
-                    ========================================== */}
-
                     <div
                       className="
                         mt-8
@@ -557,8 +498,6 @@ const OurBlogs = () => {
                         md:gap-14
                       "
                     >
-                      {/* CATEGORY */}
-
                       <span
                         className="
                           inline-flex
@@ -585,8 +524,6 @@ const OurBlogs = () => {
                         {post.category}
                       </span>
 
-                      {/* DATE */}
-
                       <span
                         className="
                           font-['Arial',Helvetica,sans-serif]
@@ -603,10 +540,6 @@ const OurBlogs = () => {
                         {post.date}
                       </span>
                     </div>
-
-                    {/* =========================================
-                        TITLE
-                    ========================================== */}
 
                     <Link
                       to={`/blog/${post.slug}`}
@@ -646,10 +579,6 @@ const OurBlogs = () => {
                       </h2>
                     </Link>
 
-                    {/* =========================================
-                        DESCRIPTION
-                    ========================================== */}
-
                     <p
                       className="
                         m-0
@@ -673,10 +602,6 @@ const OurBlogs = () => {
                     >
                       {post.excerpt}
                     </p>
-
-                    {/* =========================================
-                        READ MORE
-                    ========================================== */}
 
                     <Link
                       to={`/blog/${post.slug}`}
@@ -702,18 +627,11 @@ const OurBlogs = () => {
                       "
                     >
                       Read More
-                      <span aria-hidden="true">
-                        →
-                      </span>
+                      <span aria-hidden="true">→</span>
                     </Link>
                   </article>
                 ))}
               </div>
-
-              {/* =================================================
-                  ADDITIONAL ARTICLE CONTENT
-                  AFTER THE TWO BLOG POSTS
-              ================================================= */}
 
               <section
                 className="
@@ -724,11 +642,6 @@ const OurBlogs = () => {
                   md:mt-32
                 "
               >
-
-                {/* =================================================
-                    UNDERSTANDING THE FUNDAMENTALS
-                ================================================= */}
-
                 <div
                   className="
                     w-full
@@ -770,22 +683,16 @@ const OurBlogs = () => {
                       sm:text-[12px]
                     "
                   >
-                    Start by eliminating unnecessary items and
-                    embracing a “less is more” approach. Instead of
-                    filling every corner with furniture and décor,
-                    choose a few statement pieces that enhance the
-                    aesthetic of room. Neutral tones, monochromatic
-                    palettes, and sleek, simple furniture contribute
-                    to the clean and uncluttered look of a modern
-                    home. This style often incorporates natural
-                    light, innovative materials, and a harmonious
-                    balance between form and function.
+                    Start by eliminating unnecessary items and embracing a “less
+                    is more” approach. Instead of filling every corner with
+                    furniture and décor, choose a few statement pieces that
+                    enhance the aesthetic of room. Neutral tones, monochromatic
+                    palettes, and sleek, simple furniture contribute to the
+                    clean and uncluttered look of a modern home. This style
+                    often incorporates natural light, innovative materials, and
+                    a harmonious balance between form and function.
                   </p>
                 </div>
-
-                {/* =================================================
-                    TWO IMAGES
-                ================================================= */}
 
                 <div
                   className="
@@ -805,8 +712,6 @@ const OurBlogs = () => {
                     md:mt-16
                   "
                 >
-                  {/* IMAGE 1 */}
-
                   <div
                     className="
                       h-[198px]
@@ -838,8 +743,6 @@ const OurBlogs = () => {
                       "
                     />
                   </div>
-
-                  {/* IMAGE 2 */}
 
                   <div
                     className="
@@ -873,10 +776,6 @@ const OurBlogs = () => {
                     />
                   </div>
                 </div>
-
-                {/* =================================================
-                    EXPLORING DESIGN STYLES
-                ================================================= */}
 
                 <div
                   className="
@@ -923,21 +822,15 @@ const OurBlogs = () => {
                       sm:text-[12px]
                     "
                   >
-                    Modern interior design prioritizes furniture that
-                    is both aesthetically pleasing and highly
-                    functional. Look for multi-purpose furniture such
-                    as extendable dining tables, sofa beds, or modular
-                    shelving units that provide storage solutions
-                    while maintaining a sleek look. Additionally,
-                    investing in ergonomic seating and workspaces
-                    enhances comfort and practicality, especially for
-                    home offices.
+                    Modern interior design prioritizes furniture that is both
+                    aesthetically pleasing and highly functional. Look for
+                    multi-purpose furniture such as extendable dining tables,
+                    sofa beds, or modular shelving units that provide storage
+                    solutions while maintaining a sleek look. Additionally,
+                    investing in ergonomic seating and workspaces enhances
+                    comfort and practicality, especially for home offices.
                   </p>
                 </div>
-
-                {/* =================================================
-                    BRINGING MODERN INTERIOR DESIGN
-                ================================================= */}
 
                 <div
                   className="
@@ -985,23 +878,17 @@ const OurBlogs = () => {
                       sm:text-[12px]
                     "
                   >
-                    Incorporating these modern interior design tips,
-                    you can transform your home into a stylish,
-                    functional, and comfortable haven. Whether
-                    you’re making small updates or going for a full
-                    renovation, focusing on minimalism, smart
-                    technology, natural elements, and functional
-                    furniture can enhance the modern look.
+                    Incorporating these modern interior design tips, you can
+                    transform your home into a stylish, functional, and
+                    comfortable haven. Whether you’re making small updates or
+                    going for a full renovation, focusing on minimalism, smart
+                    technology, natural elements, and functional furniture can
+                    enhance the modern look.
                   </p>
                 </div>
-
               </section>
             </div>
           ) : (
-            /* =================================================
-               NO SEARCH RESULTS
-            ================================================= */
-
             <div
               className="
                 flex

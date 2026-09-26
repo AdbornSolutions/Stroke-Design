@@ -20,36 +20,36 @@ const JourneyOfExcellence = () => {
 
   return (
     <>
-      {/* =========================================================
-          MAIN SECTION
-          COMPLETELY TRANSPARENT
-      ========================================================= */}
-
-      <section className="relative w-full overflow-hidden px-[40px] pt-[30px] pb-[70px] max-[1199px]:px-[25px] max-[1199px]:pt-[25px] max-[1199px]:pb-[60px] max-[900px]:px-[30px] max-[900px]:pt-[25px] max-[767px]:px-[20px] max-[767px]:pt-[22px] max-[767px]:pb-[50px] max-[480px]:px-[15px] max-[480px]:pt-[20px] max-[480px]:pb-[40px] bg-white">
-        {/* =====================================================
-            HEADER
-        ===================================================== */}
-
+      <section
+        className="
+          relative
+          w-full
+          overflow-hidden
+          bg-white
+          mt-12
+          px-4
+          sm:px-6
+          md:px-8
+          lg:px-10
+          xl:px-12
+        "
+      >
         <div
           className="
             mx-auto
             grid
             w-full
-            max-w-[1400px]
+            max-w-[1280px]
             grid-cols-[150px_minmax(0,1fr)_205px]
             items-start
 
-            min-[1025px]:grid-cols-[clamp(220px,22%,305px)_minmax(500px,1fr)_clamp(280px,30%,390px)]
+            min-[1025px]:grid-cols-[clamp(220px,22%,305px)_minmax(0,1fr)_clamp(280px,30%,390px)]
 
             max-[1024px]:grid-cols-[150px_minmax(0,1fr)_205px]
 
             max-[767px]:block
           "
         >
-          {/* =====================================================
-              LEFT DECORATIVE AREA
-          ===================================================== */}
-
           <div
             className="
               relative
@@ -120,19 +120,17 @@ const JourneyOfExcellence = () => {
                 leading-none
                 text-[#1E1E1E]
 
-                min-[1025px]:
-                  px-[9px]
-                  py-[5px]
-                  pl-[6px]
-                  text-[14px]
+                min-[1025px]:px-[9px]
+                min-[1025px]:py-[5px]
+                min-[1025px]:pl-[6px]
+                min-[1025px]:text-[14px]
 
-                max-[767px]:
-                  left-0
-                  top-[32px]
-                  px-[8px]
-                  py-[4px]
-                  pl-[5px]
-                  text-[11px]
+                max-[767px]:left-0
+                max-[767px]:top-[32px]
+                max-[767px]:px-[8px]
+                max-[767px]:py-[4px]
+                max-[767px]:pl-[5px]
+                max-[767px]:text-[11px]
 
                 max-[480px]:
                   text-[10px]
@@ -147,9 +145,8 @@ const JourneyOfExcellence = () => {
                   rounded-full
                   bg-[#111111]
 
-                  min-[1025px]:
-                    h-[8px]
-                    w-[8px]
+                  min-[1025px]:h-[8px]
+                  min-[1025px]:w-[8px]
                 "
               />
 
@@ -187,17 +184,14 @@ const JourneyOfExcellence = () => {
                 tracking-normal
                 text-black
 
-                min-[1025px]:
-                  text-[clamp(34px,3.15vw,48px)]
-                  leading-[1.12]
+                min-[1025px]:text-[clamp(34px,3.15vw,48px)]
+                min-[1025px]:leading-[1.12]
 
-                max-[1024px]:
-                  text-[32px]
+                max-[1024px]:text-[32px]
 
-                max-[767px]:
-                  whitespace-normal
-                  text-[27px]
-                  leading-[1.12]
+                max-[767px]:whitespace-normal
+                max-[767px]:text-[27px]
+                max-[767px]:leading-[1.12]
 
                 max-[480px]:
                   text-[25px]
@@ -206,10 +200,6 @@ const JourneyOfExcellence = () => {
               Journey of Excellence
             </h2>
           </div>
-
-          {/* Empty right column */}
-
-          <div className="hidden min-[768px]:block" />
         </div>
 
         {/* =========================================================
@@ -220,11 +210,9 @@ const JourneyOfExcellence = () => {
           className="
             relative
             mx-auto
-            mt-[5px]
+            mt-8
             w-full
             max-w-[1280px]
-
-            min-[1400px]:max-w-[1380px]
 
             max-[900px]:mt-[25px]
 
@@ -233,70 +221,6 @@ const JourneyOfExcellence = () => {
             max-[480px]:mt-[15px]
           "
         >
-          {/* =====================================================
-              DESKTOP HORIZONTAL CONNECTOR
-          ===================================================== */}
-
-          <div
-            className="
-              absolute
-              left-[8%]
-              right-[8%]
-              top-[115px]
-              z-0
-              h-px
-              bg-[#D7D7D7]
-
-              max-[900px]:hidden
-            "
-          />
-
-          {/* =====================================================
-              DESKTOP VERTICAL STEPS
-          ===================================================== */}
-
-          <div
-            className="
-              absolute
-              left-[25%]
-              top-[78px]
-              z-0
-              h-[80px]
-              w-px
-              bg-[#D7D7D7]
-
-              max-[900px]:hidden
-            "
-          />
-
-          <div
-            className="
-              absolute
-              left-[50%]
-              top-[78px]
-              z-0
-              h-[80px]
-              w-px
-              bg-[#D7D7D7]
-
-              max-[900px]:hidden
-            "
-          />
-
-          <div
-            className="
-              absolute
-              left-[75%]
-              top-[78px]
-              z-0
-              h-[80px]
-              w-px
-              bg-[#D7D7D7]
-
-              max-[900px]:hidden
-            "
-          />
-
           {/* =====================================================
               AWARDS GRID
           ===================================================== */}
@@ -312,14 +236,12 @@ const JourneyOfExcellence = () => {
 
               max-[1199px]:gap-[14px]
 
-              max-[900px]:
-                grid-cols-2
-                gap-x-[35px]
-                gap-y-[50px]
+              max-[900px]:grid-cols-2
+              max-[900px]:gap-x-[35px]
+              max-[900px]:gap-y-[50px]
 
-              max-[767px]:
-                grid-cols-1
-                gap-[38px]
+              max-[767px]:grid-cols-1
+              max-[767px]:gap-[38px]
             "
           >
             {awards.map((award, index) => {
@@ -397,27 +319,23 @@ const JourneyOfExcellence = () => {
 
                       shadow-[0_1px_3px_rgba(0,0,0,0.05)]
 
-                      max-[1199px]:
-                        h-[48px]
-                        min-w-[66px]
-                        border-2
-                        text-[22px]
+                      max-[1199px]:h-[48px]
+                      max-[1199px]:min-w-[66px]
+                      max-[1199px]:border-2
+                      max-[1199px]:text-[22px]
 
-                      max-[900px]:
-                        h-[48px]
-                        min-w-[66px]
+                      max-[900px]:h-[48px]
+                      max-[900px]:min-w-[66px]
 
-                      max-[767px]:
-                        h-[46px]
-                        min-w-[64px]
-                        rounded-[8px]
-                        px-[11px]
-                        text-[21px]
+                      max-[767px]:h-[46px]
+                      max-[767px]:min-w-[64px]
+                      max-[767px]:rounded-[8px]
+                      max-[767px]:px-[11px]
+                      max-[767px]:text-[21px]
 
-                      max-[480px]:
-                        h-[43px]
-                        min-w-[60px]
-                        text-[19px]
+                      max-[480px]:h-[43px]
+                      max-[480px]:min-w-[60px]
+                      max-[480px]:text-[19px]
                     "
                   >
                     {award.year}
@@ -448,24 +366,20 @@ const JourneyOfExcellence = () => {
 
                       max-[1400px]:text-[16px]
 
-                      max-[1199px]:
-                        mt-[20px]
-                        text-[14px]
+                      max-[1199px]:mt-[20px]
+                      max-[1199px]:text-[14px]
 
-                      max-[900px]:
-                        mt-[15px]
-                        max-w-full
-                        mx-0
-                        text-left
-                        text-[14px]
-                        leading-[1.6]
+                      max-[900px]:mt-[15px]
+                      max-[900px]:max-w-full
+                      max-[900px]:mx-0
+                      max-[900px]:text-left
+                      max-[900px]:text-[14px]
+                      max-[900px]:leading-[1.6]
 
-                      max-[767px]:
-                        mt-[15px]
-                        text-[14px]
+                      max-[767px]:mt-[15px]
+                      max-[767px]:text-[14px]
 
-                      max-[480px]:
-                        text-[13px]
+                      max-[480px]:text-[13px]
                     `}
                   >
                     <ul

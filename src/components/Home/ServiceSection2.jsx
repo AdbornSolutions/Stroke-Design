@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 
 const projects = [
   {
@@ -72,11 +72,8 @@ const ServiceSection2 = () => {
 
     const cardWidth = firstCard.offsetWidth;
 
-    const gap = window.innerWidth <= 480
-      ? 26
-      : window.innerWidth <= 900
-        ? 26
-        : 26;
+    const gap =
+      window.innerWidth <= 480 ? 26 : window.innerWidth <= 900 ? 26 : 26;
 
     const scrollAmount = (cardWidth + gap) * 2;
 
@@ -94,329 +91,321 @@ const ServiceSection2 = () => {
         w-full
         overflow-hidden
         bg-[#f7f5f1]
+        px-4
+        py-[20px]
+        pb-[30px]
+
+        sm:px-6
+        sm:py-[25px]
+
+        md:px-[38px]
+        md:py-[30px]
+        md:pb-[35px]
+
+        lg:px-10
+        lg:py-[30px]
+        lg:pb-[24px]
       "
     >
-
-      {/* =====================================================
-          SECTION HEADER
-      ====================================================== */}
-
       <div
         className="
-          relative
-          mx-auto
-          grid
-          w-full
-          max-w-[1400px]
-          items-start
+    relative
+    mx-auto
+    grid
+    w-full
+    max-w-[1400px]
+    items-start
 
-          grid-cols-1
+    grid-cols-1
 
-          px-4
-          py-[20px]
-          pb-[30px]
+    px-4
+    py-[20px]
+    pb-[30px]
 
-          sm:px-6
-          md:px-[38px]
-          md:py-[30px]
-          md:pb-[25px]
+    sm:px-6
 
-          lg:grid-cols-[clamp(220px,22%,305px)_minmax(500px,1fr)_clamp(280px,30%,390px)]
-          lg:px-10
-          lg:pb-[24px]
-        "
+    md:px-8
+    md:py-[30px]
+    md:pb-[25px]
+
+    lg:grid-cols-[clamp(220px,22%,305px)_minmax(0,1fr)_clamp(280px,30%,390px)]
+    lg:px-10
+    lg:pb-[24px]
+
+    xl:px-12
+  "
       >
-
         {/* =================================================
-            LEFT DECORATIVE AREA
-        ================================================== */}
+      LEFT DECORATIVE AREA
+  ================================================== */}
 
         <div
           className="
-            relative
-            hidden
-            h-[115px]
-            w-full
+      relative
+      hidden
+      h-[115px]
+      w-full
 
-            lg:block
-          "
+      lg:block
+    "
         >
-
           {/* Horizontal line */}
           <div
             className="
-              absolute
-              left-0
-              top-[33px]
-              h-px
-              w-full
-              bg-[#BDBDBD]
-            "
+        absolute
+        left-0
+        top-[33px]
+        h-px
+        w-full
+        bg-[#BDBDBD]
+      "
           />
 
           {/* Vertical line */}
           <div
             className="
-              absolute
-              left-[72%]
-              top-0
-              h-[112px]
-              w-px
-              bg-[#C6C6C6]
-            "
+        absolute
+        left-[72%]
+        top-0
+        h-[112px]
+        w-px
+        bg-[#C6C6C6]
+      "
           />
 
           {/* Badge */}
           <div
             className="
-              absolute
-              left-[1px]
-              top-[42px]
-              z-10
+        absolute
+        left-[1px]
+        top-[42px]
+        z-10
 
-              inline-flex
-              items-center
-              justify-center
-              gap-[5px]
+        inline-flex
+        items-center
+        justify-center
+        gap-[5px]
 
-              whitespace-nowrap
-              rounded-full
+        whitespace-nowrap
+        rounded-full
 
-              border
-              border-[#CAA05C]
+        border
+        border-[#CAA05C]
 
-              bg-transparent
+        bg-transparent
 
-              px-[9px]
-              py-[5px]
+        px-[9px]
+        py-[5px]
 
-              font-['Playfair_Display']
-              text-[14px]
-              font-semibold
-              leading-none
-              text-[#1E1E1E]
-            "
+        font-['Playfair_Display']
+        text-[14px]
+        font-semibold
+        leading-none
+        text-[#1E1E1E]
+      "
           >
             <span
               className="
-                block
-                h-[8px]
-                w-[8px]
-                shrink-0
-                rounded-full
-                bg-[#111111]
-              "
+          block
+          h-[8px]
+          w-[8px]
+          shrink-0
+          rounded-full
+          bg-[#111111]
+        "
             />
 
             <span>Our Services</span>
           </div>
-
         </div>
 
-
         {/* =================================================
-            MOBILE DECORATIVE AREA
-        ================================================== */}
+      MOBILE DECORATIVE AREA
+  ================================================== */}
 
         <div
           className="
-            relative
-            block
-            h-[75px]
-            w-[150px]
+      relative
+      block
+      h-[75px]
+      w-full
+      max-w-[150px]
 
-            lg:hidden
-          "
+      lg:hidden
+    "
         >
-
           {/* Horizontal line */}
           <div
             className="
-              absolute
-              left-[-20px]
-              top-[21px]
-              h-px
-              w-[170px]
-              bg-[#BDBDBD]
+        absolute
+        left-[-16px]
+        top-[21px]
+        h-px
+        w-[calc(100%+16px)]
+        bg-[#BDBDBD]
 
-              max-[480px]:left-[-16px]
-              max-[480px]:w-[166px]
-            "
+        min-[481px]:left-[-20px]
+        min-[481px]:w-[170px]
+      "
           />
 
           {/* Vertical line */}
           <div
             className="
-              absolute
-              left-[106px]
-              top-0
-              h-[67px]
-              w-px
-              bg-[#C6C6C6]
-            "
+        absolute
+        left-[106px]
+        top-0
+        h-[67px]
+        w-px
+        bg-[#C6C6C6]
+      "
           />
 
           {/* Badge */}
           <div
             className="
-              absolute
-              left-0
-              top-[32px]
-              z-10
+        absolute
+        left-0
+        top-[32px]
+        z-10
 
-              inline-flex
-              items-center
-              justify-center
-              gap-[5px]
+        inline-flex
+        items-center
+        justify-center
+        gap-[5px]
 
-              whitespace-nowrap
-              rounded-full
+        whitespace-nowrap
+        rounded-full
 
-              border
-              border-[#CAA05C]
+        border
+        border-[#CAA05C]
 
-              bg-transparent
+        bg-transparent
 
-              px-[8px]
-              py-[4px]
+        px-[8px]
+        py-[4px]
 
-              font-['Playfair_Display']
-              text-[11px]
-              font-semibold
-              leading-none
-              text-[#1E1E1E]
-            "
+        font-['Playfair_Display']
+        text-[11px]
+        font-semibold
+        leading-none
+        text-[#1E1E1E]
+
+        min-[481px]:text-[12px]
+      "
           >
             <span
               className="
-                block
-                h-[7px]
-                w-[7px]
-                shrink-0
-                rounded-full
-                bg-[#111111]
-              "
+          block
+          h-[7px]
+          w-[7px]
+          shrink-0
+          rounded-full
+          bg-[#111111]
+        "
             />
 
             <span>Our Services</span>
           </div>
-
         </div>
 
-
         {/* =================================================
-            MAIN HEADING
-        ================================================== */}
+      MAIN HEADING
+  ================================================== */}
 
         <div
           className="
-            w-full
-            pt-[11px]
+      w-full
+      pt-[11px]
 
-            lg:col-start-2
-            lg:pt-[43px]
-            lg:pr-[20px]
-          "
+      lg:col-start-2
+      lg:pt-[43px]
+      lg:pr-[20px]
+    "
         >
-
           <h2
             className="
-              m-0
-              p-0
+        m-0
+        p-0
 
-              font-['Playfair_Display']
-              text-[25px]
-              font-bold
-              leading-[1.18]
-              tracking-normal
-              text-black
+        font-['Playfair_Display']
+        text-[25px]
+        font-bold
+        leading-[1.18]
+        tracking-normal
+        text-black
 
-              sm:text-[27px]
+        sm:text-[27px]
+        md:text-[30px]
 
-              md:text-[30px]
-
-              lg:text-[clamp(34px,3.15vw,48px)]
-              lg:leading-[1.12]
-            "
+        lg:text-[clamp(34px,3.15vw,48px)]
+        lg:leading-[1.12]
+      "
           >
-
             {/* First line */}
             <span
               className="
-                block
+          block
+          whitespace-normal
 
-                lg:whitespace-nowrap
-              "
+          lg:whitespace-nowrap
+        "
             >
-              Creative{" "}
-
-              <span className="text-[#CAA05C]">
-                Projects That
-              </span>
+              Creative <span className="text-[#CAA05C]">Projects That</span>
             </span>
-
 
             {/* Second line */}
             <span
               className="
-                block
+          block
+          whitespace-normal
 
-                lg:whitespace-nowrap
-              "
+          lg:whitespace-nowrap
+        "
             >
-              <span className="text-[#CAA05C]">
-                Define
-              </span>{" "}
-
-              Our Style
+              <span className="text-[#CAA05C]">Define</span> Our Style
             </span>
-
           </h2>
-
         </div>
 
-
         {/* =================================================
-            DESCRIPTION
-        ================================================== */}
+      DESCRIPTION
+  ================================================== */}
 
         <div
           className="
-            w-full
-            pt-[24px]
+      w-full
+      pt-[24px]
 
-            lg:col-start-3
-            lg:pt-[111px]
-          "
+      lg:col-start-3
+      lg:pt-[111px]
+    "
         >
-
           <p
             className="
-              m-0
-              w-full
-              max-w-[500px]
+        m-0
+        w-full
+        max-w-[500px]
 
-              font-[Arial,sans-serif]
-              text-[14px]
-              font-normal
-              leading-[1.3]
-              tracking-normal
-              text-black
+        font-[Arial,sans-serif]
+        text-[14px]
+        font-normal
+        leading-[1.3]
+        tracking-normal
+        text-black
 
-              sm:text-[15px]
+        sm:text-[15px]
 
-              lg:max-w-[330px]
-              lg:text-[clamp(12px,1.05vw,16px)]
-              lg:leading-[1.15]
-            "
+        lg:max-w-[330px]
+        lg:text-[clamp(12px,1.05vw,16px)]
+        lg:leading-[1.15]
+      "
           >
             Our portfolio showcases a diverse range of projects, from
-            beautifully crafted residential spaces to functional and
-            stylish commercial interiors.
+            beautifully crafted residential spaces to functional and stylish
+            commercial interiors.
           </p>
-
         </div>
-
       </div>
 
       {/* =====================================================
@@ -439,7 +428,6 @@ const ServiceSection2 = () => {
           lg:px-10
         "
       >
-
         {/* =================================================
             FADE EDGES
         ================================================== */}
@@ -481,7 +469,6 @@ const ServiceSection2 = () => {
             md:block
           "
         />
-
 
         {/* =================================================
             PREVIOUS BUTTON
@@ -527,11 +514,8 @@ const ServiceSection2 = () => {
             lg:flex
           "
         >
-          <span className="-mt-[3px]">
-            ‹
-          </span>
+          <span className="-mt-[3px]">‹</span>
         </button>
-
 
         {/* =================================================
             NEXT BUTTON
@@ -577,11 +561,8 @@ const ServiceSection2 = () => {
             lg:flex
           "
         >
-          <span className="-mt-[3px]">
-            ›
-          </span>
+          <span className="-mt-[3px]">›</span>
         </button>
-
 
         {/* =================================================
             SCROLL TRACK
@@ -610,7 +591,6 @@ const ServiceSection2 = () => {
             [&::-webkit-scrollbar]:hidden
           "
         >
-
           {projects.map((project, index) => (
             <article
               key={`${project.titleBold}-${index}`}
@@ -628,14 +608,9 @@ const ServiceSection2 = () => {
 
                 max-[480px]:w-[200px]
 
-                ${
-                  index % 2 === 1
-                    ? "mt-[50px]"
-                    : "mt-0"
-                }
+                ${index % 2 === 1 ? "mt-[50px]" : "mt-0"}
               `}
             >
-
               {/* =================================================
                   IMAGE
               ================================================== */}
@@ -656,7 +631,6 @@ const ServiceSection2 = () => {
                   max-[480px]:h-[260px]
                 "
               >
-
                 <img
                   src={project.image}
                   alt={project.alt}
@@ -675,9 +649,7 @@ const ServiceSection2 = () => {
                     group-hover:scale-[1.05]
                   "
                 />
-
               </div>
-
 
               {/* =================================================
                   TITLE
@@ -695,7 +667,6 @@ const ServiceSection2 = () => {
                   max-[900px]:text-[18px]
                 "
               >
-
                 {project.titleLight && (
                   <span className="font-normal text-[#6f675c]">
                     {project.titleLight}{" "}
@@ -705,9 +676,7 @@ const ServiceSection2 = () => {
                 <span className="font-bold text-[#2b2621]">
                   {project.titleBold}
                 </span>
-
               </div>
-
 
               {/* =================================================
                   LOCATION
@@ -725,14 +694,10 @@ const ServiceSection2 = () => {
               >
                 {project.location}
               </div>
-
             </article>
           ))}
-
         </div>
-
       </div>
-
     </section>
   );
 };

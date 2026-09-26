@@ -1,4 +1,3 @@
-import React from "react";
 import processImage from "../../assets/how-we-work.png";
 
 const processSteps = [
@@ -29,7 +28,25 @@ const processSteps = [
 
 const HowWeWork = () => {
   return (
-    <section className="w-full overflow-hidden bg-[#F7F7F7]">
+    <section
+      className="w-full 
+      overflow-hidden 
+      bg-[#F7F7F7] 
+      px-4
+        py-[20px]
+        pb-[30px]
+
+        sm:px-6
+        sm:py-[25px]
+
+        md:px-[38px]
+        md:py-[30px]
+        md:pb-[35px]
+
+        lg:px-10
+        lg:py-[30px]
+        lg:pb-[24px]"
+    >
       {/* =====================================================
           HEADER
       ====================================================== */}
@@ -59,7 +76,6 @@ const HowWeWork = () => {
           lg:pb-[24px]
         "
       >
-
         {/* =================================================
             LEFT DECORATIVE AREA
         ================================================== */}
@@ -74,7 +90,6 @@ const HowWeWork = () => {
             lg:block
           "
         >
-
           {/* Horizontal line */}
           <div
             className="
@@ -143,9 +158,7 @@ const HowWeWork = () => {
 
             <span>How We Work</span>
           </div>
-
         </div>
-
 
         {/* =================================================
             MOBILE DECORATIVE AREA
@@ -161,7 +174,6 @@ const HowWeWork = () => {
             lg:hidden
           "
         >
-
           {/* Horizontal line */}
           <div
             className="
@@ -233,9 +245,7 @@ const HowWeWork = () => {
 
             <span>How We Work</span>
           </div>
-
         </div>
-
 
         {/* =================================================
             MAIN HEADING
@@ -251,7 +261,6 @@ const HowWeWork = () => {
             lg:pr-[20px]
           "
         >
-
           <h2
             className="
               m-0
@@ -272,7 +281,6 @@ const HowWeWork = () => {
               lg:leading-[1.12]
             "
           >
-
             {/* First line */}
             <span
               className="
@@ -281,13 +289,8 @@ const HowWeWork = () => {
                 lg:whitespace-nowrap
               "
             >
-              Description {" "}
-
-              <span className="text-[#CAA05C]">
-                Architecture
-              </span>
+              Description <span className="text-[#CAA05C]">Architecture</span>
             </span>
-
 
             {/* Second line */}
             <span
@@ -297,17 +300,11 @@ const HowWeWork = () => {
                 lg:whitespace-nowrap
               "
             >
-              <span className="text-[#CAA05C]">
-                process for 
-              </span>{" "}
-
-              exceptional results
+              <span className="text-[#CAA05C]">process for</span> exceptional
+              <br />results
             </span>
-
           </h2>
-
         </div>
-
 
         {/* =================================================
             DESCRIPTION
@@ -322,7 +319,6 @@ const HowWeWork = () => {
             lg:pt-[111px]
           "
         >
-
           <p
             className="
               m-0
@@ -344,12 +340,10 @@ const HowWeWork = () => {
             "
           >
             Our portfolio showcases a diverse range of projects, from
-            beautifully crafted residential spaces to functional and
-            stylish commercial interiors.
+            beautifully crafted residential spaces to functional and stylish
+            commercial interiors.
           </p>
-
         </div>
-
       </div>
 
       {/* =====================================================
@@ -370,11 +364,6 @@ const HowWeWork = () => {
 
           md:px-10
           md:py-[65px]
-
-          lg:px-[5.8%]
-          lg:py-[65px]
-
-          xl:px-[5.8%]
         "
       >
         <div
@@ -472,12 +461,15 @@ const HowWeWork = () => {
                     justify-center
 
                     rounded-full
+                    border
+                    border-[#D8D8D8]
 
                     bg-[#FAF9F6]
 
                     font-['Playfair_Display']
                     text-[16px]
                     font-semibold
+                    leading-none
                     text-black
 
                     sm:h-[42px]

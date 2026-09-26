@@ -77,6 +77,7 @@ const LatestBlogs = () => {
           max-[1024px]:grid-cols-[149px_minmax(0,1fr)]
 
           max-[640px]:block
+          py-12
         "
       >
 
