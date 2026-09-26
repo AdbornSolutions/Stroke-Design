@@ -3,34 +3,34 @@ import testimonial_bg from "../../assets/testimonials_bg_image.png"
 
 const testimonials = [
   {
-    name: "Daniel James",
-    role: "Architect, United States",
+    name: "Rahul Singh",
+    role: "Architect, India",
     text: `“Their team understood exactly what I wanted. The final space feels elegant, practical and beautifully balanced. The attention to detail throughout the entire project was excellent!”`,
-    image: "/images/testimonials/daniel.jpg",
+    image: "https://img.magnific.com/free-photo/cheerful-indian-businessman-smiling-closeup-portrait-jobs-career-campaign_53876-129417.jpg?semt=ais_hybrid&w=740&q=80",
   },
   {
-    name: "Sophia Miller",
-    role: "Home Owner, Australia",
+    name: "Khushi Sharma",
+    role: "Home Owner, India",
     text: `“The entire design process was smooth and professional. They transformed our ideas into a sophisticated interior that feels warm, modern and completely personal to us.”`,
-    image: "/images/testimonials/sophia.jpg",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOL-IMHsrs9HkYjkNRLD6UMeKvIcoq54-bBr61fR6UNw&s=10",
   },
   {
     name: "Ravi Zha",
-    role: "Business Owner, United Kingdom",
+    role: "Business Owner, India",
     text: `“I absolutely love my new modern living room! The clean lines, neutral tones, and minimalist interior create such a calming & stylish atmosphere. Highly recommend their modern interior design services!”`,
-    image: "/images/testimonials/ravi.jpg",
+    image: "https://media.istockphoto.com/id/2187592637/photo/happy-indian-mature-man-holding-digital-tablet.jpg?s=612x612&w=0&k=20&c=WxA52t6UTzYmyerEJl5DLosEGaM5ijeWCq2pMVGWcQg=",
   },
   {
-    name: "Michael Peter",
-    role: "Entrepreneur, Singapore",
+    name: "Devendra Raj",
+    role: "Entrepreneur, India",
     text: `“From planning to execution, every element was handled thoughtfully. Our interior now looks much more spacious, refined and professionally designed.”`,
-    image: "/images/testimonials/michael.jpg",
+    image: "https://img.magnific.com/free-photo/successful-businessman_1098-18155.jpg?semt=ais_hybrid&w=740&q=80",
   },
   {
-    name: "Emma Lee",
-    role: "Home Owner, Canada",
+    name: "Shruti Gupta",
+    role: "Home Owner, India",
     text: `“The transformation exceeded our expectations. They created a beautiful combination of comfort, functionality and modern style while keeping the space naturally inviting.”`,
-    image: "/images/testimonials/emma.jpg",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNyR6DUTmzGBKT56LcEpjA0lGnKcwaFPmhmkidALyY2A&s=10",
   },
 ];
 

@@ -650,7 +650,7 @@ const SectionTitle = ({ number, children }) => {
     <h2
       className="terms-heading"
     >
-      <span className="mr-2 text-[#CAA05C]">{number}.</span>
+      <span className="mr-2">{number}.</span>
       {children}
     </h2>
   );
@@ -664,7 +664,6 @@ const BulletList = ({ items, nested = false }) => {
         list-disc
         space-y-2
         pl-6
-        marker:text-[#CAA05C]
       `}
     >
       {items.map((item, index) => (

@@ -81,7 +81,7 @@ const Footer = () => {
               {/* FACEBOOK */}
 
               <a
-                href="https://www.facebook.com/"
+                href="https://www.facebook.com/profile.php?id=61585797359985"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -112,7 +112,7 @@ const Footer = () => {
               {/* INSTAGRAM */}
 
               <a
-                href="https://www.instagram.com/"
+                href="https://www.instagram.com/strokesdeesignstudiio?igsi=MWN1bGNwNXpuMGQ3Zw%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -168,7 +168,7 @@ const Footer = () => {
               {/* LINKEDIN */}
 
               <a
-                href="https://www.linkedin.com/"
+                href="https://www.linkedin.com/company/strokes-deesign-studiio/home/?viewAsMember=true"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"

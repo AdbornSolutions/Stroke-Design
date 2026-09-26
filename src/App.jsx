@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import ScrollToTop from "./components/ScrollToTop";
 import About from "./pages/About";
 import AmitParekh from "./pages/AmitParekh";
 import AnandChandak from "./pages/AnandChandak";
@@ -30,6 +31,7 @@ import TermCondition from "./pages/TermCondition";
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import logo from "../assets/Stroke_logo.png";
+import QuotePopup from "./QuotePopup";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [isQuoteOpen, setIsQuoteOpen] = useState(false);
 
   const location = useLocation();
 
@@ -389,8 +391,9 @@ const Header = () => {
             </NavLink>
           </div>
 
-          <Link
-            to="/contact"
+          <button
+            type="button"
+            onClick={() => setIsQuoteOpen(true)}
             className="
               ml-8
               flex
@@ -439,7 +442,7 @@ const Header = () => {
                 <path d="M11 6l4 4-4 4" />
               </svg>
             </span>
-          </Link>
+          </button>
         </div>
 
         <button
@@ -730,56 +733,60 @@ const Header = () => {
             Contact
           </NavLink>
 
-          <Link
-            to="/contact"
-            onClick={closeMobileMenu}
+          <button
+            type="button"
+            onClick={() => {
+              closeMobileMenu();
+              setIsQuoteOpen(true);
+            }}
             className="
-              mt-5
-              flex
-              h-11
-              w-full
-              items-center
-              justify-center
-              gap-2
-              rounded-full
-              bg-[#DAC322]
-              font-bold
-              text-black
-              transition-colors
-              duration-200
-              hover:bg-[#46c45e]
-            "
+    mt-5
+    flex
+    h-11
+    w-full
+    items-center
+    justify-center
+    gap-2
+    rounded-full
+    bg-[#DAC322]
+    font-bold
+    text-black
+    transition-colors
+    duration-200
+    hover:bg-[#46c45e]
+  "
           >
             <span>Get A Quote</span>
 
             <span
               className="
-                flex
-                h-[19px]
-                w-[19px]
-                items-center
-                justify-center
-                rounded-full
-                bg-black/20
-              "
+      flex
+      h-[19px]
+      w-[19px]
+      items-center
+      justify-center
+      rounded-full
+      bg-black/20
+    "
             >
               <svg
                 viewBox="0 0 20 20"
                 className="
-                  h-[15px]
-                  w-[15px]
-                  fill-none
-                  stroke-black
-                  stroke-[2]
-                "
+        h-[15px]
+        w-[15px]
+        fill-none
+        stroke-black
+        stroke-[2]
+      "
               >
                 <path d="M4 10h11" />
                 <path d="M11 6l4 4-4 4" />
               </svg>
             </span>
-          </Link>
+          </button>
         </div>
       </div>
+      <QuotePopup isOpen={isQuoteOpen} onClose={() => setIsQuoteOpen(false)} />
     </header>
   );
 };
