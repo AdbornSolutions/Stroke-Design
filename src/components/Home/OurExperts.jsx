@@ -166,7 +166,9 @@ const OurExperts = () => {
         "
               />
 
-              <span>Amazing Design Team</span>
+              <span>
+                Amazing Design <span className="block md:inline">Team</span>
+              </span>
             </div>
           </div>
 
