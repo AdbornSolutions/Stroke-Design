@@ -1,11 +1,12 @@
 import React, { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 
-const OurBlogs = () => {
-  /* =========================================================
-     BLOG DATA
-  ========================================================= */
+import RecentPost1 from "../../assets/RecentPost.png"
+import RecentPost2 from "../../assets/RecentPost2.png"
+import ModernBedroom1 from "../../assets/ModernBedroom1.png"
+import ModernBedroom2 from "../../assets/ModernBedroom2.png"
 
+const OurBlogs = () => {
   const posts = [
     {
       id: 1,
@@ -13,7 +14,7 @@ const OurBlogs = () => {
       title: "Functional Design Trends That Blend Style and Comfort",
       category: "Power Tools",
       date: "June 2,2025",
-      image: "/images/blog/blog-1.jpg",
+      image: RecentPost1,
       excerpt:
         "Modern interior design is all about creating a sleek, functional, and aesthetically pleasing space that reflects contemporary living. Whether you’re updating a single room or redesigning your entire home, incorporating modern interior design principles can bring a fresh, sophisticated, and elegant ambiance. With an emphasis on minimalism, clean",
     },
@@ -24,7 +25,7 @@ const OurBlogs = () => {
       title: "Innovative Interior Ideas To Refresh Your Living Space",
       category: "Power Tools",
       date: "June 2,2025",
-      image: "/images/blog/blog-2.jpg",
+      image: RecentPost2,
       excerpt:
         "Modern interior design is all about creating a sleek, functional, and aesthetically pleasing space that reflects contemporary living. Whether you’re updating a single room or redesigning your entire home, incorporating modern interior design principles can bring a fresh, sophisticated, and elegant ambiance.",
     },
@@ -35,7 +36,7 @@ const OurBlogs = () => {
       title: "Elevate Every Corner With Sleek Interior Concepts",
       category: "Interior Design",
       date: "June 2,2025",
-      image: "/images/blog/blog-3.jpg",
+      image: ModernBedroom1,
       excerpt:
         "Create beautifully considered interiors with refined materials, thoughtful layouts and contemporary design elements that make every corner feel intentional.",
     },
@@ -46,7 +47,7 @@ const OurBlogs = () => {
       title: "Modern Living Room Design Ideas",
       category: "Interior Design",
       date: "May 28,2025",
-      image: "/images/blog/blog-4.jpg",
+      image: ModernBedroom2,
       excerpt:
         "Discover contemporary living room ideas that balance comfort, functionality and timeless aesthetics.",
     },
@@ -821,7 +822,7 @@ const OurBlogs = () => {
                     "
                   >
                     <img
-                      src="/images/blog/blog-detail-1.jpg"
+                      src={ModernBedroom1}
                       alt="Modern bedroom interior"
                       loading="lazy"
                       className="
@@ -855,7 +856,7 @@ const OurBlogs = () => {
                     "
                   >
                     <img
-                      src="/images/blog/blog-detail-2.jpg"
+                      src={ModernBedroom2}
                       alt="Interior design consultation"
                       loading="lazy"
                       className="

@@ -1,40 +1,23 @@
 import React from "react";
 
-const AwardWinningProjects = () => {
-  /*
-   * ============================================================
-   * PROJECT IMAGES
-   * Replace these URLs with your actual project images.
-   * ============================================================
-   */
+import AwardWinningProject1 from "../../assets/AwardWinningProject1.png";
+import AwardWinningProject2 from "../../assets/AwardWinningProject2.png";
+import AwardWinningProject3 from "../../assets/AwardWinningProject3.png";
 
+const AwardWinningProjects = () => {
   const projects = {
     main:
-      "YOUR-MAIN-PROJECT-IMAGE-URL",
+      AwardWinningProject1,
 
     topRight:
-      "YOUR-TOP-RIGHT-PROJECT-IMAGE-URL",
+      AwardWinningProject2,
 
     bottomRight:
-      "YOUR-BOTTOM-RIGHT-PROJECT-IMAGE-URL",
+      AwardWinningProject3,
   };
 
   return (
     <>
-      {/* ========================================================
-          GOOGLE FONT
-      ======================================================== */}
-
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap');
-      `}</style>
-
-
-      {/* ========================================================
-          MAIN SECTION
-          Transparent background
-      ======================================================== */}
-
       <section
         className="
           relative

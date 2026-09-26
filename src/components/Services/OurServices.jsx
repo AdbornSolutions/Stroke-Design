@@ -1,8 +1,10 @@
 import React from "react";
-
-/* =========================================================
-   SERVICES DATA
-========================================================= */
+import ResidentialImage from "../../assets/Residential/Image1.jpg";
+import CommercialImage from "../../assets/Commercial/Image1.jpg";
+import InteriorImage from "../../assets/INTERIOR/Image1.jpg";
+import ExteriorImage from "../../assets/EXTERIOR/Image1.jpg";
+import Interior2D3DImage from "../../assets/Interior 2D3D Layouts/Image8.jpg";
+import RenovationImage from "../../assets/Renovation And Remodeling/Image4.jpg";
 
 const services = [
   {
@@ -10,8 +12,9 @@ const services = [
     title: "Residential Interior Design",
     description:
       "Tailored design services for private homes, including room makeovers and complete home transformations.",
-    image: "/images/services/residential-interior.jpg",
+    image: ResidentialImage,
     column: "left",
+    link: "/residential",
   },
 
   {
@@ -19,8 +22,9 @@ const services = [
     title: "Commercial Interior Design",
     description:
       "Designing functional and attractive interiors for businesses, including offices, retail spaces, and hospitality venues.",
-    image: "/images/services/commercial-interior.jpg",
+    image: CommercialImage,
     column: "center",
+    link: "/commercial",
   },
 
   {
@@ -28,193 +32,152 @@ const services = [
     title: "Interior Design Consultation",
     description:
       "Providing professional advice on concepts, color schemes & material selection.",
-    image: "/images/services/interior-consultation.jpg",
+    image: InteriorImage,
     column: "right",
+    link: "/interior",
   },
 
   {
     id: 4,
-    title: "Architecture Design",
+    title: "Exterior Design",
     description:
-      "Thoughtful architectural planning that combines functionality, aesthetics and the character of every project.",
-    image: "/images/services/architecture.jpg",
+      "Extending design services to outdoor spaces such as gardens, patios, and decks.",
+    image: ExteriorImage,
     column: "left",
+    link: "/exterior",
   },
 
   {
     id: 5,
-    title: "Hospitality Interior Design",
+    title: "Interior 2D/3D Layouts",
     description:
-      "Creating memorable hospitality environments with carefully considered layouts, materials and design details.",
-    image: "/images/services/hospitality.jpg",
+      "Realistic 3D visualizations to help you envision your space before it's build in real life. There are a variety…",
+    image: Interior2D3DImage,
     column: "center",
+    link: "/interior2d3d",
   },
 
   {
     id: 6,
-    title: "Kitchen Interior Design",
+    title: "Renovation And Remodeling",
     description:
-      "Functional kitchen spaces designed around comfort, storage, usability and contemporary aesthetics.",
-    image: "/images/services/kitchen.jpg",
+      "Overhauling existing spaces to modernize and improve functionality and aesthetics.",
+    image: RenovationImage,
     column: "right",
-  },
-
-  {
-    id: 7,
-    title: "Office Interior Design",
-    description:
-      "Modern workplace interiors designed to improve productivity, comfort and the overall working experience.",
-    image: "/images/services/office.jpg",
-    column: "left",
-  },
-
-  {
-    id: 8,
-    title: "Retail Interior Design",
-    description:
-      "Strategic retail environments that combine visual identity, customer experience and practical functionality.",
-    image: "/images/services/retail.jpg",
-    column: "center",
-  },
-
-  {
-    id: 9,
-    title: "Project Management",
-    description:
-      "End-to-end project coordination ensuring design execution, quality and timely completion.",
-    image: "/images/services/project-management.jpg",
-    column: "right",
+    link: "/renovation",
   },
 ];
-
-
-/* =========================================================
-   SERVICE CARD
-========================================================= */
 
 const ServiceCard = ({
   title,
   description,
   image,
+  link,
   tall = false,
 }) => {
   return (
-    <article
-      className={`
+    <a
+      href={link}
+      className="
         group
+        block
         w-full
         overflow-hidden
-
-        ${tall ? "mb-0" : ""}
-      `}
+        no-underline
+      "
     >
-
-      {/* IMAGE */}
-
-      <div
+      <article
         className={`
-          relative
           w-full
           overflow-hidden
-          rounded-[11px]
-          bg-[#dedede]
 
-          ${tall
-            ? "h-[390px] sm:h-[420px] lg:h-[390px] xl:h-[390px]"
-            : "h-[175px] sm:h-[190px] lg:h-[175px] xl:h-[175px]"
-          }
+          ${tall ? "mb-0" : ""}
         `}
       >
-
-        <img
-          src={image}
-          alt={title}
-          loading="lazy"
-          className="
-            block
-            h-full
+        <div
+          className={`
+            relative
             w-full
-            object-cover
-            object-center
-            transition-transform
-            duration-700
-            ease-out
-            group-hover:scale-[1.03]
-          "
-        />
+            overflow-hidden
+            rounded-[11px]
+            bg-[#dedede]
 
-      </div>
-
-
-      {/* CONTENT */}
-
-      <div className="pt-[2px]">
-
-        <h3
-          className="
-            m-0
-            p-0
-
-            font-['Arial',Helvetica,sans-serif]
-            text-[13px]
-            font-bold
-            leading-[1.25]
-            text-black
-
-            sm:text-[13px]
-            lg:text-[13px]
-          "
+            ${
+              tall
+                ? "h-[390px] sm:h-[420px] lg:h-[390px] xl:h-[390px]"
+                : "h-[175px] sm:h-[190px] lg:h-[175px] xl:h-[175px]"
+            }
+          `}
         >
-          {title}
-        </h3>
+          <img
+            src={image}
+            alt={title}
+            loading="lazy"
+            className="
+              block
+              h-full
+              w-full
+              object-cover
+              object-center
+              transition-transform
+              duration-700
+              ease-out
+              group-hover:scale-[1.03]
+            "
+          />
+        </div>
 
+        <div className="pt-[2px]">
+          <h3
+            className="
+              m-0
+              p-0
+              font-['Arial',Helvetica,sans-serif]
+              text-[13px]
+              font-bold
+              leading-[1.25]
+              text-black
+              transition-colors
+              duration-300
+              group-hover:text-[#CAA05C]
 
-        <p
-          className="
-            m-0
-            mt-[4px]
-            max-w-[310px]
-            p-0
+              sm:text-[13px]
+              lg:text-[13px]
+            "
+          >
+            {title}
+          </h3>
 
-            font-['Arial',Helvetica,sans-serif]
-            text-[12px]
-            font-normal
-            leading-[1.65]
-            text-[#888888]
+          <p
+            className="
+              m-0
+              mt-[4px]
+              max-w-[310px]
+              p-0
+              font-['Arial',Helvetica,sans-serif]
+              text-[12px]
+              font-normal
+              leading-[1.65]
+              text-[#888888]
 
-            sm:text-[12px]
-            lg:text-[12px]
-          "
-        >
-          {description}
-        </p>
-
-      </div>
-
-    </article>
+              sm:text-[12px]
+              lg:text-[12px]
+            "
+          >
+            {description}
+          </p>
+        </div>
+      </article>
+    </a>
   );
 };
-
-
-/* =========================================================
-   MAIN COMPONENT
-========================================================= */
 
 const OurServices = () => {
   return (
     <>
-      {/* =====================================================
-          GOOGLE FONT
-      ====================================================== */}
-
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap');
       `}</style>
-
-
-      {/* =====================================================
-          OUR SERVICES SECTION
-      ====================================================== */}
 
       <section
         className="
@@ -239,12 +202,6 @@ const OurServices = () => {
           max-[480px]:pt-5
         "
       >
-
-
-        {/* ===================================================
-            HEADER
-        ==================================================== */}
-
         <div
           className="
             mx-auto
@@ -259,12 +216,6 @@ const OurServices = () => {
             max-[767px]:block
           "
         >
-
-
-          {/* =================================================
-              LEFT DECORATION
-          ================================================== */}
-
           <div
             className="
               relative
@@ -275,9 +226,6 @@ const OurServices = () => {
               max-[767px]:w-[150px]
             "
           >
-
-            {/* Horizontal line */}
-
             <span
               className="
                 absolute
@@ -296,9 +244,6 @@ const OurServices = () => {
               "
             />
 
-
-            {/* Vertical line */}
-
             <span
               className="
                 absolute
@@ -314,11 +259,6 @@ const OurServices = () => {
                 max-[767px]:h-[67px]
               "
             />
-
-
-            {/* =================================================
-                BADGE
-            ================================================== */}
 
             <div
               className="
@@ -361,7 +301,6 @@ const OurServices = () => {
                 max-[767px]:text-[11px]
               "
             >
-
               <span
                 className="
                   block
@@ -376,18 +315,9 @@ const OurServices = () => {
                 "
               />
 
-              <span>
-                Our Services
-              </span>
-
+              <span>Our Services</span>
             </div>
-
           </div>
-
-
-          {/* =================================================
-              MAIN HEADING
-          ================================================== */}
 
           <div
             className="
@@ -402,7 +332,6 @@ const OurServices = () => {
               max-[767px]:pt-[11px]
             "
           >
-
             <h2
               className="
                 m-0
@@ -423,7 +352,6 @@ const OurServices = () => {
                 max-[480px]:text-[25px]
               "
             >
-
               <span
                 className="
                   block
@@ -433,19 +361,10 @@ const OurServices = () => {
                 "
               >
                 Explore our{" "}
-                <span className="text-[#CAA05C]">
-                  services
-                </span>
+                <span className="text-[#CAA05C]">services</span>
               </span>
-
             </h2>
-
           </div>
-
-
-          {/* =================================================
-              DESCRIPTION
-          ================================================== */}
 
           <div
             className="
@@ -468,16 +387,11 @@ const OurServices = () => {
                 text-black
               "
             >
-              Transforming spaces through thoughtful
-              architecture and interior design.
+              Transforming spaces through thoughtful architecture and interior
+              design.
             </p>
           </div>
-
         </div>
-
-        {/* =====================================================
-            SERVICES GRID
-        ====================================================== */}
 
         <div
           className="
@@ -499,11 +413,9 @@ const OurServices = () => {
             max-[767px]:gap-y-[35px]
           "
         >
-
-
-          {/* =================================================
+          {/* =========================
               LEFT COLUMN
-          ================================================== */}
+          ========================== */}
 
           <div
             className="
@@ -515,32 +427,25 @@ const OurServices = () => {
               max-[767px]:gap-[35px]
             "
           >
-
             <ServiceCard
               title={services[0].title}
               description={services[0].description}
               image={services[0].image}
+              link={services[0].link}
             />
 
             <ServiceCard
               title={services[3].title}
               description={services[3].description}
               image={services[3].image}
+              link={services[3].link}
               tall
             />
-
-            <ServiceCard
-              title={services[6].title}
-              description={services[6].description}
-              image={services[6].image}
-            />
-
           </div>
 
-
-          {/* =================================================
+          {/* =========================
               CENTER COLUMN
-          ================================================== */}
+          ========================== */}
 
           <div
             className="
@@ -552,11 +457,11 @@ const OurServices = () => {
               max-[767px]:gap-[35px]
             "
           >
-
             <ServiceCard
               title={services[1].title}
               description={services[1].description}
               image={services[1].image}
+              link={services[1].link}
               tall
             />
 
@@ -564,20 +469,13 @@ const OurServices = () => {
               title={services[4].title}
               description={services[4].description}
               image={services[4].image}
+              link={services[4].link}
             />
-
-            <ServiceCard
-              title={services[7].title}
-              description={services[7].description}
-              image={services[7].image}
-            />
-
           </div>
 
-
-          {/* =================================================
+          {/* =========================
               RIGHT COLUMN
-          ================================================== */}
+          ========================== */}
 
           <div
             className="
@@ -589,30 +487,22 @@ const OurServices = () => {
               max-[767px]:gap-[35px]
             "
           >
-
             <ServiceCard
               title={services[2].title}
               description={services[2].description}
               image={services[2].image}
+              link={services[2].link}
             />
 
             <ServiceCard
               title={services[5].title}
               description={services[5].description}
               image={services[5].image}
+              link={services[5].link}
               tall
             />
-
-            <ServiceCard
-              title={services[8].title}
-              description={services[8].description}
-              image={services[8].image}
-            />
-
           </div>
-
         </div>
-
       </section>
     </>
   );

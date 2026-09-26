@@ -13,12 +13,6 @@ const Header = () => {
     setServicesOpen(false);
   };
 
-  /*
-   * =====================================================
-   * ACTIVE ROUTE CHECK
-   * =====================================================
-   */
-
   const isServicesActive =
     location.pathname === "/services" ||
     location.pathname.startsWith("/services/");
@@ -62,10 +56,6 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-[100] w-full bg-[#302e2e]">
-      {/* =====================================================
-          NAVBAR
-      ====================================================== */}
-
       <nav
         className="
           mx-auto
@@ -80,10 +70,6 @@ const Header = () => {
           xl:px-10
         "
       >
-        {/* =====================================================
-            LOGO
-        ====================================================== */}
-
         <Link
           to="/"
           onClick={closeMobileMenu}
@@ -103,19 +89,10 @@ const Header = () => {
           />
         </Link>
 
-        {/* =====================================================
-            DESKTOP NAVIGATION
-        ====================================================== */}
-
         <div className="ml-auto hidden items-center xl:flex">
           <div className="flex items-center gap-x-7 xl:gap-x-8">
-            {/* =================================================
-                HOME
-            ================================================== */}
-
             <NavLink to="/" className={() => desktopNavClass(isActive("/"))}>
               Home
-              {/* ACTIVE UNDERLINE */}
               {isActive("/") && (
                 <span
                   className="
@@ -129,10 +106,6 @@ const Header = () => {
                 />
               )}
             </NavLink>
-
-            {/* =================================================
-                ABOUT
-            ================================================== */}
 
             <NavLink
               to="/about"
@@ -153,13 +126,7 @@ const Header = () => {
               )}
             </NavLink>
 
-            {/* =================================================
-                SERVICES
-                PAGE LINK + DROPDOWN
-            ================================================== */}
-
             <div className="group relative flex items-center">
-
               <NavLink
                 to="/services"
                 className={() => desktopNavClass(isServicesActive)}
@@ -212,10 +179,6 @@ const Header = () => {
                 </svg>
               </button>
 
-              {/* =================================================
-                  DESKTOP SERVICES DROPDOWN
-              ================================================== */}
-
               <div
                 className="
                   invisible
@@ -239,7 +202,7 @@ const Header = () => {
                 "
               >
                 <NavLink
-                  to="/services/commercial"
+                  to="/commercial"
                   className={({ isActive }) => `
                     block
                     rounded
@@ -262,7 +225,7 @@ const Header = () => {
                 </NavLink>
 
                 <NavLink
-                  to="/services/residential"
+                  to="/residential"
                   className={({ isActive }) => `
                     block
                     rounded
@@ -285,7 +248,7 @@ const Header = () => {
                 </NavLink>
 
                 <NavLink
-                  to="/services/exterior"
+                  to="/exterior"
                   className={({ isActive }) => `
                     block
                     rounded
@@ -307,7 +270,7 @@ const Header = () => {
                   Exterior
                 </NavLink>
                 <NavLink
-                  to="/services/interior"
+                  to="/interior"
                   className={({ isActive }) => `
                     block
                     rounded
@@ -331,10 +294,6 @@ const Header = () => {
               </div>
             </div>
 
-            {/* =================================================
-                BLOG
-            ================================================== */}
-
             <NavLink
               to="/blog"
               className={() => desktopNavClass(isActive("/blog"))}
@@ -353,10 +312,6 @@ const Header = () => {
                 />
               )}
             </NavLink>
-
-            {/* =================================================
-                AWARDS
-            ================================================== */}
 
             <NavLink
               to="/awardpublication"
@@ -377,10 +332,6 @@ const Header = () => {
               )}
             </NavLink>
 
-            {/* =================================================
-                PROJECTS
-            ================================================== */}
-
             <NavLink
               to="/projects"
               className={() => desktopNavClass(isActive("/projects"))}
@@ -399,10 +350,6 @@ const Header = () => {
                 />
               )}
             </NavLink>
-
-            {/* =================================================
-                GALLERY
-            ================================================== */}
 
             <NavLink
               to="/gallery"
@@ -423,10 +370,6 @@ const Header = () => {
               )}
             </NavLink>
 
-            {/* =================================================
-                CONTACT
-            ================================================== */}
-
             <NavLink
               to="/contact"
               className={() => desktopNavClass(isActive("/contact"))}
@@ -446,10 +389,6 @@ const Header = () => {
               )}
             </NavLink>
           </div>
-
-          {/* =================================================
-              GET A QUOTE
-          ================================================== */}
 
           <Link
             to="/contact"
@@ -503,10 +442,6 @@ const Header = () => {
             </span>
           </Link>
         </div>
-
-        {/* =====================================================
-            MOBILE MENU BUTTON
-        ====================================================== */}
 
         <button
           type="button"
@@ -566,10 +501,6 @@ const Header = () => {
         </button>
       </nav>
 
-      {/* =======================================================
-          MOBILE MENU
-      ======================================================== */}
-
       <div
         className={`
           overflow-hidden
@@ -584,10 +515,6 @@ const Header = () => {
         `}
       >
         <div className="px-5 pb-6 pt-3 sm:px-8">
-          {/* =================================================
-              HOME
-          ================================================== */}
-
           <NavLink
             to="/"
             onClick={closeMobileMenu}
@@ -629,8 +556,6 @@ const Header = () => {
               >
                 Services
               </NavLink>
-
-              {/* MOBILE DROPDOWN BUTTON */}
 
               <button
                 type="button"
@@ -781,10 +706,6 @@ const Header = () => {
           >
             Awards & Publication
           </NavLink>
-
-          {/* =================================================
-              PROJECTS
-          ================================================== */}
 
           <NavLink
             to="/projects"

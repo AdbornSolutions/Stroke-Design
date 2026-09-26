@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const LeaveReply = () => {
   const [formData, setFormData] = useState({
@@ -81,9 +81,8 @@ const LeaveReply = () => {
                 sm:text-[15px]
               "
             >
-              Your email address will not be published. Required
-              fields are marked{" "}
-              <span className="font-semibold">*</span>
+              Your email address will not be published. Required fields are
+              marked <span className="font-semibold">*</span>
             </p>
           </div>
 
@@ -91,10 +90,7 @@ const LeaveReply = () => {
               RIGHT FORM
           ===================================================== */}
 
-          <form
-            onSubmit={handleSubmit}
-            className="w-full"
-          >
+          <form onSubmit={handleSubmit} className="w-full">
             {/* NAME + EMAIL */}
 
             <div
@@ -283,45 +279,27 @@ const LeaveReply = () => {
 
               <span
                 className="
-                  flex
-                  h-[16px]
-                  w-[16px]
-
-                  items-center
-                  justify-center
-
-                  rounded-full
-
-                  border
-                  border-black
-
-                  transition-colors
-                  duration-300
-
-                  group-hover:border-white
-                "
+                flex
+                h-[19px]
+                w-[19px]
+                items-center
+                justify-center
+                rounded-full
+                bg-black/20
+              "
               >
                 <svg
                   viewBox="0 0 20 20"
                   className="
-                    h-[12px]
-                    w-[12px]
-
-                    fill-none
-                    stroke-current
-                    stroke-[2]
-                  "
-                  aria-hidden="true"
+                  h-[15px]
+                  w-[15px]
+                  fill-none
+                  stroke-black
+                  stroke-[2]
+                "
                 >
-                  <circle
-                    cx="10"
-                    cy="10"
-                    r="7"
-                  />
-
-                  <path d="M7 10h6" />
-
-                  <path d="M10 7l3 3-3 3" />
+                  <path d="M4 10h11" />
+                  <path d="M11 6l4 4-4 4" />
                 </svg>
               </span>
             </button>

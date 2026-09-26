@@ -1,4 +1,5 @@
 import React from "react";
+import InteriorDesign from "../../assets/about-Interior-Design.png"
 
 const AwardHighlight = () => {
   return (
@@ -28,7 +29,7 @@ const AwardHighlight = () => {
 
         <div className="w-full">
           <img
-            src="/images/awards/interior-designer-of-the-year.jpg"
+            src={InteriorDesign}
             alt="Interior Designer of the Year award collection"
             className="
               block
@@ -113,7 +114,7 @@ const AwardHighlight = () => {
               sm:text-[16px]
             "
           >
-            Awarded for our comprehensive work on ‘The Serene Residence’,
+            Awarded for our comprehensive work on 'The Serene Residence',
             highlighting our innovative approach to integrating natural
             light, sustainable materials, and bespoke craftsmanship in
             residential design.
@@ -122,7 +123,7 @@ const AwardHighlight = () => {
           {/* PROJECT LINK */}
 
           <a
-            href="#award-winning-project"
+            href="/projects"
             className="
               mt-6
               inline-flex

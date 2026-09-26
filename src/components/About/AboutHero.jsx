@@ -3,9 +3,6 @@ import abouthero from "../../assets/about-hero.png";
 const AboutHero = () => {
   return (
     <section className="relative min-h-[511px] w-full overflow-hidden">
-      {/* =====================================================
-          BACKGROUND IMAGE
-      ===================================================== */}
 
       <img
         src={abouthero}
