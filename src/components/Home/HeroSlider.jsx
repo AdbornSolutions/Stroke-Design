@@ -31,7 +31,7 @@ const HeroSlider = () => {
   return (
     <section
       id="home"
-      className="relative h-[520px] w-full overflow-hidden sm:h-[560px] lg:h-[559px]"
+      className="relative h-[520px] w-full overflow-hidden sm:h-[560px]"
     >
       <div
         className="flex h-full w-full transition-transform duration-700 ease-in-out"
@@ -78,7 +78,7 @@ const HeroSlider = () => {
 
               <a
                 href="#contact"
-                className="mt-7 inline-flex min-h-[58px] items-center justify-center rounded-full border border-[#CAA05C] px-9 font-sans text-[15px] font-semibold text-white transition-colors duration-300 hover:bg-[#FFFFFF75] hover:text-[#2F2F2F] sm:mt-8 sm:px-10 sm:text-[16px]"
+                className="mt-7 inline-flex min-h-[58px] items-center justify-center rounded-full border border-[#CAA05C] px-9 font-sans text-[15px] font-semibold text-white transition-colors duration-300 hover:bg-[#DAC322] hover:text-[#000000] sm:mt-8 sm:px-10 sm:text-[16px]"
               >
                 Make a discovery call
               </a>

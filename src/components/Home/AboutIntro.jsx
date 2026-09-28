@@ -414,7 +414,7 @@ const AboutIntro = () => {
           md:py-16
 
           lg:px-14
-          lg:py-[58px]
+          lg:py-[70px]
 
           xl:px-[70px]
         "

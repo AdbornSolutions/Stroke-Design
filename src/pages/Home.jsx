@@ -6,7 +6,7 @@ import ImageGallery from "../components/Home/ImageGallery";
 import LatestBlogs from "../components/Home/LatestBlogs";
 import OurExperts from "../components/Home/OurExperts";
 import ServiceSection1 from "../components/Home/ServiceSection1";
-import ServiceSection2 from "../components/Home/ServiceSection2";
+import ServiceSection2 from "../components/Home/OurProjects";
 import StrokesReels from "../components/Home/StrokesReels";
 import Testimonials from "../components/Home/Testimonials";
 

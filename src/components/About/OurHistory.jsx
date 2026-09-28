@@ -66,26 +66,6 @@ const journeyData = [
 const OurHistory = () => {
   return (
     <>
-      {/* =====================================================
-          PLAYFAIR DISPLAY
-      ===================================================== */}
-
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap');
-
-        .company-history-playfair {
-          font-family:
-            "Playfair Display",
-            Georgia,
-            "Times New Roman",
-            serif;
-        }
-      `}</style>
-
-      {/* =====================================================
-          COMPLETE SECTION
-      ===================================================== */}
-
       <section
         className="
           w-full

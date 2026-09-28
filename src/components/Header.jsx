@@ -58,24 +58,39 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-[100] w-full bg-[#302e2e]">
+      {/* =================================================
+          DESKTOP / MAIN NAVBAR
+      ================================================== */}
+
       <nav
         className="
           mx-auto
-          flex
+          grid
           min-h-[81px]
           w-full
           max-w-[1421px]
+          grid-cols-[1fr_auto_1fr]
           items-center
           px-5
+
           sm:px-8
           lg:px-9
           xl:px-10
         "
       >
+        {/* =================================================
+            LOGO
+        ================================================== */}
+
         <Link
           to="/"
           onClick={closeMobileMenu}
-          className="flex shrink-0 items-center"
+          className="
+            flex
+            shrink-0
+            items-center
+            justify-self-start
+          "
           aria-label="Strokes Design Studio Home"
         >
           <img
@@ -90,8 +105,30 @@ const Header = () => {
           />
         </Link>
 
-        <div className="ml-auto hidden items-center xl:flex">
-          <div className="flex items-center gap-x-7 xl:gap-x-8">
+        {/* =================================================
+            DESKTOP NAVIGATION
+        ================================================== */}
+
+        <div
+          className="
+            hidden
+            items-center
+            justify-self-center
+            xl:flex
+          "
+        >
+          <div
+            className="
+              flex
+              items-center
+              gap-x-[30px]
+              whitespace-nowrap
+            "
+          >
+            {/* =========================
+                HOME
+            ========================== */}
+
             <NavLink to="/" className={() => desktopNavClass(isActive("/"))}>
               Home
               {isActive("/") && (
@@ -107,6 +144,10 @@ const Header = () => {
                 />
               )}
             </NavLink>
+
+            {/* =========================
+                ABOUT US
+            ========================== */}
 
             <NavLink
               to="/about"
@@ -126,6 +167,10 @@ const Header = () => {
                 />
               )}
             </NavLink>
+
+            {/* =========================
+                SERVICES
+            ========================== */}
 
             <div className="group relative flex items-center">
               <NavLink
@@ -180,6 +225,10 @@ const Header = () => {
                 </svg>
               </button>
 
+              {/* =========================
+                  SERVICES DROPDOWN
+              ========================== */}
+
               <div
                 className="
                   invisible
@@ -202,6 +251,8 @@ const Header = () => {
                   group-hover:opacity-100
                 "
               >
+                {/* COMMERCIAL */}
+
                 <NavLink
                   to="/commercial"
                   className={({ isActive }) => `
@@ -224,6 +275,8 @@ const Header = () => {
                 >
                   Commercial
                 </NavLink>
+
+                {/* RESIDENTIAL */}
 
                 <NavLink
                   to="/residential"
@@ -248,6 +301,8 @@ const Header = () => {
                   Residential
                 </NavLink>
 
+                {/* EXTERIOR */}
+
                 <NavLink
                   to="/exterior"
                   className={({ isActive }) => `
@@ -270,6 +325,9 @@ const Header = () => {
                 >
                   Exterior
                 </NavLink>
+
+                {/* INTERIOR */}
+
                 <NavLink
                   to="/interior"
                   className={({ isActive }) => `
@@ -295,6 +353,10 @@ const Header = () => {
               </div>
             </div>
 
+            {/* =========================
+                BLOG
+            ========================== */}
+
             <NavLink
               to="/blog"
               className={() => desktopNavClass(isActive("/blog"))}
@@ -313,6 +375,10 @@ const Header = () => {
                 />
               )}
             </NavLink>
+
+            {/* =========================
+                AWARDS & PUBLICATION
+            ========================== */}
 
             <NavLink
               to="/awardpublication"
@@ -333,6 +399,10 @@ const Header = () => {
               )}
             </NavLink>
 
+            {/* =========================
+                PROJECTS
+            ========================== */}
+
             <NavLink
               to="/projects"
               className={() => desktopNavClass(isActive("/projects"))}
@@ -351,6 +421,10 @@ const Header = () => {
                 />
               )}
             </NavLink>
+
+            {/* =========================
+                GALLERY
+            ========================== */}
 
             <NavLink
               to="/gallery"
@@ -371,6 +445,10 @@ const Header = () => {
               )}
             </NavLink>
 
+            {/* =========================
+                CONTACT
+            ========================== */}
+
             <NavLink
               to="/contact"
               className={() => desktopNavClass(isActive("/contact"))}
@@ -390,12 +468,24 @@ const Header = () => {
               )}
             </NavLink>
           </div>
+        </div>
 
+        {/* =================================================
+            DESKTOP QUOTE BUTTON
+        ================================================== */}
+
+        <div
+          className="
+            hidden
+            items-center
+            justify-self-end
+            xl:flex
+          "
+        >
           <button
             type="button"
             onClick={() => setIsQuoteOpen(true)}
             className="
-              ml-8
               flex
               h-[39px]
               items-center
@@ -412,7 +502,6 @@ const Header = () => {
               duration-200
               hover:bg-[#46c45e]
               hover:shadow-md
-              xl:ml-9
               cursor-pointer
             "
           >
@@ -445,6 +534,10 @@ const Header = () => {
             </span>
           </button>
         </div>
+
+        {/* =================================================
+            MOBILE MENU BUTTON
+        ================================================== */}
 
         <button
           type="button"
@@ -504,6 +597,10 @@ const Header = () => {
         </button>
       </nav>
 
+      {/* =================================================
+          MOBILE MENU
+      ================================================== */}
+
       <div
         className={`
           overflow-hidden
@@ -518,6 +615,8 @@ const Header = () => {
         `}
       >
         <div className="px-5 pb-6 pt-3 sm:px-8">
+          {/* HOME */}
+
           <NavLink
             to="/"
             onClick={closeMobileMenu}
@@ -526,6 +625,8 @@ const Header = () => {
             Home
           </NavLink>
 
+          {/* ABOUT */}
+
           <NavLink
             to="/about"
             onClick={closeMobileMenu}
@@ -533,6 +634,10 @@ const Header = () => {
           >
             About us
           </NavLink>
+
+          {/* =================================================
+              MOBILE SERVICES
+          ================================================== */}
 
           <div className="border-b border-white/10">
             <div className="flex items-center">
@@ -559,6 +664,8 @@ const Header = () => {
               >
                 Services
               </NavLink>
+
+              {/* SERVICES TOGGLE */}
 
               <button
                 type="button"
@@ -591,6 +698,8 @@ const Header = () => {
               </button>
             </div>
 
+            {/* MOBILE SERVICES SUBMENU */}
+
             <div
               className={`
                 overflow-hidden
@@ -604,6 +713,8 @@ const Header = () => {
                 }
               `}
             >
+              {/* COMMERCIAL */}
+
               <NavLink
                 to="/services/commercial"
                 onClick={closeMobileMenu}
@@ -625,6 +736,8 @@ const Header = () => {
               >
                 Commercial
               </NavLink>
+
+              {/* RESIDENTIAL */}
 
               <NavLink
                 to="/services/residential"
@@ -648,6 +761,8 @@ const Header = () => {
                 Residential
               </NavLink>
 
+              {/* EXTERIOR */}
+
               <NavLink
                 to="/services/Exterior"
                 onClick={closeMobileMenu}
@@ -669,6 +784,8 @@ const Header = () => {
               >
                 Exterior
               </NavLink>
+
+              {/* INTERIOR */}
 
               <NavLink
                 to="/services/Interior"
@@ -694,6 +811,8 @@ const Header = () => {
             </div>
           </div>
 
+          {/* BLOG */}
+
           <NavLink
             to="/blog"
             onClick={closeMobileMenu}
@@ -701,6 +820,8 @@ const Header = () => {
           >
             Blog
           </NavLink>
+
+          {/* AWARDS & PUBLICATION */}
 
           <NavLink
             to="/awardpublication"
@@ -710,6 +831,8 @@ const Header = () => {
             Awards & Publication
           </NavLink>
 
+          {/* PROJECTS */}
+
           <NavLink
             to="/projects"
             onClick={closeMobileMenu}
@@ -717,6 +840,8 @@ const Header = () => {
           >
             Projects
           </NavLink>
+
+          {/* GALLERY */}
 
           <NavLink
             to="/gallery"
@@ -726,6 +851,8 @@ const Header = () => {
             Gallery
           </NavLink>
 
+          {/* CONTACT */}
+
           <NavLink
             to="/contact"
             onClick={closeMobileMenu}
@@ -734,6 +861,10 @@ const Header = () => {
             Contact
           </NavLink>
 
+          {/* =================================================
+              MOBILE QUOTE BUTTON
+          ================================================== */}
+
           <button
             type="button"
             onClick={() => {
@@ -741,45 +872,45 @@ const Header = () => {
               setIsQuoteOpen(true);
             }}
             className="
-    mt-5
-    flex
-    h-11
-    w-full
-    items-center
-    justify-center
-    gap-2
-    rounded-full
-    bg-[#DAC322]
-    font-bold
-    text-black
-    transition-colors
-    duration-200
-    hover:bg-[#46c45e]
-    cursor-pointer
-  "
+              mt-5
+              flex
+              h-11
+              w-full
+              cursor-pointer
+              items-center
+              justify-center
+              gap-2
+              rounded-full
+              bg-[#DAC322]
+              font-bold
+              text-black
+              transition-colors
+              duration-200
+              hover:bg-[#46c45e]
+            "
           >
             <span>Get A Quote</span>
 
             <span
               className="
-      flex
-      h-[19px]
-      w-[19px]
-      items-center
-      justify-center
-      rounded-full
-      bg-black/20
-    "
+                flex
+                h-[19px]
+                w-[19px]
+                items-center
+                justify-center
+                rounded-full
+                bg-black/20
+              "
             >
               <svg
                 viewBox="0 0 20 20"
                 className="
-        h-[15px]
-        w-[15px]
-        fill-none
-        stroke-black
-        stroke-[2]
-      "
+                  h-[15px]
+                  w-[15px]
+                  fill-none
+                  stroke-black
+                  stroke-[2]
+                "
               >
                 <path d="M4 10h11" />
                 <path d="M11 6l4 4-4 4" />
@@ -788,6 +919,11 @@ const Header = () => {
           </button>
         </div>
       </div>
+
+      {/* =================================================
+          QUOTE POPUP
+      ================================================== */}
+
       <QuotePopup isOpen={isQuoteOpen} onClose={() => setIsQuoteOpen(false)} />
     </header>
   );

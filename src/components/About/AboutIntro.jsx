@@ -4,7 +4,7 @@ import aboutkitchen from "../../assets/about-kitchen.png";
 
 const AboutIntro = () => {
   return (
-    <section className="w-full overflow-hidden bg-white px-5 py-12 sm:px-8 md:px-10 lg:px-16 xl:px-[9.2%]">
+    <section className="w-full overflow-hidden bg-white px-5 py-20 sm:px-8 md:px-10 lg:px-16 xl:px-[9.2%]">
       <div
         className="
           mx-auto

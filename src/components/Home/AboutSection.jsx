@@ -23,7 +23,7 @@ const AboutSection = () => {
         md:pb-[35px]
 
         lg:px-10
-        lg:py-[30px]
+        lg:py-[70px]
         lg:pb-[24px]
       "
     >

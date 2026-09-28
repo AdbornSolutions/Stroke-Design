@@ -60,7 +60,7 @@ const projects = [
   },
 ];
 
-const ServiceSection2 = () => {
+const OurProjects = () => {
   const trackRef = useRef(null);
 
   const scrollGallery = (direction) => {
@@ -130,7 +130,7 @@ const ServiceSection2 = () => {
 
     lg:grid-cols-[clamp(220px,22%,305px)_minmax(0,1fr)_clamp(280px,30%,390px)]
     lg:px-10
-    lg:pb-[24px]
+    lg:pb-[40px]
 
     xl:px-12
   "
@@ -215,7 +215,7 @@ const ServiceSection2 = () => {
         "
             />
 
-            <span>Our Services</span>
+            <span>Our Projects</span>
           </div>
         </div>
 
@@ -305,7 +305,7 @@ const ServiceSection2 = () => {
         "
             />
 
-            <span>Our Services</span>
+            <span>Our Projects</span>
           </div>
         </div>
 
@@ -702,4 +702,4 @@ const ServiceSection2 = () => {
   );
 };
 
-export default ServiceSection2;
+export default OurProjects;
