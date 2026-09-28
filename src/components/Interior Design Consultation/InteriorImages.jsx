@@ -1,17 +1,17 @@
 import React from "react";
 
-import InteriorImage1 from "../../assets/Interior/Image.jpg";
-import InteriorImage2 from "../../assets/Interior/Image2.jpg";
-import InteriorImage3 from "../../assets/Interior/Image3.jpg";
-import InteriorImage4 from "../../assets/Interior/Image4.jpg";
-import InteriorImage5 from "../../assets/Interior/Image5.jpg";
-import InteriorImage6 from "../../assets/Interior/Image6.jpg";
-import InteriorImage7 from "../../assets/Interior/Image7.jpg";
-import InteriorImage8 from "../../assets/Interior/Image8.jpg";
-import InteriorImage9 from "../../assets/Interior/Image9.jpg";
-import InteriorImage10 from "../../assets/Interior/Image10.jpg";
-import InteriorImage11 from "../../assets/Interior/Image11.jpg";
-import InteriorImage12 from "../../assets/Interior/Image12.jpg";
+import InteriorImage1 from "../../assets/INTERIOR/Image.jpg";
+import InteriorImage2 from "../../assets/INTERIOR/Image2.jpg";
+import InteriorImage3 from "../../assets/INTERIOR/Image3.jpg";
+import InteriorImage4 from "../../assets/INTERIOR/Image4.jpg";
+import InteriorImage5 from "../../assets/INTERIOR/Image5.jpg";
+import InteriorImage6 from "../../assets/INTERIOR/Image6.jpg";
+import InteriorImage7 from "../../assets/INTERIOR/Image7.jpg";
+import InteriorImage8 from "../../assets/INTERIOR/Image8.jpg";
+import InteriorImage9 from "../../assets/INTERIOR/Image9.jpg";
+import InteriorImage10 from "../../assets/INTERIOR/Image10.jpg";
+import InteriorImage11 from "../../assets/INTERIOR/Image11.jpg";
+import InteriorImage12 from "../../assets/INTERIOR/Image12.jpg";
 
 const InteriorImages = () => {
   const images = [
