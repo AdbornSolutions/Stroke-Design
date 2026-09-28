@@ -1,6 +1,6 @@
 import React from "react";
 
-import InteriorImage1 from "../../assets/INTERIOR/Image.jpg";
+import InteriorImage1 from "../../assets/INTERIOR/Image1.jpg";
 import InteriorImage2 from "../../assets/INTERIOR/Image2.jpg";
 import InteriorImage3 from "../../assets/INTERIOR/Image3.jpg";
 import InteriorImage4 from "../../assets/INTERIOR/Image4.jpg";
