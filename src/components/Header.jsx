@@ -413,6 +413,7 @@ const Header = () => {
               hover:bg-[#46c45e]
               hover:shadow-md
               xl:ml-9
+              cursor-pointer
             "
           >
             <span>Get A Quote</span>
@@ -754,6 +755,7 @@ const Header = () => {
     transition-colors
     duration-200
     hover:bg-[#46c45e]
+    cursor-pointer
   "
           >
             <span>Get A Quote</span>

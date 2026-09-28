@@ -3,6 +3,7 @@ import "./App.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import ScrollToTop from "./components/ScrollToTop";
+import WhatsAppButton from "./components/WhatsAppButton";
 import About from "./pages/About";
 import AmitParekh from "./pages/AmitParekh";
 import AnandChandak from "./pages/AnandChandak";
@@ -61,6 +62,7 @@ function App() {
         <Route path="/interior2d3d" element={<Interior2D3D />} />
         <Route path="/renovation" element={<Renovation />} />
       </Routes>
+      <WhatsAppButton />
       <Footer />
     </>
   );

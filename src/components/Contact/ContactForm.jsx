@@ -1,4 +1,37 @@
+import emailjs from "@emailjs/browser";
+import { useRef, useState } from "react";
+
 const ContactForm = () => {
+  const formRef = useRef();
+
+  const [isSending, setIsSending] = useState(false);
+  const [status, setStatus] = useState("");
+
+  const SERVICE_ID = "service_3a0uv9i";
+  const TEMPLATE_ID = "template_3tsmvsb";
+  const PUBLIC_KEY = "Y1pSa5dU7sueovQtU";
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+
+    setIsSending(true);
+    setStatus("");
+
+    try {
+      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, {
+        publicKey: PUBLIC_KEY,
+      });
+
+      setStatus("success");
+      formRef.current.reset();
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      setStatus("error");
+    } finally {
+      setIsSending(false);
+    }
+  };
+
   return (
     <section className="w-full overflow-hidden bg-[#F7F7F7]">
       <section className="relative w-full overflow-hidden px-5 pb-8 pt-7 sm:px-8 md:px-[38px] lg:px-10">
@@ -160,7 +193,7 @@ const ContactForm = () => {
           "
         >
           <div className="w-full">
-            <form className="w-full">
+            <form ref={formRef} onSubmit={sendEmail} className="w-full">
               <div className="mb-4">
                 <input
                   type="text"
@@ -329,6 +362,7 @@ const ContactForm = () => {
 
               <button
                 type="submit"
+                disabled={isSending}
                 className="
                   mt-0
                   inline-flex
@@ -341,6 +375,7 @@ const ContactForm = () => {
                   border-[#CAA05C]
                   bg-transparent
                   px-[19px]
+                  cursor-pointer
 
                   font-['Arial',Helvetica,sans-serif]
                   text-[15px]
@@ -352,33 +387,50 @@ const ContactForm = () => {
 
                   hover:bg-[#CAA05C]
                   hover:text-white
+
+                  disabled:cursor-not-allowed
+                  disabled:opacity-60
                 "
               >
-                <span>Send message</span>
+                <span>{isSending ? "Sending..." : "Send message"}</span>
 
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="h-[17px] w-[17px]"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="9"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                  />
+                {!isSending && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    className="h-[17px] w-[17px]"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="9"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                    />
 
-                  <path
-                    d="M9 12h6M12.5 9.5L15 12l-2.5 2.5"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                    <path
+                      d="M9 12h6M12.5 9.5L15 12l-2.5 2.5"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                )}
               </button>
+
+              {status === "success" && (
+                <p className="mt-4 font-['Arial',Helvetica,sans-serif] text-[14px] font-medium text-green-600">
+                  Your message has been sent successfully!
+                </p>
+              )}
+
+              {status === "error" && (
+                <p className="mt-4 font-['Arial',Helvetica,sans-serif] text-[14px] font-medium text-red-600">
+                  Something went wrong. Please try again.
+                </p>
+              )}
             </form>
           </div>
 
@@ -394,7 +446,7 @@ const ContactForm = () => {
               md:h-[480px]
 
               lg:h-[540px]
-          "
+            "
           >
             <iframe
               title="Location Map"

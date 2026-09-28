@@ -1,3 +1,4 @@
+import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import quoteImage from "../assets/about-Interior-Design.png";
 
@@ -21,12 +22,44 @@ const QuotePopup = ({ isOpen, onClose }) => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("Quote Request:", formData);
+    try {
+      const SERVICE_ID = "service_3a0uv9i";
+      const TEMPLATE_ID = "template_3tsmvsb";
+      const PUBLIC_KEY = "Y1pSa5dU7sueovQtU";
 
-    // Add your API / email submission here
+      const templateParams = {
+        fullName: formData.fullName,
+        phone: formData.phone,
+        email: formData.email,
+        projectType: formData.projectType,
+        budget: formData.budget,
+        location: formData.location,
+        message: formData.message,
+      };
+
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+
+      alert("Your quote request has been sent successfully!");
+
+      setFormData({
+        fullName: "",
+        phone: "",
+        email: "",
+        projectType: "",
+        budget: "",
+        location: "",
+        message: "",
+      });
+
+      onClose();
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+
+      alert("Something went wrong. Please try again.");
+    }
   };
 
   if (!isOpen) return null;
@@ -90,6 +123,7 @@ const QuotePopup = ({ isOpen, onClose }) => {
             transition-colors
             duration-200
             hover:text-black
+            cursor-pointer
           "
         >
           ×
@@ -103,7 +137,6 @@ const QuotePopup = ({ isOpen, onClose }) => {
           className="
             grid
             grid-cols-1
-
             lg:grid-cols-2
           "
         >
@@ -397,7 +430,7 @@ const QuotePopup = ({ isOpen, onClose }) => {
                       focus:border-[#555]
                     "
                   >
-                    <option value="" selected>Project Type</option>
+                    <option value="">Project Type</option>
                     <option value="residential">Residential</option>
                     <option value="commercial">Commercial</option>
                   </select>
@@ -539,6 +572,7 @@ const QuotePopup = ({ isOpen, onClose }) => {
                   hover:bg-[#4fbd60]
                   hover:shadow-[0_5px_15px_rgba(93,204,109,0.25)]
                   active:scale-[0.98]
+                  cursor-pointer
 
                   sm:mt-[30px]
                   sm:h-[52px]
