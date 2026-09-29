@@ -347,7 +347,7 @@ const LatestBlogs = () => {
                   ${
                     featured
                       ? `
-                        h-[535px]
+                        h-[465px]
 
                         max-xl:h-[480px]
                         max-lg:h-[430px]

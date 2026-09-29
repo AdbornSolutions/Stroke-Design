@@ -557,7 +557,6 @@ const QuotePopup = ({ isOpen, onClose }) => {
                   mt-[28px]
                   flex
                   h-[51px]
-                  w-full
                   items-center
                   justify-center
                   rounded-full

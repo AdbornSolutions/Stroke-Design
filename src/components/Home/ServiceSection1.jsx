@@ -14,7 +14,7 @@ const services = [
     ),
     description: "Clean Lines, Premium Materials, Effortless Style",
     image: image1,
-    link: "#",
+    link: "/about",
   },
   {
     number: "02",
@@ -28,7 +28,7 @@ const services = [
     ),
     description: "Clean Lines, Warm Textures, Modern Comfort",
     image: image2,
-    link: "#",
+    link: "/about",
   },
   {
     number: "03",
@@ -42,7 +42,7 @@ const services = [
     ),
     description: "Clean Lines, Warm Textures, Modern Comfort",
     image: image3,
-    link: "#",
+    link: "/about",
   },
 ];
 

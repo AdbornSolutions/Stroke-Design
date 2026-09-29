@@ -578,73 +578,89 @@ const LeaveReply = () => {
               type="submit"
               disabled={sending}
               className="
-                mt-4
+    mt-4
+    inline-flex
+    min-h-[48px]
+    items-center
+    justify-center
 
-                inline-flex
-                h-[55px]
+    rounded-full
 
-                items-center
-                justify-center
-                gap-2
+    border
+    border-[#CAA05C]
 
-                rounded-full
+    bg-transparent
 
-                border
-                border-[#CAA05C]
+    pl-5
+    pr-1
 
-                bg-white
+    font-['Arial',Helvetica,sans-serif]
+    text-[15px]
+    font-semibold
+    text-black
 
-                px-[18px]
+    transition-all
+    duration-300
 
-                font-['Arial',Helvetica,sans-serif]
-                text-[15px]
-                font-semibold
+    hover:bg-[#CAA05C]
+    hover:text-white
 
-                text-black
+    active:scale-[0.98]
 
-                transition-all
-                duration-300
+    disabled:cursor-not-allowed
+    disabled:opacity-60
 
-                hover:bg-[#CAA05C]
-                hover:text-white
+    sm:text-[16px]
 
-                active:scale-[0.98]
-
-                disabled:cursor-not-allowed
-                disabled:opacity-60
-
-                sm:px-[18px]
-                cursor-pointer
-              "
+    cursor-pointer
+  "
             >
               <span>{sending ? "Sending..." : "Post the comment"}</span>
 
-              {/* Arrow Circle */}
-
               <span
                 className="
-                  flex
-                  h-[19px]
-                  w-[19px]
-                  items-center
-                  justify-center
-                  rounded-full
-                  bg-black/20
-                "
+      ml-3
+      flex
+      h-[39px]
+      w-[39px]
+      shrink-0
+      items-center
+      justify-center
+      rounded-full
+      bg-[#CAA05C]
+    "
               >
-                <svg
-                  viewBox="0 0 20 20"
-                  className="
-                    h-[15px]
-                    w-[15px]
-                    fill-none
-                    stroke-black
-                    stroke-[2]
-                  "
-                >
-                  <path d="M4 10h11" />
-                  <path d="M11 6l4 4-4 4" />
-                </svg>
+                {sending ? (
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="
+          h-[20px]
+          w-[20px]
+          animate-spin
+          fill-none
+          stroke-black
+          stroke-[2]
+        "
+                  >
+                    <circle cx="12" cy="12" r="9" className="opacity-30" />
+
+                    <path d="M21 12a9 9 0 0 1-9 9" strokeLinecap="round" />
+                  </svg>
+                ) : (
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="
+          h-[27px]
+          w-[27px]
+          fill-none
+          stroke-black
+          stroke-[2]
+        "
+                  >
+                    <path d="M5 12h13" />
+                    <path d="M13 6l6 6-6 6" />
+                  </svg>
+                )}
               </span>
             </button>
 

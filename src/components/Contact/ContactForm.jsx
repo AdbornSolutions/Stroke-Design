@@ -34,7 +34,7 @@ const ContactForm = () => {
 
   return (
     <section className="w-full overflow-hidden bg-[#F7F7F7]">
-      <section className="relative w-full overflow-hidden px-5 pb-8 pt-7 sm:px-8 md:px-[38px] lg:px-10">
+      <section className="relative w-full overflow-hidden px-5 pb-8 pt-12 sm:px-8 md:px-[38px] lg:px-10">
         <div
           className="
             mx-auto
@@ -360,7 +360,7 @@ const ContactForm = () => {
                 />
               </div>
 
-              <button
+              {/* <button
                 type="submit"
                 disabled={isSending}
                 className="
@@ -418,6 +418,67 @@ const ContactForm = () => {
                     />
                   </svg>
                 )}
+              </button> */}
+
+              <button
+                type="submit"
+                disabled={isSending}
+                className="
+                  mt-0
+                  inline-flex
+                  min-h-[48px]
+                  items-center
+                  justify-center
+
+                  rounded-full
+
+                  border
+                  border-[#CAA05C]
+
+                  bg-transparent
+
+                  pl-5
+                  pr-1
+
+                  font-['Arial',Helvetica,sans-serif]
+                  text-[15px]
+                  font-semibold
+                  text-black
+
+                  transition-all
+                  duration-300
+
+                  hover:bg-[#CAA05C]
+                  hover:text-white
+
+                  disabled:cursor-not-allowed
+                  disabled:opacity-60
+
+                  sm:text-[16px]
+                "
+              >
+                <span>{isSending ? "Sending..." : "Send message"}</span>
+
+                <span className="ml-3 flex h-[39px] w-[39px] shrink-0 items-center justify-center rounded-full bg-[#CAA05C] ">
+                  {isSending ? (
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="h-[20px] w-[20px] animate-spin fill-none stroke-black stroke-[2]"
+                    >
+                      <circle cx="12" cy="12" r="9" className="opacity-30" />
+
+                      <path d="M21 12a9 9 0 0 1-9 9" strokeLinecap="round" />
+                    </svg>
+                  ) : (
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="h-[27px] w-[27px] fill-none stroke-black stroke-[2]"
+                    >
+                      <path d="M5 12h13" />
+                      <path d="M13 6l6 6-6 6" />
+                    </svg>
+                  )}
+                </span>
               </button>
 
               {status === "success" && (
