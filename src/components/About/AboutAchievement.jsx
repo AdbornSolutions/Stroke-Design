@@ -49,7 +49,7 @@ const AboutAchievements = () => {
             overflow-hidden
             px-[clamp(38px,5vw,72px)]
             pb-3
-            pt-5
+            pt-12
 
             min-[1200px]:pb-[22px]
 
@@ -108,7 +108,7 @@ const AboutAchievements = () => {
                   bg-[#00000080]
 
                   max-[640px]:top-[21px]
-                  max-[640px]:w-[150px]
+                  max-[640px]:w-[180px]
                 "
               />
 
@@ -127,10 +127,10 @@ const AboutAchievements = () => {
 
                   min-[1200px]:h-[110px]
 
-                  max-[1024px]:left-[108px]
+                  max-[1024px]:left-[118px]
                   max-[1024px]:h-[110px]
 
-                  max-[640px]:left-[108px]
+                  max-[640px]:left-[142px]
                   max-[640px]:h-[67px]
                 "
               />

@@ -64,19 +64,23 @@ const Header = () => {
 
       <nav
         className="
-          mx-auto
-          grid
-          min-h-[81px]
-          w-full
-          max-w-[1421px]
-          grid-cols-[1fr_auto_1fr]
-          items-center
-          px-5
+    mx-auto
+    grid
+    min-h-[81px]
+    w-full
+    max-w-[1421px]
 
-          sm:px-8
-          lg:px-9
-          xl:px-10
-        "
+    grid-cols-[1fr_auto]
+
+    items-center
+    px-5
+
+    sm:px-8
+    lg:px-9
+    xl:px-10
+
+    xl:grid-cols-[1fr_auto_1fr]
+  "
       >
         {/* =================================================
             LOGO
@@ -476,60 +480,60 @@ const Header = () => {
 
         <div
           className="
-            hidden
-            items-center
-            justify-self-end
-            xl:flex
-          "
+    hidden
+    items-center
+    justify-self-end
+    xl:flex
+  "
         >
           <button
             type="button"
             onClick={() => setIsQuoteOpen(true)}
             className="
-              flex
-              h-[39px]
-              items-center
-              gap-2
-              whitespace-nowrap
-              rounded-full
-              bg-[#DAC322]
-              px-4
-              text-[16px]
-              font-bold
-              text-black
-              shadow-sm
-              transition-all
-              duration-200
-              hover:bg-[#46c45e]
-              hover:shadow-md
-              cursor-pointer
-            "
+      flex
+      h-[47px]
+      items-center
+      gap-[4px]
+      whitespace-nowrap
+      rounded-full
+      bg-[#DAC322]
+      pl-[22px]
+      pr-[4px]
+      font-bold
+      text-black
+      transition-all
+      duration-200
+      hover:bg-[#c99b43]
+      cursor-pointer
+    "
           >
             <span>Get A Quote</span>
 
             <span
               className="
-                flex
-                h-[18px]
-                w-[18px]
-                items-center
-                justify-center
-                rounded-full
-                bg-black/20
-              "
+        flex
+        h-[39px]
+        w-[39px]
+        ml-1
+        shrink-0
+        items-center
+        justify-center
+        rounded-full
+        bg-white
+      "
             >
               <svg
-                viewBox="0 0 20 20"
+                viewBox="0 0 24 24"
                 className="
-                  h-[15px]
-                  w-[15px]
-                  fill-none
-                  stroke-black
-                  stroke-[2]
-                "
+          h-[27px]
+          w-[27px]
+          fill-none
+          stroke-black
+          stroke-[2]
+        "
               >
-                <path d="M4 10h11" />
-                <path d="M11 6l4 4-4 4" />
+                <path d="M5 12h13" />
+                <path d="M13 6l6 6-6 6" />
               </svg>
             </span>
           </button>
@@ -549,7 +553,8 @@ const Header = () => {
             w-11
             cursor-pointer
             items-center
-            justify-center
+            justify-between
+            justify-self-end
             rounded-md
             text-white
             xl:hidden
@@ -872,48 +877,52 @@ const Header = () => {
               setIsQuoteOpen(true);
             }}
             className="
-              mt-5
-              flex
-              h-11
-              w-full
-              cursor-pointer
-              items-center
-              justify-center
-              gap-2
-              rounded-full
-              bg-[#DAC322]
-              font-bold
-              text-black
-              transition-colors
-              duration-200
-              hover:bg-[#46c45e]
-            "
+    mt-5
+    flex
+    h-[47px]
+    w-full
+    cursor-pointer
+    items-center
+    justify-center
+    gap-[4px]
+    rounded-full
+    bg-[#D6A84F]
+    pl-[22px]
+    pr-[4px]
+    text-[20px]
+    font-medium
+    text-white
+    transition-all
+    duration-200
+    hover:bg-[#c99b43]
+  "
           >
             <span>Get A Quote</span>
 
             <span
               className="
-                flex
-                h-[19px]
-                w-[19px]
-                items-center
-                justify-center
-                rounded-full
-                bg-black/20
-              "
+      flex
+      h-[39px]
+      w-[39px]
+      shrink-0
+      items-center
+      justify-center
+      rounded-full
+      bg-white
+    "
             >
               <svg
-                viewBox="0 0 20 20"
+                viewBox="0 0 24 24"
                 className="
-                  h-[15px]
-                  w-[15px]
-                  fill-none
-                  stroke-black
-                  stroke-[2]
-                "
+        h-[27px]
+        w-[27px]
+        fill-none
+        stroke-black
+        stroke-[2]
+      "
               >
-                <path d="M4 10h11" />
-                <path d="M11 6l4 4-4 4" />
+                <path d="M5 12h13" />
+                <path d="M13 6l6 6-6 6" />
               </svg>
             </span>
           </button>

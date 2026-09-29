@@ -1,4 +1,3 @@
-import React from "react";
 import image1 from "../../assets/hero-2.png";
 import image2 from "../../assets/hero-3.png";
 import image3 from "../../assets/hero-4.png";
@@ -72,8 +71,8 @@ const ServiceSection1 = () => {
         lg:pb-[24px]
       "
     >
-<div
-  className="
+      <div
+        className="
     relative
     mx-auto
     grid
@@ -93,17 +92,17 @@ const ServiceSection1 = () => {
 
     lg:px-10
     lg:grid-cols-[clamp(220px,22%,305px)_minmax(0,1fr)_clamp(280px,30%,390px)]
-    lg:pb-[24px]
+    lg:pb-[34px]
 
     xl:px-12
   "
->
-  {/* =====================================================
+      >
+        {/* =====================================================
       LEFT DECORATIVE AREA
   ====================================================== */}
 
-  <div
-    className="
+        <div
+          className="
       relative
       hidden
       h-[115px]
@@ -111,10 +110,10 @@ const ServiceSection1 = () => {
 
       lg:block
     "
-  >
-    {/* Horizontal Line */}
-    <div
-      className="
+        >
+          {/* Horizontal Line */}
+          <div
+            className="
         absolute
         left-0
         top-[33px]
@@ -122,11 +121,11 @@ const ServiceSection1 = () => {
         w-full
         bg-[#BDBDBD]
       "
-    />
+          />
 
-    {/* Vertical Line */}
-    <div
-      className="
+          {/* Vertical Line */}
+          <div
+            className="
         absolute
         left-[72%]
         top-0
@@ -134,11 +133,11 @@ const ServiceSection1 = () => {
         w-px
         bg-[#C6C6C6]
       "
-    />
+          />
 
-    {/* Our Services Badge */}
-    <div
-      className="
+          {/* Our Services Badge */}
+          <div
+            className="
         absolute
         left-[1px]
         top-[42px]
@@ -166,9 +165,9 @@ const ServiceSection1 = () => {
         leading-none
         text-[#1E1E1E]
       "
-    >
-      <span
-        className="
+          >
+            <span
+              className="
           block
           h-[8px]
           w-[8px]
@@ -176,18 +175,18 @@ const ServiceSection1 = () => {
           rounded-full
           bg-[#111111]
         "
-      />
+            />
 
-      <span>Our Services</span>
-    </div>
-  </div>
+            <span>Our Services</span>
+          </div>
+        </div>
 
-  {/* =====================================================
+        {/* =====================================================
       MOBILE DECORATIVE AREA
   ====================================================== */}
 
-  <div
-    className="
+        <div
+          className="
       relative
       block
       h-[75px]
@@ -196,10 +195,10 @@ const ServiceSection1 = () => {
 
       lg:hidden
     "
-  >
-    {/* Horizontal Line */}
-    <div
-      className="
+        >
+          {/* Horizontal Line */}
+          <div
+            className="
         absolute
         left-[-16px]
         top-[21px]
@@ -210,11 +209,11 @@ const ServiceSection1 = () => {
         min-[481px]:left-[-20px]
         min-[481px]:w-[170px]
       "
-    />
+          />
 
-    {/* Vertical Line */}
-    <div
-      className="
+          {/* Vertical Line */}
+          <div
+            className="
         absolute
         left-[106px]
         top-0
@@ -222,11 +221,11 @@ const ServiceSection1 = () => {
         w-px
         bg-[#C6C6C6]
     "
-    />
+          />
 
-    {/* Badge */}
-    <div
-      className="
+          {/* Badge */}
+          <div
+            className="
         absolute
         left-0
         top-[32px]
@@ -256,9 +255,9 @@ const ServiceSection1 = () => {
 
         min-[481px]:text-[12px]
       "
-    >
-      <span
-        className="
+          >
+            <span
+              className="
           block
           h-[7px]
           w-[7px]
@@ -266,18 +265,18 @@ const ServiceSection1 = () => {
           rounded-full
           bg-[#111111]
         "
-      />
+            />
 
-      <span>Our Services</span>
-    </div>
-  </div>
+            <span>Our Services</span>
+          </div>
+        </div>
 
-  {/* =====================================================
+        {/* =====================================================
       MAIN HEADING
   ====================================================== */}
 
-  <div
-    className="
+        <div
+          className="
       w-full
       pt-[11px]
 
@@ -285,9 +284,9 @@ const ServiceSection1 = () => {
       lg:pt-[43px]
       lg:pr-[20px]
     "
-  >
-    <h2
-      className="
+        >
+          <h2
+            className="
         m-0
         p-0
 
@@ -304,49 +303,49 @@ const ServiceSection1 = () => {
         lg:text-[clamp(34px,3.15vw,48px)]
         lg:leading-[1.12]
       "
-    >
-      {/* First Line */}
-      <span
-        className="
+          >
+            {/* First Line */}
+            <span
+              className="
           block
           whitespace-normal
 
           lg:whitespace-nowrap
         "
-      >
-        Explore our
-      </span>
+            >
+              Explore our
+            </span>
 
-      {/* Second Line */}
-      <span
-        className="
+            {/* Second Line */}
+            <span
+              className="
           block
           whitespace-normal
           text-[#CAA05C]
 
           lg:whitespace-nowrap
         "
-      >
-        comprehensive services
-      </span>
-    </h2>
-  </div>
+            >
+              comprehensive services
+            </span>
+          </h2>
+        </div>
 
-  {/* =====================================================
+        {/* =====================================================
       DESCRIPTION
   ====================================================== */}
 
-  <div
-    className="
+        <div
+          className="
       w-full
       pt-[24px]
 
       lg:col-start-3
       lg:pt-[111px]
     "
-  >
-    <p
-      className="
+        >
+          <p
+            className="
         m-0
         w-full
         max-w-[500px]
@@ -364,13 +363,13 @@ const ServiceSection1 = () => {
         lg:text-[clamp(12px,1.05vw,16px)]
         lg:leading-[1.15]
       "
-    >
-      We specialize in transforming visions into reality. Explore our
-      portfolio of innovative architectural and interior design projects
-      crafted with precision.
-    </p>
-  </div>
-</div>
+          >
+            We specialize in transforming visions into reality. Explore our
+            portfolio of innovative architectural and interior design projects
+            crafted with precision.
+          </p>
+        </div>
+      </div>
 
       {/* =====================================================
           STACKING SERVICES CARDS
@@ -614,72 +613,59 @@ const ServiceSection1 = () => {
               <a
                 href={service.link}
                 className="
-                  inline-flex
-                  items-center
-                  justify-center
-                  gap-[8px]
+    mt-7
+    inline-flex
+    min-h-[48px]
+    items-center
+    justify-center
+    rounded-full
+    border
+    border-[#CAA05C]
+    font-sans
+    text-[15px]
+    font-semibold
+    text-white
+    no-underline
+    transition-colors
+    duration-300
+    hover:bg-[#DAC322]
+    hover:text-[#000000]
 
-                  rounded-full
-                  border
-                  border-[#CAA05C]
+    pl-5
+    pr-1
 
-                  bg-transparent
-
-                  px-[16px]
-                  py-[9px]
-                  pr-[10px]
-
-                  font-[Arial,sans-serif]
-                  text-[12px]
-                  font-medium
-                  leading-none
-                  text-white
-                  no-underline
-
-                  transition-all
-                  duration-300
-
-                  hover:bg-[#CAA05C]
-
-                  md:gap-[10px]
-                  md:px-[20px]
-                  md:py-[11px]
-                  md:pr-[12px]
-                  md:text-[14px]
-                "
+    sm:mt-8
+    sm:text-[16px]
+  "
               >
                 <span>More About Us</span>
 
-                {/* Arrow Circle */}
                 <span
                   className="
-                    inline-flex
-                    h-[24px]
-                    w-[24px]
-                    shrink-0
-
-                    items-center
-                    justify-center
-
-                    rounded-full
-
-                    bg-[#CAA05C]
-                    text-[13px]
-                    text-[#1c1a17]
-
-                    transition-transform
-                    duration-300
-
-                    md:h-[28px]
-                    md:w-[28px]
-                    md:text-[15px]
-
-                    group-hover:bg-white
-                    group-hover:text-[#CAA05C]
-                    group-hover:rotate-45
-                  "
+      ml-3
+      flex
+      h-[39px]
+      w-[39px]
+      shrink-0
+      items-center
+      justify-center
+      rounded-full
+      bg-white
+    "
                 >
-                  ↗
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="
+        h-[27px]
+        w-[27px]
+        fill-none
+        stroke-black
+        stroke-[2]
+      "
+                  >
+                    <path d="M5 12h13" />
+                    <path d="M13 6l6 6-6 6" />
+                  </svg>
                 </span>
               </a>
             </div>

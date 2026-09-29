@@ -85,7 +85,7 @@ const OurHistory = () => {
             overflow-hidden
             px-[clamp(38px,5vw,72px)]
             pb-3
-            pt-5
+            pt-16
 
             min-[1200px]:pb-[22px]
 
@@ -267,38 +267,16 @@ const OurHistory = () => {
                 "
               >
                 {/* FIRST LINE */}
-
+                <span className="">Our History </span>
                 <span
                   className="
-                    block
-                    whitespace-nowrap
-
-                    max-[640px]:whitespace-normal
-                  "
-                >
-                  Our History
-                </span>
-
-                {/* SECOND LINE */}
-
-                <span
-                  className="
-                    block
-                    whitespace-nowrap
-
-                    max-[640px]:whitespace-normal
-                  "
-                >
-                  <span
-                    className="
                       font-bold
                       text-[#CAA05C]
                     "
-                  >
-                    Is Full Of Interesting
-                  </span>{" "}
-                  Stages And Events.
-                </span>
+                >
+                  Is Full Of <br /> Interesting
+                </span>{" "}
+                Stages And Events.
               </h2>
             </div>
           </div>
