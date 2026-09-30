@@ -64,23 +64,22 @@ const Header = () => {
 
       <nav
         className="
-    mx-auto
-    grid
-    min-h-[81px]
-    w-full
-    max-w-[1421px]
+          mx-auto
+          grid
+          min-h-[81px]
+          w-full
+          max-w-[1421px]
 
-    grid-cols-[1fr_auto]
+          grid-cols-[1fr_auto]
+          items-center
 
-    items-center
-    px-5
+          px-5
+          sm:px-8
+          lg:px-9
+          xl:px-10
 
-    sm:px-8
-    lg:px-9
-    xl:px-10
-
-    xl:grid-cols-[1fr_auto_1fr]
-  "
+          xl:grid-cols-[auto_auto_auto]
+        "
       >
         {/* =================================================
             LOGO
@@ -111,6 +110,7 @@ const Header = () => {
 
         {/* =================================================
             DESKTOP NAVIGATION
+            PERFECT CENTER
         ================================================== */}
 
         <div
@@ -125,13 +125,11 @@ const Header = () => {
             className="
               flex
               items-center
-              gap-x-[30px]
+              gap-x-[20px]
               whitespace-nowrap
             "
           >
-            {/* =========================
-                HOME
-            ========================== */}
+            {/* HOME */}
 
             <NavLink to="/" className={() => desktopNavClass(isActive("/"))}>
               Home
@@ -149,9 +147,7 @@ const Header = () => {
               )}
             </NavLink>
 
-            {/* =========================
-                ABOUT US
-            ========================== */}
+            {/* ABOUT US */}
 
             <NavLink
               to="/about"
@@ -172,9 +168,7 @@ const Header = () => {
               )}
             </NavLink>
 
-            {/* =========================
-                SERVICES
-            ========================== */}
+            {/* SERVICES */}
 
             <div className="group relative flex items-center">
               <NavLink
@@ -229,9 +223,7 @@ const Header = () => {
                 </svg>
               </button>
 
-              {/* =========================
-                  SERVICES DROPDOWN
-              ========================== */}
+              {/* SERVICES DROPDOWN */}
 
               <div
                 className="
@@ -357,9 +349,7 @@ const Header = () => {
               </div>
             </div>
 
-            {/* =========================
-                BLOG
-            ========================== */}
+            {/* BLOG */}
 
             <NavLink
               to="/blog"
@@ -380,9 +370,7 @@ const Header = () => {
               )}
             </NavLink>
 
-            {/* =========================
-                AWARDS & PUBLICATION
-            ========================== */}
+            {/* AWARDS & PUBLICATION */}
 
             <NavLink
               to="/awardpublication"
@@ -403,9 +391,7 @@ const Header = () => {
               )}
             </NavLink>
 
-            {/* =========================
-                PROJECTS
-            ========================== */}
+            {/* PROJECTS */}
 
             <NavLink
               to="/projects"
@@ -426,9 +412,7 @@ const Header = () => {
               )}
             </NavLink>
 
-            {/* =========================
-                GALLERY
-            ========================== */}
+            {/* GALLERY */}
 
             <NavLink
               to="/gallery"
@@ -449,9 +433,7 @@ const Header = () => {
               )}
             </NavLink>
 
-            {/* =========================
-                CONTACT
-            ========================== */}
+            {/* CONTACT */}
 
             <NavLink
               to="/contact"
@@ -480,74 +462,76 @@ const Header = () => {
 
         <div
           className="
-    hidden
-    items-center
-    justify-self-end
-    xl:flex
-  "
+            hidden
+            items-center
+            justify-self-end
+            xl:flex
+          "
         >
           <button
             type="button"
             onClick={() => setIsQuoteOpen(true)}
             className="
-      group
-      flex
-      items-center
-      whitespace-nowrap
-      cursor-pointer
-    "
+              group
+              flex
+              cursor-pointer
+              items-center
+              whitespace-nowrap
+            "
           >
-            {/* Text Button */}
+            {/* TEXT BUTTON */}
+
             <span
               className="
-        flex
-        h-[34px]
-        items-center
-        rounded-full
-        bg-[#C99B43]
-        px-[16px]
-        font-['Playfair_Display']
-        text-[19px]
-        font-normal
-        leading-none
-        text-white
-        transition-all
-        duration-200
-        group-hover:bg-[#B88A38]
-      "
+                flex
+                h-[34px]
+                items-center
+                rounded-full
+                bg-[#C99B43]
+                px-[16px]
+                font-['Playfair_Display']
+                text-[19px]
+                font-normal
+                leading-none
+                text-white
+                transition-all
+                duration-200
+                group-hover:bg-[#B88A38]
+              "
             >
               Get A Quote
             </span>
 
-            {/* Separate Arrow Circle */}
+            {/* ARROW CIRCLE */}
+
             <span
               className="
-        ml-[4px]
-        flex
-        h-[34px]
-        w-[34px]
-        shrink-0
-        items-center
-        justify-center
-        rounded-full
-        bg-white
-        overflow-hidden
-      "
+                ml-[4px]
+                flex
+                h-[34px]
+                w-[34px]
+                shrink-0
+                items-center
+                justify-center
+                overflow-hidden
+                rounded-full
+                bg-white
+              "
             >
               <svg
                 viewBox="0 0 24 24"
                 className="
-          h-[29px]
-          w-[29px]
-          fill-none
-          stroke-black
-          stroke-[2]
-          transition-transform
-          duration-300
-          ease-out
-          rotate-[-45deg]
-          group-hover:rotate-0
-        "
+                  h-[29px]
+                  w-[29px]
+                  rotate-[-45deg]
+                  fill-none
+                  stroke-black
+                  stroke-[2]
+                  transition-transform
+                  duration-300
+                  ease-out
+                  group-hover:rotate-0
+                "
               >
                 <path d="M5 12h13" />
                 <path d="M13 6l6 6-6 6" />
@@ -657,14 +641,10 @@ const Header = () => {
             About us
           </NavLink>
 
-          {/* =================================================
-              MOBILE SERVICES
-          ================================================== */}
+          {/* MOBILE SERVICES */}
 
           <div className="border-b border-white/10">
             <div className="flex items-center">
-              {/* SERVICES PAGE LINK */}
-
               <NavLink
                 to="/services"
                 onClick={closeMobileMenu}
@@ -686,8 +666,6 @@ const Header = () => {
               >
                 Services
               </NavLink>
-
-              {/* SERVICES TOGGLE */}
 
               <button
                 type="button"
@@ -735,8 +713,6 @@ const Header = () => {
                 }
               `}
             >
-              {/* COMMERCIAL */}
-
               <NavLink
                 to="/services/commercial"
                 onClick={closeMobileMenu}
@@ -758,8 +734,6 @@ const Header = () => {
               >
                 Commercial
               </NavLink>
-
-              {/* RESIDENTIAL */}
 
               <NavLink
                 to="/services/residential"
@@ -783,8 +757,6 @@ const Header = () => {
                 Residential
               </NavLink>
 
-              {/* EXTERIOR */}
-
               <NavLink
                 to="/services/Exterior"
                 onClick={closeMobileMenu}
@@ -806,8 +778,6 @@ const Header = () => {
               >
                 Exterior
               </NavLink>
-
-              {/* INTERIOR */}
 
               <NavLink
                 to="/services/Interior"
@@ -883,9 +853,7 @@ const Header = () => {
             Contact
           </NavLink>
 
-          {/* =================================================
-              MOBILE QUOTE BUTTON
-          ================================================== */}
+          {/* MOBILE QUOTE BUTTON */}
 
           <button
             type="button"
@@ -894,49 +862,65 @@ const Header = () => {
               setIsQuoteOpen(true);
             }}
             className="
-    mt-5
-    flex
-    h-[47px]
-    w-full
-    cursor-pointer
-    items-center
-    justify-center
-    gap-[4px]
-    rounded-full
-    bg-[#D6A84F]
-    pl-[22px]
-    pr-[4px]
-    text-[20px]
-    font-medium
-    text-white
-    transition-all
-    duration-200
-    hover:bg-[#c99b43]
-  "
+              group
+              mt-5
+              flex
+              w-full
+              cursor-pointer
+              items-center
+              justify-center
+              whitespace-nowrap
+            "
           >
-            <span>Get A Quote</span>
+            <span
+              className="
+                flex
+                h-[47px]
+                items-center
+                rounded-full
+                bg-[#D6A84F]
+                px-[22px]
+                font-['Playfair_Display']
+                text-[20px]
+                font-normal
+                leading-none
+                text-white
+                transition-all
+                duration-200
+                group-hover:bg-[#c99b43]
+              "
+            >
+              Get A Quote
+            </span>
 
             <span
               className="
-      flex
-      h-[39px]
-      w-[39px]
-      shrink-0
-      items-center
-      justify-center
-      rounded-full
-      bg-white
-    "
+                ml-[4px]
+                flex
+                h-[39px]
+                w-[39px]
+                shrink-0
+                items-center
+                justify-center
+                overflow-hidden
+                rounded-full
+                bg-white
+              "
             >
               <svg
                 viewBox="0 0 24 24"
                 className="
-        h-[27px]
-        w-[27px]
-        fill-none
-        stroke-black
-        stroke-[2]
-      "
+                  h-[27px]
+                  w-[27px]
+                  rotate-[-45deg]
+                  fill-none
+                  stroke-black
+                  stroke-[2]
+                  transition-transform
+                  duration-300
+                  ease-out
+                  group-hover:rotate-0
+                "
               >
                 <path d="M5 12h13" />
                 <path d="M13 6l6 6-6 6" />

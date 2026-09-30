@@ -89,7 +89,7 @@ const OurBlogs = () => {
         w-full
         bg-white
         px-5
-        py-6
+        py-12
         text-black
 
         sm:px-7
@@ -163,10 +163,10 @@ const OurBlogs = () => {
                   pr-[48px]
 
                   font-['Arial',Helvetica,sans-serif]
-                  text-[14px]
-                  font-semibold
+                  text-[18px]
 
                   text-black
+                  opacity-[0.50]
 
                   outline-none
 
@@ -197,6 +197,8 @@ const OurBlogs = () => {
                   bg-transparent
 
                   text-black
+                  opacity-[0.50]
+                  cursor-pointer
                 "
               >
                 <svg
@@ -221,16 +223,14 @@ const OurBlogs = () => {
           <div className="mb-6">
             <h2
               className="
-                m-0
-                mb-5
-
-                font-['Arial',Helvetica,sans-serif]
-                text-[25px]
-                font-normal
-                leading-none
-
-                text-black
-              "
+      m-0
+      mb-5
+      font-['Arial',Helvetica,sans-serif]
+      text-[25px]
+      font-normal
+      leading-none
+      text-black
+    "
             >
               Categories
             </h2>
@@ -241,32 +241,62 @@ const OurBlogs = () => {
                   key={category}
                   type="button"
                   className="
-                    flex
-                    h-[34px]
-                    w-full
-                    items-center
+          group
+          flex
+          h-[34px]
+          w-full
+          items-center
+          justify-between
 
-                    border-b
-                    border-[#333333]
+          border-b
+          border-[#333333]
 
-                    bg-transparent
+          bg-transparent
+          px-0
 
-                    px-0
+          font-['Arial',Helvetica,sans-serif]
+          text-left
+          text-[18px]
+          font-normal
 
-                    font-['Arial',Helvetica,sans-serif]
-                    text-left
-                    text-[15px]
-                    font-normal
+          text-[#374151]
+          cursor-pointer
 
-                    text-[#374151]
+          transition-colors
+          duration-200
 
-                    transition-colors
-                    duration-200
-
-                    hover:text-[#CAA05C]
-                  "
+          hover:text-[#CAA05C]
+        "
                 >
-                  {category}
+                  <span>{category}</span>
+
+                  <span
+                    className="
+            flex
+            h-[20px]
+            w-[20px]
+            shrink-0
+            items-center
+            justify-center
+            transition-transform
+            duration-200
+            group-hover:translate-x-[3px]
+          "
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="
+              h-[17px]
+              w-[17px]
+              fill-none
+              stroke-current
+              stroke-[1.8]
+            "
+                    >
+                      <path d="M5 12h13" />
+                      <path d="M13 6l6 6-6 6" />
+                    </svg>
+                  </span>
                 </button>
               ))}
             </div>

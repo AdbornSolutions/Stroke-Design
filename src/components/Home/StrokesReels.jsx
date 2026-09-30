@@ -45,7 +45,7 @@ const StrokesReels = () => {
   ];
 
   return (
-    <section className="w-full overflow-hidden bg-[#F7F7F7] px-4 py-3 sm:px-6 sm:py-4 md:px-8 lg:px-10 xl:px-12">
+    <section className="w-full overflow-hidden px-4 py-12 sm:px-6 sm:py-12 md:px-8 lg:px-10 xl:px-12">
 
       {/* =====================================================
           HEADER

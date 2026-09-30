@@ -1,7 +1,3 @@
-/* =========================================================
-   DATA
-========================================================= */
-
 const journeyData = [
   {
     year: "2009",
@@ -486,11 +482,11 @@ const OurHistory = () => {
 
                         max-[767px]:hidden
 
-                        ${isOdd ? "right-1/2 w-[150px]" : "left-1/2 w-[150px]"}
-
-                        max-[1024px]:w-[92px]
-
-                        max-[850px]:w-[76px]
+                        ${
+                          isOdd
+                            ? "right-1/2 w-[calc(25vw_-_199.5px)] max-[1024px]:w-[calc(25vw_-_123.75px)] max-[850px]:w-[calc(25vw_-_113.75px)]"
+                            : "left-1/2 w-[calc(25vw_-_207px)] max-[1024px]:w-[calc(25vw_-_123.75px)] max-[850px]:w-[calc(25vw_-_126.25px)]"
+                        }
                       `}
                     />
 

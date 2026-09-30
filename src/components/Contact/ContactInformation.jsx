@@ -1,21 +1,6 @@
 const ContactInformation = () => {
   return (
     <section className="w-full bg-transparent px-4 py-8 sm:px-6 md:px-8 lg:px-[6.2%]">
-      <h2
-        className="
-          mb-10
-          font-['Arial',Helvetica,sans-serif]
-          text-[22px]
-          font-normal
-          leading-[1.2]
-          text-black
-
-          sm:text-[23px]
-          md:text-[24px]
-        "
-      >
-        Contact Information
-      </h2>
 
       <div
         className="

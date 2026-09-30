@@ -549,8 +549,7 @@ const ImageGallery = () => {
         relative
         w-full
         overflow-hidden
-        bg-[#f3f3f3]
-
+ 
         pt-[42px]
         pb-[28px]
 

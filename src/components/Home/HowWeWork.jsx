@@ -31,7 +31,6 @@ const HowWeWork = () => {
     <section
       className="w-full 
       overflow-hidden 
-      bg-[#F7F7F7] 
       px-4
         py-[20px]
         pb-[30px]
@@ -354,8 +353,7 @@ const HowWeWork = () => {
         className="
           relative
           w-full
-          bg-[#F7F7F7]
-
+ 
           px-5
           py-[45px]
 

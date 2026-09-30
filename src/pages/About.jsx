@@ -3,7 +3,7 @@ import AboutHero from "../components/About/AboutHero";
 import AboutIntro from "../components/About/AboutIntro";
 import OurHistory from "../components/About/OurHistory";
 import ImageGallery from "../components/Home/ImageGallery";
-import LatestBlogs from "../components/Home/LatestBlogs";
+// import LatestBlogs from "../components/Home/LatestBlogs";
 import OurExperts from "../components/Home/OurExperts";
 import Testimonials from "../components/Home/Testimonials";
 
@@ -17,7 +17,7 @@ const About = () => {
       <AboutAchievement />
       <ImageGallery />
       <Testimonials />
-      <LatestBlogs />
+      {/* <LatestBlogs /> */}
     </div>
   );
 };

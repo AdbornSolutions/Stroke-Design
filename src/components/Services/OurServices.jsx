@@ -177,7 +177,7 @@ const OurServices = () => {
 
           px-10
           pb-10
-          pt-[30px]
+          pt-12
 
           max-[1024px]:px-[38px]
           max-[1024px]:pb-[35px]
@@ -200,6 +200,7 @@ const OurServices = () => {
     max-w-[1400px]
     grid-cols-[clamp(220px,22%,305px)_minmax(0,1fr)_clamp(280px,30%,390px)]
     items-start
+    pb-4
 
     px-4
     sm:px-6

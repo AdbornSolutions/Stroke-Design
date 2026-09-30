@@ -2,7 +2,7 @@ import expertsImage from "../../assets/experts.png";
 
 const OurExperts = () => {
   return (
-    <section className="w-full overflow-hidden bg-[#F7F7F7]">
+    <section className="w-full overflow-hidden">
       {/* =====================================================
           HEADER
       ====================================================== */}
@@ -230,8 +230,7 @@ const OurExperts = () => {
         className="
           w-full
           overflow-hidden
-          bg-[#F7F7F7]
-
+ 
           pb-[45px]
 
           sm:pb-[55px]
