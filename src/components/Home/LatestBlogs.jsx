@@ -374,7 +374,7 @@ const LatestBlogs = () => {
                 `}
               >
 
-                <img
+                <img loading="lazy" decoding="async"
                   src={post.image}
                   alt={post.title}
                   draggable={false}

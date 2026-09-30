@@ -320,15 +320,21 @@ function AnimatedGalleryRow({ images, direction, speed, row }) {
        GET SET WIDTH
     ===================================================== */
 
-    const getSetWidth = () => {
-      return originalSet.getBoundingClientRect().width;
-    };
+    let setWidth = originalSet.getBoundingClientRect().width;
+    const getSetWidth = () => setWidth;
+    let inViewport = false;
+    const observer = new IntersectionObserver(([entry]) => {
+      inViewport = entry.isIntersecting;
+    });
+    observer.observe(rowElement);
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     /* =====================================================
        RESET POSITION
     ===================================================== */
 
     const resetPosition = () => {
+      setWidth = originalSet.getBoundingClientRect().width;
       const width = getSetWidth();
 
       if (!width) return;
@@ -359,7 +365,7 @@ function AnimatedGalleryRow({ images, direction, speed, row }) {
 
       lastTimeRef.current = time;
 
-      if (!pausedRef.current) {
+      if (!pausedRef.current && inViewport && !document.hidden && !reducedMotion.matches) {
         const width = getSetWidth();
 
         if (width > 0) {
@@ -474,6 +480,7 @@ function AnimatedGalleryRow({ images, direction, speed, row }) {
     ===================================================== */
 
     return () => {
+      observer.disconnect();
       cancelAnimationFrame(animationRef.current);
 
       clearTimeout(resizeTimer);

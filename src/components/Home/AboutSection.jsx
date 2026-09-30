@@ -316,7 +316,7 @@ const AboutSection = () => {
               rounded-[12px]
             "
           >
-            <img
+            <img loading="lazy" decoding="async"
               src={about1}
               alt="Interior living room design"
               className="
@@ -358,7 +358,7 @@ const AboutSection = () => {
               rounded-[12px]
             "
           >
-            <img
+            <img loading="lazy" decoding="async"
               src={about2}
               alt="Luxury bedroom interior"
               className="
@@ -400,7 +400,7 @@ const AboutSection = () => {
               rounded-[12px]
             "
           >
-            <img
+            <img loading="lazy" decoding="async"
               src={about3}
               alt="Modern kitchen interior"
               className="

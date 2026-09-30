@@ -1,19 +1,5 @@
-import { motion } from "framer-motion";
-
 const SmoothScrolling = ({ children }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{
-        duration: 1,
-        ease: "easeOut",
-      }}
-      className="min-h-screen"
-    >
-      {children}
-    </motion.div>
-  );
+  return <div className="min-h-screen">{children}</div>;
 };
 
 export default SmoothScrolling;

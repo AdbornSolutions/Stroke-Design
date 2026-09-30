@@ -406,7 +406,7 @@ const HowWeWork = () => {
                 w-full
               "
             >
-              <img src={processImage} alt="Interior design consultation" />
+              <img loading="lazy" decoding="async" src={processImage} alt="Interior design consultation" />
             </div>
           </div>
 

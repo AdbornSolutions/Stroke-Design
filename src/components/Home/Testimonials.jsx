@@ -217,7 +217,7 @@ const Testimonials = () => {
           max-[480px]:h-[145px]
         "
       >
-        <img
+        <img loading="lazy" decoding="async"
           src={testimonial_bg}
           alt="Stroke Design Studio"
           className="

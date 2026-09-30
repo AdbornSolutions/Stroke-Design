@@ -398,7 +398,7 @@ const OurExperts = () => {
                 lg:rounded-[16px]
               "
             >
-              <img
+              <img loading="lazy" decoding="async"
                 src={expertsImage}
                 alt="Ujwal and Bhuvaneshwari Nimgade"
                 className="

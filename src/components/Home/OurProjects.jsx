@@ -149,7 +149,7 @@ const OurProjects = () => {
             Only added to the header area.
         ================================================== */}
 
-        <img
+        <img loading="lazy" decoding="async"
           src={ProjectBackground}
           alt=""
           aria-hidden="true"

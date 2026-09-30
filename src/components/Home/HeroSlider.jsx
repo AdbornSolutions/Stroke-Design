@@ -67,6 +67,9 @@ const HeroSlider = () => {
             >
               <img
                 src={image}
+                fetchPriority={index === 0 ? "high" : "low"}
+                loading={index === 0 ? "eager" : "lazy"}
+                decoding="async"
                 alt={`Interior Design ${index + 1}`}
                 draggable="false"
                 className="

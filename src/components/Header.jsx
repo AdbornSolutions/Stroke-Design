@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import logo from "../assets/Stroke_logo.png";
-import QuotePopup from "./QuotePopup";
+const QuotePopup = lazy(() => import("./QuotePopup"));
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -934,7 +934,7 @@ const Header = () => {
           QUOTE POPUP
       ================================================== */}
 
-      <QuotePopup isOpen={isQuoteOpen} onClose={() => setIsQuoteOpen(false)} />
+      {isQuoteOpen && <Suspense fallback={null}><QuotePopup isOpen={isQuoteOpen} onClose={() => setIsQuoteOpen(false)} /></Suspense>}
     </header>
   );
 };

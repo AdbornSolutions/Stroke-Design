@@ -42,7 +42,7 @@ const AboutIntro = () => {
 
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img
+          <img loading="lazy" decoding="async"
             src={backgroundImage}
             alt=""
             className="
@@ -367,7 +367,7 @@ const AboutIntro = () => {
                 "
               >
 
-                <img
+                <img loading="lazy" decoding="async"
                   src={interiorImage}
                   alt="Interior design living room"
                   className="

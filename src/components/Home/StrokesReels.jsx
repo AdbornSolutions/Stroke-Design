@@ -1,4 +1,5 @@
 import React from "react";
+import ViewportVideo from "../ViewportVideo";
 import stroke1 from "../../assets/Reels/strokes-1.mp4";
 import stroke2 from "../../assets/Reels/strokes-2.mp4";
 import stroke3 from "../../assets/Reels/strokes-3.mp4";
@@ -275,13 +276,11 @@ const StrokesReels = () => {
             "
           >
 
-            <video
+            <ViewportVideo
               src={video.src}
-              autoPlay
               muted
               loop
               playsInline
-              preload="metadata"
               className="
                 absolute
                 inset-0
