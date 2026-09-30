@@ -193,8 +193,8 @@ const Testimonials = () => {
         relative
         w-full
         overflow-hidden
-        bg-[#EAE9E5]
         text-[#111111]
+        mt-12
       "
       onMouseEnter={stopAutoSlide}
       onMouseLeave={startAutoSlide}

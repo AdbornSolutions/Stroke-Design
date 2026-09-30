@@ -490,46 +490,63 @@ const Header = () => {
             type="button"
             onClick={() => setIsQuoteOpen(true)}
             className="
+      group
       flex
-      h-[47px]
       items-center
-      gap-[4px]
       whitespace-nowrap
-      rounded-full
-      bg-[#DAC322]
-      pl-[22px]
-      pr-[4px]
-      font-bold
-      text-black
-      transition-all
-      duration-200
-      hover:bg-[#c99b43]
       cursor-pointer
     "
           >
-            <span>Get A Quote</span>
-
+            {/* Text Button */}
             <span
               className="
         flex
-        h-[39px]
-        w-[39px]
-        ml-1
+        h-[34px]
+        items-center
+        rounded-full
+        bg-[#C99B43]
+        px-[16px]
+        font-['Playfair_Display']
+        text-[19px]
+        font-normal
+        leading-none
+        text-white
+        transition-all
+        duration-200
+        group-hover:bg-[#B88A38]
+      "
+            >
+              Get A Quote
+            </span>
+
+            {/* Separate Arrow Circle */}
+            <span
+              className="
+        ml-[4px]
+        flex
+        h-[34px]
+        w-[34px]
         shrink-0
         items-center
         justify-center
         rounded-full
         bg-white
+        overflow-hidden
       "
             >
               <svg
                 viewBox="0 0 24 24"
                 className="
-          h-[27px]
-          w-[27px]
+          h-[29px]
+          w-[29px]
           fill-none
           stroke-black
           stroke-[2]
+          transition-transform
+          duration-300
+          ease-out
+          rotate-[-45deg]
+          group-hover:rotate-0
         "
               >
                 <path d="M5 12h13" />
