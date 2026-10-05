@@ -82,10 +82,7 @@ const OurProjects = () => {
 
     const scrollAmount = (cardWidth + gap) * 2;
 
-    trackRef.current.scrollBy({
-      left: direction * scrollAmount,
-      behavior: "smooth",
-    });
+    trackRef.current.scrollLeft += direction * scrollAmount;
   };
 
   return (
@@ -631,7 +628,6 @@ const OurProjects = () => {
 
             overflow-x-auto
 
-            scroll-smooth
             snap-x
             snap-mandatory
 

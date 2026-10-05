@@ -1,20 +1,28 @@
-import { motion } from "framer-motion";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
-const SmoothScrolling = ({ children }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{
-        duration: 0.5,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      className="page-transition"
-    >
-      {children}
-    </motion.div>
-  );
+const SmoothScrolling = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    // Smoothly scroll to top whenever the route changes
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, [pathname]);
+
+  useEffect(() => {
+    // Enable native smooth scrolling
+    document.documentElement.style.scrollBehavior = "smooth";
+
+    return () => {
+      document.documentElement.style.scrollBehavior = "";
+    };
+  }, []);
+
+  return null;
 };
 
 export default SmoothScrolling;

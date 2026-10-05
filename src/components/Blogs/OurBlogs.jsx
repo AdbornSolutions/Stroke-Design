@@ -120,10 +120,13 @@ const OurBlogs = () => {
         <aside
           className="
             w-full
+            min-w-0
             pr-0
 
+            lg:sticky
+            lg:top-22
+            lg:h-fit
             lg:pr-8
-            xl:pr-12
           "
         >
           <div className="mb-5">
