@@ -5,7 +5,6 @@ import "./App.css";
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import PageTransition from "./components/PageTransition";
 import ScrollToTop from "./components/ScrollToTop";
 import SmoothScrolling from "./components/SmoothScrolling";
 import WhatsAppButton from "./components/WhatsAppButton";
@@ -52,41 +51,39 @@ function App() {
           </div>
         }
       >
-        <PageTransition>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/awardpublication" element={<AwardPublication />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/contact" element={<Contact />} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/awardpublication" element={<AwardPublication />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/contact" element={<Contact />} />
 
-            <Route path="/terms-and-conditions" element={<TermCondition />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-and-conditions" element={<TermCondition />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
-            <Route path="/amit-parekh" element={<AmitParekh />} />
-            <Route path="/anand-chandak" element={<AnandChandak />} />
-            <Route
-              path="/prakash-amarshetiwar"
-              element={<PrakashAmarshetiwar />}
-            />
-            <Route path="/swatiben-shah" element={<SwatibenShah />} />
+          <Route path="/amit-parekh" element={<AmitParekh />} />
+          <Route path="/anand-chandak" element={<AnandChandak />} />
+          <Route
+            path="/prakash-amarshetiwar"
+            element={<PrakashAmarshetiwar />}
+          />
+          <Route path="/swatiben-shah" element={<SwatibenShah />} />
 
-            <Route path="/darshan-house" element={<DarshanHouse />} />
-            <Route path="/jain-mandir" element={<JainMandir />} />
-            <Route path="/jaiswal-tata-capital" element={<JaiswalTata />} />
-            <Route path="/ronin-bunglow" element={<RoninBunglow />} />
+          <Route path="/darshan-house" element={<DarshanHouse />} />
+          <Route path="/jain-mandir" element={<JainMandir />} />
+          <Route path="/jaiswal-tata-capital" element={<JaiswalTata />} />
+          <Route path="/ronin-bunglow" element={<RoninBunglow />} />
 
-            <Route path="/residential" element={<Residential />} />
-            <Route path="/commercial" element={<Commercial />} />
-            <Route path="/interior" element={<Interior />} />
-            <Route path="/exterior" element={<Exterior />} />
-            <Route path="/interior2d3d" element={<Interior2D3D />} />
-            <Route path="/renovation" element={<Renovation />} />
-          </Routes>
-        </PageTransition>
+          <Route path="/residential" element={<Residential />} />
+          <Route path="/commercial" element={<Commercial />} />
+          <Route path="/interior" element={<Interior />} />
+          <Route path="/exterior" element={<Exterior />} />
+          <Route path="/interior2d3d" element={<Interior2D3D />} />
+          <Route path="/renovation" element={<Renovation />} />
+        </Routes>
       </Suspense>
 
       <WhatsAppButton />
