@@ -1,4 +1,3 @@
-import ViewportVideo from "../ViewportVideo";
 import stroke1 from "../../assets/Reels/strokes-1.mp4";
 import stroke2 from "../../assets/Reels/strokes-2.mp4";
 import stroke3 from "../../assets/Reels/strokes-3.mp4";
@@ -7,6 +6,7 @@ import stroke5 from "../../assets/Reels/strokes-5.mp4";
 import stroke6 from "../../assets/Reels/strokes-6.mp4";
 import stroke7 from "../../assets/Reels/strokes-7.mp4";
 import stroke8 from "../../assets/Reels/strokes-8.mp4";
+import ViewportVideo from "../ViewportVideo";
 
 const videoItems = [
   { id: 1, src: stroke1 },
@@ -25,13 +25,11 @@ const StrokesReels = () => {
       aria-label="Strokes Design Studio reels"
       className="w-full overflow-hidden px-4 py-12 sm:px-6 sm:py-12 md:px-8 lg:px-10 xl:px-12"
     >
-
       {/* =====================================================
           HEADER
       ===================================================== */}
 
       <div className="mx-auto flex w-full max-w-[1100px] flex-col items-center text-center">
-
         {/* Instagram / Brand */}
 
         <div
@@ -50,7 +48,6 @@ const StrokesReels = () => {
             lg:text-[30px]
           "
         >
-
           {/* Instagram Icon */}
 
           <svg
@@ -112,30 +109,17 @@ const StrokesReels = () => {
               strokeWidth="1.6"
             />
 
-            <circle
-              cx="17.3"
-              cy="6.8"
-              r="1"
-              fill="white"
-            />
+            <circle cx="17.3" cy="6.8" r="1" fill="white" />
           </svg>
-
 
           {/* @ */}
 
-          <span className="text-[25px] sm:text-[27px] md:text-[29px]">
-            @
-          </span>
-
+          <span className="text-[25px] sm:text-[27px] md:text-[29px]">@</span>
 
           {/* Brand */}
 
-          <span>
-            strokes design studio
-          </span>
-
+          <span>strokes design studio</span>
         </div>
-
 
         {/* =====================================================
             TAGLINE
@@ -158,11 +142,8 @@ const StrokesReels = () => {
           "
         >
           Where Design Meets Experience
-          <span className="ml-2">
-            ✨
-          </span>
+          <span className="ml-2">✨</span>
         </div>
-
 
         {/* =====================================================
             SERVICES
@@ -190,9 +171,7 @@ const StrokesReels = () => {
           <span className="mx-[8px]">|</span>
           Project Management
         </div>
-
       </div>
-
 
       {/* =====================================================
           VIDEO GRID
@@ -231,7 +210,6 @@ const StrokesReels = () => {
           max-[480px]:gap-y-[10px]
         "
       >
-
         {videoItems.map((video) => (
           <div
             key={video.id}
@@ -253,13 +231,13 @@ const StrokesReels = () => {
               hover:-translate-y-[2px]
             "
           >
-
             <ViewportVideo
               src={video.src}
               aria-label={`Strokes Design Studio reel ${video.id}`}
               muted
               loop
               playsInline
+              preload="metadata"
               className="
                 absolute
                 inset-0
@@ -275,14 +253,11 @@ const StrokesReels = () => {
                 group-hover:scale-[1.015]
               "
             />
-
           </div>
         ))}
-
       </div>
-
     </section>
   );
-}
+};
 
 export default StrokesReels;

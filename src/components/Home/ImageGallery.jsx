@@ -260,6 +260,7 @@ function GallerySet({ images, row }) {
             alt={image.alt}
             loading="lazy"
             decoding="async"
+            fetchPriority="low"
             draggable="false"
             className="
               block

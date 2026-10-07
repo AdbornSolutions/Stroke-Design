@@ -14,10 +14,13 @@ export default function ViewportVideo({ src, ...props }) {
         video.pause();
       }
     };
-    const observer = new IntersectionObserver(([entry]) => {
-      visible = entry.isIntersecting;
-      updatePlayback();
-    }, { threshold: 0.1 });
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        visible = entry.isIntersecting;
+        updatePlayback();
+      },
+      { threshold: 0.1 },
+    );
     observer.observe(video);
     document.addEventListener("visibilitychange", updatePlayback);
     return () => {
@@ -27,5 +30,5 @@ export default function ViewportVideo({ src, ...props }) {
     };
   }, [src]);
 
-  return <video {...props} ref={ref} preload="none" controls />;
+  return <video {...props} ref={ref} preload="metadata" />;
 }
