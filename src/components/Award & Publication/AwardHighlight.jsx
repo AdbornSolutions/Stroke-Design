@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import InteriorDesign from "../../assets/about-Interior-Design.png";
+import InteriorDesign from "../../assets/about-Interior-Design.webp";
 
 const AwardHighlight = () => {
   return (

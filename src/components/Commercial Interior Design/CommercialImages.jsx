@@ -1,15 +1,15 @@
-import CommercialImage1 from "../../assets/Commercial/Image1.jpg";
-import CommercialImage10 from "../../assets/Commercial/Image10.jpg";
-import CommercialImage11 from "../../assets/Commercial/Image11.jpg";
-import CommercialImage12 from "../../assets/Commercial/Image12.jpg";
-import CommercialImage2 from "../../assets/Commercial/Image2.jpg";
-import CommercialImage3 from "../../assets/Commercial/Image3.jpg";
-import CommercialImage4 from "../../assets/Commercial/Image4.jpg";
-import CommercialImage5 from "../../assets/Commercial/Image5.jpg";
-import CommercialImage6 from "../../assets/Commercial/Image6.jpg";
-import CommercialImage7 from "../../assets/Commercial/Image7.jpg";
-import CommercialImage8 from "../../assets/Commercial/Image8.jpg";
-import CommercialImage9 from "../../assets/Commercial/Image9.jpg";
+import CommercialImage1 from "../../assets/Commercial/Image1.webp";
+import CommercialImage10 from "../../assets/Commercial/Image10.webp";
+import CommercialImage11 from "../../assets/Commercial/Image11.webp";
+import CommercialImage12 from "../../assets/Commercial/Image12.webp";
+import CommercialImage2 from "../../assets/Commercial/Image2.webp";
+import CommercialImage3 from "../../assets/Commercial/Image3.webp";
+import CommercialImage4 from "../../assets/Commercial/Image4.webp";
+import CommercialImage5 from "../../assets/Commercial/Image5.webp";
+import CommercialImage6 from "../../assets/Commercial/Image6.webp";
+import CommercialImage7 from "../../assets/Commercial/Image7.webp";
+import CommercialImage8 from "../../assets/Commercial/Image8.webp";
+import CommercialImage9 from "../../assets/Commercial/Image9.webp";
 
 const CommercialImages = () => {
   const images = [

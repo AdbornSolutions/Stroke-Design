@@ -1,17 +1,17 @@
 import React from "react";
 
-import InteriorImage1 from "../../assets/Interior 2D3D Layouts/Image1.jpg";
-import InteriorImage2 from "../../assets/Interior 2D3D Layouts/Image2.jpg";
-import InteriorImage3 from "../../assets/Interior 2D3D Layouts/Image3.jpg";
-import InteriorImage4 from "../../assets/Interior 2D3D Layouts/Image4.jpg";
-import InteriorImage5 from "../../assets/Interior 2D3D Layouts/Image5.jpg";
-import InteriorImage6 from "../../assets/Interior 2D3D Layouts/Image6.jpg";
-import InteriorImage7 from "../../assets/Interior 2D3D Layouts/Image7.jpg";
-import InteriorImage8 from "../../assets/Interior 2D3D Layouts/Image8.jpg";
-import InteriorImage9 from "../../assets/Interior 2D3D Layouts/Image9.jpg";
-import InteriorImage10 from "../../assets/Interior 2D3D Layouts/Image10.jpg";
-import InteriorImage11 from "../../assets/Interior 2D3D Layouts/Image11.jpg";
-import InteriorImage12 from "../../assets/Interior 2D3D Layouts/Image12.jpg";
+import InteriorImage1 from "../../assets/Interior 2D3D Layouts/Image1.webp";
+import InteriorImage2 from "../../assets/Interior 2D3D Layouts/Image2.webp";
+import InteriorImage3 from "../../assets/Interior 2D3D Layouts/Image3.webp";
+import InteriorImage4 from "../../assets/Interior 2D3D Layouts/Image4.webp";
+import InteriorImage5 from "../../assets/Interior 2D3D Layouts/Image5.webp";
+import InteriorImage6 from "../../assets/Interior 2D3D Layouts/Image6.webp";
+import InteriorImage7 from "../../assets/Interior 2D3D Layouts/Image7.webp";
+import InteriorImage8 from "../../assets/Interior 2D3D Layouts/Image8.webp";
+import InteriorImage9 from "../../assets/Interior 2D3D Layouts/Image9.webp";
+import InteriorImage10 from "../../assets/Interior 2D3D Layouts/Image10.webp";
+import InteriorImage11 from "../../assets/Interior 2D3D Layouts/Image11.webp";
+import InteriorImage12 from "../../assets/Interior 2D3D Layouts/Image12.webp";
 
 const InteriorImages = () => {
   const images = [

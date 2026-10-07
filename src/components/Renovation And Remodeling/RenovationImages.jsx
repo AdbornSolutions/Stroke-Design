@@ -1,9 +1,9 @@
-import RenovationImage1 from "../../assets/Renovation And Remodeling/Image1.jpg";
-import RenovationImage2 from "../../assets/Renovation And Remodeling/Image2.jpg";
-import RenovationImage3 from "../../assets/Renovation And Remodeling/Image3.jpg";
-import RenovationImage4 from "../../assets/Renovation And Remodeling/Image4.jpg";
-import RenovationImage5 from "../../assets/Renovation And Remodeling/Image5.jpg";
-import RenovationImage6 from "../../assets/Renovation And Remodeling/Image6.jpg";
+import RenovationImage1 from "../../assets/Renovation And Remodeling/Image1.webp";
+import RenovationImage2 from "../../assets/Renovation And Remodeling/Image2.webp";
+import RenovationImage3 from "../../assets/Renovation And Remodeling/Image3.webp";
+import RenovationImage4 from "../../assets/Renovation And Remodeling/Image4.webp";
+import RenovationImage5 from "../../assets/Renovation And Remodeling/Image5.webp";
+import RenovationImage6 from "../../assets/Renovation And Remodeling/Image6.webp";
 
 const RenovationImages = () => {
   const images = [

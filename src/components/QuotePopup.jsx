@@ -1,6 +1,6 @@
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
-import quoteImage from "../assets/about-Interior-Design.png";
+import quoteImage from "../assets/about-Interior-Design.webp";
 
 const QuotePopup = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({

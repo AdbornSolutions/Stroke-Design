@@ -1,4 +1,4 @@
-import revolutionhero from "../../assets/about-hero.png";
+import revolutionhero from "../../assets/about-hero.webp";
 
 const RenovationHero = () => {
   return (

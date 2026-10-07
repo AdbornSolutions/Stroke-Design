@@ -1,4 +1,4 @@
-import processImage from "../../assets/how-we-work.png";
+import processImage from "../../assets/how-we-work.webp";
 
 const processSteps = [
   {

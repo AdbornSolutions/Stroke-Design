@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import testimonial_bg from "../../assets/testimonials_bg_image.png";
+import testimonial_bg from "../../assets/testimonials_bg_image.webp";
 
 const testimonials = [
   {

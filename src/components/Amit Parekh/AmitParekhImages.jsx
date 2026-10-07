@@ -1,11 +1,11 @@
-import AmitImage1 from "../../assets/Amit Parekh/image1.jpg";
-import AmitImage2 from "../../assets/Amit Parekh/image2.jpg";
-import AmitImage3 from "../../assets/Amit Parekh/image3.jpg";
-import AmitImage4 from "../../assets/Amit Parekh/image4.jpg";
-import AmitImage5 from "../../assets/Amit Parekh/image5.jpg";
-import AmitImage6 from "../../assets/Amit Parekh/image6.jpg";
-import AmitImage7 from "../../assets/Amit Parekh/image7.jpg";
-import AmitImage8 from "../../assets/Amit Parekh/image8.jpg";
+import AmitImage1 from "../../assets/Amit Parekh/image1.webp";
+import AmitImage2 from "../../assets/Amit Parekh/image2.webp";
+import AmitImage3 from "../../assets/Amit Parekh/image3.webp";
+import AmitImage4 from "../../assets/Amit Parekh/image4.webp";
+import AmitImage5 from "../../assets/Amit Parekh/image5.webp";
+import AmitImage6 from "../../assets/Amit Parekh/image6.webp";
+import AmitImage7 from "../../assets/Amit Parekh/image7.webp";
+import AmitImage8 from "../../assets/Amit Parekh/image8.webp";
 
 const AmitParekhImages = () => {
   const images = [

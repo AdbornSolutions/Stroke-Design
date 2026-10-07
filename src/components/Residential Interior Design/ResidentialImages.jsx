@@ -1,17 +1,17 @@
 import React from "react";
 
-import ResidentialImage1 from "../../assets/Residential/Image1.jpg";
-import ResidentialImage2 from "../../assets/Residential/Image2.jpg";
-import ResidentialImage3 from "../../assets/Residential/Image3.jpg";
-import ResidentialImage4 from "../../assets/Residential/Image4.jpg";
-import ResidentialImage5 from "../../assets/Residential/Image5.jpg";
-import ResidentialImage6 from "../../assets/Residential/Image6.jpg";
-import ResidentialImage7 from "../../assets/Residential/Image7.jpg";
-import ResidentialImage8 from "../../assets/Residential/Image8.jpg";
-import ResidentialImage9 from "../../assets/Residential/Image9.jpg";
-import ResidentialImage10 from "../../assets/Residential/Image10.jpg";
-import ResidentialImage11 from "../../assets/Residential/Image11.jpg";
-import ResidentialImage12 from "../../assets/Residential/Image12.jpg";
+import ResidentialImage1 from "../../assets/Residential/Image1.webp";
+import ResidentialImage2 from "../../assets/Residential/Image2.webp";
+import ResidentialImage3 from "../../assets/Residential/Image3.webp";
+import ResidentialImage4 from "../../assets/Residential/Image4.webp";
+import ResidentialImage5 from "../../assets/Residential/Image5.webp";
+import ResidentialImage6 from "../../assets/Residential/Image6.webp";
+import ResidentialImage7 from "../../assets/Residential/Image7.webp";
+import ResidentialImage8 from "../../assets/Residential/Image8.webp";
+import ResidentialImage9 from "../../assets/Residential/Image9.webp";
+import ResidentialImage10 from "../../assets/Residential/Image10.webp";
+import ResidentialImage11 from "../../assets/Residential/Image11.webp";
+import ResidentialImage12 from "../../assets/Residential/Image12.webp";
 
 const ResidentialImages = () => {
   const images = [

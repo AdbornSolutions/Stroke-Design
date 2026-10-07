@@ -424,11 +424,17 @@ function AnimatedGalleryRow({ images, direction, speed, row }) {
       }
     };
 
-    const observer = new IntersectionObserver(([entry]) => {
-      inViewport = entry.isIntersecting;
-      updateAnimation();
-    });
-    observer.observe(rowElement);
+    const observer = "IntersectionObserver" in window
+      ? new IntersectionObserver(([entry]) => {
+          inViewport = entry.isIntersecting;
+          updateAnimation();
+        })
+      : null;
+
+    // Keep the gallery animation functional in browsers without the observer API.
+    inViewport = !observer;
+    observer?.observe(rowElement);
+    updateAnimation();
 
     /* =====================================================
        HOVER PAUSE
@@ -531,7 +537,7 @@ function AnimatedGalleryRow({ images, direction, speed, row }) {
     ===================================================== */
 
     return () => {
-      observer.disconnect();
+      observer?.disconnect();
       if (animationFrame !== null) {
         cancelAnimationFrame(animationFrame);
       }

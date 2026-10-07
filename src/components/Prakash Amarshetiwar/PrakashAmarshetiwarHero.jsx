@@ -1,4 +1,4 @@
-import prakashamarshetiwarhero from "../../assets/about-hero.png";
+import prakashamarshetiwarhero from "../../assets/about-hero.webp";
 
 const PrakashAmarshetiwarHero = () => {
   return (

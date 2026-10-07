@@ -20,14 +20,7 @@ const TermCondition = () => {
         <TermsHero />
       </motion.div>
 
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={viewport}
-        variants={fadeUp}
-      >
-        <OurTerms />
-      </motion.div>
+      <OurTerms />
 
       <motion.div
         initial="hidden"

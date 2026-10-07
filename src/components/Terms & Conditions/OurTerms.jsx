@@ -1,5 +1,3 @@
-import React from "react";
-
 const OurTerms = () => {
   return (
     <main className="w-full bg-white text-[#2E2E2E]">
@@ -70,9 +68,7 @@ const OurTerms = () => {
           <section id="section-2" className="mb-10 scroll-mt-28">
             <SectionTitle number="2">Use of Website</SectionTitle>
 
-            <p>
-              You may use this website for lawful purposes, including:
-            </p>
+            <p>You may use this website for lawful purposes, including:</p>
 
             <BulletList
               items={[
@@ -85,9 +81,7 @@ const OurTerms = () => {
               ]}
             />
 
-            <p className="mt-5">
-              You agree not to use this website:
-            </p>
+            <p className="mt-5">You agree not to use this website:</p>
 
             <BulletList
               items={[
@@ -101,8 +95,8 @@ const OurTerms = () => {
             />
 
             <p className="mt-5">
-              We reserve the right to restrict or terminate access to the website
-              if we believe it is being misused.
+              We reserve the right to restrict or terminate access to the
+              website if we believe it is being misused.
             </p>
           </section>
 
@@ -195,9 +189,7 @@ const OurTerms = () => {
           </section>
 
           <section id="section-6" className="mb-10 scroll-mt-28">
-            <SectionTitle number="6">
-              Project Scope and Agreements
-            </SectionTitle>
+            <SectionTitle number="6">Project Scope and Agreements</SectionTitle>
 
             <BulletList
               items={[
@@ -263,9 +255,7 @@ const OurTerms = () => {
           </section>
 
           <section id="section-8" className="mb-10 scroll-mt-28">
-            <SectionTitle number="8">
-              Design Changes and Revisions
-            </SectionTitle>
+            <SectionTitle number="8">Design Changes and Revisions</SectionTitle>
 
             <BulletList
               items={[
@@ -444,7 +434,9 @@ const OurTerms = () => {
           <section id="section-15" className="mb-10 scroll-mt-28">
             <SectionTitle number="15">User-Submitted Information</SectionTitle>
 
-            <p>When you submit information through our website, you confirm that:</p>
+            <p>
+              When you submit information through our website, you confirm that:
+            </p>
 
             <BulletList
               items={[
@@ -455,8 +447,8 @@ const OurTerms = () => {
             />
 
             <p className="mt-5">
-              Information submitted through our website may be used to respond to
-              your enquiry, understand your project requirements, provide
+              Information submitted through our website may be used to respond
+              to your enquiry, understand your project requirements, provide
               quotations, arrange consultations, and communicate about our
               services.
             </p>
@@ -647,9 +639,7 @@ const OurTerms = () => {
 
 const SectionTitle = ({ number, children }) => {
   return (
-    <h2
-      className="terms-heading"
-    >
+    <h2 className="terms-heading">
       <span className="mr-2">{number}.</span>
       {children}
     </h2>

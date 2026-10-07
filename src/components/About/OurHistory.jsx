@@ -1,8 +1,8 @@
-import Journey1 from "../../assets/about-history-1.png";
-import Journey2 from "../../assets/about-history-2.png";
-import Journey3 from "../../assets/about-history-3.png";
-import Journey4 from "../../assets/about-history-4.png";
-import Journey5 from "../../assets/about-history-5.png";
+import Journey1 from "../../assets/about-history-1.webp";
+import Journey2 from "../../assets/about-history-2.webp";
+import Journey3 from "../../assets/about-history-3.webp";
+import Journey4 from "../../assets/about-history-4.webp";
+import Journey5 from "../../assets/about-history-5.webp";
 
 const journeyData = [
   {

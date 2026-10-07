@@ -20,14 +20,7 @@ const PrivacyPolicy = () => {
         <PrivacyHero />
       </motion.div>
 
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={viewport}
-        variants={fadeUp}
-      >
-        <OurPrivacy />
-      </motion.div>
+      <OurPrivacy />
 
       <motion.div
         initial="hidden"

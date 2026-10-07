@@ -1,4 +1,4 @@
-import ProjectBackground from "../../assets/ProjectBackground.png";
+import ProjectBackground from "../../assets/ProjectBackground.webp";
 
 const JourneyOfExcellence = () => {
   const awards = [

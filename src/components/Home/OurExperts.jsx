@@ -1,4 +1,4 @@
-import expertsImage from "../../assets/experts.png";
+import expertsImage from "../../assets/experts.webp";
 
 const OurExperts = () => {
   return (

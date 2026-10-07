@@ -1,12 +1,12 @@
-import DarshanImage1 from "../../assets/DARSHAN House/Image1.jpg";
-import DarshanImage2 from "../../assets/DARSHAN House/Image2.jpg";
-import DarshanImage3 from "../../assets/DARSHAN House/Image3.jpg";
-import DarshanImage4 from "../../assets/DARSHAN House/Image4.jpg";
-import DarshanImage5 from "../../assets/DARSHAN House/Image5.jpg";
-import DarshanImage6 from "../../assets/DARSHAN House/Image6.jpg";
-import DarshanImage7 from "../../assets/DARSHAN House/Image7.jpg";
-import DarshanImage8 from "../../assets/DARSHAN House/Image8.jpg";
-import DarshanImage9 from "../../assets/DARSHAN House/Image9.jpg";
+import DarshanImage1 from "../../assets/DARSHAN House/Image1.webp";
+import DarshanImage2 from "../../assets/DARSHAN House/Image2.webp";
+import DarshanImage3 from "../../assets/DARSHAN House/Image3.webp";
+import DarshanImage4 from "../../assets/DARSHAN House/Image4.webp";
+import DarshanImage5 from "../../assets/DARSHAN House/Image5.webp";
+import DarshanImage6 from "../../assets/DARSHAN House/Image6.webp";
+import DarshanImage7 from "../../assets/DARSHAN House/Image7.webp";
+import DarshanImage8 from "../../assets/DARSHAN House/Image8.webp";
+import DarshanImage9 from "../../assets/DARSHAN House/Image9.webp";
 
 const DarshanHouseImages = () => {
   const images = [

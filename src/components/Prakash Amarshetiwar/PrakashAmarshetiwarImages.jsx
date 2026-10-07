@@ -1,19 +1,17 @@
-import React from "react";
-
-import PrakashImage1 from "../../assets/Prakash Amarshetiwar/Image1.jpg";
-import PrakashImage2 from "../../assets/Prakash Amarshetiwar/Image2.jpg";
-import PrakashImage3 from "../../assets/Prakash Amarshetiwar/Image3.jpg";
-import PrakashImage4 from "../../assets/Prakash Amarshetiwar/Image4.jpg";
-import PrakashImage5 from "../../assets/Prakash Amarshetiwar/Image5.jpg";
-import PrakashImage6 from "../../assets/Prakash Amarshetiwar/Image6.jpg";
-import PrakashImage7 from "../../assets/Prakash Amarshetiwar/Image7.jpg";
-import PrakashImage8 from "../../assets/Prakash Amarshetiwar/Image8.jpg";
-import PrakashImage9 from "../../assets/Prakash Amarshetiwar/Image9.jpg";
-import PrakashImage10 from "../../assets/Prakash Amarshetiwar/Image10.jpg";
-import PrakashImage11 from "../../assets/Prakash Amarshetiwar/Image11.jpg";
-import PrakashImage12 from "../../assets/Prakash Amarshetiwar/Image12.jpg";
-import PrakashImage13 from "../../assets/Prakash Amarshetiwar/Image13.jpg";
-import PrakashImage14 from "../../assets/Prakash Amarshetiwar/Image14.jpg";
+import PrakashImage1 from "../../assets/Prakash Amarshetiwar/Image1.webp";
+import PrakashImage10 from "../../assets/Prakash Amarshetiwar/Image10.webp";
+import PrakashImage11 from "../../assets/Prakash Amarshetiwar/Image11.webp";
+import PrakashImage12 from "../../assets/Prakash Amarshetiwar/Image12.webp";
+import PrakashImage13 from "../../assets/Prakash Amarshetiwar/Image13.webp";
+import PrakashImage14 from "../../assets/Prakash Amarshetiwar/Image14.webp";
+import PrakashImage2 from "../../assets/Prakash Amarshetiwar/Image2.webp";
+import PrakashImage3 from "../../assets/Prakash Amarshetiwar/Image3.webp";
+import PrakashImage4 from "../../assets/Prakash Amarshetiwar/Image4.webp";
+import PrakashImage5 from "../../assets/Prakash Amarshetiwar/Image5.webp";
+import PrakashImage6 from "../../assets/Prakash Amarshetiwar/Image6.webp";
+import PrakashImage7 from "../../assets/Prakash Amarshetiwar/Image7.webp";
+import PrakashImage8 from "../../assets/Prakash Amarshetiwar/Image8.webp";
+import PrakashImage9 from "../../assets/Prakash Amarshetiwar/Image9.webp";
 
 const PrakashAmarshetiwarImages = () => {
   const images = [
@@ -125,7 +123,6 @@ const PrakashAmarshetiwarImages = () => {
             xl:px-[48px]
           "
         >
-
           <div
             className="
               hidden
@@ -137,7 +134,6 @@ const PrakashAmarshetiwarImages = () => {
               xl:gap-[22px]
             "
           >
-
             {images.slice(0, 3).map((image) => (
               <div
                 key={image.id}
@@ -380,7 +376,6 @@ const PrakashAmarshetiwarImages = () => {
               </div>
             ))}
           </div>
-
         </div>
       </section>
     </>

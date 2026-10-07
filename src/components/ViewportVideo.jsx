@@ -5,7 +5,9 @@ export default function ViewportVideo({ src, ...props }) {
 
   useEffect(() => {
     const video = ref.current;
-    let visible = false;
+    if (!video) return;
+
+    let visible = !("IntersectionObserver" in window);
     const updatePlayback = () => {
       if (visible && !document.hidden) {
         if (!video.getAttribute("src")) video.src = src;
@@ -14,17 +16,21 @@ export default function ViewportVideo({ src, ...props }) {
         video.pause();
       }
     };
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        visible = entry.isIntersecting;
-        updatePlayback();
-      },
-      { threshold: 0.1 },
-    );
-    observer.observe(video);
+    const observer = "IntersectionObserver" in window
+      ? new IntersectionObserver(
+          ([entry]) => {
+            visible = entry.isIntersecting;
+            updatePlayback();
+          },
+          { threshold: 0.1 },
+        )
+      : null;
+
+    observer?.observe(video);
+    updatePlayback();
     document.addEventListener("visibilitychange", updatePlayback);
     return () => {
-      observer.disconnect();
+      observer?.disconnect();
       document.removeEventListener("visibilitychange", updatePlayback);
       video.pause();
     };

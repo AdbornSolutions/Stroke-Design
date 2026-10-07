@@ -1,5 +1,5 @@
-import aboutbedroom from "../../assets/about-bedroom.png";
-import aboutkitchen from "../../assets/about-kitchen.png";
+import aboutbedroom from "../../assets/about-bedroom.webp";
+import aboutkitchen from "../../assets/about-kitchen.webp";
 
 const AboutIntro = () => {
   return (

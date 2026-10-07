@@ -1,11 +1,11 @@
 import React from "react";
 
-import SwatibenImages1 from "../../assets/Swatiben Shah/Image1.jpg";
-import SwatibenImages2 from "../../assets/Swatiben Shah/Image2.jpg";
-import SwatibenImages3 from "../../assets/Swatiben Shah/Image3.jpg";
-import SwatibenImages4 from "../../assets/Swatiben Shah/Image4.jpg";
-import SwatibenImages5 from "../../assets/Swatiben Shah/Image5.jpg";
-import SwatibenImages6 from "../../assets/Swatiben Shah/Image6.jpg";
+import SwatibenImages1 from "../../assets/Swatiben Shah/Image1.webp";
+import SwatibenImages2 from "../../assets/Swatiben Shah/Image2.webp";
+import SwatibenImages3 from "../../assets/Swatiben Shah/Image3.webp";
+import SwatibenImages4 from "../../assets/Swatiben Shah/Image4.webp";
+import SwatibenImages5 from "../../assets/Swatiben Shah/Image5.webp";
+import SwatibenImages6 from "../../assets/Swatiben Shah/Image6.webp";
 
 const SwatibenShahImages = () => {
   const images = [
@@ -72,12 +72,6 @@ const SwatibenShahImages = () => {
             xl:px-[48px]
           "
         >
-
-          {/* =================================================
-              DESKTOP GALLERY
-              ROW 1 → 3 IMAGES
-              ROW 2 → 3 IMAGES
-          ================================================== */}
 
           <div
             className="

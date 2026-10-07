@@ -1,6 +1,6 @@
 import { lazy, Suspense, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import logo from "../assets/Stroke_logo.png";
+import logo from "../assets/Stroke_logo.webp";
 const QuotePopup = lazy(() => import("./QuotePopup"));
 
 const Header = () => {

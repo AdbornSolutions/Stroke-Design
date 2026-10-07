@@ -1,10 +1,10 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 
-import ModernBedroom1 from "../../assets/ModernBedroom1.png";
-import ModernBedroom2 from "../../assets/ModernBedroom2.png";
-import RecentPost1 from "../../assets/RecentPost.png";
-import RecentPost2 from "../../assets/RecentPost2.png";
+import ModernBedroom1 from "../../assets/ModernBedroom1.webp";
+import ModernBedroom2 from "../../assets/ModernBedroom2.webp";
+import RecentPost1 from "../../assets/RecentPost.webp";
+import RecentPost2 from "../../assets/RecentPost2.webp";
 
 const posts = [
   {

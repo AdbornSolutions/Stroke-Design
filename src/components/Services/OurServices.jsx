@@ -1,9 +1,9 @@
-import CommercialImage from "../../assets/Commercial/Image1.jpg";
-import ExteriorImage from "../../assets/EXTERIOR/Image1.jpg";
-import Interior2D3DImage from "../../assets/Interior 2D3D Layouts/Image8.jpg";
-import InteriorImage from "../../assets/INTERIOR/Image1.jpg";
-import RenovationImage from "../../assets/Renovation And Remodeling/Image4.jpg";
-import ResidentialImage from "../../assets/Residential/Image1.jpg";
+import CommercialImage from "../../assets/Commercial/Image1.webp";
+import ExteriorImage from "../../assets/EXTERIOR/Image1.webp";
+import Interior2D3DImage from "../../assets/Interior 2D3D Layouts/Image8.webp";
+import InteriorImage from "../../assets/INTERIOR/Image1.webp";
+import RenovationImage from "../../assets/Renovation And Remodeling/Image4.webp";
+import ResidentialImage from "../../assets/Residential/Image1.webp";
 
 const services = [
   {

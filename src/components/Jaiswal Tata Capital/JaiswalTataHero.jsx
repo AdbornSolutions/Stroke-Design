@@ -1,4 +1,4 @@
-import jaiswaltatahero from "../../assets/about-hero.png";
+import jaiswaltatahero from "../../assets/about-hero.webp";
 
 const JaiswalTataHero = () => {
   return (

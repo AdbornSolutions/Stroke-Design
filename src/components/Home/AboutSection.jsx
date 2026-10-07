@@ -1,6 +1,6 @@
-import about1 from "../../assets/about-1.png";
-import about2 from "../../assets/about-2.png";
-import about3 from "../../assets/about-3.png";
+import about1 from "../../assets/about-1.webp";
+import about2 from "../../assets/about-2.webp";
+import about3 from "../../assets/about-3.webp";
 
 const AboutSection = () => {
   return (

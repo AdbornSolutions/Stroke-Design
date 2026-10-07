@@ -1,15 +1,15 @@
-import ExteriorImage1 from "../../assets/EXTERIOR/Image1.jpg";
-import ExteriorImage10 from "../../assets/EXTERIOR/Image10.jpg";
-import ExteriorImage11 from "../../assets/EXTERIOR/Image11.jpg";
-import ExteriorImage12 from "../../assets/EXTERIOR/Image12.jpg";
-import ExteriorImage2 from "../../assets/EXTERIOR/Image2.jpg";
-import ExteriorImage3 from "../../assets/EXTERIOR/Image3.jpg";
-import ExteriorImage4 from "../../assets/EXTERIOR/Image4.jpg";
-import ExteriorImage5 from "../../assets/EXTERIOR/Image5.jpg";
-import ExteriorImage6 from "../../assets/EXTERIOR/Image6.jpg";
-import ExteriorImage7 from "../../assets/EXTERIOR/Image7.jpg";
-import ExteriorImage8 from "../../assets/EXTERIOR/Image8.jpg";
-import ExteriorImage9 from "../../assets/EXTERIOR/Image9.jpg";
+import ExteriorImage1 from "../../assets/EXTERIOR/Image1.webp";
+import ExteriorImage10 from "../../assets/EXTERIOR/Image10.webp";
+import ExteriorImage11 from "../../assets/EXTERIOR/Image11.webp";
+import ExteriorImage12 from "../../assets/EXTERIOR/Image12.webp";
+import ExteriorImage2 from "../../assets/EXTERIOR/Image2.webp";
+import ExteriorImage3 from "../../assets/EXTERIOR/Image3.webp";
+import ExteriorImage4 from "../../assets/EXTERIOR/Image4.webp";
+import ExteriorImage5 from "../../assets/EXTERIOR/Image5.webp";
+import ExteriorImage6 from "../../assets/EXTERIOR/Image6.webp";
+import ExteriorImage7 from "../../assets/EXTERIOR/Image7.webp";
+import ExteriorImage8 from "../../assets/EXTERIOR/Image8.webp";
+import ExteriorImage9 from "../../assets/EXTERIOR/Image9.webp";
 
 const ExteriorImages = () => {
   const images = [

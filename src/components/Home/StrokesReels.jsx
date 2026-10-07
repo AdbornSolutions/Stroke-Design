@@ -6,7 +6,6 @@ import stroke5 from "../../assets/Reels/strokes-5.mp4";
 import stroke6 from "../../assets/Reels/strokes-6.mp4";
 import stroke7 from "../../assets/Reels/strokes-7.mp4";
 import stroke8 from "../../assets/Reels/strokes-8.mp4";
-import ViewportVideo from "../ViewportVideo";
 
 const videoItems = [
   { id: 1, src: stroke1 },
@@ -231,13 +230,13 @@ const StrokesReels = () => {
               hover:-translate-y-[2px]
             "
           >
-            <ViewportVideo
+            <video
               src={video.src}
               aria-label={`Strokes Design Studio reel ${video.id}`}
               muted
-              loop
               playsInline
               preload="metadata"
+              controls
               className="
                 absolute
                 inset-0

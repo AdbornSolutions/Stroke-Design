@@ -1,14 +1,14 @@
 import { useRef } from "react";
-import HomeProject1 from "../../assets/home-project-1.png";
-import HomeProject2 from "../../assets/home-project-2.png";
-import HomeProject3 from "../../assets/home-project-3.png";
-import HomeProject4 from "../../assets/home-project-4.png";
-import HomeProject5 from "../../assets/home-project-5.png";
-import HomeProject6 from "../../assets/home-project-6.png";
-import HomeProject7 from "../../assets/home-project-7.png";
-import HomeProject8 from "../../assets/home-project-8.png";
+import HomeProject1 from "../../assets/home-project-1.webp";
+import HomeProject2 from "../../assets/home-project-2.webp";
+import HomeProject3 from "../../assets/home-project-3.webp";
+import HomeProject4 from "../../assets/home-project-4.webp";
+import HomeProject5 from "../../assets/home-project-5.webp";
+import HomeProject6 from "../../assets/home-project-6.webp";
+import HomeProject7 from "../../assets/home-project-7.webp";
+import HomeProject8 from "../../assets/home-project-8.webp";
 
-import ProjectBackground from "../../assets/ProjectBackground.png";
+import ProjectBackground from "../../assets/ProjectBackground.webp";
 
 const projects = [
   {

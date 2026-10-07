@@ -1,12 +1,10 @@
-import React from "react";
-
-import AnandImage1 from "../../assets/Anand Chandak/Image1.jpg";
-import AnandImage2 from "../../assets/Anand Chandak/Image2.jpg";
-import AnandImage3 from "../../assets/Anand Chandak/Image3.jpg";
-import AnandImage4 from "../../assets/Anand Chandak/Image4.jpg";
-import AnandImage5 from "../../assets/Anand Chandak/Image5.jpg";
-import AnandImage6 from "../../assets/Anand Chandak/Image6.jpg";
-import AnandImage7 from "../../assets/Anand Chandak/Image7.jpg";
+import AnandImage1 from "../../assets/Anand Chandak/Image1.webp";
+import AnandImage2 from "../../assets/Anand Chandak/Image2.webp";
+import AnandImage3 from "../../assets/Anand Chandak/Image3.webp";
+import AnandImage4 from "../../assets/Anand Chandak/Image4.webp";
+import AnandImage5 from "../../assets/Anand Chandak/Image5.webp";
+import AnandImage6 from "../../assets/Anand Chandak/Image6.webp";
+import AnandImage7 from "../../assets/Anand Chandak/Image7.webp";
 
 const AnandChandakImages = () => {
   const images = [
@@ -76,7 +74,6 @@ const AnandChandakImages = () => {
             xl:px-[48px]
           "
         >
-
           <div
             className="
               hidden
@@ -88,7 +85,6 @@ const AnandChandakImages = () => {
               xl:gap-[22px]
             "
           >
-
             {images.slice(0, 2).map((image) => (
               <div
                 key={image.id}
@@ -267,7 +263,6 @@ const AnandChandakImages = () => {
               </div>
             ))}
           </div>
-
         </div>
       </section>
     </>

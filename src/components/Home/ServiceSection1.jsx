@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-import image1 from "../../assets/hero-2.png";
-import image2 from "../../assets/hero-3.png";
-import image3 from "../../assets/hero-4.png";
+import image1 from "../../assets/hero-2.webp";
+import image2 from "../../assets/hero-3.webp";
+import image3 from "../../assets/hero-4.webp";
 
 const services = [
   {
