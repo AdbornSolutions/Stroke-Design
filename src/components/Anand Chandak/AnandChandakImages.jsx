@@ -10,9 +10,6 @@ import AnandImage7 from "../../assets/Anand Chandak/Image7.jpg";
 
 const AnandChandakImages = () => {
   const images = [
-    // =========================
-    // ANAND CHANDAK
-    // =========================
     {
       id: "anand-1",
       src: AnandImage1,
@@ -80,13 +77,6 @@ const AnandChandakImages = () => {
           "
         >
 
-          {/* =================================================
-              DESKTOP GALLERY
-              ROW 1 → 2 IMAGES
-              ROW 2 → 3 IMAGES
-              ROW 3 → 2 IMAGES
-          ================================================== */}
-
           <div
             className="
               hidden
@@ -98,10 +88,6 @@ const AnandChandakImages = () => {
               xl:gap-[22px]
             "
           >
-
-            {/* =========================
-                FIRST ROW - 2 IMAGES
-            ========================== */}
 
             {images.slice(0, 2).map((image) => (
               <div
@@ -133,10 +119,6 @@ const AnandChandakImages = () => {
                 />
               </div>
             ))}
-
-            {/* =========================
-                SECOND ROW - 3 IMAGES
-            ========================== */}
 
             {images.slice(2, 5).map((image) => (
               <div
@@ -170,10 +152,6 @@ const AnandChandakImages = () => {
               </div>
             ))}
 
-            {/* =========================
-                THIRD ROW - 2 IMAGES
-            ========================== */}
-
             {images.slice(5, 7).map((image) => (
               <div
                 key={image.id}
@@ -206,11 +184,6 @@ const AnandChandakImages = () => {
               </div>
             ))}
           </div>
-
-          {/* =================================================
-              TABLET
-              3 COLUMNS
-          ================================================== */}
 
           <div
             className="
@@ -253,11 +226,6 @@ const AnandChandakImages = () => {
               </div>
             ))}
           </div>
-
-          {/* =================================================
-              MOBILE
-              2 COLUMNS
-          ================================================== */}
 
           <div
             className="

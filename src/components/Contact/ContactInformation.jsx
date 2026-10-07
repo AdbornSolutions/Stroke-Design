@@ -43,6 +43,7 @@ const ContactInformation = () => {
             "
           >
             <svg
+              aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="none"
@@ -118,6 +119,7 @@ const ContactInformation = () => {
           >
 
             <svg
+              aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="none"
@@ -148,7 +150,12 @@ const ContactInformation = () => {
               text-[#071b3b]
             "
           >
-            strokedesign@gmail.com
+            <a
+              href="mailto:strokedesign@gmail.com"
+              className="text-inherit no-underline"
+            >
+              strokedesign@gmail.com
+            </a>
           </p>
         </div>
 
@@ -177,6 +184,7 @@ const ContactInformation = () => {
             "
           >
             <svg
+              aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="none"
@@ -213,7 +221,13 @@ const ContactInformation = () => {
               text-[#071b3b]
             "
           >
-            +91 9325054113 / +91 9860344023
+            <a href="tel:+919325054113" className="text-inherit no-underline">
+              +91 9325054113
+            </a>
+            {" / "}
+            <a href="tel:+919860344023" className="text-inherit no-underline">
+              +91 9860344023
+            </a>
           </p>
         </div>
       </div>

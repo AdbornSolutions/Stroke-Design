@@ -1,4 +1,3 @@
-import React from "react";
 import aboutbedroom from "../../assets/about-bedroom.png";
 import aboutkitchen from "../../assets/about-kitchen.png";
 
@@ -159,6 +158,8 @@ const AboutIntro = () => {
               <img
                 src={aboutbedroom}
                 alt="Luxury bedroom interior"
+                loading="lazy"
+                decoding="async"
                 className="
                   block
                   aspect-[0.84]
@@ -179,8 +180,6 @@ const AboutIntro = () => {
             flex
             min-w-0
             flex-col
-
-            lg:pt-[-0px]
           "
         >
           {/* Kitchen Image */}
@@ -194,6 +193,8 @@ const AboutIntro = () => {
             <img
               src={aboutkitchen}
               alt="Modern kitchen interior"
+              loading="lazy"
+              decoding="async"
               className="
                 block
                 aspect-[1.45]

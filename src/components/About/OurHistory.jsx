@@ -1,11 +1,16 @@
+import Journey1 from "../../assets/about-history-1.png";
+import Journey2 from "../../assets/about-history-2.png";
+import Journey3 from "../../assets/about-history-3.png";
+import Journey4 from "../../assets/about-history-4.png";
+import Journey5 from "../../assets/about-history-5.png";
+
 const journeyData = [
   {
     year: "2009",
     title: "The Beginning",
     description:
       "Our journey began in 2009 with a simple vision: to create spaces that are beautiful, functional and deeply connected to the people who use them. Starting with small residential projects, we built our foundation through personalized service and attention to detail.",
-    image:
-      "https://mediumslateblue-turtle-686127.hostingersite.com/wp-content/uploads/2026/08/c1b822f2a6a07583a63f48218917cb28f60aa1da.png",
+    image: Journey1,
     alt: "Interior design workspace",
     side: "odd",
   },
@@ -15,8 +20,7 @@ const journeyData = [
     title: "Building Our Expertise",
     description:
       "As our experience grew, we expanded our design capabilities and began working on a wider range of residential spaces. This period helped us strengthen our understanding of space planning, materials, lighting and customized furniture solutions.",
-    image:
-      "https://mediumslateblue-turtle-686127.hostingersite.com/wp-content/uploads/2026/08/8b2e4ae2e8333b9c31b59c1ef5648edc882c2ac3.png",
+    image: Journey2,
     alt: "Interior design studio",
     side: "even",
   },
@@ -26,8 +30,7 @@ const journeyData = [
     title: "Expanding Into New Spaces",
     description:
       "By 2017, we had expanded into larger residential and commercial interior projects. With a growing team of designers, craftsmen and project professionals, we began offering complete solutions from initial concept to final execution.",
-    image:
-      "https://mediumslateblue-turtle-686127.hostingersite.com/wp-content/uploads/2026/08/8b271ca192b73cb014c5ed359199dfa4ae7d7421.png",
+    image: Journey3,
     alt: "Design team collaboration",
     side: "odd",
   },
@@ -37,8 +40,7 @@ const journeyData = [
     title: "Evolving With Modern Design",
     description:
       "We embraced new design technologies, contemporary materials and advanced visualization methods. Our approach became more collaborative and transparent, allowing clients to experience their spaces through detailed layouts and 3D design before execution began.",
-    image:
-      "https://mediumslateblue-turtle-686127.hostingersite.com/wp-content/uploads/2026/08/0ba0423dcb4a63c4d26ffdf7dd7b31f92aabdab6.png",
+    image: Journey4,
     alt: "Modern interior design office",
     side: "even",
   },
@@ -48,8 +50,7 @@ const journeyData = [
     title: "Designing the Future",
     description:
       "Today, we continue to create thoughtful residential and commercial interiors that balance creativity, functionality and timeless appeal. With years of experience and a refined network of professionals, we remain committed to designing spaces that inspire everyday living.",
-    image:
-      "https://mediumslateblue-turtle-686127.hostingersite.com/wp-content/uploads/2026/08/e7becf682bf50382068ec7015bdf15350f50a18c.png",
+    image: Journey5,
     alt: "Interior design professionals",
     side: "odd",
   },
@@ -61,21 +62,20 @@ const journeyData = [
 
 const OurHistory = () => {
   return (
-    <>
-      <section
-        className="
-          w-full
-          overflow-hidden
-          bg-[#f7f7f6]
-          text-[#111111]
-        "
-      >
-        {/* ===================================================
+    <section
+      className="
+        w-full
+        overflow-hidden
+        bg-[#f7f7f6]
+        text-[#111111]
+      "
+    >
+      {/* ===================================================
             HISTORY HEADER
         =================================================== */}
 
-        <section
-          className="
+      <section
+        className="
             relative
             w-full
             overflow-hidden
@@ -94,9 +94,9 @@ const OurHistory = () => {
 
             max-[380px]:px-[14px]
           "
-        >
-          <div
-            className="
+      >
+        <div
+          className="
               mx-auto
               grid
               w-full
@@ -108,13 +108,13 @@ const OurHistory = () => {
 
               max-[640px]:block
             "
-          >
-            {/* =============================================
+        >
+          {/* =============================================
                 LEFT DECORATIVE AREA
             ============================================== */}
 
-            <div
-              className="
+          <div
+            className="
                 relative
                 h-[110px]
                 w-full
@@ -122,11 +122,11 @@ const OurHistory = () => {
                 max-[640px]:h-[74px]
                 max-[640px]:w-[150px]
               "
-            >
-              {/* Horizontal line */}
+          >
+            {/* Horizontal line */}
 
-              <span
-                className="
+            <span
+              className="
                   absolute
                   left-0
                   top-8
@@ -138,12 +138,12 @@ const OurHistory = () => {
                   max-[640px]:top-[21px]
                   max-[640px]:w-[150px]
                 "
-              />
+            />
 
-              {/* Vertical line */}
+            {/* Vertical line */}
 
-              <span
-                className="
+            <span
+              className="
                   absolute
                   left-[75%]
                   top-0
@@ -160,14 +160,14 @@ const OurHistory = () => {
                   max-[640px]:left-[108px]
                   max-[640px]:h-[67px]
                 "
-              />
+            />
 
-              {/* ===========================================
+            {/* ===========================================
                   BADGE
               ============================================ */}
 
-              <div
-                className="
+            <div
+              className="
                   company-history-playfair
                   absolute
                   left-[2px]
@@ -200,9 +200,9 @@ const OurHistory = () => {
                   max-[640px]:py-1
                   max-[640px]:text-[10px]
                 "
-              >
-                <span
-                  className="
+            >
+              <span
+                className="
                     block
                     h-2
                     w-2
@@ -217,18 +217,18 @@ const OurHistory = () => {
                     max-[640px]:min-h-[7px]
                     max-[640px]:min-w-[7px]
                   "
-                />
+              />
 
-                <span>Our History</span>
-              </div>
+              <span>Our History</span>
             </div>
+          </div>
 
-            {/* =============================================
+          {/* =============================================
                 MAIN HEADING
             ============================================== */}
 
-            <div
-              className="
+          <div
+            className="
                 relative
                 z-[2]
                 w-full
@@ -238,9 +238,9 @@ const OurHistory = () => {
 
                 max-[640px]:pt-[10px]
               "
-            >
-              <h2
-                className="
+          >
+            <h2
+              className="
                   company-history-playfair
                   m-0
                   w-full
@@ -261,29 +261,29 @@ const OurHistory = () => {
 
                   max-[380px]:text-[23px]
                 "
-              >
-                {/* FIRST LINE */}
-                <span className="">Our History </span>
-                <span
-                  className="
+            >
+              {/* FIRST LINE */}
+              <span>Our History </span>
+              <span
+                className="
                       font-bold
                       text-[#CAA05C]
                     "
-                >
-                  Is Full Of <br /> Interesting
-                </span>{" "}
-                Stages And Events.
-              </h2>
-            </div>
+              >
+                Is Full Of <br /> Interesting
+              </span>{" "}
+              Stages And Events.
+            </h2>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* ===================================================
+      {/* ===================================================
             JOURNEY TIMELINE
         =================================================== */}
 
-        <section
-          className="
+      <section
+        className="
             w-full
             overflow-hidden
             bg-[#f7f7f6]
@@ -301,20 +301,20 @@ const OurHistory = () => {
 
             max-[360px]:px-[10px]
           "
-        >
-          <div
-            className="
+      >
+        <div
+          className="
               relative
               mx-auto
               w-full
             "
-          >
-            {/* =============================================
+        >
+          {/* =============================================
                 CONTINUOUS TIMELINE
             ============================================== */}
 
-            <div
-              className="
+          <div
+            className="
                 pointer-events-none
                 absolute
                 bottom-[5px]
@@ -334,20 +334,20 @@ const OurHistory = () => {
 
                 max-[360px]:left-[15px]
               "
-              aria-hidden="true"
-            />
+            aria-hidden="true"
+          />
 
-            {/* =============================================
+          {/* =============================================
                 TIMELINE ITEMS
             ============================================== */}
 
-            {journeyData.map((item) => {
-              const isOdd = item.side === "odd";
+          {journeyData.map((item) => {
+            const isOdd = item.side === "odd";
 
-              return (
-                <article
-                  key={item.year}
-                  className="
+            return (
+              <article
+                key={item.year}
+                className="
                     relative
                     z-[2]
                     grid
@@ -376,13 +376,13 @@ const OurHistory = () => {
 
                     last:mb-0
                   "
-                >
-                  {/* =======================================
+              >
+                {/* =======================================
                       IMAGE
                   ======================================== */}
 
-                  <div
-                    className={`
+                <div
+                  className={`
                       relative
                       z-[99]
                       w-full
@@ -414,12 +414,13 @@ const OurHistory = () => {
                           : "col-start-3 row-start-1"
                       }
                     `}
-                  >
-                    <img
-                      src={item.image}
-                      alt={item.alt}
-                      loading="lazy"
-                      className="
+                >
+                  <img
+                    src={item.image}
+                    alt={item.alt}
+                    loading="lazy"
+                    decoding="async"
+                    className="
                         block
                         h-full
                         w-full
@@ -431,15 +432,15 @@ const OurHistory = () => {
 
                         hover:scale-[1.025]
                       "
-                    />
-                  </div>
+                  />
+                </div>
 
-                  {/* =======================================
+                {/* =======================================
                       CENTER NODE
                   ======================================== */}
 
-                  <div
-                    className="
+                <div
+                  className="
                       relative
                       z-[5]
                       flex
@@ -468,11 +469,11 @@ const OurHistory = () => {
                       max-[360px]:top-[38px]
                       max-[360px]:w-10
                     "
-                  >
-                    {/* Desktop connector */}
+                >
+                  {/* Desktop connector */}
 
-                    <span
-                      className={`
+                  <span
+                    className={`
                         absolute
                         top-1/2
                         z-[1]
@@ -488,12 +489,12 @@ const OurHistory = () => {
                             : "left-1/2 w-[calc(25vw_-_207px)] max-[1024px]:w-[calc(25vw_-_123.75px)] max-[850px]:w-[calc(25vw_-_126.25px)]"
                         }
                       `}
-                    />
+                  />
 
-                    {/* Mobile connector */}
+                  {/* Mobile connector */}
 
-                    <span
-                      className="
+                  <span
+                    className="
                         absolute
                         left-5
                         top-1/2
@@ -512,12 +513,12 @@ const OurHistory = () => {
                         max-[360px]:left-4
                         max-[360px]:w-6
                       "
-                    />
+                  />
 
-                    {/* Timeline dot */}
+                  {/* Timeline dot */}
 
-                    <span
-                      className="
+                  <span
+                    className="
                         relative
                         z-[4]
                         block
@@ -538,15 +539,15 @@ const OurHistory = () => {
 
                         max-[360px]:left-[11px]
                       "
-                    />
-                  </div>
+                  />
+                </div>
 
-                  {/* =======================================
+                {/* =======================================
                       CONTENT CARD
                   ======================================== */}
 
-                  <div
-                    className={`
+                <div
+                  className={`
                       relative
                       z-[2]
                       w-full
@@ -567,9 +568,9 @@ const OurHistory = () => {
                           : "col-start-1 row-start-1"
                       }
                     `}
-                  >
-                    <div
-                      className="
+                >
+                  <div
+                    className="
                         relative
                         w-full
                         max-w-[429px]
@@ -601,13 +602,13 @@ const OurHistory = () => {
                         max-[360px]:pb-[21px]
                         max-[360px]:pt-[37px]
                       "
-                    >
-                      {/* =================================
+                  >
+                    {/* =================================
                           YEAR
                       ================================== */}
 
-                      <div
-                        className="
+                    <div
+                      className="
                           absolute
                           left-[-20px]
                           top-[-20px]
@@ -634,16 +635,16 @@ const OurHistory = () => {
                           max-[360px]:top-[-8px]
                           max-[360px]:text-[22px]
                         "
-                      >
-                        {item.year}
-                      </div>
+                    >
+                      {item.year}
+                    </div>
 
-                      {/* =================================
+                    {/* =================================
                           TITLE
                       ================================== */}
 
-                      <h3
-                        className="
+                    <h3
+                      className="
                           company-history-playfair
                           m-0
                           mb-4
@@ -669,16 +670,16 @@ const OurHistory = () => {
 
                           max-[360px]:text-[22px]
                         "
-                      >
-                        {item.title}
-                      </h3>
+                    >
+                      {item.title}
+                    </h3>
 
-                      {/* =================================
+                    {/* =================================
                           DESCRIPTION
                       ================================== */}
 
-                      <p
-                        className="
+                    <p
+                      className="
                           m-0
                           p-0
                           text-left
@@ -700,18 +701,17 @@ const OurHistory = () => {
                           max-[360px]:text-[11.5px]
                           max-[360px]:leading-[1.44]
                         "
-                      >
-                        {item.description}
-                      </p>
-                    </div>
+                    >
+                      {item.description}
+                    </p>
                   </div>
-                </article>
-              );
-            })}
-          </div>
-        </section>
+                </div>
+              </article>
+            );
+          })}
+        </div>
       </section>
-    </>
+    </section>
   );
 };
 

@@ -1,12 +1,13 @@
-import exteriorhero from "../../assets/about-hero.png";
+import exteriorHeroImage from "../../assets/about-hero.png";
 
 const ExteriorHero = () => {
   return (
     <section className="relative min-h-[511px] w-full overflow-hidden">
 
       <img
-        src={exteriorhero}
-        alt="Exterior Design"
+        src={exteriorHeroImage}
+        alt=""
+        fetchPriority="high"
         className="
           absolute
           inset-0
@@ -18,6 +19,7 @@ const ExteriorHero = () => {
       />
 
       <div
+        aria-hidden="true"
         className="
           absolute
           inset-0
@@ -77,7 +79,8 @@ const ExteriorHero = () => {
           Exterior Design
         </h1>
 
-        <div
+        <nav
+          aria-label="Breadcrumb"
           className="
             mt-[18px]
 
@@ -103,8 +106,8 @@ const ExteriorHero = () => {
 
           <span className="mx-[4px]">/</span>
 
-          <span>Exterior Design</span>
-        </div>
+          <span aria-current="page">Exterior Design</span>
+        </nav>
       </div>
     </section>
   );

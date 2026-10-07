@@ -1,5 +1,3 @@
-import React from "react";
-
 import backgroundImage from "../../assets/about-bg.png";
 import interiorImage from "../../assets/about-interior.png";
 
@@ -41,7 +39,7 @@ const AboutIntro = () => {
       >
 
         {/* Background Image */}
-        <div className="absolute inset-0">
+        <div aria-hidden="true" className="absolute inset-0">
           <img loading="lazy" decoding="async"
             src={backgroundImage}
             alt=""
@@ -151,7 +149,7 @@ const AboutIntro = () => {
 
 
               {/* Main Heading */}
-              <h1
+              <h2
                 className="
                   m-0
                   max-w-[650px]
@@ -190,7 +188,7 @@ const AboutIntro = () => {
                 <span className="text-[#CAA05C]">
                   Alive
                 </span>
-              </h1>
+              </h2>
 
 
               {/* Feature List */}
@@ -441,7 +439,7 @@ const AboutIntro = () => {
           "
         >
 
-          {stats.map((stat, index) => (
+          {stats.map((stat) => (
             <div
               key={stat.number}
               className="

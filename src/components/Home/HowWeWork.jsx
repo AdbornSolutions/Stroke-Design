@@ -70,7 +70,7 @@ const HowWeWork = () => {
           md:py-[30px]
           md:pb-[25px]
 
-          lg:grid-cols-[clamp(220px,22%,305px)_minmax(500px,1fr)_clamp(280px,30%,390px)]
+          min-[1160px]:grid-cols-[clamp(220px,22%,305px)_minmax(500px,1fr)_clamp(280px,30%,390px)]
           lg:px-10
           lg:pb-[24px]
         "
@@ -86,7 +86,7 @@ const HowWeWork = () => {
             h-[115px]
             w-full
 
-            lg:block
+            min-[1160px]:block
           "
         >
           {/* Horizontal line */}
@@ -170,7 +170,7 @@ const HowWeWork = () => {
             h-[75px]
             w-[150px]
 
-            lg:hidden
+            min-[1160px]:hidden
           "
         >
           {/* Horizontal line */}
@@ -255,9 +255,9 @@ const HowWeWork = () => {
             w-full
             pt-[11px]
 
-            lg:col-start-2
-            lg:pt-[43px]
-            lg:pr-[20px]
+            min-[1160px]:col-start-2
+            min-[1160px]:pt-[43px]
+            min-[1160px]:pr-[20px]
           "
         >
           <h2
@@ -285,7 +285,7 @@ const HowWeWork = () => {
               className="
                 block
 
-                lg:whitespace-nowrap
+                min-[1160px]:whitespace-nowrap
               "
             >
               Description <span className="text-[#CAA05C]">Architecture</span>
@@ -296,7 +296,7 @@ const HowWeWork = () => {
               className="
                 block
 
-                lg:whitespace-nowrap
+                min-[1160px]:whitespace-nowrap
               "
             >
               <span className="text-[#CAA05C]">process for</span> exceptional
@@ -314,8 +314,8 @@ const HowWeWork = () => {
             w-full
             pt-[24px]
 
-            lg:col-start-3
-            lg:pt-[111px]
+            min-[1160px]:col-start-3
+            min-[1160px]:pt-[111px]
           "
         >
           <p
@@ -406,7 +406,12 @@ const HowWeWork = () => {
                 w-full
               "
             >
-              <img loading="lazy" decoding="async" src={processImage} alt="Interior design consultation" />
+              <img
+                loading="lazy"
+                decoding="async"
+                src={processImage}
+                alt="Interior design consultation"
+              />
             </div>
           </div>
 

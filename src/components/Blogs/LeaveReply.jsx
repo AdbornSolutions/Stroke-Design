@@ -331,42 +331,37 @@
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
 
+const SERVICE_ID = "service_3a0uv9i";
+const TEMPLATE_ID = "template_3tsmvsb";
+const PUBLIC_KEY = "Y1pSa5dU7sueovQtU";
+
 const LeaveReply = () => {
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
 
-  const SERVICE_ID = "service_3a0uv9i";
-  const TEMPLATE_ID = "template_3tsmvsb";
-  const PUBLIC_KEY = "Y1pSa5dU7sueovQtU";
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (sending) return;
 
+    const form = e.currentTarget;
     setSending(true);
     setSubmitted(false);
     setError("");
 
-    emailjs
-      .sendForm(SERVICE_ID, TEMPLATE_ID, e.currentTarget, {
+    try {
+      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form, {
         publicKey: PUBLIC_KEY,
-      })
-      .then(
-        () => {
-          console.log("SUCCESS!");
+      });
 
-          setSubmitted(true);
-          setSending(false);
-
-          e.currentTarget.reset();
-        },
-        (error) => {
-          console.error("EMAILJS ERROR:", error);
-
-          setError("Something went wrong. Please try again.");
-          setSending(false);
-        },
-      );
+      setSubmitted(true);
+      form.reset();
+    } catch (error) {
+      console.error("EMAILJS ERROR:", error);
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -434,6 +429,7 @@ const LeaveReply = () => {
           <form
             id="leave-reply-form"
             onSubmit={handleSubmit}
+            aria-busy={sending}
             className="w-full"
           >
             {/* NAME + EMAIL */}
@@ -453,6 +449,7 @@ const LeaveReply = () => {
                 type="text"
                 name="name"
                 placeholder="Name *"
+                aria-label="Name"
                 required
                 className="
                   h-[43px]
@@ -492,6 +489,7 @@ const LeaveReply = () => {
                 type="email"
                 name="email"
                 placeholder="Email *"
+                aria-label="Email"
                 required
                 className="
                   h-[43px]
@@ -531,6 +529,7 @@ const LeaveReply = () => {
             <textarea
               name="message"
               placeholder="Message Here *"
+              aria-label="Message"
               required
               rows={5}
               className="
@@ -668,6 +667,7 @@ const LeaveReply = () => {
 
             {submitted && (
               <p
+                role="status"
                 className="
                   mt-3
 
@@ -684,6 +684,7 @@ const LeaveReply = () => {
 
             {error && (
               <p
+                role="alert"
                 className="
                   mt-3
 

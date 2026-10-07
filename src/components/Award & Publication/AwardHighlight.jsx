@@ -1,5 +1,5 @@
-import React from "react";
-import InteriorDesign from "../../assets/about-Interior-Design.png"
+import { Link } from "react-router-dom";
+import InteriorDesign from "../../assets/about-Interior-Design.png";
 
 const AwardHighlight = () => {
   return (
@@ -31,6 +31,7 @@ const AwardHighlight = () => {
           <img
             src={InteriorDesign}
             alt="Interior Designer of the Year award collection"
+            decoding="async"
             className="
               block
               aspect-[568/378]
@@ -122,8 +123,8 @@ const AwardHighlight = () => {
 
           {/* PROJECT LINK */}
 
-          <a
-            href="/projects"
+          <Link
+            to="/projects"
             className="
               mt-6
               inline-flex
@@ -147,7 +148,7 @@ const AwardHighlight = () => {
             <span className="ml-1 text-[17px] leading-none">
               →
             </span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

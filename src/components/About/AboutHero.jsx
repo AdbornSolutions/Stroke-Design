@@ -1,12 +1,13 @@
-import abouthero from "../../assets/about-hero.png";
+import aboutHeroImage from "../../assets/about-hero.png";
 
 const AboutHero = () => {
   return (
     <section className="relative min-h-[511px] w-full overflow-hidden">
 
       <img
-        src={abouthero}
-        alt="About Us - Interior Design"
+        src={aboutHeroImage}
+        alt=""
+        fetchPriority="high"
         className="
           absolute
           inset-0
@@ -23,6 +24,7 @@ const AboutHero = () => {
       ===================================================== */}
 
       <div
+        aria-hidden="true"
         className="
           absolute
           inset-0
@@ -93,7 +95,8 @@ const AboutHero = () => {
             BREADCRUMB
         =============================================== */}
 
-        <div
+        <nav
+          aria-label="Breadcrumb"
           className="
             mt-[18px]
 
@@ -119,8 +122,8 @@ const AboutHero = () => {
 
           <span className="mx-[4px]">/</span>
 
-          <span>About us</span>
-        </div>
+          <span aria-current="page">About us</span>
+        </nav>
       </div>
     </section>
   );

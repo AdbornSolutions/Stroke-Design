@@ -1,11 +1,12 @@
-import contacthero from "../../assets/about-hero.png";
+import contactHeroImage from "../../assets/about-hero.png";
 
 const ContactHero = () => {
   return (
     <section className="relative min-h-[511px] w-full overflow-hidden">
       <img
-        src={contacthero}
-        alt="Contact"
+        src={contactHeroImage}
+        alt=""
+        fetchPriority="high"
         className="
           absolute
           inset-0
@@ -17,6 +18,7 @@ const ContactHero = () => {
       />
 
       <div
+        aria-hidden="true"
         className="
           absolute
           inset-0
@@ -75,7 +77,8 @@ const ContactHero = () => {
           Contact
         </h1>
 
-        <div
+        <nav
+          aria-label="Breadcrumb"
           className="
             mt-[18px]
 
@@ -101,8 +104,8 @@ const ContactHero = () => {
 
           <span className="mx-[4px]">/</span>
 
-          <span>Contact</span>
-        </div>
+          <span aria-current="page">Contact</span>
+        </nav>
       </div>
     </section>
   );

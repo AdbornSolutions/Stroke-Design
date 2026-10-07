@@ -1,25 +1,25 @@
-const AwardsRecognition = () => {
-  const awards = [
-    {
-      year: "2025",
-      title: "Best Residential Interior",
-      organization: "Global architecture & design awards",
-      featured: false,
-    },
-    {
-      year: "2024",
-      title: "Excellence In Materiality",
-      organization: "Interior Space Honors",
-      featured: true,
-    },
-    {
-      year: "2023",
-      title: "Emerging Studio of the year",
-      organization: "Design Vanguard",
-      featured: false,
-    },
-  ];
+const awards = [
+  {
+    year: "2025",
+    title: "Best Residential Interior",
+    organization: "Global architecture & design awards",
+    featured: false,
+  },
+  {
+    year: "2024",
+    title: "Excellence In Materiality",
+    organization: "Interior Space Honors",
+    featured: true,
+  },
+  {
+    year: "2023",
+    title: "Emerging Studio of the year",
+    organization: "Design Vanguard",
+    featured: false,
+  },
+];
 
+const AwardsRecognition = () => {
   return (
     <section className="w-full overflow-hidden bg-white">
       <div

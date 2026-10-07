@@ -1,4 +1,4 @@
-import amitparekhhero from "../../assets/about-hero.png";
+import amitParekhHeroImage from "../../assets/about-hero.png";
 
 const AmitParekhHero = () => {
   return (
@@ -8,8 +8,9 @@ const AmitParekhHero = () => {
       ===================================================== */}
 
       <img
-        src={amitparekhhero}
-        alt="Amit Parekh"
+        src={amitParekhHeroImage}
+        alt=""
+        fetchPriority="high"
         className="
           absolute
           inset-0
@@ -26,6 +27,7 @@ const AmitParekhHero = () => {
       ===================================================== */}
 
       <div
+        aria-hidden="true"
         className="
           absolute
           inset-0
@@ -96,7 +98,8 @@ const AmitParekhHero = () => {
             BREADCRUMB
         =============================================== */}
 
-        <div
+        <nav
+          aria-label="Breadcrumb"
           className="
             mt-[18px]
 
@@ -122,8 +125,8 @@ const AmitParekhHero = () => {
 
           <span className="mx-[4px]">/</span>
 
-          <span>Amit Parekh</span>
-        </div>
+          <span aria-current="page">Amit Parekh</span>
+        </nav>
       </div>
     </section>
   );

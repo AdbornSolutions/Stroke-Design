@@ -1,12 +1,13 @@
-import anandchadakhero from "../../assets/about-hero.png";
+import anandChandakHeroImage from "../../assets/about-hero.png";
 
 const AnandChadakHero = () => {
   return (
     <section className="relative min-h-[511px] w-full overflow-hidden">
 
       <img
-        src={anandchadakhero}
-        alt="Anand Chadak"
+        src={anandChandakHeroImage}
+        alt=""
+        fetchPriority="high"
         className="
           absolute
           inset-0
@@ -18,6 +19,7 @@ const AnandChadakHero = () => {
       />
 
       <div
+        aria-hidden="true"
         className="
           absolute
           inset-0
@@ -77,7 +79,8 @@ const AnandChadakHero = () => {
           Anand Chadak
         </h1>
 
-        <div
+        <nav
+          aria-label="Breadcrumb"
           className="
             mt-[18px]
 
@@ -103,8 +106,8 @@ const AnandChadakHero = () => {
 
           <span className="mx-[4px]">/</span>
 
-          <span>Anand Chadak</span>
-        </div>
+          <span aria-current="page">Anand Chadak</span>
+        </nav>
       </div>
     </section>
   );

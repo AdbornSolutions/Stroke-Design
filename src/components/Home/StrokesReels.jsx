@@ -1,4 +1,3 @@
-import React from "react";
 import ViewportVideo from "../ViewportVideo";
 import stroke1 from "../../assets/Reels/strokes-1.mp4";
 import stroke2 from "../../assets/Reels/strokes-2.mp4";
@@ -9,44 +8,23 @@ import stroke6 from "../../assets/Reels/strokes-6.mp4";
 import stroke7 from "../../assets/Reels/strokes-7.mp4";
 import stroke8 from "../../assets/Reels/strokes-8.mp4";
 
-const StrokesReels = () => {
-  const videoItems = [
-    {
-      id: 1,
-      src: stroke1,
-    },
-    {
-      id: 2,
-      src: stroke2,
-    },
-    {
-      id: 3,
-      src: stroke3,
-    },
-    {
-      id: 4,
-      src: stroke4,
-    },
-    {
-      id: 5,
-      src: stroke5,
-    },
-    {
-      id: 6,
-      src: stroke6,
-    },
-    {
-      id: 7,
-      src: stroke7,
-    },
-    {
-      id: 8,
-      src: stroke8,
-    },
-  ];
+const videoItems = [
+  { id: 1, src: stroke1 },
+  { id: 2, src: stroke2 },
+  { id: 3, src: stroke3 },
+  { id: 4, src: stroke4 },
+  { id: 5, src: stroke5 },
+  { id: 6, src: stroke6 },
+  { id: 7, src: stroke7 },
+  { id: 8, src: stroke8 },
+];
 
+const StrokesReels = () => {
   return (
-    <section className="w-full overflow-hidden px-4 py-12 sm:px-6 sm:py-12 md:px-8 lg:px-10 xl:px-12">
+    <section
+      aria-label="Strokes Design Studio reels"
+      className="w-full overflow-hidden px-4 py-12 sm:px-6 sm:py-12 md:px-8 lg:px-10 xl:px-12"
+    >
 
       {/* =====================================================
           HEADER
@@ -278,6 +256,7 @@ const StrokesReels = () => {
 
             <ViewportVideo
               src={video.src}
+              aria-label={`Strokes Design Studio reel ${video.id}`}
               muted
               loop
               playsInline

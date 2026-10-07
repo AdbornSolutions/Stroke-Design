@@ -6,62 +6,62 @@ import ModernBedroom2 from "../../assets/ModernBedroom2.png";
 import RecentPost1 from "../../assets/RecentPost.png";
 import RecentPost2 from "../../assets/RecentPost2.png";
 
+const posts = [
+  {
+    id: 1,
+    slug: "functional-design-trends-that-blend-style-and-comfort",
+    title: "Functional Design Trends That Blend Style and Comfort",
+    category: "Power Tools",
+    date: "June 2,2025",
+    image: RecentPost1,
+    excerpt:
+      "Modern interior design is all about creating a sleek, functional, and aesthetically pleasing space that reflects contemporary living. Whether you're updating a single room or redesigning your entire home, incorporating modern interior design principles can bring a fresh, sophisticated, and elegant ambiance. With an emphasis on minimalism, clean",
+  },
+
+  {
+    id: 2,
+    slug: "innovative-interior-ideas-to-refresh-your-living-space",
+    title: "Innovative Interior Ideas To Refresh Your Living Space",
+    category: "Power Tools",
+    date: "June 2,2025",
+    image: RecentPost2,
+    excerpt:
+      "Modern interior design is all about creating a sleek, functional, and aesthetically pleasing space that reflects contemporary living. Whether you’re updating a single room or redesigning your entire home, incorporating modern interior design principles can bring a fresh, sophisticated, and elegant ambiance.",
+  },
+
+  {
+    id: 3,
+    slug: "elevate-every-corner-with-sleek-interior-concepts",
+    title: "Elevate Every Corner With Sleek Interior Concepts",
+    category: "Interior Design",
+    date: "June 2,2025",
+    image: ModernBedroom1,
+    excerpt:
+      "Create beautifully considered interiors with refined materials, thoughtful layouts and contemporary design elements that make every corner feel intentional.",
+  },
+
+  {
+    id: 4,
+    slug: "modern-living-room-design-ideas",
+    title: "Modern Living Room Design Ideas",
+    category: "Interior Design",
+    date: "May 28,2025",
+    image: ModernBedroom2,
+    excerpt:
+      "Discover contemporary living room ideas that balance comfort, functionality and timeless aesthetics.",
+  },
+];
+
+const categories = [
+  "Accessories",
+  "Electrical & Lighting",
+  "Home Appliance",
+  "Power Tools",
+  "Uncategorized",
+  "Ware Accessories",
+];
+
 const OurBlogs = () => {
-  const posts = [
-    {
-      id: 1,
-      slug: "functional-design-trends-that-blend-style-and-comfort",
-      title: "Functional Design Trends That Blend Style and Comfort",
-      category: "Power Tools",
-      date: "June 2,2025",
-      image: RecentPost1,
-      excerpt:
-        "Modern interior design is all about creating a sleek, functional, and aesthetically pleasing space that reflects contemporary living. Whether you’re updating a single room or redesigning your entire home, incorporating modern interior design principles can bring a fresh, sophisticated, and elegant ambiance. With an emphasis on minimalism, clean",
-    },
-
-    {
-      id: 2,
-      slug: "innovative-interior-ideas-to-refresh-your-living-space",
-      title: "Innovative Interior Ideas To Refresh Your Living Space",
-      category: "Power Tools",
-      date: "June 2,2025",
-      image: RecentPost2,
-      excerpt:
-        "Modern interior design is all about creating a sleek, functional, and aesthetically pleasing space that reflects contemporary living. Whether you’re updating a single room or redesigning your entire home, incorporating modern interior design principles can bring a fresh, sophisticated, and elegant ambiance.",
-    },
-
-    {
-      id: 3,
-      slug: "elevate-every-corner-with-sleek-interior-concepts",
-      title: "Elevate Every Corner With Sleek Interior Concepts",
-      category: "Interior Design",
-      date: "June 2,2025",
-      image: ModernBedroom1,
-      excerpt:
-        "Create beautifully considered interiors with refined materials, thoughtful layouts and contemporary design elements that make every corner feel intentional.",
-    },
-
-    {
-      id: 4,
-      slug: "modern-living-room-design-ideas",
-      title: "Modern Living Room Design Ideas",
-      category: "Interior Design",
-      date: "May 28,2025",
-      image: ModernBedroom2,
-      excerpt:
-        "Discover contemporary living room ideas that balance comfort, functionality and timeless aesthetics.",
-    },
-  ];
-
-  const categories = [
-    "Accessories",
-    "Electrical & Lighting",
-    "Home Appliance",
-    "Power Tools",
-    "Uncategorized",
-    "Ware Accessories",
-  ];
-
   const [search, setSearch] = useState("");
 
   const filteredPosts = useMemo(() => {
@@ -80,8 +80,7 @@ const OurBlogs = () => {
     });
   }, [search]);
 
-  const recentPosts = filteredPosts.slice(0, 2);
-  const rightColumnPosts = filteredPosts.slice(0, 2);
+  const visiblePosts = filteredPosts.slice(0, 2);
 
   return (
     <section
@@ -323,7 +322,7 @@ const OurBlogs = () => {
             </h2>
 
             <div className="space-y-7">
-              {recentPosts.map((post) => (
+              {visiblePosts.map((post) => (
                 <Link
                   key={post.id}
                   to={`/blog/${post.slug}`}
@@ -364,6 +363,7 @@ const OurBlogs = () => {
                       src={post.image}
                       alt={post.title}
                       loading="lazy"
+                      decoding="async"
                       className="
                         h-full
                         w-full
@@ -467,10 +467,10 @@ const OurBlogs = () => {
             lg:mt-0
           "
         >
-          {rightColumnPosts.length > 0 ? (
+          {visiblePosts.length > 0 ? (
             <div className="w-full">
               <div className="space-y-20">
-                {rightColumnPosts.map((post, index) => (
+                {visiblePosts.map((post, index) => (
                   <article key={post.id} className="w-full">
                     <Link
                       to={`/blog/${post.slug}`}
@@ -503,6 +503,7 @@ const OurBlogs = () => {
                           src={post.image}
                           alt={post.title}
                           loading={index === 0 ? "eager" : "lazy"}
+                          decoding="async"
                           className="
                             h-full
                             w-full
@@ -763,6 +764,7 @@ const OurBlogs = () => {
                       src={ModernBedroom1}
                       alt="Modern bedroom interior"
                       loading="lazy"
+                      decoding="async"
                       className="
                         h-full
                         w-full
@@ -795,6 +797,7 @@ const OurBlogs = () => {
                       src={ModernBedroom2}
                       alt="Interior design consultation"
                       loading="lazy"
+                      decoding="async"
                       className="
                         h-full
                         w-full

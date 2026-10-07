@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import hero1 from "../../assets/hero-1.png";
 import hero2 from "../../assets/hero-2.png";
@@ -51,6 +52,7 @@ const HeroSlider = () => {
           return (
             <div
               key={index}
+              aria-hidden="true"
               className="
                 absolute
                 inset-0
@@ -67,10 +69,10 @@ const HeroSlider = () => {
             >
               <img
                 src={image}
-                fetchPriority={index === 0 ? "high" : "low"}
-                loading={index === 0 ? "eager" : "lazy"}
+                fetchPriority={index === currentSlide ? "high" : "low"}
+                loading={index === currentSlide ? "eager" : "lazy"}
                 decoding="async"
-                alt={`Interior Design ${index + 1}`}
+                alt=""
                 draggable="false"
                 className="
                   block
@@ -81,7 +83,7 @@ const HeroSlider = () => {
               />
 
               {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-black/35" />
+              <div aria-hidden="true" className="absolute inset-0 bg-black/35" />
             </div>
           );
         })}
@@ -215,8 +217,8 @@ const HeroSlider = () => {
 
               {/* CTA BUTTON */}
 
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="
                   mt-7
                   inline-flex
@@ -270,7 +272,7 @@ const HeroSlider = () => {
                     <path d="M13 6l6 6-6 6" />
                   </svg>
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

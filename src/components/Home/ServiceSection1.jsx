@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import image1 from "../../assets/hero-2.png";
 import image2 from "../../assets/hero-3.png";
 import image3 from "../../assets/hero-4.png";
@@ -444,15 +446,32 @@ const ServiceSection1 = () => {
               lg:p-[40px]
             "
             style={{
-              backgroundImage: `url("${service.image}")`,
               zIndex: index + 1,
             }}
           >
+            <img
+              src={service.image}
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+              decoding="async"
+              className="
+                pointer-events-none
+                absolute
+                inset-0
+                h-full
+                w-full
+                object-cover
+                object-center
+              "
+            />
+
             {/* =================================================
                 DARK GRADIENT
             ================================================== */}
 
             <div
+              aria-hidden="true"
               className="
                 pointer-events-none
                 absolute
@@ -562,7 +581,7 @@ const ServiceSection1 = () => {
             "
             >
               {/* Heading */}
-              <h2
+              <h3
                 className="
                   m-0
                   mb-[8px]
@@ -584,7 +603,7 @@ const ServiceSection1 = () => {
                 "
               >
                 {service.title}
-              </h2>
+              </h3>
 
               {/* Description */}
               <p
@@ -610,8 +629,8 @@ const ServiceSection1 = () => {
               </p>
 
               {/* CTA */}
-              <a
-                href={service.link}
+              <Link
+                to={service.link}
                 className="
     mt-7
     inline-flex
@@ -655,6 +674,8 @@ const ServiceSection1 = () => {
                 >
                   <svg
                     viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    focusable="false"
                     className="
         h-[27px]
         w-[27px]
@@ -667,7 +688,7 @@ const ServiceSection1 = () => {
                     <path d="M13 6l6 6-6 6" />
                   </svg>
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         ))}

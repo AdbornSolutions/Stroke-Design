@@ -1,6 +1,7 @@
-import React from "react";
-
 import ExteriorImage1 from "../../assets/EXTERIOR/Image1.jpg";
+import ExteriorImage10 from "../../assets/EXTERIOR/Image10.jpg";
+import ExteriorImage11 from "../../assets/EXTERIOR/Image11.jpg";
+import ExteriorImage12 from "../../assets/EXTERIOR/Image12.jpg";
 import ExteriorImage2 from "../../assets/EXTERIOR/Image2.jpg";
 import ExteriorImage3 from "../../assets/EXTERIOR/Image3.jpg";
 import ExteriorImage4 from "../../assets/EXTERIOR/Image4.jpg";
@@ -9,9 +10,6 @@ import ExteriorImage6 from "../../assets/EXTERIOR/Image6.jpg";
 import ExteriorImage7 from "../../assets/EXTERIOR/Image7.jpg";
 import ExteriorImage8 from "../../assets/EXTERIOR/Image8.jpg";
 import ExteriorImage9 from "../../assets/EXTERIOR/Image9.jpg";
-import ExteriorImage10 from "../../assets/EXTERIOR/Image10.jpg";
-import ExteriorImage11 from "../../assets/EXTERIOR/Image11.jpg";
-import ExteriorImage12 from "../../assets/EXTERIOR/Image12.jpg";
 
 const ExteriorImages = () => {
   const images = [
@@ -110,15 +108,6 @@ const ExteriorImages = () => {
           xl:px-[48px]
         "
       >
-
-        {/* =================================================
-            DESKTOP GALLERY
-            ROW 1 → 3 IMAGES
-            ROW 2 → 4 IMAGES
-            ROW 3 → 3 IMAGES
-            ROW 4 → 2 IMAGES
-        ================================================== */}
-
         <div
           className="
             hidden
@@ -130,11 +119,6 @@ const ExteriorImages = () => {
             xl:gap-[22px]
           "
         >
-
-          {/* =========================
-              FIRST ROW - 3 IMAGES
-          ========================== */}
-
           {images.slice(0, 3).map((image) => (
             <div
               key={image.id}
@@ -165,10 +149,6 @@ const ExteriorImages = () => {
               />
             </div>
           ))}
-
-          {/* =========================
-              SECOND ROW - 4 IMAGES
-          ========================== */}
 
           {images.slice(3, 7).map((image) => (
             <div
@@ -234,10 +214,6 @@ const ExteriorImages = () => {
             </div>
           ))}
 
-          {/* =========================
-              FOURTH ROW - 2 IMAGES
-          ========================== */}
-
           {images.slice(10, 12).map((image) => (
             <div
               key={image.id}
@@ -270,11 +246,6 @@ const ExteriorImages = () => {
             </div>
           ))}
         </div>
-
-        {/* =================================================
-            TABLET
-            3 COLUMNS
-        ================================================== */}
 
         <div
           className="
@@ -318,11 +289,6 @@ const ExteriorImages = () => {
           ))}
         </div>
 
-        {/* =================================================
-            MOBILE
-            2 COLUMNS
-        ================================================== */}
-
         <div
           className="
             grid
@@ -363,7 +329,6 @@ const ExteriorImages = () => {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

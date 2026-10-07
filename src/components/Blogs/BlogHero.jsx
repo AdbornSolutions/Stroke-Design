@@ -1,4 +1,4 @@
-import bloghero from "../../assets/about-hero.png";
+import blogHeroImage from "../../assets/about-hero.png";
 
 const BlogHero = () => {
   return (
@@ -8,8 +8,9 @@ const BlogHero = () => {
       ===================================================== */}
 
       <img
-        src={bloghero}
-        alt="Blog - Interior Design"
+        src={blogHeroImage}
+        alt=""
+        fetchPriority="high"
         className="
           absolute
           inset-0
@@ -26,6 +27,7 @@ const BlogHero = () => {
       ===================================================== */}
 
       <div
+        aria-hidden="true"
         className="
           absolute
           inset-0
@@ -96,7 +98,8 @@ const BlogHero = () => {
             BREADCRUMB
         =============================================== */}
 
-        <div
+        <nav
+          aria-label="Breadcrumb"
           className="
             mt-[18px]
 
@@ -122,8 +125,8 @@ const BlogHero = () => {
 
           <span className="mx-[4px]">/</span>
 
-          <span>Blogs</span>
-        </div>
+          <span aria-current="page">Blogs</span>
+        </nav>
       </div>
     </section>
   );

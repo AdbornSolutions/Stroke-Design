@@ -1,4 +1,4 @@
-import galleryhero from "../../assets/about-hero.png";
+import galleryHeroImage from "../../assets/about-hero.png";
 
 const GalleryHero = () => {
   return (
@@ -8,8 +8,9 @@ const GalleryHero = () => {
       ===================================================== */}
 
       <img
-        src={galleryhero}
-        alt="Gallery"
+        src={galleryHeroImage}
+        alt=""
+        fetchPriority="high"
         className="
           absolute
           inset-0
@@ -26,6 +27,7 @@ const GalleryHero = () => {
       ===================================================== */}
 
       <div
+        aria-hidden="true"
         className="
           absolute
           inset-0
@@ -96,7 +98,8 @@ const GalleryHero = () => {
             BREADCRUMB
         =============================================== */}
 
-        <div
+        <nav
+          aria-label="Breadcrumb"
           className="
             mt-[18px]
 
@@ -122,8 +125,8 @@ const GalleryHero = () => {
 
           <span className="mx-[4px]">/</span>
 
-          <span>Gallery</span>
-        </div>
+          <span aria-current="page">Gallery</span>
+        </nav>
       </div>
     </section>
   );

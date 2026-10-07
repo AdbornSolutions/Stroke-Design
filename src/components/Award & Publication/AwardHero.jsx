@@ -1,4 +1,4 @@
-import awardhero from "../../assets/about-hero.png";
+import awardHeroImage from "../../assets/about-hero.png";
 
 const AwardHero = () => {
   return (
@@ -8,8 +8,9 @@ const AwardHero = () => {
       ===================================================== */}
 
       <img
-        src={awardhero}
-        alt="Awards & Publication"
+        src={awardHeroImage}
+        alt=""
+        fetchPriority="high"
         className="
           absolute
           inset-0
@@ -26,6 +27,7 @@ const AwardHero = () => {
       ===================================================== */}
 
       <div
+        aria-hidden="true"
         className="
           absolute
           inset-0
@@ -96,7 +98,8 @@ const AwardHero = () => {
             BREADCRUMB
         =============================================== */}
 
-        <div
+        <nav
+          aria-label="Breadcrumb"
           className="
             mt-[18px]
 
@@ -122,8 +125,8 @@ const AwardHero = () => {
 
           <span className="mx-[4px]">/</span>
 
-          <span>Awards & Publication</span>
-        </div>
+          <span aria-current="page">Awards & Publication</span>
+        </nav>
       </div>
     </section>
   );

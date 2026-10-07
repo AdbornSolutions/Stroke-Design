@@ -1,5 +1,3 @@
-import React from "react";
-
 import DarshanImage1 from "../../assets/DARSHAN House/Image1.jpg";
 import DarshanImage2 from "../../assets/DARSHAN House/Image2.jpg";
 import DarshanImage3 from "../../assets/DARSHAN House/Image3.jpg";
@@ -12,9 +10,6 @@ import DarshanImage9 from "../../assets/DARSHAN House/Image9.jpg";
 
 const DarshanHouseImages = () => {
   const images = [
-    // =========================
-    // DARSHAN HOUSE
-    // =========================
     {
       id: "darshan-1",
       src: DarshanImage1,
@@ -92,14 +87,6 @@ const DarshanHouseImages = () => {
           xl:px-[48px]
         "
       >
-
-        {/* =================================================
-            DESKTOP GALLERY
-            ROW 1 → 3 IMAGES
-            ROW 2 → 4 IMAGES
-            ROW 3 → 2 IMAGES
-        ================================================== */}
-
         <div
           className="
             hidden
@@ -111,11 +98,6 @@ const DarshanHouseImages = () => {
             xl:gap-[22px]
           "
         >
-
-          {/* =========================
-              FIRST ROW - 3 IMAGES
-          ========================== */}
-
           {images.slice(0, 3).map((image) => (
             <div
               key={image.id}
@@ -146,10 +128,6 @@ const DarshanHouseImages = () => {
               />
             </div>
           ))}
-
-          {/* =========================
-              SECOND ROW - 4 IMAGES
-          ========================== */}
 
           {images.slice(3, 7).map((image) => (
             <div
@@ -183,10 +161,6 @@ const DarshanHouseImages = () => {
             </div>
           ))}
 
-          {/* =========================
-              THIRD ROW - 2 IMAGES
-          ========================== */}
-
           {images.slice(7, 9).map((image) => (
             <div
               key={image.id}
@@ -219,11 +193,6 @@ const DarshanHouseImages = () => {
             </div>
           ))}
         </div>
-
-        {/* =================================================
-            TABLET
-            3 COLUMNS
-        ================================================== */}
 
         <div
           className="
@@ -267,11 +236,6 @@ const DarshanHouseImages = () => {
           ))}
         </div>
 
-        {/* =================================================
-            MOBILE
-            2 COLUMNS
-        ================================================== */}
-
         <div
           className="
             grid
@@ -312,7 +276,6 @@ const DarshanHouseImages = () => {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

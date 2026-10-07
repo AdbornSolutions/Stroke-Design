@@ -2,7 +2,10 @@ import expertsImage from "../../assets/experts.png";
 
 const OurExperts = () => {
   return (
-    <section className="w-full overflow-hidden">
+    <section
+      aria-labelledby="our-experts-heading"
+      className="w-full overflow-hidden"
+    >
       {/* =====================================================
           HEADER
       ====================================================== */}
@@ -72,6 +75,7 @@ const OurExperts = () => {
           >
             {/* Horizontal Line */}
             <span
+              aria-hidden="true"
               className="
         absolute
         left-0
@@ -89,6 +93,7 @@ const OurExperts = () => {
 
             {/* Vertical Line */}
             <span
+              aria-hidden="true"
               className="
         absolute
         left-[108px]
@@ -189,6 +194,7 @@ const OurExperts = () => {
     "
           >
             <h2
+              id="our-experts-heading"
               className="
         m-0
         w-full
@@ -398,7 +404,9 @@ const OurExperts = () => {
                 lg:rounded-[16px]
               "
             >
-              <img loading="lazy" decoding="async"
+              <img
+                loading="lazy"
+                decoding="async"
                 src={expertsImage}
                 alt="Ujwal and Bhuvaneshwari Nimgade"
                 className="

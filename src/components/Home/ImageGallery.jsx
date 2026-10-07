@@ -290,8 +290,6 @@ function AnimatedGalleryRow({ images, direction, speed, row }) {
   const trackRef = useRef(null);
   const originalSetRef = useRef(null);
 
-  const animationRef = useRef(null);
-
   const positionRef = useRef(0);
   const lastTimeRef = useRef(null);
 
@@ -323,11 +321,9 @@ function AnimatedGalleryRow({ images, direction, speed, row }) {
     let setWidth = originalSet.getBoundingClientRect().width;
     const getSetWidth = () => setWidth;
     let inViewport = false;
-    const observer = new IntersectionObserver(([entry]) => {
-      inViewport = entry.isIntersecting;
-    });
-    observer.observe(rowElement);
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let animationFrame = null;
+    let initialized = false;
 
     /* =====================================================
        RESET POSITION
@@ -357,6 +353,19 @@ function AnimatedGalleryRow({ images, direction, speed, row }) {
     ===================================================== */
 
     const animate = (time) => {
+      animationFrame = null;
+
+      if (
+        !initialized ||
+        pausedRef.current ||
+        !inViewport ||
+        document.hidden ||
+        reducedMotion.matches
+      ) {
+        lastTimeRef.current = null;
+        return;
+      }
+
       if (lastTimeRef.current === null) {
         lastTimeRef.current = time;
       }
@@ -365,39 +374,60 @@ function AnimatedGalleryRow({ images, direction, speed, row }) {
 
       lastTimeRef.current = time;
 
-      if (!pausedRef.current && inViewport && !document.hidden && !reducedMotion.matches) {
-        const width = getSetWidth();
+      const width = getSetWidth();
 
-        if (width > 0) {
-          const movement = speed * (delta / 16.67);
+      if (width > 0) {
+        const movement = speed * (delta / 16.67);
 
-          /* LEFT */
+        /* LEFT */
 
-          if (direction === "left") {
-            positionRef.current -= movement;
+        if (direction === "left") {
+          positionRef.current -= movement;
 
-            if (Math.abs(positionRef.current) >= width) {
-              positionRef.current += width;
-            }
-          } else {
-            /* RIGHT */
-            positionRef.current += movement;
-
-            if (positionRef.current >= 0) {
-              positionRef.current -= width;
-            }
+          if (Math.abs(positionRef.current) >= width) {
+            positionRef.current += width;
           }
+        } else {
+          /* RIGHT */
+          positionRef.current += movement;
 
-          track.style.transform = `translate3d(
-              ${positionRef.current}px,
-              0,
-              0
-            )`;
+          if (positionRef.current >= 0) {
+            positionRef.current -= width;
+          }
         }
+
+        track.style.transform = `translate3d(
+            ${positionRef.current}px,
+            0,
+            0
+          )`;
       }
 
-      animationRef.current = requestAnimationFrame(animate);
+      animationFrame = requestAnimationFrame(animate);
     };
+
+    const updateAnimation = () => {
+      const shouldAnimate =
+        initialized &&
+        !pausedRef.current &&
+        inViewport &&
+        !document.hidden &&
+        !reducedMotion.matches;
+
+      if (shouldAnimate && animationFrame === null) {
+        animationFrame = requestAnimationFrame(animate);
+      } else if (!shouldAnimate && animationFrame !== null) {
+        cancelAnimationFrame(animationFrame);
+        animationFrame = null;
+        lastTimeRef.current = null;
+      }
+    };
+
+    const observer = new IntersectionObserver(([entry]) => {
+      inViewport = entry.isIntersecting;
+      updateAnimation();
+    });
+    observer.observe(rowElement);
 
     /* =====================================================
        HOVER PAUSE
@@ -405,10 +435,12 @@ function AnimatedGalleryRow({ images, direction, speed, row }) {
 
     const handleMouseEnter = () => {
       pausedRef.current = true;
+      updateAnimation();
     };
 
     const handleMouseLeave = () => {
       pausedRef.current = false;
+      updateAnimation();
     };
 
     /* =====================================================
@@ -417,10 +449,21 @@ function AnimatedGalleryRow({ images, direction, speed, row }) {
 
     const handleTouchStart = () => {
       pausedRef.current = true;
+      updateAnimation();
     };
 
     const handleTouchEnd = () => {
       pausedRef.current = false;
+      updateAnimation();
+    };
+
+    const handleTouchCancel = () => {
+      pausedRef.current = false;
+      updateAnimation();
+    };
+
+    const handleVisibilityChange = () => {
+      updateAnimation();
     };
 
     /* =====================================================
@@ -453,7 +496,13 @@ function AnimatedGalleryRow({ images, direction, speed, row }) {
       passive: true,
     });
 
+    rowElement.addEventListener("touchcancel", handleTouchCancel, {
+      passive: true,
+    });
+
     window.addEventListener("resize", handleResize);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    reducedMotion.addEventListener("change", updateAnimation);
 
     /* =====================================================
        INITIALIZE
@@ -462,9 +511,10 @@ function AnimatedGalleryRow({ images, direction, speed, row }) {
     const initialize = () => {
       resetPosition();
 
+      initialized = true;
       lastTimeRef.current = null;
 
-      animationRef.current = requestAnimationFrame(animate);
+      updateAnimation();
     };
 
     if (document.readyState === "complete") {
@@ -481,7 +531,9 @@ function AnimatedGalleryRow({ images, direction, speed, row }) {
 
     return () => {
       observer.disconnect();
-      cancelAnimationFrame(animationRef.current);
+      if (animationFrame !== null) {
+        cancelAnimationFrame(animationFrame);
+      }
 
       clearTimeout(resizeTimer);
 
@@ -492,8 +544,11 @@ function AnimatedGalleryRow({ images, direction, speed, row }) {
       rowElement.removeEventListener("touchstart", handleTouchStart);
 
       rowElement.removeEventListener("touchend", handleTouchEnd);
+      rowElement.removeEventListener("touchcancel", handleTouchCancel);
 
       window.removeEventListener("resize", handleResize);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      reducedMotion.removeEventListener("change", updateAnimation);
 
       window.removeEventListener("load", initialize);
 

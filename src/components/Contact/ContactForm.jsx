@@ -1,29 +1,31 @@
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 
+const SERVICE_ID = "service_3a0uv9i";
+const TEMPLATE_ID = "template_3tsmvsb";
+const PUBLIC_KEY = "Y1pSa5dU7sueovQtU";
+
 const ContactForm = () => {
-  const formRef = useRef();
+  const formRef = useRef(null);
 
   const [isSending, setIsSending] = useState(false);
   const [status, setStatus] = useState("");
 
-  const SERVICE_ID = "service_3a0uv9i";
-  const TEMPLATE_ID = "template_3tsmvsb";
-  const PUBLIC_KEY = "Y1pSa5dU7sueovQtU";
-
   const sendEmail = async (e) => {
     e.preventDefault();
+    if (isSending || !formRef.current) return;
 
+    const form = formRef.current;
     setIsSending(true);
     setStatus("");
 
     try {
-      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, {
+      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form, {
         publicKey: PUBLIC_KEY,
       });
 
       setStatus("success");
-      formRef.current.reset();
+      form.reset();
     } catch (error) {
       console.error("EmailJS Error:", error);
       setStatus("error");
@@ -193,12 +195,18 @@ const ContactForm = () => {
           "
         >
           <div className="w-full">
-            <form ref={formRef} onSubmit={sendEmail} className="w-full">
+            <form
+              ref={formRef}
+              onSubmit={sendEmail}
+              aria-busy={isSending}
+              className="w-full"
+            >
               <div className="mb-4">
                 <input
                   type="text"
                   name="name"
                   placeholder="Name *"
+                  aria-label="Name"
                   required
                   className="
                     h-[59px]
@@ -242,6 +250,7 @@ const ContactForm = () => {
                   type="tel"
                   name="phone"
                   placeholder="Phone No. *"
+                  aria-label="Phone number"
                   required
                   className="
                     h-[59px]
@@ -271,6 +280,7 @@ const ContactForm = () => {
                   type="text"
                   name="subject"
                   placeholder="Subject"
+                  aria-label="Subject"
                   className="
                     h-[59px]
                     w-full
@@ -301,6 +311,7 @@ const ContactForm = () => {
                   type="email"
                   name="email"
                   placeholder="Email *"
+                  aria-label="Email"
                   required
                   className="
                     h-[59px]
@@ -331,6 +342,7 @@ const ContactForm = () => {
                 <textarea
                   name="message"
                   placeholder="Write a Comment"
+                  aria-label="Message"
                   rows={5}
                   className="
                     min-h-[116px]
@@ -359,66 +371,6 @@ const ContactForm = () => {
                   "
                 />
               </div>
-
-              {/* <button
-                type="submit"
-                disabled={isSending}
-                className="
-                  mt-0
-                  inline-flex
-                  h-[55px]
-                  items-center
-                  justify-center
-                  gap-2
-                  rounded-full
-                  border
-                  border-[#CAA05C]
-                  bg-transparent
-                  px-[19px]
-                  cursor-pointer
-
-                  font-['Arial',Helvetica,sans-serif]
-                  text-[15px]
-                  font-semibold
-                  text-black
-
-                  transition-all
-                  duration-200
-
-                  hover:bg-[#CAA05C]
-                  hover:text-white
-
-                  disabled:cursor-not-allowed
-                  disabled:opacity-60
-                "
-              >
-                <span>{isSending ? "Sending..." : "Send message"}</span>
-
-                {!isSending && (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    className="h-[17px] w-[17px]"
-                  >
-                    <circle
-                      cx="12"
-                      cy="12"
-                      r="9"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                    />
-
-                    <path
-                      d="M9 12h6M12.5 9.5L15 12l-2.5 2.5"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                )}
-              </button> */}
 
               <button
                 type="submit"
@@ -482,13 +434,19 @@ const ContactForm = () => {
               </button>
 
               {status === "success" && (
-                <p className="mt-4 font-['Arial',Helvetica,sans-serif] text-[14px] font-medium text-green-600">
+                <p
+                  role="status"
+                  className="mt-4 font-['Arial',Helvetica,sans-serif] text-[14px] font-medium text-green-600"
+                >
                   Your message has been sent successfully!
                 </p>
               )}
 
               {status === "error" && (
-                <p className="mt-4 font-['Arial',Helvetica,sans-serif] text-[14px] font-medium text-red-600">
+                <p
+                  role="alert"
+                  className="mt-4 font-['Arial',Helvetica,sans-serif] text-[14px] font-medium text-red-600"
+                >
                   Something went wrong. Please try again.
                 </p>
               )}

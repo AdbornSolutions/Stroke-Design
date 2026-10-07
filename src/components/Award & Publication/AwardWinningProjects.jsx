@@ -2,18 +2,15 @@ import AwardWinningProject1 from "../../assets/AwardWinningProject1.png";
 import AwardWinningProject2 from "../../assets/AwardWinningProject2.png";
 import AwardWinningProject3 from "../../assets/AwardWinningProject3.png";
 
+const projects = {
+  main: AwardWinningProject1,
+  topRight: AwardWinningProject2,
+  bottomRight: AwardWinningProject3,
+};
+
 const AwardWinningProjects = () => {
-  const projects = {
-    main: AwardWinningProject1,
-
-    topRight: AwardWinningProject2,
-
-    bottomRight: AwardWinningProject3,
-  };
-
   return (
-    <>
-      <section
+    <section
         className="
           relative
           w-full
@@ -225,16 +222,13 @@ const AwardWinningProjects = () => {
 
             gap-[18px]
 
-            min-[1200px]:
-              mt-[10px]
+            min-[1200px]:mt-[10px]
 
-            max-[900px]:
-              grid-cols-1
-              gap-[18px]
+            max-[900px]:grid-cols-1
+            max-[900px]:gap-[18px]
 
-            max-[767px]:
-              mt-[15px]
-              gap-[14px]
+            max-[767px]:mt-[15px]
+            max-[767px]:gap-[14px]
           "
         >
           {/* ====================================================
@@ -249,26 +243,23 @@ const AwardWinningProjects = () => {
               overflow-hidden
               rounded-[12px]
 
-              max-[1199px]:
-                h-[500px]
+              max-[1199px]:h-[500px]
 
-              max-[1024px]:
-                h-[450px]
+              max-[1024px]:h-[450px]
 
-              max-[900px]:
-                h-[430px]
+              max-[900px]:h-[430px]
 
-              max-[767px]:
-                h-auto
-                aspect-[1.15/1]
+              max-[767px]:h-auto
+              max-[767px]:aspect-[1.15/1]
 
-              max-[480px]:
-                aspect-[1.05/1]
+              max-[480px]:aspect-[1.05/1]
             "
           >
             <img
               src={projects.main}
               alt="Award winning interior design project"
+              loading="lazy"
+              decoding="async"
               className="
                 absolute
                 inset-0
@@ -297,8 +288,7 @@ const AwardWinningProjects = () => {
 
               gap-[18px]
 
-              max-[767px]:
-                gap-[14px]
+              max-[767px]:gap-[14px]
             "
           >
             {/* ==================================================
@@ -314,26 +304,23 @@ const AwardWinningProjects = () => {
 
                 rounded-[12px]
 
-                max-[1199px]:
-                  h-[241px]
+                max-[1199px]:h-[241px]
 
-                max-[1024px]:
-                  h-[216px]
+                max-[1024px]:h-[216px]
 
-                max-[900px]:
-                  h-[300px]
+                max-[900px]:h-[300px]
 
-                max-[767px]:
-                  h-auto
-                  aspect-[2.3/1]
+                max-[767px]:h-auto
+                max-[767px]:aspect-[2.3/1]
 
-                max-[480px]:
-                  aspect-[1.8/1]
+                max-[480px]:aspect-[1.8/1]
               "
             >
               <img
                 src={projects.topRight}
                 alt="Award winning residential interior"
+                loading="lazy"
+                decoding="async"
                 className="
                   absolute
                   inset-0
@@ -364,26 +351,23 @@ const AwardWinningProjects = () => {
 
                 rounded-[12px]
 
-                max-[1199px]:
-                  h-[241px]
+                max-[1199px]:h-[241px]
 
-                max-[1024px]:
-                  h-[216px]
+                max-[1024px]:h-[216px]
 
-                max-[900px]:
-                  h-[300px]
+                max-[900px]:h-[300px]
 
-                max-[767px]:
-                  h-auto
-                  aspect-[2.3/1]
+                max-[767px]:h-auto
+                max-[767px]:aspect-[2.3/1]
 
-                max-[480px]:
-                  aspect-[1.8/1]
+                max-[480px]:aspect-[1.8/1]
               "
             >
               <img
                 src={projects.bottomRight}
                 alt="Award winning interior design"
+                loading="lazy"
+                decoding="async"
                 className="
                   absolute
                   inset-0
@@ -402,8 +386,7 @@ const AwardWinningProjects = () => {
             </div>
           </div>
         </div>
-      </section>
-    </>
+    </section>
   );
 };
 

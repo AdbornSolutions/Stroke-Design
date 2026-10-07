@@ -1,12 +1,13 @@
-import commercialhero from "../../assets/about-hero.png";
+import commercialHeroImage from "../../assets/about-hero.png";
 
 const CommercialHero = () => {
   return (
     <section className="relative min-h-[511px] w-full overflow-hidden">
 
       <img
-        src={commercialhero}
-        alt="Commercial Exterior"
+        src={commercialHeroImage}
+        alt=""
+        fetchPriority="high"
         className="
           absolute
           inset-0
@@ -18,6 +19,7 @@ const CommercialHero = () => {
       />
 
       <div
+        aria-hidden="true"
         className="
           absolute
           inset-0
@@ -77,7 +79,8 @@ const CommercialHero = () => {
           Commercial Exterior
         </h1>
 
-        <div
+        <nav
+          aria-label="Breadcrumb"
           className="
             mt-[18px]
 
@@ -103,8 +106,8 @@ const CommercialHero = () => {
 
           <span className="mx-[4px]">/</span>
 
-          <span>Residential Interior Design</span>
-        </div>
+          <span aria-current="page">Residential Interior Design</span>
+        </nav>
       </div>
     </section>
   );

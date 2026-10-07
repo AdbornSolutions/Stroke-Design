@@ -1,6 +1,7 @@
-import React from "react";
-
 import CommercialImage1 from "../../assets/Commercial/Image1.jpg";
+import CommercialImage10 from "../../assets/Commercial/Image10.jpg";
+import CommercialImage11 from "../../assets/Commercial/Image11.jpg";
+import CommercialImage12 from "../../assets/Commercial/Image12.jpg";
 import CommercialImage2 from "../../assets/Commercial/Image2.jpg";
 import CommercialImage3 from "../../assets/Commercial/Image3.jpg";
 import CommercialImage4 from "../../assets/Commercial/Image4.jpg";
@@ -9,9 +10,6 @@ import CommercialImage6 from "../../assets/Commercial/Image6.jpg";
 import CommercialImage7 from "../../assets/Commercial/Image7.jpg";
 import CommercialImage8 from "../../assets/Commercial/Image8.jpg";
 import CommercialImage9 from "../../assets/Commercial/Image9.jpg";
-import CommercialImage10 from "../../assets/Commercial/Image10.jpg";
-import CommercialImage11 from "../../assets/Commercial/Image11.jpg";
-import CommercialImage12 from "../../assets/Commercial/Image12.jpg";
 
 const CommercialImages = () => {
   const images = [
@@ -110,15 +108,6 @@ const CommercialImages = () => {
           xl:px-[48px]
         "
       >
-
-        {/* =================================================
-            DESKTOP GALLERY
-            ROW 1 → 3 IMAGES
-            ROW 2 → 4 IMAGES
-            ROW 3 → 3 IMAGES
-            ROW 4 → 2 IMAGES
-        ================================================== */}
-
         <div
           className="
             hidden
@@ -130,11 +119,6 @@ const CommercialImages = () => {
             xl:gap-[22px]
           "
         >
-
-          {/* =========================
-              FIRST ROW - 3 IMAGES
-          ========================== */}
-
           {images.slice(0, 3).map((image) => (
             <div
               key={image.id}
@@ -165,10 +149,6 @@ const CommercialImages = () => {
               />
             </div>
           ))}
-
-          {/* =========================
-              SECOND ROW - 4 IMAGES
-          ========================== */}
 
           {images.slice(3, 7).map((image) => (
             <div
@@ -202,10 +182,6 @@ const CommercialImages = () => {
             </div>
           ))}
 
-          {/* =========================
-              THIRD ROW - 3 IMAGES
-          ========================== */}
-
           {images.slice(7, 10).map((image) => (
             <div
               key={image.id}
@@ -237,10 +213,6 @@ const CommercialImages = () => {
               />
             </div>
           ))}
-
-          {/* =========================
-              FOURTH ROW - 2 IMAGES
-          ========================== */}
 
           {images.slice(10, 12).map((image) => (
             <div
@@ -274,11 +246,6 @@ const CommercialImages = () => {
             </div>
           ))}
         </div>
-
-        {/* =================================================
-            TABLET
-            3 COLUMNS
-        ================================================== */}
 
         <div
           className="
@@ -322,11 +289,6 @@ const CommercialImages = () => {
           ))}
         </div>
 
-        {/* =================================================
-            MOBILE
-            2 COLUMNS
-        ================================================== */}
-
         <div
           className="
             grid
@@ -367,7 +329,6 @@ const CommercialImages = () => {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

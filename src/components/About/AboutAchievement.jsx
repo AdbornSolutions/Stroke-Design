@@ -1,5 +1,3 @@
-import React from "react";
-
 const awards = [
   {
     year: "2025",
@@ -35,8 +33,7 @@ const awards = [
 
 const AboutAchievements = () => {
   return (
-    <>
-      <section className="w-full overflow-hidden bg-white">
+    <section className="w-full overflow-hidden bg-white">
 
 
         {/* =======================================================
@@ -468,12 +465,6 @@ const AboutAchievements = () => {
                     max-[600px]:translate-x-0
 
                     max-[380px]:w-[35px]
-
-                    ${
-                      index === 0
-                        ? ""
-                        : ""
-                    }
                   `}
                 >
 
@@ -614,8 +605,7 @@ const AboutAchievements = () => {
 
         </section>
 
-      </section>
-    </>
+    </section>
   );
 };
 

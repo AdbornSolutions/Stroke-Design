@@ -1,45 +1,38 @@
-import React from "react";
-
 import blogImage1 from "../../assets/blog-image-1.png";
 import blogImage2 from "../../assets/blog-image-2.png";
 import blogImage3 from "../../assets/blog-image-3.png";
 
+const blogPosts = [
+  {
+    id: 1,
+    image: blogImage1,
+    date: "June 2, 2025",
+    author: "By Admin",
+    title: "Innovative Interior Ideas To Refresh Your Living Space",
+    description:
+      "Modern interior design is all about creating a sleek, functional, and aesthetically pleasing space that reflects contemporary living. Whether you're updating a single.",
+  },
+  {
+    id: 2,
+    image: blogImage2,
+    date: "June 2, 2025",
+    author: "By Admin",
+    title: "Innovative Interior Ideas To Refresh Your Living Space",
+    description:
+      "Modern interior design is all about creating a sleek, functional, and aesthetically pleasing space that reflects contemporary living.",
+  },
+  {
+    id: 3,
+    image: blogImage3,
+    date: "June 2, 2025",
+    author: "By Admin",
+    title: "Elevate Every Corner With Sleek Interior Concepts",
+    description:
+      "Modern interior design is all about creating a sleek, functional, and aesthetically pleasing space that reflects contemporary living. Whether you're updating a single.",
+  },
+];
 
 const LatestBlogs = () => {
-
-  const blogPosts = [
-    {
-      id: 1,
-      image: blogImage1,
-      date: "June 2, 2025",
-      author: "By Admin",
-      title: "Innovative Interior Ideas To Refresh Your Living Space",
-      description:
-        "Modern interior design is all about creating a sleek, functional, and aesthetically pleasing space that reflects contemporary living. Whether you're updating a single.",
-    },
-
-    {
-      id: 2,
-      image: blogImage2,
-      date: "June 2, 2025",
-      author: "By Admin",
-      title: "Innovative Interior Ideas To Refresh Your Living Space",
-      description:
-        "Modern interior design is all about creating a sleek, functional, and aesthetically pleasing space that reflects contemporary living.",
-    },
-
-    {
-      id: 3,
-      image: blogImage3,
-      date: "June 2, 2025",
-      author: "By Admin",
-      title: "Elevate Every Corner With Sleek Interior Concepts",
-      description:
-        "Modern interior design is all about creating a sleek, functional, and aesthetically pleasing space that reflects contemporary living. Whether you're updating a single.",
-    },
-  ];
-
-
   return (
     <section
       className="

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import testimonial_bg from "../../assets/testimonials_bg_image.png";
 
 const testimonials = [
@@ -31,10 +31,13 @@ const testimonials = [
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
 
   const autoSlideRef = useRef(null);
-  const touchStartRef = useRef({ x: 0, y: 0 });
+  const animationTimeoutRef = useRef(null);
+  const resumeTimeoutRef = useRef(null);
+  const isAnimatingRef = useRef(false);
+  const isHoveredRef = useRef(false);
+  const pointerStartRef = useRef(null);
 
   /*
     ============================================================
@@ -65,14 +68,15 @@ const Testimonials = () => {
   */
 
   const nextSlide = () => {
-    if (isAnimating) return;
+    if (isAnimatingRef.current) return;
 
-    setIsAnimating(true);
-
+    isAnimatingRef.current = true;
     setCurrentIndex((prev) => normalize(prev + 1));
 
-    setTimeout(() => {
-      setIsAnimating(false);
+    clearTimeout(animationTimeoutRef.current);
+    animationTimeoutRef.current = setTimeout(() => {
+      isAnimatingRef.current = false;
+      animationTimeoutRef.current = null;
     }, SLIDE_DURATION);
   };
 
@@ -83,14 +87,15 @@ const Testimonials = () => {
   */
 
   const previousSlide = () => {
-    if (isAnimating) return;
+    if (isAnimatingRef.current) return;
 
-    setIsAnimating(true);
-
+    isAnimatingRef.current = true;
     setCurrentIndex((prev) => normalize(prev - 1));
 
-    setTimeout(() => {
-      setIsAnimating(false);
+    clearTimeout(animationTimeoutRef.current);
+    animationTimeoutRef.current = setTimeout(() => {
+      isAnimatingRef.current = false;
+      animationTimeoutRef.current = null;
     }, SLIDE_DURATION);
   };
 
@@ -101,7 +106,11 @@ const Testimonials = () => {
   */
 
   const startAutoSlide = () => {
+    clearTimeout(resumeTimeoutRef.current);
     clearInterval(autoSlideRef.current);
+    autoSlideRef.current = null;
+
+    if (document.hidden || isHoveredRef.current) return;
 
     autoSlideRef.current = setInterval(() => {
       setCurrentIndex((prev) => normalize(prev + 1));
@@ -109,7 +118,20 @@ const Testimonials = () => {
   };
 
   const stopAutoSlide = () => {
+    clearTimeout(resumeTimeoutRef.current);
     clearInterval(autoSlideRef.current);
+    autoSlideRef.current = null;
+  };
+
+  const resumeAutoSlide = () => {
+    clearTimeout(resumeTimeoutRef.current);
+    resumeTimeoutRef.current = setTimeout(
+      () => {
+        resumeTimeoutRef.current = null;
+        startAutoSlide();
+      },
+      SLIDE_DURATION + 200,
+    );
   };
 
   /*
@@ -121,8 +143,21 @@ const Testimonials = () => {
   useEffect(() => {
     startAutoSlide();
 
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        stopAutoSlide();
+      } else {
+        startAutoSlide();
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
     return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
       clearInterval(autoSlideRef.current);
+      clearTimeout(animationTimeoutRef.current);
+      clearTimeout(resumeTimeoutRef.current);
     };
   }, []);
 
@@ -133,7 +168,7 @@ const Testimonials = () => {
   */
 
   const handlePointerDown = (event) => {
-    touchStartRef.current = {
+    pointerStartRef.current = {
       x: event.clientX,
       y: event.clientY,
     };
@@ -142,10 +177,13 @@ const Testimonials = () => {
   };
 
   const handlePointerUp = (event) => {
-    const { x, y } = touchStartRef.current;
+    const start = pointerStartRef.current;
+    pointerStartRef.current = null;
 
-    const deltaX = event.clientX - x;
-    const deltaY = event.clientY - y;
+    if (!start) return;
+
+    const deltaX = event.clientX - start.x;
+    const deltaY = event.clientY - start.y;
 
     /*
       Ignore vertical movement.
@@ -180,15 +218,27 @@ const Testimonials = () => {
       Restart automatic slider.
     */
 
-    setTimeout(() => {
-      startAutoSlide();
-    }, SLIDE_DURATION + 200);
+    resumeAutoSlide();
   };
 
-  const activeTestimonial = testimonials[currentIndex];
+  const handlePointerCancel = () => {
+    pointerStartRef.current = null;
+    startAutoSlide();
+  };
+
+  const handleMouseEnter = () => {
+    isHoveredRef.current = true;
+    stopAutoSlide();
+  };
+
+  const handleMouseLeave = () => {
+    isHoveredRef.current = false;
+    startAutoSlide();
+  };
 
   return (
     <section
+      aria-labelledby="testimonials-heading"
       className="
         relative
         w-full
@@ -196,8 +246,8 @@ const Testimonials = () => {
         text-[#111111]
         mt-12
       "
-      onMouseEnter={stopAutoSlide}
-      onMouseLeave={startAutoSlide}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       {/* =====================================================
           ARCHITECTURAL BACKGROUND IMAGE
@@ -217,9 +267,12 @@ const Testimonials = () => {
           max-[480px]:h-[145px]
         "
       >
-        <img loading="lazy" decoding="async"
+        <img
           src={testimonial_bg}
-          alt="Stroke Design Studio"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
           className="
             absolute
             left-1/2
@@ -383,6 +436,7 @@ const Testimonials = () => {
           "
         >
           <h2
+            id="testimonials-heading"
             className="
               m-0
               p-0
@@ -484,6 +538,7 @@ const Testimonials = () => {
         "
         onPointerDown={handlePointerDown}
         onPointerUp={handlePointerUp}
+        onPointerCancel={handlePointerCancel}
       >
         {/* =====================================================
             SLIDER TRACK
@@ -628,7 +683,7 @@ const Testimonials = () => {
               stopAutoSlide();
               previousSlide();
 
-              setTimeout(startAutoSlide, SLIDE_DURATION + 200);
+              resumeAutoSlide();
             }}
             className="
               pointer-events-auto
@@ -674,7 +729,7 @@ const Testimonials = () => {
               stopAutoSlide();
               nextSlide();
 
-              setTimeout(startAutoSlide, SLIDE_DURATION + 200);
+              resumeAutoSlide();
             }}
             className="
               pointer-events-auto

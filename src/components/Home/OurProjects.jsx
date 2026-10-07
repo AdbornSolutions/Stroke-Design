@@ -1,61 +1,61 @@
 import { useRef } from "react";
+import HomeProject1 from "../../assets/home-project-1.png";
+import HomeProject2 from "../../assets/home-project-2.png";
+import HomeProject3 from "../../assets/home-project-3.png";
+import HomeProject4 from "../../assets/home-project-4.png";
+import HomeProject5 from "../../assets/home-project-5.png";
+import HomeProject6 from "../../assets/home-project-6.png";
+import HomeProject7 from "../../assets/home-project-7.png";
+import HomeProject8 from "../../assets/home-project-8.png";
 
 import ProjectBackground from "../../assets/ProjectBackground.png";
 
 const projects = [
   {
-    image:
-      "https://mediumslateblue-turtle-686127.hostingersite.com/wp-content/uploads/2026/08/Rectangle-24-4.png",
+    image: HomeProject1,
     titleLight: "2BHK Home",
     titleBold: "Interior",
     location: "Pune",
     alt: "2BHK Home Interior",
   },
   {
-    image:
-      "https://mediumslateblue-turtle-686127.hostingersite.com/wp-content/uploads/2026/08/Rectangle-25-3.png",
+    image: HomeProject2,
     titleBold: "Studio Apartment Interior",
     location: "Mumbai",
     alt: "Studio Apartment Interior",
   },
   {
-    image:
-      "https://mediumslateblue-turtle-686127.hostingersite.com/wp-content/uploads/2026/08/Rectangle-26-18.png",
+    image: HomeProject3,
     titleBold: "3BHK Luxury Apartment",
     location: "Mumbai",
     alt: "3BHK Luxury Apartment",
   },
   {
-    image:
-      "https://mediumslateblue-turtle-686127.hostingersite.com/wp-content/uploads/2026/08/Rectangle-27-5.png",
+    image: HomeProject4,
     titleBold: "Modern Villa Interior",
     location: "Mumbai",
     alt: "Modern Villa Interior",
   },
   {
-    image:
-      "https://mediumslateblue-turtle-686127.hostingersite.com/wp-content/uploads/2026/08/Rectangle-28-6.png",
+    image: HomeProject5,
     titleBold: "Duplex House Interior",
     location: "Nagpur",
     alt: "Duplex House Interior",
   },
   {
-    image:
-      "https://mediumslateblue-turtle-686127.hostingersite.com/wp-content/uploads/2026/08/Rectangle-29-6.png",
+    image: HomeProject6,
     titleBold: "Modern Kitchen Interior",
     location: "Nagpur",
     alt: "Modern Kitchen Interior",
   },
   {
-    image:
-      "https://mediumslateblue-turtle-686127.hostingersite.com/wp-content/uploads/2026/08/Rectangle-30-24.png",
+    image: HomeProject7,
     titleBold: "Compact Home Interior",
     location: "Hyderabad",
     alt: "Compact Home Interior",
   },
   {
-    image:
-      "https://mediumslateblue-turtle-686127.hostingersite.com/wp-content/uploads/2026/08/Rectangle-31.png",
+    image: HomeProject8,
     titleBold: "Luxury Residential Interior",
     location: "Hyderabad",
     alt: "Luxury Residential Interior",
@@ -66,23 +66,19 @@ const OurProjects = () => {
   const trackRef = useRef(null);
 
   const scrollGallery = (direction) => {
-    if (!trackRef.current) return;
+    const track = trackRef.current;
+    if (!track) return;
 
-    const firstCard = trackRef.current.querySelector("[data-project-card]");
+    const firstCard = track.querySelector("[data-project-card]");
     if (!firstCard) return;
 
-    const cardWidth = firstCard.offsetWidth;
-
+    const cardWidth = firstCard.getBoundingClientRect().width;
     const gap =
-      window.innerWidth <= 480
-        ? 26
-        : window.innerWidth <= 900
-          ? 26
-          : 26;
+      Number.parseFloat(window.getComputedStyle(track).columnGap) || 0;
 
     const scrollAmount = (cardWidth + gap) * 2;
 
-    trackRef.current.scrollLeft += direction * scrollAmount;
+    track.scrollLeft += direction * scrollAmount;
   };
 
   return (
@@ -146,7 +142,9 @@ const OurProjects = () => {
             Only added to the header area.
         ================================================== */}
 
-        <img loading="lazy" decoding="async"
+        <img
+          loading="lazy"
+          decoding="async"
           src={ProjectBackground}
           alt=""
           aria-hidden="true"
@@ -363,6 +361,7 @@ const OurProjects = () => {
           "
         >
           <h2
+            id="projects-heading"
             className="
               m-0
               p-0
@@ -391,10 +390,7 @@ const OurProjects = () => {
                 lg:whitespace-nowrap
               "
             >
-              Creative{" "}
-              <span className="text-[#CAA05C]">
-                Projects That
-              </span>
+              Creative <span className="text-[#CAA05C]">Projects That</span>
             </span>
 
             {/* Second line */}
@@ -407,10 +403,7 @@ const OurProjects = () => {
                 lg:whitespace-nowrap
               "
             >
-              <span className="text-[#CAA05C]">
-                Define
-              </span>{" "}
-              Our Style
+              <span className="text-[#CAA05C]">Define</span> Our Style
             </span>
           </h2>
         </div>
@@ -527,6 +520,7 @@ const OurProjects = () => {
           type="button"
           onClick={() => scrollGallery(-1)}
           aria-label="Previous projects"
+          aria-controls="projects-gallery"
           className="
             absolute
             left-[-6px]
@@ -575,6 +569,7 @@ const OurProjects = () => {
           type="button"
           onClick={() => scrollGallery(1)}
           aria-label="Next projects"
+          aria-controls="projects-gallery"
           className="
             absolute
             right-[-6px]
@@ -621,6 +616,9 @@ const OurProjects = () => {
 
         <div
           ref={trackRef}
+          id="projects-gallery"
+          role="region"
+          aria-label="Featured projects"
           className="
             flex
             items-start
@@ -685,6 +683,7 @@ const OurProjects = () => {
                   src={project.image}
                   alt={project.alt}
                   loading="lazy"
+                  decoding="async"
                   className="
                     block
                     h-full

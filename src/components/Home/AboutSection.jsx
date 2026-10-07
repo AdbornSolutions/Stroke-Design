@@ -65,6 +65,7 @@ const AboutSection = () => {
           >
             {/* Horizontal Line */}
             <div
+              aria-hidden="true"
               className="
           absolute
           left-0
@@ -77,6 +78,7 @@ const AboutSection = () => {
 
             {/* Vertical Line */}
             <div
+              aria-hidden="true"
               className="
           absolute
           left-[72%]
@@ -144,6 +146,7 @@ const AboutSection = () => {
           >
             {/* Horizontal Line */}
             <div
+              aria-hidden="true"
               className="
           absolute
           left-[-16px]
@@ -156,6 +159,7 @@ const AboutSection = () => {
 
             {/* Vertical Line */}
             <div
+              aria-hidden="true"
               className="
           absolute
           left-[106px]

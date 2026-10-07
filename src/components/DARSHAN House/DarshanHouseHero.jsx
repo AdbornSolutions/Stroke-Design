@@ -1,12 +1,13 @@
-import darshanhousehero from "../../assets/about-hero.png";
+import darshanHouseHeroImage from "../../assets/about-hero.png";
 
 const DarshanHouseHero = () => {
   return (
     <section className="relative min-h-[511px] w-full overflow-hidden">
 
       <img
-        src={darshanhousehero}
-        alt="Darshan House"
+        src={darshanHouseHeroImage}
+        alt=""
+        fetchPriority="high"
         className="
           absolute
           inset-0
@@ -18,6 +19,7 @@ const DarshanHouseHero = () => {
       />
 
       <div
+        aria-hidden="true"
         className="
           absolute
           inset-0
@@ -77,7 +79,8 @@ const DarshanHouseHero = () => {
           Darshan House
         </h1>
 
-        <div
+        <nav
+          aria-label="Breadcrumb"
           className="
             mt-[18px]
 
@@ -103,11 +106,11 @@ const DarshanHouseHero = () => {
 
           <span className="mx-[4px]">/</span>
 
-          <span>Darshan House</span>
-        </div>
+          <span aria-current="page">Darshan House</span>
+        </nav>
       </div>
     </section>
-  )
+  );
 };
 
 export default DarshanHouseHero;

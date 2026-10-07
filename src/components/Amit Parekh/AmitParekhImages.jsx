@@ -1,5 +1,3 @@
-import React from "react";
-
 import AmitImage1 from "../../assets/Amit Parekh/image1.jpg";
 import AmitImage2 from "../../assets/Amit Parekh/image2.jpg";
 import AmitImage3 from "../../assets/Amit Parekh/image3.jpg";
@@ -11,9 +9,6 @@ import AmitImage8 from "../../assets/Amit Parekh/image8.jpg";
 
 const AmitParekhImages = () => {
   const images = [
-    // =========================
-    // AMIT PAREKH
-    // =========================
     {
       id: "amit-1",
       src: AmitImage1,
@@ -86,14 +81,6 @@ const AmitParekhImages = () => {
             xl:px-[48px]
           "
         >
-
-          {/* =================================================
-              DESKTOP GALLERY
-              ROW 1 → 3 IMAGES
-              ROW 2 → 2 IMAGES
-              ROW 3 → 3 IMAGES
-          ================================================== */}
-
           <div
             className="
               hidden
@@ -105,11 +92,6 @@ const AmitParekhImages = () => {
               xl:gap-[22px]
             "
           >
-
-            {/* =========================
-                FIRST ROW - 3 IMAGES
-            ========================== */}
-
             {images.slice(0, 3).map((image) => (
               <div
                 key={image.id}
@@ -140,10 +122,6 @@ const AmitParekhImages = () => {
                 />
               </div>
             ))}
-
-            {/* =========================
-                SECOND ROW - 2 IMAGES
-            ========================== */}
 
             {images.slice(3, 5).map((image) => (
               <div
@@ -177,10 +155,6 @@ const AmitParekhImages = () => {
               </div>
             ))}
 
-            {/* =========================
-                THIRD ROW - 3 IMAGES
-            ========================== */}
-
             {images.slice(5, 8).map((image) => (
               <div
                 key={image.id}
@@ -213,11 +187,6 @@ const AmitParekhImages = () => {
               </div>
             ))}
           </div>
-
-          {/* =================================================
-              TABLET
-              3 COLUMNS
-          ================================================== */}
 
           <div
             className="
@@ -261,11 +230,6 @@ const AmitParekhImages = () => {
             ))}
           </div>
 
-          {/* =================================================
-              MOBILE
-              2 COLUMNS
-          ================================================== */}
-
           <div
             className="
               grid
@@ -306,7 +270,6 @@ const AmitParekhImages = () => {
               </div>
             ))}
           </div>
-
         </div>
       </section>
     </>

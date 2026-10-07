@@ -1,5 +1,3 @@
-import React from "react";
-
 import interior1 from "../../assets/GalleryImages/Interior-1.webp";
 import interior2 from "../../assets/GalleryImages/Interior-2.webp";
 import interior3 from "../../assets/GalleryImages/Interior-3.webp";
@@ -20,9 +18,6 @@ import exterior8 from "../../assets/GalleryImages/Exterior-8.webp";
 
 const GalleryImages = () => {
   const images = [
-    // =========================
-    // INTERIOR
-    // =========================
     {
       id: "interior-1",
       src: interior1,
@@ -72,9 +67,6 @@ const GalleryImages = () => {
       layout: "small",
     },
 
-    // =========================
-    // EXTERIOR
-    // =========================
     {
       id: "exterior-1",
       src: exterior1,
@@ -142,27 +134,12 @@ const GalleryImages = () => {
           xl:px-[48px]
         "
       >
-        {/* =========================
-            DESKTOP
-            ROW 1 = 3 COLUMNS
-            ROW 2 = 4 COLUMNS
-            ROW 3 = 2 COLUMNS
-            ROW 4 = 3 COLUMNS
-            ROW 5 = 4 COLUMNS
-            ROW 6 = 2 COLUMNS
-        ========================== */}
-
         <div
           className="
             hidden
             lg:block
           "
         >
-
-          {/* =========================
-              FIRST ROW - 3 IMAGES
-          ========================== */}
-
           <div
             className="
               grid
@@ -205,11 +182,6 @@ const GalleryImages = () => {
               </div>
             ))}
           </div>
-
-
-          {/* =========================
-              SECOND ROW - 4 IMAGES
-          ========================== */}
 
           <div
             className="
@@ -255,11 +227,6 @@ const GalleryImages = () => {
             ))}
           </div>
 
-
-          {/* =========================
-              THIRD ROW - 2 IMAGES
-          ========================== */}
-
           <div
             className="
               grid
@@ -304,11 +271,6 @@ const GalleryImages = () => {
             ))}
           </div>
 
-
-          {/* =========================
-              FOURTH ROW - 3 IMAGES
-          ========================== */}
-
           <div
             className="
               grid
@@ -352,11 +314,6 @@ const GalleryImages = () => {
               </div>
             ))}
           </div>
-
-
-          {/* =========================
-              FIFTH ROW - 4 IMAGES
-          ========================== */}
 
           <div
             className="
@@ -403,12 +360,6 @@ const GalleryImages = () => {
           </div>
         </div>
 
-
-        {/* =========================
-            TABLET
-            3 COLUMNS
-        ========================== */}
-
         <div
           className="
             hidden
@@ -449,12 +400,6 @@ const GalleryImages = () => {
             </div>
           ))}
         </div>
-
-
-        {/* =========================
-            MOBILE
-            2 COLUMNS
-        ========================== */}
 
         <div
           className="
