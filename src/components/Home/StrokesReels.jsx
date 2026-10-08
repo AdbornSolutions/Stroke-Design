@@ -235,7 +235,8 @@ const StrokesReels = () => {
               aria-label={`Strokes Design Studio reel ${video.id}`}
               muted
               playsInline
-              preload="metadata"
+              preload="none"
+              loading="lazy"
               controls
               className="
                 absolute

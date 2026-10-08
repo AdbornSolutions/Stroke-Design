@@ -1,6 +1,9 @@
 import path from "node:path";
 import { readFile } from "node:fs/promises";
+import { fileURLToPath } from "node:url";
 import sharp from "sharp";
+
+const assetDirectory = fileURLToPath(new URL("../src/assets/", import.meta.url));
 
 // Optimize deployment assets without changing the original photographs.
 export default function optimizedImages() {
@@ -9,7 +12,12 @@ export default function optimizedImages() {
     apply: "build",
     enforce: "pre",
     async load(id) {
-      if (!/\.(png|jpe?g|webp)$/i.test(id) || !id.replaceAll("\\", "/").includes("/src/assets/")) return null;
+      const normalizedId = id.replaceAll("\\", "/");
+      const normalizedAssetDirectory = assetDirectory.replaceAll("\\", "/");
+      if (
+        !/\.(png|jpe?g|webp)$/i.test(id) ||
+        !normalizedId.startsWith(normalizedAssetDirectory)
+      ) return null;
       const original = await readFile(id);
       const optimized = await sharp(original)
         .rotate()

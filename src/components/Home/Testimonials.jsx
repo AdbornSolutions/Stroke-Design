@@ -110,10 +110,22 @@ const Testimonials = () => {
     clearInterval(autoSlideRef.current);
     autoSlideRef.current = null;
 
-    if (document.hidden || isHoveredRef.current) return;
+    if (
+      document.hidden ||
+      isHoveredRef.current ||
+      pointerStartRef.current !== null ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) return;
 
     autoSlideRef.current = setInterval(() => {
+      if (isAnimatingRef.current) return;
+
+      isAnimatingRef.current = true;
       setCurrentIndex((prev) => normalize(prev + 1));
+      animationTimeoutRef.current = setTimeout(() => {
+        isAnimatingRef.current = false;
+        animationTimeoutRef.current = null;
+      }, SLIDE_DURATION);
     }, AUTO_SLIDE_DELAY);
   };
 
@@ -147,7 +159,7 @@ const Testimonials = () => {
       if (document.hidden) {
         stopAutoSlide();
       } else {
-        startAutoSlide();
+        resumeAutoSlide();
       }
     };
 
@@ -223,17 +235,19 @@ const Testimonials = () => {
 
   const handlePointerCancel = () => {
     pointerStartRef.current = null;
-    startAutoSlide();
+    resumeAutoSlide();
   };
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = (event) => {
+    if (event.pointerType === "touch") return;
     isHoveredRef.current = true;
     stopAutoSlide();
   };
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = (event) => {
+    if (event.pointerType === "touch") return;
     isHoveredRef.current = false;
-    startAutoSlide();
+    resumeAutoSlide();
   };
 
   return (
@@ -539,6 +553,7 @@ const Testimonials = () => {
         onPointerDown={handlePointerDown}
         onPointerUp={handlePointerUp}
         onPointerCancel={handlePointerCancel}
+        onLostPointerCapture={handlePointerCancel}
       >
         {/* =====================================================
             SLIDER TRACK

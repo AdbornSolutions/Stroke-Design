@@ -2,16 +2,20 @@ import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import quoteImage from "../assets/about-Interior-Design.webp";
 
+const initialFormData = {
+  fullName: "",
+  phone: "",
+  email: "",
+  projectType: "",
+  budget: "",
+  location: "",
+  message: "",
+};
+
 const QuotePopup = ({ isOpen, onClose }) => {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    phone: "",
-    email: "",
-    projectType: "",
-    budget: "",
-    location: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState(initialFormData);
+  const [isSending, setIsSending] = useState(false);
+  const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,7 +28,10 @@ const QuotePopup = ({ isOpen, onClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (isSending) return;
 
+    setIsSending(true);
+    setStatus("");
     try {
       const SERVICE_ID = "service_3a0uv9i";
       const TEMPLATE_ID = "template_3tsmvsb";
@@ -42,23 +49,14 @@ const QuotePopup = ({ isOpen, onClose }) => {
 
       await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
 
-      alert("Your quote request has been sent successfully!");
-
-      setFormData({
-        fullName: "",
-        phone: "",
-        email: "",
-        projectType: "",
-        budget: "",
-        location: "",
-        message: "",
-      });
-
+      setStatus("success");
+      setFormData(initialFormData);
       onClose();
     } catch (error) {
       console.error("EmailJS Error:", error);
-
-      alert("Something went wrong. Please try again.");
+      setStatus("error");
+    } finally {
+      setIsSending(false);
     }
   };
 
@@ -289,7 +287,7 @@ const QuotePopup = ({ isOpen, onClose }) => {
               xl:px-[40px]
             "
           >
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} aria-busy={isSending}>
               {/* =================================================
                   NAME + PHONE
               ================================================== */}
@@ -312,6 +310,7 @@ const QuotePopup = ({ isOpen, onClose }) => {
                     onChange={handleChange}
                     placeholder="Full Name *"
                     required
+                    disabled={isSending}
                     className="
                       h-[42px]
                       w-full
@@ -340,6 +339,7 @@ const QuotePopup = ({ isOpen, onClose }) => {
                     onChange={handleChange}
                     placeholder="Phone Number *"
                     required
+                    disabled={isSending}
                     className="
                       h-[42px]
                       w-full
@@ -372,6 +372,7 @@ const QuotePopup = ({ isOpen, onClose }) => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Email Address"
+                  disabled={isSending}
                   className="
                     h-[42px]
                     w-full
@@ -412,6 +413,7 @@ const QuotePopup = ({ isOpen, onClose }) => {
                     name="projectType"
                     value={formData.projectType}
                     onChange={handleChange}
+                    disabled={isSending}
                     className="
                       h-[42px]
                       w-full
@@ -460,6 +462,7 @@ const QuotePopup = ({ isOpen, onClose }) => {
                     value={formData.budget}
                     onChange={handleChange}
                     placeholder="Approximate Budget"
+                    disabled={isSending}
                     className="
                       h-[42px]
                       w-full
@@ -493,6 +496,7 @@ const QuotePopup = ({ isOpen, onClose }) => {
                   onChange={handleChange}
                   placeholder="Project Location *"
                   required
+                  disabled={isSending}
                   className="
                     h-[42px]
                     w-full
@@ -524,6 +528,7 @@ const QuotePopup = ({ isOpen, onClose }) => {
                   onChange={handleChange}
                   placeholder="Tell Us About Your Project"
                   rows="3"
+                  disabled={isSending}
                   className="
                     block
                     min-h-[80px]
@@ -553,6 +558,8 @@ const QuotePopup = ({ isOpen, onClose }) => {
 
               <button
                 type="submit"
+                disabled={isSending}
+                aria-live="polite"
                 className="
                   mt-[28px]
                   flex
@@ -572,6 +579,8 @@ const QuotePopup = ({ isOpen, onClose }) => {
                   hover:shadow-[0_5px_15px_rgba(93,204,109,0.25)]
                   active:scale-[0.98]
                   cursor-pointer
+                  disabled:cursor-not-allowed
+                  disabled:opacity-60
 
                   sm:mt-[30px]
                   sm:h-[52px]
@@ -579,8 +588,13 @@ const QuotePopup = ({ isOpen, onClose }) => {
                   lg:mt-[28px]
                 "
               >
-                Request My Quote
+                {isSending ? "Sending..." : "Request My Quote"}
               </button>
+              {status === "error" && (
+                <p role="alert" className="mt-3 text-sm text-red-600">
+                  Something went wrong. Please try again.
+                </p>
+              )}
             </form>
           </div>
         </div>

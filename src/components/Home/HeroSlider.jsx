@@ -13,6 +13,9 @@ const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (reducedMotion.matches) return;
+
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000);

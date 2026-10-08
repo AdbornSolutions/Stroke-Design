@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 
 export default function ViewportVideo({ src, ...props }) {
   const ref = useRef(null);
+  const autoPlay = props.autoPlay ?? false;
 
   useEffect(() => {
     const video = ref.current;
@@ -11,7 +12,7 @@ export default function ViewportVideo({ src, ...props }) {
     const updatePlayback = () => {
       if (visible && !document.hidden) {
         if (!video.getAttribute("src")) video.src = src;
-        video.play().catch(() => {});
+        if (autoPlay) video.play().catch(() => {});
       } else {
         video.pause();
       }
@@ -34,7 +35,7 @@ export default function ViewportVideo({ src, ...props }) {
       document.removeEventListener("visibilitychange", updatePlayback);
       video.pause();
     };
-  }, [src]);
+  }, [src, autoPlay]);
 
-  return <video {...props} ref={ref} preload="metadata" />;
+  return <video {...props} ref={ref} preload="none" />;
 }

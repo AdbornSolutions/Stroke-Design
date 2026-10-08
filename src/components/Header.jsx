@@ -10,10 +10,16 @@ const Header = () => {
 
   const location = useLocation();
 
+  const [previousPathname, setPreviousPathname] = useState(location.pathname);
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
     setServicesOpen(false);
   };
+
+  if (previousPathname !== location.pathname) {
+    setPreviousPathname(location.pathname);
+    closeMobileMenu();
+  }
 
   const isServicesActive =
     location.pathname === "/services" ||
@@ -547,6 +553,7 @@ const Header = () => {
         <button
           type="button"
           onClick={() => setMobileMenuOpen((prev) => !prev)}
+          aria-controls="mobile-navigation"
           className="
             ml-auto
             flex
@@ -608,6 +615,7 @@ const Header = () => {
       ================================================== */}
 
       <div
+        id="mobile-navigation"
         className={`
           overflow-hidden
           border-t
@@ -667,10 +675,12 @@ const Header = () => {
                 Services
               </NavLink>
 
-              <button
-                type="button"
-                onClick={() => setServicesOpen((prev) => !prev)}
-                aria-label="Open Services submenu"
+        <button
+          type="button"
+          onClick={() => setServicesOpen((prev) => !prev)}
+          aria-label="Open Services submenu"
+          aria-expanded={servicesOpen}
+          aria-controls="mobile-services-submenu"
                 className="
                   flex
                   h-10
@@ -701,6 +711,7 @@ const Header = () => {
             {/* MOBILE SERVICES SUBMENU */}
 
             <div
+              id="mobile-services-submenu"
               className={`
                 overflow-hidden
                 transition-all

@@ -3,7 +3,6 @@ import interiorhero from "../../assets/about-hero.webp";
 const InteriorHero = () => {
   return (
     <section className="relative min-h-[511px] w-full overflow-hidden">
-
       <img
         src={interiorhero}
         alt="Interior Design"
@@ -52,7 +51,6 @@ const InteriorHero = () => {
           xl:pb-[55px]
         "
       >
-
         <h1
           className="
             m-0

@@ -5,7 +5,6 @@ import "./App.css";
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import ScrollToTop from "./components/ScrollToTop";
 import SmoothScrolling from "./components/SmoothScrolling";
 import WhatsAppButton from "./components/WhatsAppButton";
 import Home from "./pages/Home";
@@ -37,7 +36,6 @@ const TermCondition = lazy(() => import("./pages/TermCondition"));
 function App() {
   return (
     <>
-      <ScrollToTop />
       <SmoothScrolling />
       <Header />
 

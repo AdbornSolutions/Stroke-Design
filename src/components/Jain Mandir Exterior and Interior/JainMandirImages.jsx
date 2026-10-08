@@ -1,18 +1,18 @@
 import React from "react";
 
-import jainmandirimage1 from "../../assets/Jain Mandir Exterior and Interior/Image1.jpg";
-import jainmandirimage2 from "../../assets/Jain Mandir Exterior and Interior/Image2.jpg";
-import jainmandirimage3 from "../../assets/Jain Mandir Exterior and Interior/Image3.jpg";
-import jainmandirimage4 from "../../assets/Jain Mandir Exterior and Interior/Image4.jpg";
-import jainmandirimage5 from "../../assets/Jain Mandir Exterior and Interior/Image5.jpg";
-import jainmandirimage6 from "../../assets/Jain Mandir Exterior and Interior/Image6.jpg";
-import jainmandirimage7 from "../../assets/Jain Mandir Exterior and Interior/Image7.jpg";
-import jainmandirimage8 from "../../assets/Jain Mandir Exterior and Interior/Image8.jpg";
-import jainmandirimage9 from "../../assets/Jain Mandir Exterior and Interior/Image9.jpg";
-import jainmandirimage10 from "../../assets/Jain Mandir Exterior and Interior/Image10.jpg";
-import jainmandirimage11 from "../../assets/Jain Mandir Exterior and Interior/Image11.jpg";
-import jainmandirimage12 from "../../assets/Jain Mandir Exterior and Interior/Image12.jpg";
-import jainmandirimage13 from "../../assets/Jain Mandir Exterior and Interior/Image13.jpg";
+import jainmandirimage1 from "../../assets/Jain Mandir Exterior and Interior/Image1.webp";
+import jainmandirimage2 from "../../assets/Jain Mandir Exterior and Interior/Image2.webp";
+import jainmandirimage3 from "../../assets/Jain Mandir Exterior and Interior/Image3.webp";
+import jainmandirimage4 from "../../assets/Jain Mandir Exterior and Interior/Image4.webp";
+import jainmandirimage5 from "../../assets/Jain Mandir Exterior and Interior/Image5.webp";
+import jainmandirimage6 from "../../assets/Jain Mandir Exterior and Interior/Image6.webp";
+import jainmandirimage7 from "../../assets/Jain Mandir Exterior and Interior/Image7.webp";
+import jainmandirimage8 from "../../assets/Jain Mandir Exterior and Interior/Image8.webp";
+import jainmandirimage9 from "../../assets/Jain Mandir Exterior and Interior/Image9.webp";
+import jainmandirimage10 from "../../assets/Jain Mandir Exterior and Interior/Image10.webp";
+import jainmandirimage11 from "../../assets/Jain Mandir Exterior and Interior/Image11.webp";
+import jainmandirimage12 from "../../assets/Jain Mandir Exterior and Interior/Image12.webp";
+import jainmandirimage13 from "../../assets/Jain Mandir Exterior and Interior/Image13.webp";
 
 const JainMandirImages = () => {
   const images = [
