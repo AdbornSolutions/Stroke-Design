@@ -1,4 +1,4 @@
-import servicehero from "../../assets/about-hero.webp";
+import servicehero from "../../assets/optimized/about-hero.webp";
 
 const ProjectHero = () => {
   return (

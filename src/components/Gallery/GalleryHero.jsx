@@ -1,4 +1,4 @@
-import galleryHeroImage from "../../assets/about-hero.webp";
+import galleryHeroImage from "../../assets/optimized/about-hero.webp";
 
 const GalleryHero = () => {
   return (

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import ContactInformation from "../components/Contact/ContactInformation";
 import OurTerms from "../components/Terms & Conditions/OurTerms";
@@ -12,24 +12,24 @@ import {
 const TermCondition = () => {
   return (
     <div>
-      <motion.div
+      <m.div
         initial="hidden"
         animate="visible"
         variants={fadeUp}
       >
         <TermsHero />
-      </motion.div>
+      </m.div>
 
       <OurTerms />
 
-      <motion.div
+      <m.div
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
         variants={fadeUp}
       >
         <ContactInformation />
-      </motion.div>
+      </m.div>
     </div>
   );
 };

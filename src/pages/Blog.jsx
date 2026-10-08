@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import BlogHero from "../components/Blogs/BlogHero";
 import OurBlogs from "../components/Blogs/OurBlogs";
@@ -13,31 +13,31 @@ import {
 const Blog = () => {
   return (
     <div>
-      <motion.div
+      <m.div
         initial="hidden"
         animate="visible"
         variants={fadeUp}
       >
         <BlogHero />
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
         variants={fadeUp}
       >
         <OurBlogs />
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
         variants={fadeUp}
       >
         <LeaveReply />
-      </motion.div>
+      </m.div>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import GalleryHero from "../components/Gallery/GalleryHero";
 import GalleryImages from "../components/Gallery/GalleryImages";
@@ -12,22 +12,22 @@ import {
 const Gallery = () => {
   return (
     <div>
-      <motion.div
+      <m.div
         initial="hidden"
         animate="visible"
         variants={fadeUp}
       >
         <GalleryHero />
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
         variants={fadeUp}
       >
         <GalleryImages />
-      </motion.div>
+      </m.div>
     </div>
   );
 };

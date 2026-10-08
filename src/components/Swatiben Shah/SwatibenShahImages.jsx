@@ -1,47 +1,56 @@
+import GalleryImage from "../Gallery/GalleryImage";
+import useGalleryLayout from "../useGalleryLayout";
 import React from "react";
 
-import SwatibenImages1 from "../../assets/Swatiben Shah/Image1.webp";
-import SwatibenImages2 from "../../assets/Swatiben Shah/Image2.webp";
-import SwatibenImages3 from "../../assets/Swatiben Shah/Image3.webp";
-import SwatibenImages4 from "../../assets/Swatiben Shah/Image4.webp";
-import SwatibenImages5 from "../../assets/Swatiben Shah/Image5.webp";
-import SwatibenImages6 from "../../assets/Swatiben Shah/Image6.webp";
+import SwatibenImages1 from "../../assets/optimized/Renovation And Remodeling/Image1.webp";
+import SwatibenImages2 from "../../assets/optimized/Renovation And Remodeling/Image2.webp";
+import SwatibenImages3 from "../../assets/optimized/Renovation And Remodeling/Image3.webp";
+import SwatibenImages4 from "../../assets/optimized/Renovation And Remodeling/Image4.webp";
+import SwatibenImages5 from "../../assets/optimized/Renovation And Remodeling/Image5.webp";
+import SwatibenImages6 from "../../assets/optimized/Renovation And Remodeling/Image6.webp";
 
 const SwatibenShahImages = () => {
+  const layout = useGalleryLayout();
   const images = [
     {
       id: "swatiben-1",
       src: SwatibenImages1,
+      aspectRatio: 0.75,
       alt: "Swatiben Shah Gallery Image 1",
       layout: "large",
     },
     {
       id: "swatiben-2",
       src: SwatibenImages2,
+      aspectRatio: 0.75,
       alt: "Swatiben Shah Gallery Image 2",
       layout: "large",
     },
     {
       id: "swatiben-3",
       src: SwatibenImages3,
+      aspectRatio: 0.75,
       alt: "Swatiben Shah Gallery Image 3",
       layout: "large",
     },
     {
       id: "swatiben-4",
       src: SwatibenImages4,
+      aspectRatio: 0.75,
       alt: "Swatiben Shah Gallery Image 4",
       layout: "large",
     },
     {
       id: "swatiben-5",
       src: SwatibenImages5,
+      aspectRatio: 0.75,
       alt: "Swatiben Shah Gallery Image 5",
       layout: "large",
     },
     {
       id: "swatiben-6",
       src: SwatibenImages6,
+      aspectRatio: 0.75,
       alt: "Swatiben Shah Gallery Image 6",
       layout: "large",
     },
@@ -70,7 +79,7 @@ const SwatibenShahImages = () => {
           "
         >
 
-          <div
+          {layout === "desktop" && (<div
             className="
               hidden
 
@@ -94,9 +103,11 @@ const SwatibenShahImages = () => {
                   rounded-[18px]
                 "
               >
-                <img
+                <GalleryImage
                   src={image.src}
+                  aspectRatio={image.aspectRatio}
                   alt={image.alt}
+                  loading="lazy"
                   className="
                     absolute
                     inset-0
@@ -125,8 +136,9 @@ const SwatibenShahImages = () => {
                   rounded-[18px]
                 "
               >
-                <img
+                <GalleryImage
                   src={image.src}
+                  aspectRatio={image.aspectRatio}
                   alt={image.alt}
                   loading="lazy"
                   className="
@@ -144,9 +156,9 @@ const SwatibenShahImages = () => {
                 />
               </div>
             ))}
-          </div>
+          </div>)}
 
-          <div
+          {layout === "tablet" && (<div
             className="
               hidden
               md:grid
@@ -167,8 +179,9 @@ const SwatibenShahImages = () => {
                   rounded-[16px]
                 "
               >
-                <img
+                <GalleryImage
                   src={image.src}
+                  aspectRatio={image.aspectRatio}
                   alt={image.alt}
                   loading="lazy"
                   className="
@@ -186,9 +199,9 @@ const SwatibenShahImages = () => {
                 />
               </div>
             ))}
-          </div>
+          </div>)}
 
-          <div
+          {layout === "mobile" && (<div
             className="
               grid
               grid-cols-2
@@ -208,8 +221,9 @@ const SwatibenShahImages = () => {
                   rounded-[14px]
                 "
               >
-                <img
+                <GalleryImage
                   src={image.src}
+                  aspectRatio={image.aspectRatio}
                   alt={image.alt}
                   loading="lazy"
                   className="
@@ -227,7 +241,7 @@ const SwatibenShahImages = () => {
                 />
               </div>
             ))}
-          </div>
+          </div>)}
 
         </div>
       </section>

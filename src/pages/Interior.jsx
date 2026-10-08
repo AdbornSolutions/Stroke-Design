@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import InteriorHero from "../components/Interior Design Consultation/InteriorHero";
 import InteriorImages from "../components/Interior Design Consultation/InteriorImages";
@@ -11,22 +11,22 @@ import {
 const Interior = () => {
   return (
     <div>
-      <motion.div
+      <m.div
         initial="hidden"
         animate="visible"
         variants={fadeUp}
       >
         <InteriorHero />
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
         variants={fadeUp}
       >
         <InteriorImages />
-      </motion.div>
+      </m.div>
     </div>
   );
 };

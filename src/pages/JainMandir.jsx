@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import JainMandirHero from "../components/Jain Mandir Exterior and Interior/JainMandirHero";
 import JainMandirImages from "../components/Jain Mandir Exterior and Interior/JainMandirImages";
@@ -12,22 +12,22 @@ import {
 const JainMandir = () => {
   return (
     <div>
-      <motion.div
+      <m.div
         initial="hidden"
         animate="visible"
         variants={fadeUp}
       >
         <JainMandirHero />
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
         variants={fadeUp}
       >
         <JainMandirImages />
-      </motion.div>
+      </m.div>
     </div>
   );
 };

@@ -1,6 +1,7 @@
-import about1 from "../../assets/about-1.webp";
-import about2 from "../../assets/about-2.webp";
-import about3 from "../../assets/about-3.webp";
+import GalleryImage from "../Gallery/GalleryImage";
+import about1 from "../../assets/optimized/about-1.webp";
+import about2 from "../../assets/optimized/about-2.webp";
+import about3 from "../../assets/optimized/about-3.webp";
 
 const AboutSection = () => {
   return (
@@ -320,7 +321,7 @@ const AboutSection = () => {
               rounded-[12px]
             "
           >
-            <img loading="lazy" decoding="async"
+            <GalleryImage aspectRatio={0.665158371040724} loading="lazy" decoding="async"
               src={about1}
               alt="Interior living room design"
               className="
@@ -362,7 +363,7 @@ const AboutSection = () => {
               rounded-[12px]
             "
           >
-            <img loading="lazy" decoding="async"
+            <GalleryImage aspectRatio={0.6666666666666666} loading="lazy" decoding="async"
               src={about2}
               alt="Luxury bedroom interior"
               className="
@@ -404,7 +405,7 @@ const AboutSection = () => {
               rounded-[12px]
             "
           >
-            <img loading="lazy" decoding="async"
+            <GalleryImage aspectRatio={0.7461928934010152} loading="lazy" decoding="async"
               src={about3}
               alt="Modern kitchen interior"
               className="

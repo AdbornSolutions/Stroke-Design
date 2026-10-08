@@ -1,6 +1,6 @@
-import AwardWinningProject1 from "../../assets/AwardWinningProject1.webp";
-import AwardWinningProject2 from "../../assets/AwardWinningProject2.webp";
-import AwardWinningProject3 from "../../assets/AwardWinningProject3.webp";
+import AwardWinningProject1 from "../../assets/optimized/AwardWinningProject1.webp";
+import AwardWinningProject2 from "../../assets/optimized/AwardWinningProject2.webp";
+import AwardWinningProject3 from "../../assets/optimized/AwardWinningProject3.webp";
 
 const projects = {
   main: AwardWinningProject1,

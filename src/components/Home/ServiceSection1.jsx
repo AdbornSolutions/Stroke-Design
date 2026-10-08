@@ -1,8 +1,9 @@
+import GalleryImage from "../Gallery/GalleryImage";
 import { Link } from "react-router-dom";
 
-import image1 from "../../assets/hero-2.webp";
-import image2 from "../../assets/hero-3.webp";
-import image3 from "../../assets/hero-4.webp";
+import image1 from "../../assets/optimized/hero-2.webp";
+import image2 from "../../assets/optimized/hero-3.webp";
+import image3 from "../../assets/optimized/hero-4.webp";
 
 const services = [
   {
@@ -16,6 +17,7 @@ const services = [
     ),
     description: "Clean Lines, Premium Materials, Effortless Style",
     image: image1,
+    aspectRatio: 1.990668740279938,
     link: "/about",
   },
   {
@@ -30,6 +32,7 @@ const services = [
     ),
     description: "Clean Lines, Warm Textures, Modern Comfort",
     image: image2,
+    aspectRatio: 1.990668740279938,
     link: "/about",
   },
   {
@@ -44,6 +47,7 @@ const services = [
     ),
     description: "Clean Lines, Warm Textures, Modern Comfort",
     image: image3,
+    aspectRatio: 1.990668740279938,
     link: "/about",
   },
 ];
@@ -449,7 +453,7 @@ const ServiceSection1 = () => {
               zIndex: index + 1,
             }}
           >
-            <img
+            <GalleryImage aspectRatio={service.aspectRatio}
               src={service.image}
               alt=""
               aria-hidden="true"

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import AmitParekhHero from "../components/Amit Parekh/AmitParekhHero";
 import AmitParekhImages from "../components/Amit Parekh/AmitParekhImages";
@@ -11,22 +11,22 @@ import {
 const AmitParekh = () => {
   return (
     <div>
-      <motion.div
+      <m.div
         initial="hidden"
         animate="visible"
         variants={fadeUp}
       >
         <AmitParekhHero />
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
         variants={fadeUp}
       >
         <AmitParekhImages />
-      </motion.div>
+      </m.div>
     </div>
   );
 };

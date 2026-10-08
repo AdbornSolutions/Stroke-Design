@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import ExteriorHero from "../components/Exterior Design/ExteriorHero";
 import ExteriorImages from "../components/Exterior Design/ExteriorImages";
@@ -11,22 +11,22 @@ import {
 const Exterior = () => {
   return (
     <div>
-      <motion.div
+      <m.div
         initial="hidden"
         animate="visible"
         variants={fadeUp}
       >
         <ExteriorHero />
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
         variants={fadeUp}
       >
         <ExteriorImages />
-      </motion.div>
+      </m.div>
     </div>
   );
 };

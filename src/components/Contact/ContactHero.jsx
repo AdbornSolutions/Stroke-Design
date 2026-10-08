@@ -1,4 +1,4 @@
-import contactHeroImage from "../../assets/about-hero.webp";
+import contactHeroImage from "../../assets/optimized/about-hero.webp";
 
 const ContactHero = () => {
   return (

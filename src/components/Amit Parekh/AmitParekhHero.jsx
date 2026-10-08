@@ -1,4 +1,4 @@
-import amitParekhHeroImage from "../../assets/about-hero.webp";
+import amitParekhHeroImage from "../../assets/optimized/about-hero.webp";
 
 const AmitParekhHero = () => {
   return (

@@ -1,4 +1,4 @@
-import interiorhero from "../../assets/about-hero.webp";
+import interiorhero from "../../assets/optimized/about-hero.webp";
 
 const InteriorHero = () => {
   return (

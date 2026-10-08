@@ -1,87 +1,102 @@
-import CommercialImage1 from "../../assets/Commercial/Image1.webp";
-import CommercialImage10 from "../../assets/Commercial/Image10.webp";
-import CommercialImage11 from "../../assets/Commercial/Image11.webp";
-import CommercialImage12 from "../../assets/Commercial/Image12.webp";
-import CommercialImage2 from "../../assets/Commercial/Image2.webp";
-import CommercialImage3 from "../../assets/Commercial/Image3.webp";
-import CommercialImage4 from "../../assets/Commercial/Image4.webp";
-import CommercialImage5 from "../../assets/Commercial/Image5.webp";
-import CommercialImage6 from "../../assets/Commercial/Image6.webp";
-import CommercialImage7 from "../../assets/Commercial/Image7.webp";
-import CommercialImage8 from "../../assets/Commercial/Image8.webp";
-import CommercialImage9 from "../../assets/Commercial/Image9.webp";
+import GalleryImage from "../Gallery/GalleryImage";
+import useGalleryLayout from "../useGalleryLayout";
+import CommercialImage1 from "../../assets/optimized/Commercial/Image1.webp";
+import CommercialImage10 from "../../assets/optimized/Commercial/Image10.webp";
+import CommercialImage11 from "../../assets/optimized/Commercial/Image11.webp";
+import CommercialImage12 from "../../assets/optimized/Commercial/Image12.webp";
+import CommercialImage2 from "../../assets/optimized/Commercial/Image2.webp";
+import CommercialImage3 from "../../assets/optimized/Commercial/Image3.webp";
+import CommercialImage4 from "../../assets/optimized/Commercial/Image4.webp";
+import CommercialImage5 from "../../assets/optimized/Commercial/Image5.webp";
+import CommercialImage6 from "../../assets/optimized/Commercial/Image6.webp";
+import CommercialImage7 from "../../assets/optimized/Commercial/Image7.webp";
+import CommercialImage8 from "../../assets/optimized/Commercial/Image8.webp";
+import CommercialImage9 from "../../assets/optimized/Commercial/Image9.webp";
 
 const CommercialImages = () => {
+  const layout = useGalleryLayout();
   const images = [
     {
       id: "Commercial-1",
       src: CommercialImage1,
+      aspectRatio: 0.6666666666666666,
       alt: "Commercial Design Gallery Image 1",
       layout: "large",
     },
     {
       id: "Commercial-2",
       src: CommercialImage2,
+      aspectRatio: 1.5,
       alt: "Commercial Design Gallery Image 2",
       layout: "large",
     },
     {
       id: "Commercial-3",
       src: CommercialImage3,
+      aspectRatio: 0.44583333333333336,
       alt: "Commercial Design Gallery Image 3",
       layout: "large",
     },
     {
       id: "Commercial-4",
       src: CommercialImage4,
+      aspectRatio: 1.3333333333333333,
       alt: "Commercial Design Gallery Image 4",
       layout: "small",
     },
     {
       id: "Commercial-5",
       src: CommercialImage5,
+      aspectRatio: 1.3333333333333333,
       alt: "Commercial Design Gallery Image 5",
       layout: "small",
     },
     {
       id: "Commercial-6",
       src: CommercialImage6,
+      aspectRatio: 1.5,
       alt: "Commercial Design Gallery Image 6",
       layout: "small",
     },
     {
       id: "Commercial-7",
       src: CommercialImage7,
+      aspectRatio: 1.5,
       alt: "Commercial Design Gallery Image 7",
       layout: "small",
     },
     {
       id: "Commercial-8",
       src: CommercialImage8,
+      aspectRatio: 0.44583333333333336,
       alt: "Commercial Design Gallery Image 8",
       layout: "small",
     },
     {
       id: "Commercial-9",
       src: CommercialImage9,
+      aspectRatio: 0.75,
       alt: "Commercial Design Gallery Image 9",
       layout: "small",
     },
     {
       id: "Commercial-10",
       src: CommercialImage10,
+      aspectRatio: 1.5,
       alt: "Commercial Design Gallery Image 10",
       layout: "small",
     },
     {
       id: "Commercial-11",
       src: CommercialImage11,
+      aspectRatio: 1.5,
       alt: "Commercial Design Gallery Image 11",
       layout: "small",
     },
     {
       id: "Commercial-12",
       src: CommercialImage12,
+      aspectRatio: 0.6666666666666666,
       alt: "Commercial Design Gallery Image 12",
       layout: "small",
     },
@@ -108,7 +123,7 @@ const CommercialImages = () => {
           xl:px-[48px]
         "
       >
-        <div
+        {layout === "desktop" && (<div
           className="
             hidden
 
@@ -131,9 +146,11 @@ const CommercialImages = () => {
                 rounded-[18px]
               "
             >
-              <img
+              <GalleryImage
                 src={image.src}
+                  aspectRatio={image.aspectRatio}
                 alt={image.alt}
+                  loading="lazy"
                 className="
                   absolute
                   inset-0
@@ -162,8 +179,9 @@ const CommercialImages = () => {
                 rounded-[18px]
               "
             >
-              <img
+              <GalleryImage
                 src={image.src}
+                  aspectRatio={image.aspectRatio}
                 alt={image.alt}
                 loading="lazy"
                 className="
@@ -194,8 +212,9 @@ const CommercialImages = () => {
                 rounded-[18px]
               "
             >
-              <img
+              <GalleryImage
                 src={image.src}
+                  aspectRatio={image.aspectRatio}
                 alt={image.alt}
                 loading="lazy"
                 className="
@@ -226,8 +245,9 @@ const CommercialImages = () => {
                 rounded-[18px]
               "
             >
-              <img
+              <GalleryImage
                 src={image.src}
+                  aspectRatio={image.aspectRatio}
                 alt={image.alt}
                 loading="lazy"
                 className="
@@ -245,9 +265,9 @@ const CommercialImages = () => {
               />
             </div>
           ))}
-        </div>
+        </div>)}
 
-        <div
+        {layout === "tablet" && (<div
           className="
             hidden
             md:grid
@@ -268,8 +288,9 @@ const CommercialImages = () => {
                 rounded-[16px]
               "
             >
-              <img
+              <GalleryImage
                 src={image.src}
+                  aspectRatio={image.aspectRatio}
                 alt={image.alt}
                 loading="lazy"
                 className="
@@ -287,9 +308,9 @@ const CommercialImages = () => {
               />
             </div>
           ))}
-        </div>
+        </div>)}
 
-        <div
+        {layout === "mobile" && (<div
           className="
             grid
             grid-cols-2
@@ -309,8 +330,9 @@ const CommercialImages = () => {
                 rounded-[14px]
               "
             >
-              <img
+              <GalleryImage
                 src={image.src}
+                  aspectRatio={image.aspectRatio}
                 alt={image.alt}
                 loading="lazy"
                 className="
@@ -328,7 +350,7 @@ const CommercialImages = () => {
               />
             </div>
           ))}
-        </div>
+        </div>)}
       </div>
     </section>
   );

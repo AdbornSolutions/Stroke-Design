@@ -1,18 +1,20 @@
+import GalleryImage from "../Gallery/GalleryImage";
 import { useRef } from "react";
-import HomeProject1 from "../../assets/home-project-1.webp";
-import HomeProject2 from "../../assets/home-project-2.webp";
-import HomeProject3 from "../../assets/home-project-3.webp";
-import HomeProject4 from "../../assets/home-project-4.webp";
-import HomeProject5 from "../../assets/home-project-5.webp";
-import HomeProject6 from "../../assets/home-project-6.webp";
-import HomeProject7 from "../../assets/home-project-7.webp";
-import HomeProject8 from "../../assets/home-project-8.webp";
+import HomeProject1 from "../../assets/optimized/home-project-1.webp";
+import HomeProject2 from "../../assets/optimized/home-project-2.webp";
+import HomeProject3 from "../../assets/optimized/home-project-3.webp";
+import HomeProject4 from "../../assets/optimized/home-project-4.webp";
+import HomeProject5 from "../../assets/optimized/home-project-5.webp";
+import HomeProject6 from "../../assets/optimized/home-project-6.webp";
+import HomeProject7 from "../../assets/optimized/home-project-7.webp";
+import HomeProject8 from "../../assets/optimized/home-project-8.webp";
 
-import ProjectBackground from "../../assets/ProjectBackground.webp";
+import ProjectBackground from "../../assets/optimized/ProjectBackground.webp";
 
 const projects = [
   {
     image: HomeProject1,
+    aspectRatio: 0.8243243243243243,
     titleLight: "2BHK Home",
     titleBold: "Interior",
     location: "Pune",
@@ -20,42 +22,49 @@ const projects = [
   },
   {
     image: HomeProject2,
+    aspectRatio: 0.8243243243243243,
     titleBold: "Studio Apartment Interior",
     location: "Mumbai",
     alt: "Studio Apartment Interior",
   },
   {
     image: HomeProject3,
+    aspectRatio: 0.8243243243243243,
     titleBold: "3BHK Luxury Apartment",
     location: "Mumbai",
     alt: "3BHK Luxury Apartment",
   },
   {
     image: HomeProject4,
+    aspectRatio: 0.8243243243243243,
     titleBold: "Modern Villa Interior",
     location: "Mumbai",
     alt: "Modern Villa Interior",
   },
   {
     image: HomeProject5,
+    aspectRatio: 0.8243243243243243,
     titleBold: "Duplex House Interior",
     location: "Nagpur",
     alt: "Duplex House Interior",
   },
   {
     image: HomeProject6,
+    aspectRatio: 0.8243243243243243,
     titleBold: "Modern Kitchen Interior",
     location: "Nagpur",
     alt: "Modern Kitchen Interior",
   },
   {
     image: HomeProject7,
+    aspectRatio: 0.8243243243243243,
     titleBold: "Compact Home Interior",
     location: "Hyderabad",
     alt: "Compact Home Interior",
   },
   {
     image: HomeProject8,
+    aspectRatio: 0.8243243243243243,
     titleBold: "Luxury Residential Interior",
     location: "Hyderabad",
     alt: "Luxury Residential Interior",
@@ -142,7 +151,7 @@ const OurProjects = () => {
             Only added to the header area.
         ================================================== */}
 
-        <img
+        <GalleryImage aspectRatio={1.5}
           loading="lazy"
           decoding="async"
           src={ProjectBackground}
@@ -679,7 +688,7 @@ const OurProjects = () => {
                   max-[480px]:h-[260px]
                 "
               >
-                <img
+                <GalleryImage aspectRatio={project.aspectRatio}
                   src={project.image}
                   alt={project.alt}
                   loading="lazy"

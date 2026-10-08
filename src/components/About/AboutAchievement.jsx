@@ -3,19 +3,16 @@ const awards = [
     year: "2025",
     category: "Interior Design",
     title: "Best Residential Design",
-    image: "YOUR-2025-IMAGE-URL",
   },
   {
     year: "2024",
     category: "Architecture",
     title: "Top Commercial Design",
-    image: "YOUR-2024-IMAGE-URL",
   },
   {
     year: "2023",
     category: "Community center",
     title: "Sustainable Design Award",
-    image: "YOUR-2023-IMAGE-URL",
   },
   {
     year: "2022",
@@ -27,7 +24,6 @@ const awards = [
         Award
       </>
     ),
-    image: "YOUR-2022-IMAGE-URL",
   },
 ];
 
@@ -408,7 +404,7 @@ const AboutAchievements = () => {
                     max-[380px]:w-[75px]
                   "
                   style={{
-                    backgroundImage: `url("${award.image}")`,
+                    backgroundImage: award.image ? `url("${award.image}")` : undefined,
                   }}
                 >
 

@@ -1,60 +1,69 @@
+import galleryDimensions from "../../assets/GalleryImages/optimized/dimensions.json";
 import { useEffect, useRef } from "react";
-import interior1 from "../../assets/GalleryImages/Interior-1.webp";
-import interior2 from "../../assets/GalleryImages/Interior-2.webp";
-import interior3 from "../../assets/GalleryImages/Interior-3.webp";
-import interior4 from "../../assets/GalleryImages/Interior-4.webp";
-import interior5 from "../../assets/GalleryImages/Interior-5.webp";
-import interior6 from "../../assets/GalleryImages/Interior-6.webp";
-import interior7 from "../../assets/GalleryImages/Interior-7.webp";
-import interior8 from "../../assets/GalleryImages/Interior-8.webp";
+import interior1 from "../../assets/GalleryImages/optimized/strip/Interior-1.webp";
+import interior2 from "../../assets/GalleryImages/optimized/strip/Interior-2.webp";
+import interior3 from "../../assets/GalleryImages/optimized/strip/Interior-3.webp";
+import interior4 from "../../assets/GalleryImages/optimized/strip/Interior-4.webp";
+import interior5 from "../../assets/GalleryImages/optimized/strip/Interior-5.webp";
+import interior6 from "../../assets/GalleryImages/optimized/strip/Interior-6.webp";
+import interior7 from "../../assets/GalleryImages/optimized/strip/Interior-7.webp";
+import interior8 from "../../assets/GalleryImages/optimized/strip/Interior-8.webp";
 
-import exterior1 from "../../assets/GalleryImages/Exterior-1.webp";
-import exterior2 from "../../assets/GalleryImages/Exterior-2.webp";
-import exterior3 from "../../assets/GalleryImages/Exterior-3.webp";
-import exterior4 from "../../assets/GalleryImages/Exterior-4.webp";
-import exterior5 from "../../assets/GalleryImages/Exterior-5.webp";
-import exterior6 from "../../assets/GalleryImages/Exterior-6.webp";
-import exterior7 from "../../assets/GalleryImages/Exterior-7.webp";
-import exterior8 from "../../assets/GalleryImages/Exterior-8.webp";
+import exterior1 from "../../assets/GalleryImages/optimized/strip/Exterior-1.webp";
+import exterior2 from "../../assets/GalleryImages/optimized/strip/Exterior-2.webp";
+import exterior3 from "../../assets/GalleryImages/optimized/strip/Exterior-3.webp";
+import exterior4 from "../../assets/GalleryImages/optimized/strip/Exterior-4.webp";
+import exterior5 from "../../assets/GalleryImages/optimized/strip/Exterior-5.webp";
+import exterior6 from "../../assets/GalleryImages/optimized/strip/Exterior-6.webp";
+import exterior7 from "../../assets/GalleryImages/optimized/strip/Exterior-7.webp";
+import exterior8 from "../../assets/GalleryImages/optimized/strip/Exterior-8.webp";
 
 const row1Images = [
   {
     src: interior1,
+    dimensions: galleryDimensions["interior-1"],
     alt: "Interior project 1",
     type: "a",
   },
   {
     src: interior2,
+    dimensions: galleryDimensions["interior-2"],
     alt: "Interior project 2",
     type: "b",
   },
   {
     src: interior3,
+    dimensions: galleryDimensions["interior-3"],
     alt: "Interior project 3",
     type: "c",
   },
   {
     src: interior4,
+    dimensions: galleryDimensions["interior-4"],
     alt: "Interior project 4",
     type: "d",
   },
   {
     src: interior5,
+    dimensions: galleryDimensions["interior-5"],
     alt: "Interior project 5",
     type: "a",
   },
   {
     src: interior6,
+    dimensions: galleryDimensions["interior-6"],
     alt: "Interior project 6",
     type: "b",
   },
   {
     src: interior7,
+    dimensions: galleryDimensions["interior-7"],
     alt: "Interior project 7",
     type: "c",
   },
   {
     src: interior8,
+    dimensions: galleryDimensions["interior-8"],
     alt: "Interior project 8",
     type: "d",
   },
@@ -67,41 +76,49 @@ const row1Images = [
 const row2Images = [
   {
     src: exterior1,
+    dimensions: galleryDimensions["exterior-1"],
     alt: "Interior project 9",
     type: "a",
   },
   {
     src: exterior2,
+    dimensions: galleryDimensions["exterior-2"],
     alt: "Interior project 10",
     type: "b",
   },
   {
     src: exterior3,
+    dimensions: galleryDimensions["exterior-3"],
     alt: "Interior project 11",
     type: "c",
   },
   {
     src: exterior4,
+    dimensions: galleryDimensions["exterior-4"],
     alt: "Interior project 12",
     type: "d",
   },
   {
     src: exterior5,
+    dimensions: galleryDimensions["exterior-5"],
     alt: "Interior project 13",
     type: "a",
   },
   {
     src: exterior6,
+    dimensions: galleryDimensions["exterior-6"],
     alt: "Interior project 14",
     type: "b",
   },
   {
     src: exterior7,
+    dimensions: galleryDimensions["exterior-7"],
     alt: "Interior project 15",
     type: "c",
   },
   {
     src: exterior8,
+    dimensions: galleryDimensions["exterior-8"],
     alt: "Interior project 16",
     type: "d",
   },
@@ -207,6 +224,21 @@ const getCardSize = (row, type) => {
    IMAGE SET
 ========================================================= */
 
+
+// Select enough pixels for each fixed-size card, including object-cover cropping.
+function getImageSizes(row, image) {
+  const classes = getCardSize(row, image.type);
+  const base = classes.match(/^\s*w-\[(\d+)px\] h-\[(\d+)px\]/);
+  const slots = [[0, Number(base[1]), Number(base[2])],
+    ...[...classes.matchAll(/min-\[(\d+)px\]:w-\[(\d+)px\]\s+min-\[\d+px\]:h-\[(\d+)px\]/g)]
+      .map(match => match.slice(1).map(Number))];
+  const ratio = image.dimensions.width / image.dimensions.height;
+  return slots.map(([_min, width, height], index) => {
+    const pixels = Math.ceil(Math.max(width, height * ratio));
+    return index < slots.length - 1 ? `(max-width: ${slots[index + 1][0] - 1}px) ${pixels}px` : `${pixels}px`;
+  }).join(", ");
+}
+
 function GallerySet({ images, row }) {
   return (
     <div
@@ -258,6 +290,7 @@ function GallerySet({ images, row }) {
           <img
             src={image.src}
             alt={image.alt}
+            sizes={getImageSizes(row, image)}
             loading="lazy"
             decoding="async"
             fetchPriority="low"
@@ -314,6 +347,25 @@ function AnimatedGalleryRow({ images, direction, speed, row }) {
     clone.setAttribute("aria-hidden", "true");
 
     track.appendChild(clone);
+
+    // Warm the full loop ahead of scrolling, including horizontally hidden copies.
+    // Duplicate cards share URLs, so each photograph downloads once.
+    const warmImages = () => {
+      rowElement.querySelectorAll("img").forEach(image => {
+        image.fetchPriority = "auto";
+        image.loading = "eager";
+      });
+    };
+    const imageObserver = "IntersectionObserver" in window
+      ? new IntersectionObserver(([entry]) => {
+          if (entry.isIntersecting) {
+            warmImages();
+            imageObserver.disconnect();
+          }
+        }, { rootMargin: "1200px 0px" })
+      : null;
+    if (imageObserver) imageObserver.observe(rowElement);
+    else warmImages();
 
     /* =====================================================
        GET SET WIDTH
@@ -538,6 +590,7 @@ function AnimatedGalleryRow({ images, direction, speed, row }) {
 
     return () => {
       observer?.disconnect();
+      imageObserver?.disconnect();
       if (animationFrame !== null) {
         cancelAnimationFrame(animationFrame);
       }

@@ -1,89 +1,104 @@
+import GalleryImage from "../Gallery/GalleryImage";
+import useGalleryLayout from "../useGalleryLayout";
 import React from "react";
 
-import InteriorImage1 from "../../assets/INTERIOR/Image1.webp";
-import InteriorImage2 from "../../assets/INTERIOR/Image2.webp";
-import InteriorImage3 from "../../assets/INTERIOR/Image3.webp";
-import InteriorImage4 from "../../assets/INTERIOR/Image4.webp";
-import InteriorImage5 from "../../assets/INTERIOR/Image5.webp";
-import InteriorImage6 from "../../assets/INTERIOR/Image6.webp";
-import InteriorImage7 from "../../assets/INTERIOR/Image7.webp";
-import InteriorImage8 from "../../assets/INTERIOR/Image8.webp";
-import InteriorImage9 from "../../assets/INTERIOR/Image9.webp";
-import InteriorImage10 from "../../assets/INTERIOR/Image10.webp";
-import InteriorImage11 from "../../assets/INTERIOR/Image11.webp";
-import InteriorImage12 from "../../assets/INTERIOR/Image12.webp";
+import InteriorImage1 from "../../assets/optimized/INTERIOR/Image1.webp";
+import InteriorImage2 from "../../assets/optimized/Commercial/Image7.webp";
+import InteriorImage3 from "../../assets/optimized/INTERIOR/Image3.webp";
+import InteriorImage4 from "../../assets/optimized/INTERIOR/Image4.webp";
+import InteriorImage5 from "../../assets/optimized/INTERIOR/Image5.webp";
+import InteriorImage6 from "../../assets/optimized/INTERIOR/Image6.webp";
+import InteriorImage7 from "../../assets/optimized/INTERIOR/Image7.webp";
+import InteriorImage8 from "../../assets/optimized/Interior 2D3D Layouts/Image8.webp";
+import InteriorImage9 from "../../assets/optimized/INTERIOR/Image9.webp";
+import InteriorImage10 from "../../assets/optimized/INTERIOR/Image10.webp";
+import InteriorImage11 from "../../assets/optimized/INTERIOR/Image11.webp";
+import InteriorImage12 from "../../assets/optimized/INTERIOR/Image12.webp";
 
 const InteriorImages = () => {
+  const layout = useGalleryLayout();
   const images = [
     {
       id: "Interior-1",
       src: InteriorImage1,
+      aspectRatio: 1.3333333333333333,
       alt: "Interior Design Gallery Image 1",
       layout: "large",
     },
     {
       id: "Interior-2",
       src: InteriorImage2,
+      aspectRatio: 1.5,
       alt: "Interior Design Gallery Image 2",
       layout: "large",
     },
     {
       id: "Interior-3",
       src: InteriorImage3,
+      aspectRatio: 0.75,
       alt: "Interior Design Gallery Image 3",
       layout: "large",
     },
     {
       id: "Interior-4",
       src: InteriorImage4,
+      aspectRatio: 0.6666666666666666,
       alt: "Interior Design Gallery Image 4",
       layout: "small",
     },
     {
       id: "Interior-5",
       src: InteriorImage5,
+      aspectRatio: 0.6666666666666666,
       alt: "Interior Design Gallery Image 5",
       layout: "small",
     },
     {
       id: "Interior-6",
       src: InteriorImage6,
+      aspectRatio: 0.6666666666666666,
       alt: "Interior Design Gallery Image 6",
       layout: "small",
     },
     {
       id: "Interior-7",
       src: InteriorImage7,
+      aspectRatio: 0.6666666666666666,
       alt: "Interior Design Gallery Image 7",
       layout: "small",
     },
     {
       id: "Interior-8",
       src: InteriorImage8,
+      aspectRatio: 0.6666666666666666,
       alt: "Interior Design Gallery Image 8",
       layout: "small",
     },
     {
       id: "Interior-9",
       src: InteriorImage9,
+      aspectRatio: 0.6666666666666666,
       alt: "Interior Design Gallery Image 9",
       layout: "small",
     },
     {
       id: "Interior-10",
       src: InteriorImage10,
+      aspectRatio: 0.6666666666666666,
       alt: "Interior Design Gallery Image 10",
       layout: "small",
     },
     {
       id: "Interior-11",
       src: InteriorImage11,
+      aspectRatio: 0.6666666666666666,
       alt: "Interior Design Gallery Image 11",
       layout: "small",
     },
     {
       id: "Interior-12",
       src: InteriorImage12,
+      aspectRatio: 0.6666666666666666,
       alt: "Interior Design Gallery Image 12",
       layout: "small",
     },
@@ -111,7 +126,7 @@ const InteriorImages = () => {
         "
       >
 
-        <div
+        {layout === "desktop" && (<div
           className="
             hidden
 
@@ -135,9 +150,11 @@ const InteriorImages = () => {
                 rounded-[18px]
               "
             >
-              <img
+              <GalleryImage
                 src={image.src}
+                  aspectRatio={image.aspectRatio}
                 alt={image.alt}
+                  loading="lazy"
                 className="
                   absolute
                   inset-0
@@ -166,8 +183,9 @@ const InteriorImages = () => {
                 rounded-[18px]
               "
             >
-              <img
+              <GalleryImage
                 src={image.src}
+                  aspectRatio={image.aspectRatio}
                 alt={image.alt}
                 loading="lazy"
                 className="
@@ -198,8 +216,9 @@ const InteriorImages = () => {
                 rounded-[18px]
               "
             >
-              <img
+              <GalleryImage
                 src={image.src}
+                  aspectRatio={image.aspectRatio}
                 alt={image.alt}
                 loading="lazy"
                 className="
@@ -230,8 +249,9 @@ const InteriorImages = () => {
                 rounded-[18px]
               "
             >
-              <img
+              <GalleryImage
                 src={image.src}
+                  aspectRatio={image.aspectRatio}
                 alt={image.alt}
                 loading="lazy"
                 className="
@@ -249,9 +269,9 @@ const InteriorImages = () => {
               />
             </div>
           ))}
-        </div>
+        </div>)}
 
-        <div
+        {layout === "tablet" && (<div
           className="
             hidden
             md:grid
@@ -272,8 +292,9 @@ const InteriorImages = () => {
                 rounded-[16px]
               "
             >
-              <img
+              <GalleryImage
                 src={image.src}
+                  aspectRatio={image.aspectRatio}
                 alt={image.alt}
                 loading="lazy"
                 className="
@@ -291,9 +312,9 @@ const InteriorImages = () => {
               />
             </div>
           ))}
-        </div>
+        </div>)}
 
-        <div
+        {layout === "mobile" && (<div
           className="
             grid
             grid-cols-2
@@ -313,8 +334,9 @@ const InteriorImages = () => {
                 rounded-[14px]
               "
             >
-              <img
+              <GalleryImage
                 src={image.src}
+                  aspectRatio={image.aspectRatio}
                 alt={image.alt}
                 loading="lazy"
                 className="
@@ -332,7 +354,7 @@ const InteriorImages = () => {
               />
             </div>
           ))}
-        </div>
+        </div>)}
 
       </div>
     </section>

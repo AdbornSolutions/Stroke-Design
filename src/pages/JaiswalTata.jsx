@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import JaiswalTataHero from "../components/Jaiswal Tata Capital/JaiswalTataHero";
 import JaiswalTataImages from "../components/Jaiswal Tata Capital/JaiswalTataImages";
@@ -11,22 +11,22 @@ import {
 const JaiswalTata = () => {
   return (
     <div>
-      <motion.div
+      <m.div
         initial="hidden"
         animate="visible"
         variants={fadeUp}
       >
         <JaiswalTataHero />
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
         variants={fadeUp}
       >
         <JaiswalTataImages />
-      </motion.div>
+      </m.div>
     </div>
   );
 };

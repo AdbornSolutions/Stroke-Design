@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import DarshanHouseHero from "../components/DARSHAN House/DarshanHouseHero";
 import DarshanHouseImages from "../components/DARSHAN House/DarshanHouseImages";
@@ -11,22 +11,22 @@ import {
 const DarshanHouse = () => {
   return (
     <div>
-      <motion.div
+      <m.div
         initial="hidden"
         animate="visible"
         variants={fadeUp}
       >
         <DarshanHouseHero />
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
         variants={fadeUp}
       >
         <DarshanHouseImages />
-      </motion.div>
+      </m.div>
     </div>
   );
 };

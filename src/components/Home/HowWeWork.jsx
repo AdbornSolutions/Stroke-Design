@@ -1,4 +1,5 @@
-import processImage from "../../assets/how-we-work.webp";
+import GalleryImage from "../Gallery/GalleryImage";
+import processImage from "../../assets/optimized/how-we-work.webp";
 
 const processSteps = [
   {
@@ -406,7 +407,7 @@ const HowWeWork = () => {
                 w-full
               "
             >
-              <img
+              <GalleryImage aspectRatio={1.4287020109689215}
                 loading="lazy"
                 decoding="async"
                 src={processImage}

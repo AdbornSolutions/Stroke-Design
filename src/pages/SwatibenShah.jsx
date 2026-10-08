@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import SwatibenShahHero from "../components/Swatiben Shah/SwatibenShahHero";
 import SwatibenShahImages from "../components/Swatiben Shah/SwatibenShahImages";
@@ -11,22 +11,22 @@ import {
 const SwatibenShah = () => {
   return (
     <div>
-      <motion.div
+      <m.div
         initial="hidden"
         animate="visible"
         variants={fadeUp}
       >
         <SwatibenShahHero />
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
         variants={fadeUp}
       >
         <SwatibenShahImages />
-      </motion.div>
+      </m.div>
     </div>
   );
 };

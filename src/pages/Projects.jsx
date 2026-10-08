@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import ProjectHero from "../components/Projects/ProjectHero";
 import OurProject from "../components/Projects/OurProject";
@@ -12,22 +12,22 @@ import {
 const Projects = () => {
   return (
     <div>
-      <motion.div
+      <m.div
         initial="hidden"
         animate="visible"
         variants={fadeUp}
       >
         <ProjectHero />
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
         variants={fadeUp}
       >
         <OurProject />
-      </motion.div>
+      </m.div>
     </div>
   );
 };

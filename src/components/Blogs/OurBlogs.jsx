@@ -1,10 +1,11 @@
+import GalleryImage from "../Gallery/GalleryImage";
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 
-import ModernBedroom1 from "../../assets/ModernBedroom1.webp";
-import ModernBedroom2 from "../../assets/ModernBedroom2.webp";
-import RecentPost1 from "../../assets/RecentPost.webp";
-import RecentPost2 from "../../assets/RecentPost2.webp";
+import ModernBedroom1 from "../../assets/optimized/ModernBedroom1.webp";
+import ModernBedroom2 from "../../assets/optimized/ModernBedroom2.webp";
+import RecentPost1 from "../../assets/optimized/RecentPost.webp";
+import RecentPost2 from "../../assets/optimized/RecentPost2.webp";
 
 const posts = [
   {
@@ -14,6 +15,7 @@ const posts = [
     category: "Power Tools",
     date: "June 2,2025",
     image: RecentPost1,
+    aspectRatio: 1.3679890560875514,
     excerpt:
       "Modern interior design is all about creating a sleek, functional, and aesthetically pleasing space that reflects contemporary living. Whether you're updating a single room or redesigning your entire home, incorporating modern interior design principles can bring a fresh, sophisticated, and elegant ambiance. With an emphasis on minimalism, clean",
   },
@@ -25,6 +27,7 @@ const posts = [
     category: "Power Tools",
     date: "June 2,2025",
     image: RecentPost2,
+    aspectRatio: 1.3679890560875514,
     excerpt:
       "Modern interior design is all about creating a sleek, functional, and aesthetically pleasing space that reflects contemporary living. Whether you’re updating a single room or redesigning your entire home, incorporating modern interior design principles can bring a fresh, sophisticated, and elegant ambiance.",
   },
@@ -36,6 +39,7 @@ const posts = [
     category: "Interior Design",
     date: "June 2,2025",
     image: ModernBedroom1,
+    aspectRatio: 1.4516129032258065,
     excerpt:
       "Create beautifully considered interiors with refined materials, thoughtful layouts and contemporary design elements that make every corner feel intentional.",
   },
@@ -47,6 +51,7 @@ const posts = [
     category: "Interior Design",
     date: "May 28,2025",
     image: ModernBedroom2,
+    aspectRatio: 1.4516129032258065,
     excerpt:
       "Discover contemporary living room ideas that balance comfort, functionality and timeless aesthetics.",
   },
@@ -359,7 +364,7 @@ const OurBlogs = () => {
                       max-sm:w-[110px]
                     "
                   >
-                    <img
+                    <GalleryImage aspectRatio={post.aspectRatio}
                       src={post.image}
                       alt={post.title}
                       loading="lazy"
@@ -499,7 +504,7 @@ const OurBlogs = () => {
                           xl:h-[330px]
                         "
                       >
-                        <img
+                        <GalleryImage aspectRatio={post.aspectRatio}
                           src={post.image}
                           alt={post.title}
                           loading={index === 0 ? "eager" : "lazy"}
@@ -760,7 +765,7 @@ const OurBlogs = () => {
                       md:h-[198px]
                     "
                   >
-                    <img
+                    <GalleryImage aspectRatio={1.4516129032258065}
                       src={ModernBedroom1}
                       alt="Modern bedroom interior"
                       loading="lazy"
@@ -793,7 +798,7 @@ const OurBlogs = () => {
                       md:h-[198px]
                     "
                   >
-                    <img
+                    <GalleryImage aspectRatio={1.4516129032258065}
                       src={ModernBedroom2}
                       alt="Interior design consultation"
                       loading="lazy"

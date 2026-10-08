@@ -1,13 +1,15 @@
 import { lazy, Suspense } from "react";
+import { LazyMotion, domAnimation } from "framer-motion";
 import { Route, Routes } from "react-router-dom";
 
 import "./App.css";
+import { loadGallery } from "./pages/loadGallery";
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import SmoothScrolling from "./components/SmoothScrolling";
 import WhatsAppButton from "./components/WhatsAppButton";
-import Home from "./pages/Home";
+const Home = lazy(() => import("./pages/Home"));
 
 const About = lazy(() => import("./pages/About"));
 const AmitParekh = lazy(() => import("./pages/AmitParekh"));
@@ -18,7 +20,7 @@ const Commercial = lazy(() => import("./pages/Commercial"));
 const Contact = lazy(() => import("./pages/Contact"));
 const DarshanHouse = lazy(() => import("./pages/DarshanHouse"));
 const Exterior = lazy(() => import("./pages/Exterior"));
-const Gallery = lazy(() => import("./pages/Gallery"));
+const Gallery = lazy(loadGallery);
 const Interior = lazy(() => import("./pages/Interior"));
 const Interior2D3D = lazy(() => import("./pages/Interior2D3D"));
 const JainMandir = lazy(() => import("./pages/JainMandir"));
@@ -35,7 +37,7 @@ const TermCondition = lazy(() => import("./pages/TermCondition"));
 
 function App() {
   return (
-    <>
+    <LazyMotion features={domAnimation} strict>
       <SmoothScrolling />
       <Header />
 
@@ -86,7 +88,7 @@ function App() {
 
       <WhatsAppButton />
       <Footer />
-    </>
+    </LazyMotion>
   );
 }
 

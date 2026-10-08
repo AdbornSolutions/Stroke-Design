@@ -1,4 +1,4 @@
-import privacyhero from "../../assets/about-hero.webp";
+import privacyhero from "../../assets/optimized/about-hero.webp";
 
 const PrivacyHero = () => {
   return (

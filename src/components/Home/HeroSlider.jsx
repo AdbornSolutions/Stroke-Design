@@ -1,28 +1,49 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
-import hero1 from "../../assets/hero-1.webp";
-import hero2 from "../../assets/hero-2.webp";
-import hero3 from "../../assets/hero-3.webp";
-import hero4 from "../../assets/hero-4.webp";
-import interiorText from "../../assets/Interior.webp";
+import hero1 from "../../assets/optimized/hero-1.webp";
+import hero2 from "../../assets/optimized/hero-2.webp";
+import hero3 from "../../assets/optimized/hero-3.webp";
+import hero4 from "../../assets/optimized/hero-4.webp";
+import interiorText from "../../assets/optimized/Interior.webp";
 
 const slides = [hero1, hero2, hero3, hero4];
 
 const HeroSlider = () => {
+  const sectionRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (reducedMotion.matches) return;
-
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
+    let visible = !("IntersectionObserver" in window);
+    let interval = null;
+    const update = () => {
+      if (visible && !document.hidden && !reducedMotion.matches) {
+        if (interval === null) interval = setInterval(() => {
+          setCurrentSlide(prev => (prev + 1) % slides.length);
+        }, 5000);
+      } else if (interval !== null) {
+        clearInterval(interval);
+        interval = null;
+      }
+    };
+    const observer = "IntersectionObserver" in window
+      ? new IntersectionObserver(([entry]) => {
+          visible = entry.isIntersecting;
+          update();
+        })
+      : null;
+    if (sectionRef.current) observer?.observe(sectionRef.current);
+    document.addEventListener("visibilitychange", update);
+    reducedMotion.addEventListener("change", update);
+    update();
+    return () => {
+      observer?.disconnect();
+      document.removeEventListener("visibilitychange", update);
+      reducedMotion.removeEventListener("change", update);
+      if (interval !== null) clearInterval(interval);
+    };
   }, []);
-
   const previousSlide = () => {
     setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
@@ -33,6 +54,7 @@ const HeroSlider = () => {
 
   return (
     <section
+      ref={sectionRef}
       id="home"
       className="
         relative
@@ -72,6 +94,7 @@ const HeroSlider = () => {
             >
               <img
                 src={image}
+                sizes="(max-width: 768px) 1440px, (max-width: 1920px) 100vw, 1920px"
                 fetchPriority={index === currentSlide ? "high" : "low"}
                 loading={index === currentSlide ? "eager" : "lazy"}
                 decoding="async"

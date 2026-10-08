@@ -1,52 +1,62 @@
-import AnandImage1 from "../../assets/Anand Chandak/Image1.webp";
-import AnandImage2 from "../../assets/Anand Chandak/Image2.webp";
-import AnandImage3 from "../../assets/Anand Chandak/Image3.webp";
-import AnandImage4 from "../../assets/Anand Chandak/Image4.webp";
-import AnandImage5 from "../../assets/Anand Chandak/Image5.webp";
-import AnandImage6 from "../../assets/Anand Chandak/Image6.webp";
-import AnandImage7 from "../../assets/Anand Chandak/Image7.webp";
+import GalleryImage from "../Gallery/GalleryImage";
+import useGalleryLayout from "../useGalleryLayout";
+import AnandImage1 from "../../assets/optimized/Anand Chandak/Image1.webp";
+import AnandImage2 from "../../assets/optimized/Anand Chandak/Image2.webp";
+import AnandImage3 from "../../assets/optimized/Anand Chandak/Image3.webp";
+import AnandImage4 from "../../assets/optimized/Anand Chandak/Image4.webp";
+import AnandImage5 from "../../assets/optimized/Anand Chandak/Image5.webp";
+import AnandImage6 from "../../assets/optimized/Anand Chandak/Image6.webp";
+import AnandImage7 from "../../assets/optimized/Anand Chandak/Image7.webp";
 
 const AnandChandakImages = () => {
+  const layout = useGalleryLayout();
   const images = [
     {
       id: "anand-1",
       src: AnandImage1,
+      aspectRatio: 1.4883720930232558,
       alt: "Anand Chandak Gallery Image 1",
       layout: "large",
     },
     {
       id: "anand-2",
       src: AnandImage2,
+      aspectRatio: 1.5,
       alt: "Anand Chandak Gallery Image 2",
       layout: "large",
     },
     {
       id: "anand-3",
       src: AnandImage3,
+      aspectRatio: 0.6666666666666666,
       alt: "Anand Chandak Gallery Image 3",
       layout: "large",
     },
     {
       id: "anand-4",
       src: AnandImage4,
+      aspectRatio: 1.5,
       alt: "Anand Chandak Gallery Image 4",
       layout: "small",
     },
     {
       id: "anand-5",
       src: AnandImage5,
+      aspectRatio: 0.746875,
       alt: "Anand Chandak Gallery Image 5",
       layout: "small",
     },
     {
       id: "anand-6",
       src: AnandImage6,
+      aspectRatio: 1.5,
       alt: "Anand Chandak Gallery Image 6",
       layout: "small",
     },
     {
       id: "anand-7",
       src: AnandImage7,
+      aspectRatio: 1.5,
       alt: "Anand Chandak Gallery Image 7",
       layout: "small",
     },
@@ -74,7 +84,7 @@ const AnandChandakImages = () => {
             xl:px-[48px]
           "
         >
-          <div
+          {layout === "desktop" && (<div
             className="
               hidden
 
@@ -97,9 +107,11 @@ const AnandChandakImages = () => {
                   rounded-[18px]
                 "
               >
-                <img
+                <GalleryImage
                   src={image.src}
+                  aspectRatio={image.aspectRatio}
                   alt={image.alt}
+                  loading="lazy"
                   className="
                     absolute
                     inset-0
@@ -128,8 +140,9 @@ const AnandChandakImages = () => {
                   rounded-[18px]
                 "
               >
-                <img
+                <GalleryImage
                   src={image.src}
+                  aspectRatio={image.aspectRatio}
                   alt={image.alt}
                   loading="lazy"
                   className="
@@ -160,8 +173,9 @@ const AnandChandakImages = () => {
                   rounded-[18px]
                 "
               >
-                <img
+                <GalleryImage
                   src={image.src}
+                  aspectRatio={image.aspectRatio}
                   alt={image.alt}
                   loading="lazy"
                   className="
@@ -179,9 +193,9 @@ const AnandChandakImages = () => {
                 />
               </div>
             ))}
-          </div>
+          </div>)}
 
-          <div
+          {layout === "tablet" && (<div
             className="
               hidden
               md:grid
@@ -202,8 +216,9 @@ const AnandChandakImages = () => {
                   rounded-[16px]
                 "
               >
-                <img
+                <GalleryImage
                   src={image.src}
+                  aspectRatio={image.aspectRatio}
                   alt={image.alt}
                   loading="lazy"
                   className="
@@ -221,9 +236,9 @@ const AnandChandakImages = () => {
                 />
               </div>
             ))}
-          </div>
+          </div>)}
 
-          <div
+          {layout === "mobile" && (<div
             className="
               grid
               grid-cols-2
@@ -243,8 +258,9 @@ const AnandChandakImages = () => {
                   rounded-[14px]
                 "
               >
-                <img
+                <GalleryImage
                   src={image.src}
+                  aspectRatio={image.aspectRatio}
                   alt={image.alt}
                   loading="lazy"
                   className="
@@ -262,7 +278,7 @@ const AnandChandakImages = () => {
                 />
               </div>
             ))}
-          </div>
+          </div>)}
         </div>
       </section>
     </>

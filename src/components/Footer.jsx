@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/Stroke_logo.webp";
+import logo from "../assets/optimized/Stroke_logo.webp";
 
 const Footer = () => {
   const menuLinks = [

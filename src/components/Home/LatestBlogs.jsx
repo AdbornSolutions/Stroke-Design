@@ -1,11 +1,13 @@
-import blogImage1 from "../../assets/blog-image-1.webp";
-import blogImage2 from "../../assets/blog-image-2.webp";
-import blogImage3 from "../../assets/blog-image-3.webp";
+import GalleryImage from "../Gallery/GalleryImage";
+import blogImage1 from "../../assets/optimized/blog-image-1.webp";
+import blogImage2 from "../../assets/optimized/blog-image-2.webp";
+import blogImage3 from "../../assets/optimized/blog-image-3.webp";
 
 const blogPosts = [
   {
     id: 1,
     image: blogImage1,
+    aspectRatio: 1.4057826520438683,
     date: "June 2, 2025",
     author: "By Admin",
     title: "Innovative Interior Ideas To Refresh Your Living Space",
@@ -15,6 +17,7 @@ const blogPosts = [
   {
     id: 2,
     image: blogImage2,
+    aspectRatio: 1.4057826520438683,
     date: "June 2, 2025",
     author: "By Admin",
     title: "Innovative Interior Ideas To Refresh Your Living Space",
@@ -24,6 +27,7 @@ const blogPosts = [
   {
     id: 3,
     image: blogImage3,
+    aspectRatio: 1.4057826520438683,
     date: "June 2, 2025",
     author: "By Admin",
     title: "Elevate Every Corner With Sleek Interior Concepts",
@@ -367,7 +371,7 @@ const LatestBlogs = () => {
                 `}
               >
 
-                <img loading="lazy" decoding="async"
+                <GalleryImage aspectRatio={post.aspectRatio} loading="lazy" decoding="async"
                   src={post.image}
                   alt={post.title}
                   draggable={false}

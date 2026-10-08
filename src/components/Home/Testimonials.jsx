@@ -1,5 +1,6 @@
+import GalleryImage from "../Gallery/GalleryImage";
 import { useEffect, useRef, useState } from "react";
-import testimonial_bg from "../../assets/testimonials_bg_image.webp";
+import testimonial_bg from "../../assets/optimized/testimonials_bg_image.webp";
 
 const testimonials = [
   {
@@ -281,7 +282,7 @@ const Testimonials = () => {
           max-[480px]:h-[145px]
         "
       >
-        <img
+        <GalleryImage aspectRatio={1.2121212121212122}
           src={testimonial_bg}
           alt=""
           aria-hidden="true"

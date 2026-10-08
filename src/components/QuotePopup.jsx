@@ -1,6 +1,6 @@
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
-import quoteImage from "../assets/about-Interior-Design.webp";
+import quoteImage from "../assets/optimized/about-Interior-Design.webp";
 
 const initialFormData = {
   fullName: "",

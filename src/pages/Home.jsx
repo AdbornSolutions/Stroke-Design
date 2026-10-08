@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import AboutIntro from "../components/Home/AboutIntro";
 import AboutSection from "../components/Home/AboutSection";
@@ -22,103 +22,103 @@ const Home = () => {
   return (
     <div>
       <main>
-        <motion.div
+        <m.div
           initial="hidden"
           animate="visible"
           variants={fadeUp}
         >
           <HeroSlider />
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
           variants={fadeUp}
         >
           <AboutSection />
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
           variants={fadeUp}
         >
           <ServiceSection1 />
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
           variants={fadeUp}
         >
           <AboutIntro />
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
           variants={fadeUp}
         >
           <ServiceSection2 />
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
           variants={fadeUp}
         >
           <HowWeWork />
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
           variants={fadeUp}
         >
           <OurExperts />
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
           variants={fadeUp}
         >
           <Testimonials />
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
           variants={fadeUp}
         >
           <LatestBlogs />
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
           variants={scaleIn}
         >
           <StrokesReels />
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
           variants={fadeUp}
         >
           <ImageGallery />
-        </motion.div>
+        </m.div>
       </main>
     </div>
   );

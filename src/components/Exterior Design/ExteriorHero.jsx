@@ -1,4 +1,4 @@
-import exteriorHeroImage from "../../assets/about-hero.webp";
+import exteriorHeroImage from "../../assets/optimized/about-hero.webp";
 
 const ExteriorHero = () => {
   return (

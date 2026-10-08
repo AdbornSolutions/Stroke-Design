@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import ContactInformation from "../components/Contact/ContactInformation";
 import OurPrivacy from "../components/Privacy Policy/OurPrivacy";
@@ -12,24 +12,24 @@ import {
 const PrivacyPolicy = () => {
   return (
     <div>
-      <motion.div
+      <m.div
         initial="hidden"
         animate="visible"
         variants={fadeUp}
       >
         <PrivacyHero />
-      </motion.div>
+      </m.div>
 
       <OurPrivacy />
 
-      <motion.div
+      <m.div
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
         variants={fadeUp}
       >
         <ContactInformation />
-      </motion.div>
+      </m.div>
     </div>
   );
 };

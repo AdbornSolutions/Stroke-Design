@@ -1,0 +1,66 @@
+{
+  "exterior-1": {
+    "width": 1920,
+    "height": 1770
+  },
+  "exterior-2": {
+    "width": 1920,
+    "height": 1440
+  },
+  "exterior-3": {
+    "width": 1440,
+    "height": 1920
+  },
+  "exterior-4": {
+    "width": 1920,
+    "height": 1824
+  },
+  "exterior-5": {
+    "width": 1280,
+    "height": 1920
+  },
+  "exterior-6": {
+    "width": 1920,
+    "height": 1280
+  },
+  "exterior-7": {
+    "width": 1280,
+    "height": 1920
+  },
+  "exterior-8": {
+    "width": 1280,
+    "height": 1920
+  },
+  "interior-1": {
+    "width": 1920,
+    "height": 1440
+  },
+  "interior-2": {
+    "width": 1920,
+    "height": 1280
+  },
+  "interior-3": {
+    "width": 1280,
+    "height": 1920
+  },
+  "interior-4": {
+    "width": 1280,
+    "height": 1920
+  },
+  "interior-5": {
+    "width": 1280,
+    "height": 1920
+  },
+  "interior-6": {
+    "width": 1280,
+    "height": 1920
+  },
+  "interior-7": {
+    "width": 1920,
+    "height": 1280
+  },
+  "interior-8": {
+    "width": 1920,
+    "height": 1290
+  }
+}

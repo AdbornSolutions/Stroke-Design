@@ -1,5 +1,6 @@
-import backgroundImage from "../../assets/about-bg.webp";
-import interiorImage from "../../assets/about-interior.webp";
+import GalleryImage from "../Gallery/GalleryImage";
+import backgroundImage from "../../assets/optimized/about-bg.webp";
+import interiorImage from "../../assets/optimized/about-interior.webp";
 
 const stats = [
   {
@@ -40,8 +41,9 @@ const AboutIntro = () => {
 
         {/* Background Image */}
         <div aria-hidden="true" className="absolute inset-0">
-          <img loading="lazy" decoding="async"
+          <GalleryImage aspectRatio={2.0338983050847457} loading="lazy" decoding="async"
             src={backgroundImage}
+            sizes="(max-width: 1440px) 1440px, (max-width: 1920px) 100vw, 1920px"
             alt=""
             className="
               h-full
@@ -365,7 +367,7 @@ const AboutIntro = () => {
                 "
               >
 
-                <img loading="lazy" decoding="async"
+                <GalleryImage aspectRatio={1.105263157894737} loading="lazy" decoding="async"
                   src={interiorImage}
                   alt="Interior design living room"
                   className="

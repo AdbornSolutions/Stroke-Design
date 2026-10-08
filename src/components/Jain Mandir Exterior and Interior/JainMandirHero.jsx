@@ -1,4 +1,4 @@
-import jainmandirhero from "../../assets/about-hero.webp";
+import jainmandirhero from "../../assets/optimized/about-hero.webp";
 
 const JainMandirHero = () => {
   return (

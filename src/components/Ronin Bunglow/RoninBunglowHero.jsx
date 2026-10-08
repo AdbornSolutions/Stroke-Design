@@ -1,4 +1,4 @@
-import roninbunglowhero from "../../assets/about-hero.webp";
+import roninbunglowhero from "../../assets/optimized/about-hero.webp";
 
 const RoninBunglowHero = () => {
   return (

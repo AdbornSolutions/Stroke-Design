@@ -1,101 +1,118 @@
-import PrakashImage1 from "../../assets/Prakash Amarshetiwar/Image1.webp";
-import PrakashImage10 from "../../assets/Prakash Amarshetiwar/Image10.webp";
-import PrakashImage11 from "../../assets/Prakash Amarshetiwar/Image11.webp";
-import PrakashImage12 from "../../assets/Prakash Amarshetiwar/Image12.webp";
-import PrakashImage13 from "../../assets/Prakash Amarshetiwar/Image13.webp";
-import PrakashImage14 from "../../assets/Prakash Amarshetiwar/Image14.webp";
-import PrakashImage2 from "../../assets/Prakash Amarshetiwar/Image2.webp";
-import PrakashImage3 from "../../assets/Prakash Amarshetiwar/Image3.webp";
-import PrakashImage4 from "../../assets/Prakash Amarshetiwar/Image4.webp";
-import PrakashImage5 from "../../assets/Prakash Amarshetiwar/Image5.webp";
-import PrakashImage6 from "../../assets/Prakash Amarshetiwar/Image6.webp";
-import PrakashImage7 from "../../assets/Prakash Amarshetiwar/Image7.webp";
-import PrakashImage8 from "../../assets/Prakash Amarshetiwar/Image8.webp";
-import PrakashImage9 from "../../assets/Prakash Amarshetiwar/Image9.webp";
+import GalleryImage from "../Gallery/GalleryImage";
+import useGalleryLayout from "../useGalleryLayout";
+import PrakashImage1 from "../../assets/optimized/Prakash Amarshetiwar/Image1.webp";
+import PrakashImage10 from "../../assets/optimized/Prakash Amarshetiwar/Image10.webp";
+import PrakashImage11 from "../../assets/optimized/Prakash Amarshetiwar/Image11.webp";
+import PrakashImage12 from "../../assets/optimized/Prakash Amarshetiwar/Image12.webp";
+import PrakashImage13 from "../../assets/optimized/Prakash Amarshetiwar/Image13.webp";
+import PrakashImage14 from "../../assets/optimized/EXTERIOR/Image11.webp";
+import PrakashImage2 from "../../assets/optimized/Prakash Amarshetiwar/Image2.webp";
+import PrakashImage3 from "../../assets/optimized/Prakash Amarshetiwar/Image3.webp";
+import PrakashImage4 from "../../assets/optimized/Prakash Amarshetiwar/Image4.webp";
+import PrakashImage5 from "../../assets/optimized/Prakash Amarshetiwar/Image5.webp";
+import PrakashImage6 from "../../assets/optimized/Prakash Amarshetiwar/Image6.webp";
+import PrakashImage7 from "../../assets/optimized/Prakash Amarshetiwar/Image7.webp";
+import PrakashImage8 from "../../assets/optimized/Prakash Amarshetiwar/Image8.webp";
+import PrakashImage9 from "../../assets/optimized/Prakash Amarshetiwar/Image9.webp";
 
 const PrakashAmarshetiwarImages = () => {
+  const layout = useGalleryLayout();
   const images = [
     {
       id: "prakash-1",
       src: PrakashImage1,
+      aspectRatio: 1.5,
       alt: "Prakash Amarshetiwar Gallery Image 1",
       layout: "large",
     },
     {
       id: "prakash-2",
       src: PrakashImage2,
+      aspectRatio: 1.5,
       alt: "Prakash Amarshetiwar Gallery Image 2",
       layout: "large",
     },
     {
       id: "prakash-3",
       src: PrakashImage3,
+      aspectRatio: 1.5,
       alt: "Prakash Amarshetiwar Gallery Image 3",
       layout: "large",
     },
     {
       id: "prakash-4",
       src: PrakashImage4,
+      aspectRatio: 0.6666666666666666,
       alt: "Prakash Amarshetiwar Gallery Image 4",
       layout: "small",
     },
     {
       id: "prakash-5",
       src: PrakashImage5,
+      aspectRatio: 0.6666666666666666,
       alt: "Prakash Amarshetiwar Gallery Image 5",
       layout: "small",
     },
     {
       id: "prakash-6",
       src: PrakashImage6,
+      aspectRatio: 0.6666666666666666,
       alt: "Prakash Amarshetiwar Gallery Image 6",
       layout: "small",
     },
     {
       id: "prakash-7",
       src: PrakashImage7,
+      aspectRatio: 0.6666666666666666,
       alt: "Prakash Amarshetiwar Gallery Image 7",
       layout: "small",
     },
     {
       id: "prakash-8",
       src: PrakashImage8,
+      aspectRatio: 1.5,
       alt: "Prakash Amarshetiwar Gallery Image 8",
       layout: "small",
     },
     {
       id: "prakash-9",
       src: PrakashImage9,
+      aspectRatio: 1.5,
       alt: "Prakash Amarshetiwar Gallery Image 9",
       layout: "small",
     },
     {
       id: "prakash-10",
       src: PrakashImage10,
+      aspectRatio: 1.5,
       alt: "Prakash Amarshetiwar Gallery Image 10",
       layout: "small",
     },
     {
       id: "prakash-11",
       src: PrakashImage11,
+      aspectRatio: 1.4368568755846585,
       alt: "Prakash Amarshetiwar Gallery Image 11",
       layout: "small",
     },
     {
       id: "prakash-12",
       src: PrakashImage12,
+      aspectRatio: 1.5,
       alt: "Prakash Amarshetiwar Gallery Image 12",
       layout: "small",
     },
     {
       id: "prakash-13",
       src: PrakashImage13,
+      aspectRatio: 1.5,
       alt: "Prakash Amarshetiwar Gallery Image 13",
       layout: "small",
     },
     {
       id: "prakash-14",
       src: PrakashImage14,
+      aspectRatio: 1.0847457627118644,
       alt: "Prakash Amarshetiwar Gallery Image 14",
       layout: "small",
     },
@@ -123,7 +140,7 @@ const PrakashAmarshetiwarImages = () => {
             xl:px-[48px]
           "
         >
-          <div
+          {layout === "desktop" && (<div
             className="
               hidden
 
@@ -146,9 +163,11 @@ const PrakashAmarshetiwarImages = () => {
                   rounded-[18px]
                 "
               >
-                <img
+                <GalleryImage
                   src={image.src}
+                  aspectRatio={image.aspectRatio}
                   alt={image.alt}
+                  loading="lazy"
                   className="
                     absolute
                     inset-0
@@ -177,8 +196,9 @@ const PrakashAmarshetiwarImages = () => {
                   rounded-[18px]
                 "
               >
-                <img
+                <GalleryImage
                   src={image.src}
+                  aspectRatio={image.aspectRatio}
                   alt={image.alt}
                   loading="lazy"
                   className="
@@ -209,8 +229,9 @@ const PrakashAmarshetiwarImages = () => {
                   rounded-[18px]
                 "
               >
-                <img
+                <GalleryImage
                   src={image.src}
+                  aspectRatio={image.aspectRatio}
                   alt={image.alt}
                   loading="lazy"
                   className="
@@ -241,8 +262,9 @@ const PrakashAmarshetiwarImages = () => {
                   rounded-[18px]
                 "
               >
-                <img
+                <GalleryImage
                   src={image.src}
+                  aspectRatio={image.aspectRatio}
                   alt={image.alt}
                   loading="lazy"
                   className="
@@ -273,8 +295,9 @@ const PrakashAmarshetiwarImages = () => {
                   rounded-[18px]
                 "
               >
-                <img
+                <GalleryImage
                   src={image.src}
+                  aspectRatio={image.aspectRatio}
                   alt={image.alt}
                   loading="lazy"
                   className="
@@ -292,9 +315,9 @@ const PrakashAmarshetiwarImages = () => {
                 />
               </div>
             ))}
-          </div>
+          </div>)}
 
-          <div
+          {layout === "tablet" && (<div
             className="
               hidden
               md:grid
@@ -315,8 +338,9 @@ const PrakashAmarshetiwarImages = () => {
                   rounded-[16px]
                 "
               >
-                <img
+                <GalleryImage
                   src={image.src}
+                  aspectRatio={image.aspectRatio}
                   alt={image.alt}
                   loading="lazy"
                   className="
@@ -334,9 +358,9 @@ const PrakashAmarshetiwarImages = () => {
                 />
               </div>
             ))}
-          </div>
+          </div>)}
 
-          <div
+          {layout === "mobile" && (<div
             className="
               grid
               grid-cols-2
@@ -356,8 +380,9 @@ const PrakashAmarshetiwarImages = () => {
                   rounded-[14px]
                 "
               >
-                <img
+                <GalleryImage
                   src={image.src}
+                  aspectRatio={image.aspectRatio}
                   alt={image.alt}
                   loading="lazy"
                   className="
@@ -375,7 +400,7 @@ const PrakashAmarshetiwarImages = () => {
                 />
               </div>
             ))}
-          </div>
+          </div>)}
         </div>
       </section>
     </>

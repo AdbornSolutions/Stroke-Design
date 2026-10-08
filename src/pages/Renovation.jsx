@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import RenovationHero from "../components/Renovation And Remodeling/RenovationHero";
 import RenovationImages from "../components/Renovation And Remodeling/RenovationImages";
@@ -11,22 +11,22 @@ import {
 const Renovation = () => {
   return (
     <div>
-      <motion.div
+      <m.div
         initial="hidden"
         animate="visible"
         variants={fadeUp}
       >
         <RenovationHero />
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
         variants={fadeUp}
       >
         <RenovationImages />
-      </motion.div>
+      </m.div>
     </div>
   );
 };

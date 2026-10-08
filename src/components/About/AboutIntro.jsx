@@ -1,5 +1,6 @@
-import aboutbedroom from "../../assets/about-bedroom.webp";
-import aboutkitchen from "../../assets/about-kitchen.webp";
+import GalleryImage from "../Gallery/GalleryImage";
+import aboutbedroom from "../../assets/optimized/about-bedroom.webp";
+import aboutkitchen from "../../assets/optimized/about-kitchen.webp";
 
 const AboutIntro = () => {
   return (
@@ -155,7 +156,7 @@ const AboutIntro = () => {
                 xl:max-w-[310px]
               "
             >
-              <img
+              <GalleryImage aspectRatio={0.8689839572192514}
                 src={aboutbedroom}
                 alt="Luxury bedroom interior"
                 loading="lazy"
@@ -190,7 +191,7 @@ const AboutIntro = () => {
               rounded-[14px]
             "
           >
-            <img
+            <GalleryImage aspectRatio={1.1783295711060948}
               src={aboutkitchen}
               alt="Modern kitchen interior"
               loading="lazy"

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import ContactForm from "../components/Contact/ContactForm";
 import ContactHero from "../components/Contact/ContactHero";
@@ -9,27 +9,27 @@ import { fadeUp, viewport } from "../components/MotionVariants";
 const Contact = () => {
   return (
     <div>
-      <motion.div initial="hidden" animate="visible" variants={fadeUp}>
+      <m.div initial="hidden" animate="visible" variants={fadeUp}>
         <ContactHero />
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
         variants={fadeUp}
       >
         <ContactInformation />
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
         variants={fadeUp}
       >
         <ContactForm />
-      </motion.div>
+      </m.div>
     </div>
   );
 };

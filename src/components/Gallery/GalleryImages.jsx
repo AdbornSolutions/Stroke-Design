@@ -1,22 +1,43 @@
-import interior1 from "../../assets/GalleryImages/Interior-1.webp";
-import interior2 from "../../assets/GalleryImages/Interior-2.webp";
-import interior3 from "../../assets/GalleryImages/Interior-3.webp";
-import interior4 from "../../assets/GalleryImages/Interior-4.webp";
-import interior5 from "../../assets/GalleryImages/Interior-5.webp";
-import interior6 from "../../assets/GalleryImages/Interior-6.webp";
-import interior7 from "../../assets/GalleryImages/Interior-7.webp";
-import interior8 from "../../assets/GalleryImages/Interior-8.webp";
+import GalleryImage from "./GalleryImage";
+import imageDimensions from "../../assets/GalleryImages/optimized/dimensions.json";
+import useGalleryLayout from "../useGalleryLayout";
+import interior1 from "../../assets/GalleryImages/optimized/Interior-1.webp";
+import interior2 from "../../assets/GalleryImages/optimized/Interior-2.webp";
+import interior3 from "../../assets/GalleryImages/optimized/Interior-3.webp";
+import interior4 from "../../assets/GalleryImages/optimized/Interior-4.webp";
+import interior5 from "../../assets/GalleryImages/optimized/Interior-5.webp";
+import interior6 from "../../assets/GalleryImages/optimized/Interior-6.webp";
+import interior7 from "../../assets/GalleryImages/optimized/Interior-7.webp";
+import interior8 from "../../assets/GalleryImages/optimized/Interior-8.webp";
 
-import exterior1 from "../../assets/GalleryImages/Exterior-1.webp";
-import exterior2 from "../../assets/GalleryImages/Exterior-2.webp";
-import exterior3 from "../../assets/GalleryImages/Exterior-3.webp";
-import exterior4 from "../../assets/GalleryImages/Exterior-4.webp";
-import exterior5 from "../../assets/GalleryImages/Exterior-5.webp";
-import exterior6 from "../../assets/GalleryImages/Exterior-6.webp";
-import exterior7 from "../../assets/GalleryImages/Exterior-7.webp";
-import exterior8 from "../../assets/GalleryImages/Exterior-8.webp";
+import exterior1 from "../../assets/GalleryImages/optimized/Exterior-1.webp";
+import exterior2 from "../../assets/GalleryImages/optimized/Exterior-2.webp";
+import exterior3 from "../../assets/GalleryImages/optimized/Exterior-3.webp";
+import exterior4 from "../../assets/GalleryImages/optimized/Exterior-4.webp";
+import exterior5 from "../../assets/GalleryImages/optimized/Exterior-5.webp";
+import exterior6 from "../../assets/GalleryImages/optimized/Exterior-6.webp";
+import exterior7 from "../../assets/GalleryImages/optimized/Exterior-7.webp";
+import exterior8 from "../../assets/GalleryImages/optimized/Exterior-8.webp";
+
+
+function imageSizes(image, desktopColumns, desktopAspect) {
+  const { width, height } = imageDimensions[image.id];
+  const ratio = width / height;
+  const slot = (columns, spacing, aspect) => {
+    const crop = Math.max(1, ratio / aspect);
+    return `calc(${(100 * crop / columns).toFixed(3)}vw - ${(spacing * crop / columns).toFixed(3)}px)`;
+  };
+  return [
+    `(max-width: 639px) ${slot(2, 50, 0.88)}`,
+    `(max-width: 767px) ${slot(2, 62, 0.88)}`,
+    `(max-width: 1023px) ${slot(3, 104, 1 / 1.05)}`,
+    `(max-width: 1279px) ${slot(desktopColumns, 84 + 20 * (desktopColumns - 1), desktopAspect)}`,
+    slot(desktopColumns, 96 + 22 * (desktopColumns - 1), desktopAspect),
+  ].join(", ");
+}
 
 const GalleryImages = () => {
+  const layout = useGalleryLayout();
   const images = [
     {
       id: "interior-1",
@@ -134,7 +155,7 @@ const GalleryImages = () => {
           xl:px-[48px]
         "
       >
-        <div
+        {layout === "desktop" && (<div
           className="
             hidden
             lg:block
@@ -163,9 +184,12 @@ const GalleryImages = () => {
                   rounded-[18px]
                 "
               >
-                <img
+                <GalleryImage
                   src={image.src}
                   alt={image.alt}
+                  sizes={imageSizes(image, 3, 1.52)}
+                  loading={images.indexOf(image) < (layout === "mobile" ? 2 : 3) ? "eager" : "lazy"}
+                  decoding="async"
                   className="
                     absolute
                     inset-0
@@ -206,10 +230,12 @@ const GalleryImages = () => {
                   rounded-[18px]
                 "
               >
-                <img
+                <GalleryImage
                   src={image.src}
                   alt={image.alt}
-                  loading="lazy"
+                  sizes={imageSizes(image, 4, 0.88)}
+                  loading={images.indexOf(image) < (layout === "mobile" ? 2 : 3) ? "eager" : "lazy"}
+                  decoding="async"
                   className="
                     absolute
                     inset-0
@@ -250,10 +276,12 @@ const GalleryImages = () => {
                   rounded-[18px]
                 "
               >
-                <img
+                <GalleryImage
                   src={image.src}
                   alt={image.alt}
-                  loading="lazy"
+                  sizes={imageSizes(image, 2, 1.45)}
+                  loading={images.indexOf(image) < (layout === "mobile" ? 2 : 3) ? "eager" : "lazy"}
+                  decoding="async"
                   className="
                     absolute
                     inset-0
@@ -294,10 +322,12 @@ const GalleryImages = () => {
                   rounded-[18px]
                 "
               >
-                <img
+                <GalleryImage
                   src={image.src}
                   alt={image.alt}
-                  loading="lazy"
+                  sizes={imageSizes(image, 3, 1.52)}
+                  loading={images.indexOf(image) < (layout === "mobile" ? 2 : 3) ? "eager" : "lazy"}
+                  decoding="async"
                   className="
                     absolute
                     inset-0
@@ -338,10 +368,12 @@ const GalleryImages = () => {
                   rounded-[18px]
                 "
               >
-                <img
+                <GalleryImage
                   src={image.src}
                   alt={image.alt}
-                  loading="lazy"
+                  sizes={imageSizes(image, 4, 0.88)}
+                  loading={images.indexOf(image) < (layout === "mobile" ? 2 : 3) ? "eager" : "lazy"}
+                  decoding="async"
                   className="
                     absolute
                     inset-0
@@ -358,9 +390,9 @@ const GalleryImages = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div>)}
 
-        <div
+        {layout === "tablet" && (<div
           className="
             hidden
             md:grid
@@ -380,10 +412,12 @@ const GalleryImages = () => {
                 rounded-[16px]
               "
             >
-              <img
-                src={image.src}
-                alt={image.alt}
-                loading="lazy"
+              <GalleryImage
+                  src={image.src}
+                  alt={image.alt}
+                  sizes={imageSizes(image, 3, 0.9523809523809523)}
+                  loading={images.indexOf(image) < (layout === "mobile" ? 2 : 3) ? "eager" : "lazy"}
+                  decoding="async"
                 className="
                   absolute
                   inset-0
@@ -399,9 +433,9 @@ const GalleryImages = () => {
               />
             </div>
           ))}
-        </div>
+        </div>)}
 
-        <div
+        {layout === "mobile" && (<div
           className="
             grid
             grid-cols-2
@@ -420,10 +454,12 @@ const GalleryImages = () => {
                 rounded-[14px]
               "
             >
-              <img
-                src={image.src}
-                alt={image.alt}
-                loading="lazy"
+              <GalleryImage
+                  src={image.src}
+                  alt={image.alt}
+                  sizes={imageSizes(image, 2, 0.88)}
+                  loading={images.indexOf(image) < (layout === "mobile" ? 2 : 3) ? "eager" : "lazy"}
+                  decoding="async"
                 className="
                   absolute
                   inset-0
@@ -439,7 +475,7 @@ const GalleryImages = () => {
               />
             </div>
           ))}
-        </div>
+        </div>)}
       </div>
     </section>
   );

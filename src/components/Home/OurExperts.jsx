@@ -1,4 +1,5 @@
-import expertsImage from "../../assets/experts.webp";
+import GalleryImage from "../Gallery/GalleryImage";
+import expertsImage from "../../assets/optimized/experts.webp";
 
 const OurExperts = () => {
   return (
@@ -404,7 +405,7 @@ const OurExperts = () => {
                 lg:rounded-[16px]
               "
             >
-              <img
+              <GalleryImage aspectRatio={1.0534351145038168}
                 loading="lazy"
                 decoding="async"
                 src={expertsImage}

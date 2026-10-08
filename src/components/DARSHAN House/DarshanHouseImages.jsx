@@ -1,66 +1,78 @@
-import DarshanImage1 from "../../assets/DARSHAN House/Image1.webp";
-import DarshanImage2 from "../../assets/DARSHAN House/Image2.webp";
-import DarshanImage3 from "../../assets/DARSHAN House/Image3.webp";
-import DarshanImage4 from "../../assets/DARSHAN House/Image4.webp";
-import DarshanImage5 from "../../assets/DARSHAN House/Image5.webp";
-import DarshanImage6 from "../../assets/DARSHAN House/Image6.webp";
-import DarshanImage7 from "../../assets/DARSHAN House/Image7.webp";
-import DarshanImage8 from "../../assets/DARSHAN House/Image8.webp";
-import DarshanImage9 from "../../assets/DARSHAN House/Image9.webp";
+import GalleryImage from "../Gallery/GalleryImage";
+import useGalleryLayout from "../useGalleryLayout";
+import DarshanImage1 from "../../assets/optimized/DARSHAN House/Image1.webp";
+import DarshanImage2 from "../../assets/optimized/DARSHAN House/Image2.webp";
+import DarshanImage3 from "../../assets/optimized/DARSHAN House/Image3.webp";
+import DarshanImage4 from "../../assets/optimized/DARSHAN House/Image4.webp";
+import DarshanImage5 from "../../assets/optimized/DARSHAN House/Image5.webp";
+import DarshanImage6 from "../../assets/optimized/DARSHAN House/Image6.webp";
+import DarshanImage7 from "../../assets/optimized/DARSHAN House/Image7.webp";
+import DarshanImage8 from "../../assets/optimized/DARSHAN House/Image8.webp";
+import DarshanImage9 from "../../assets/optimized/DARSHAN House/Image9.webp";
 
 const DarshanHouseImages = () => {
+  const layout = useGalleryLayout();
   const images = [
     {
       id: "darshan-1",
       src: DarshanImage1,
+      aspectRatio: 1.7777777777777777,
       alt: "Darshan House Gallery Image 1",
       layout: "large",
     },
     {
       id: "darshan-2",
       src: DarshanImage2,
+      aspectRatio: 1.7777777777777777,
       alt: "Darshan House Gallery Image 2",
       layout: "large",
     },
     {
       id: "darshan-3",
       src: DarshanImage3,
+      aspectRatio: 1.7777777777777777,
       alt: "Darshan House Gallery Image 3",
       layout: "large",
     },
     {
       id: "darshan-4",
       src: DarshanImage4,
+      aspectRatio: 1.7777777777777777,
       alt: "Darshan House Gallery Image 4",
       layout: "small",
     },
     {
       id: "darshan-5",
       src: DarshanImage5,
+      aspectRatio: 1.7777777777777777,
       alt: "Darshan House Gallery Image 5",
       layout: "small",
     },
     {
       id: "darshan-6",
       src: DarshanImage6,
+      aspectRatio: 1.7777777777777777,
       alt: "Darshan House Gallery Image 6",
       layout: "small",
     },
     {
       id: "darshan-7",
       src: DarshanImage7,
+      aspectRatio: 1.7777777777777777,
       alt: "Darshan House Gallery Image 7",
       layout: "small",
     },
     {
       id: "darshan-8",
       src: DarshanImage8,
+      aspectRatio: 1.7777777777777777,
       alt: "Darshan House Gallery Image 8",
       layout: "small",
     },
     {
       id: "darshan-9",
       src: DarshanImage9,
+      aspectRatio: 1.7777777777777777,
       alt: "Darshan House Gallery Image 9",
       layout: "large",
     },
@@ -87,7 +99,7 @@ const DarshanHouseImages = () => {
           xl:px-[48px]
         "
       >
-        <div
+        {layout === "desktop" && (<div
           className="
             hidden
 
@@ -110,9 +122,11 @@ const DarshanHouseImages = () => {
                 rounded-[18px]
               "
             >
-              <img
+              <GalleryImage
                 src={image.src}
+                  aspectRatio={image.aspectRatio}
                 alt={image.alt}
+                  loading="lazy"
                 className="
                   absolute
                   inset-0
@@ -141,8 +155,9 @@ const DarshanHouseImages = () => {
                 rounded-[18px]
               "
             >
-              <img
+              <GalleryImage
                 src={image.src}
+                  aspectRatio={image.aspectRatio}
                 alt={image.alt}
                 loading="lazy"
                 className="
@@ -173,8 +188,9 @@ const DarshanHouseImages = () => {
                 rounded-[18px]
               "
             >
-              <img
+              <GalleryImage
                 src={image.src}
+                  aspectRatio={image.aspectRatio}
                 alt={image.alt}
                 loading="lazy"
                 className="
@@ -192,9 +208,9 @@ const DarshanHouseImages = () => {
               />
             </div>
           ))}
-        </div>
+        </div>)}
 
-        <div
+        {layout === "tablet" && (<div
           className="
             hidden
             md:grid
@@ -215,8 +231,9 @@ const DarshanHouseImages = () => {
                 rounded-[16px]
               "
             >
-              <img
+              <GalleryImage
                 src={image.src}
+                  aspectRatio={image.aspectRatio}
                 alt={image.alt}
                 loading="lazy"
                 className="
@@ -234,9 +251,9 @@ const DarshanHouseImages = () => {
               />
             </div>
           ))}
-        </div>
+        </div>)}
 
-        <div
+        {layout === "mobile" && (<div
           className="
             grid
             grid-cols-2
@@ -256,8 +273,9 @@ const DarshanHouseImages = () => {
                 rounded-[14px]
               "
             >
-              <img
+              <GalleryImage
                 src={image.src}
+                  aspectRatio={image.aspectRatio}
                 alt={image.alt}
                 loading="lazy"
                 className="
@@ -275,7 +293,7 @@ const DarshanHouseImages = () => {
               />
             </div>
           ))}
-        </div>
+        </div>)}
       </div>
     </section>
   );

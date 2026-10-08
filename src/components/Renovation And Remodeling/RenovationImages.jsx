@@ -1,45 +1,54 @@
-import RenovationImage1 from "../../assets/Renovation And Remodeling/Image1.webp";
-import RenovationImage2 from "../../assets/Renovation And Remodeling/Image2.webp";
-import RenovationImage3 from "../../assets/Renovation And Remodeling/Image3.webp";
-import RenovationImage4 from "../../assets/Renovation And Remodeling/Image4.webp";
-import RenovationImage5 from "../../assets/Renovation And Remodeling/Image5.webp";
-import RenovationImage6 from "../../assets/Renovation And Remodeling/Image6.webp";
+import GalleryImage from "../Gallery/GalleryImage";
+import useGalleryLayout from "../useGalleryLayout";
+import RenovationImage1 from "../../assets/optimized/Renovation And Remodeling/Image1.webp";
+import RenovationImage2 from "../../assets/optimized/Renovation And Remodeling/Image2.webp";
+import RenovationImage3 from "../../assets/optimized/Renovation And Remodeling/Image3.webp";
+import RenovationImage4 from "../../assets/optimized/Renovation And Remodeling/Image4.webp";
+import RenovationImage5 from "../../assets/optimized/Renovation And Remodeling/Image5.webp";
+import RenovationImage6 from "../../assets/optimized/Renovation And Remodeling/Image6.webp";
 
 const RenovationImages = () => {
+  const layout = useGalleryLayout();
   const images = [
     {
       id: "Renovation-1",
       src: RenovationImage1,
+      aspectRatio: 0.75,
       alt: "Renovation Design Gallery Image 1",
       layout: "large",
     },
     {
       id: "Renovation-2",
       src: RenovationImage2,
+      aspectRatio: 0.75,
       alt: "Renovation Design Gallery Image 2",
       layout: "large",
     },
     {
       id: "Renovation-3",
       src: RenovationImage3,
+      aspectRatio: 0.75,
       alt: "Renovation Design Gallery Image 3",
       layout: "large",
     },
     {
       id: "Renovation-4",
       src: RenovationImage4,
+      aspectRatio: 0.75,
       alt: "Renovation Design Gallery Image 4",
       layout: "large",
     },
     {
       id: "Renovation-5",
       src: RenovationImage5,
+      aspectRatio: 0.75,
       alt: "Renovation Design Gallery Image 5",
       layout: "large",
     },
     {
       id: "Renovation-6",
       src: RenovationImage6,
+      aspectRatio: 0.75,
       alt: "Renovation Design Gallery Image 6",
       layout: "large",
     },
@@ -66,7 +75,7 @@ const RenovationImages = () => {
           xl:px-[48px]
         "
       >
-        <div
+        {layout === "desktop" && (<div
           className="
             hidden
 
@@ -89,9 +98,11 @@ const RenovationImages = () => {
                 rounded-[18px]
               "
             >
-              <img
+              <GalleryImage
                 src={image.src}
+                  aspectRatio={image.aspectRatio}
                 alt={image.alt}
+                  loading="lazy"
                 className="
                   absolute
                   inset-0
@@ -120,8 +131,9 @@ const RenovationImages = () => {
                 rounded-[18px]
               "
             >
-              <img
+              <GalleryImage
                 src={image.src}
+                  aspectRatio={image.aspectRatio}
                 alt={image.alt}
                 loading="lazy"
                 className="
@@ -139,9 +151,9 @@ const RenovationImages = () => {
               />
             </div>
           ))}
-        </div>
+        </div>)}
 
-        <div
+        {layout === "tablet" && (<div
           className="
             hidden
             md:grid
@@ -162,8 +174,9 @@ const RenovationImages = () => {
                 rounded-[16px]
               "
             >
-              <img
+              <GalleryImage
                 src={image.src}
+                  aspectRatio={image.aspectRatio}
                 alt={image.alt}
                 loading="lazy"
                 className="
@@ -181,9 +194,9 @@ const RenovationImages = () => {
               />
             </div>
           ))}
-        </div>
+        </div>)}
 
-        <div
+        {layout === "mobile" && (<div
           className="
             grid
             grid-cols-2
@@ -203,8 +216,9 @@ const RenovationImages = () => {
                 rounded-[14px]
               "
             >
-              <img
+              <GalleryImage
                 src={image.src}
+                  aspectRatio={image.aspectRatio}
                 alt={image.alt}
                 loading="lazy"
                 className="
@@ -222,7 +236,7 @@ const RenovationImages = () => {
               />
             </div>
           ))}
-        </div>
+        </div>)}
       </div>
     </section>
   );

@@ -1,59 +1,70 @@
-import AmitImage1 from "../../assets/Amit Parekh/image1.webp";
-import AmitImage2 from "../../assets/Amit Parekh/image2.webp";
-import AmitImage3 from "../../assets/Amit Parekh/image3.webp";
-import AmitImage4 from "../../assets/Amit Parekh/image4.webp";
-import AmitImage5 from "../../assets/Amit Parekh/image5.webp";
-import AmitImage6 from "../../assets/Amit Parekh/image6.webp";
-import AmitImage7 from "../../assets/Amit Parekh/image7.webp";
-import AmitImage8 from "../../assets/Amit Parekh/image8.webp";
+import GalleryImage from "../Gallery/GalleryImage";
+import useGalleryLayout from "../useGalleryLayout";
+import AmitImage1 from "../../assets/optimized/Amit Parekh/image1.webp";
+import AmitImage2 from "../../assets/optimized/Amit Parekh/image2.webp";
+import AmitImage3 from "../../assets/optimized/Amit Parekh/image3.webp";
+import AmitImage4 from "../../assets/optimized/Amit Parekh/image4.webp";
+import AmitImage5 from "../../assets/optimized/Amit Parekh/image5.webp";
+import AmitImage6 from "../../assets/optimized/Amit Parekh/image6.webp";
+import AmitImage7 from "../../assets/optimized/Amit Parekh/image7.webp";
+import AmitImage8 from "../../assets/optimized/Amit Parekh/image8.webp";
 
 const AmitParekhImages = () => {
+  const layout = useGalleryLayout();
   const images = [
     {
       id: "amit-1",
       src: AmitImage1,
+      aspectRatio: 1.5,
       alt: "Amit Parekh Gallery Image 1",
       layout: "large",
     },
     {
       id: "amit-2",
       src: AmitImage2,
+      aspectRatio: 1.5,
       alt: "Amit Parekh Gallery Image 2",
       layout: "large",
     },
     {
       id: "amit-3",
       src: AmitImage3,
+      aspectRatio: 1.5,
       alt: "Amit Parekh Gallery Image 3",
       layout: "large",
     },
     {
       id: "amit-4",
       src: AmitImage4,
+      aspectRatio: 0.6666666666666666,
       alt: "Amit Parekh Gallery Image 4",
       layout: "small",
     },
     {
       id: "amit-5",
       src: AmitImage5,
+      aspectRatio: 1.5,
       alt: "Amit Parekh Gallery Image 5",
       layout: "small",
     },
     {
       id: "amit-6",
       src: AmitImage6,
+      aspectRatio: 0.6666666666666666,
       alt: "Amit Parekh Gallery Image 6",
       layout: "small",
     },
     {
       id: "amit-7",
       src: AmitImage7,
+      aspectRatio: 1.5,
       alt: "Amit Parekh Gallery Image 7",
       layout: "small",
     },
     {
       id: "amit-8",
       src: AmitImage8,
+      aspectRatio: 1.5,
       alt: "Amit Parekh Gallery Image 8",
       layout: "small",
     },
@@ -81,7 +92,7 @@ const AmitParekhImages = () => {
             xl:px-[48px]
           "
         >
-          <div
+          {layout === "desktop" && (<div
             className="
               hidden
 
@@ -104,9 +115,11 @@ const AmitParekhImages = () => {
                   rounded-[18px]
                 "
               >
-                <img
+                <GalleryImage
                   src={image.src}
+                  aspectRatio={image.aspectRatio}
                   alt={image.alt}
+                  loading="lazy"
                   className="
                     absolute
                     inset-0
@@ -135,8 +148,9 @@ const AmitParekhImages = () => {
                   rounded-[18px]
                 "
               >
-                <img
+                <GalleryImage
                   src={image.src}
+                  aspectRatio={image.aspectRatio}
                   alt={image.alt}
                   loading="lazy"
                   className="
@@ -167,8 +181,9 @@ const AmitParekhImages = () => {
                   rounded-[18px]
                 "
               >
-                <img
+                <GalleryImage
                   src={image.src}
+                  aspectRatio={image.aspectRatio}
                   alt={image.alt}
                   loading="lazy"
                   className="
@@ -186,9 +201,9 @@ const AmitParekhImages = () => {
                 />
               </div>
             ))}
-          </div>
+          </div>)}
 
-          <div
+          {layout === "tablet" && (<div
             className="
               hidden
               md:grid
@@ -209,8 +224,9 @@ const AmitParekhImages = () => {
                   rounded-[16px]
                 "
               >
-                <img
+                <GalleryImage
                   src={image.src}
+                  aspectRatio={image.aspectRatio}
                   alt={image.alt}
                   loading="lazy"
                   className="
@@ -228,9 +244,9 @@ const AmitParekhImages = () => {
                 />
               </div>
             ))}
-          </div>
+          </div>)}
 
-          <div
+          {layout === "mobile" && (<div
             className="
               grid
               grid-cols-2
@@ -250,8 +266,9 @@ const AmitParekhImages = () => {
                   rounded-[14px]
                 "
               >
-                <img
+                <GalleryImage
                   src={image.src}
+                  aspectRatio={image.aspectRatio}
                   alt={image.alt}
                   loading="lazy"
                   className="
@@ -269,7 +286,7 @@ const AmitParekhImages = () => {
                 />
               </div>
             ))}
-          </div>
+          </div>)}
         </div>
       </section>
     </>

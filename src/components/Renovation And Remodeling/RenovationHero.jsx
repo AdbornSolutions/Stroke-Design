@@ -1,4 +1,4 @@
-import revolutionhero from "../../assets/about-hero.webp";
+import revolutionhero from "../../assets/optimized/about-hero.webp";
 
 const RenovationHero = () => {
   return (

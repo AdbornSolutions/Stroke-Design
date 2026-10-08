@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import PrakashAmarshetiwarHero from "../components/Prakash Amarshetiwar/PrakashAmarshetiwarHero";
 import PrakashAmarshetiwarImages from "../components/Prakash Amarshetiwar/PrakashAmarshetiwarImages";
@@ -11,22 +11,22 @@ import {
 const PrakashAmarshetiwar = () => {
   return (
     <div>
-      <motion.div
+      <m.div
         initial="hidden"
         animate="visible"
         variants={fadeUp}
       >
         <PrakashAmarshetiwarHero />
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
         variants={fadeUp}
       >
         <PrakashAmarshetiwarImages />
-      </motion.div>
+      </m.div>
     </div>
   );
 };

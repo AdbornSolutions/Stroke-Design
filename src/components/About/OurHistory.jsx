@@ -1,8 +1,9 @@
-import Journey1 from "../../assets/about-history-1.webp";
-import Journey2 from "../../assets/about-history-2.webp";
-import Journey3 from "../../assets/about-history-3.webp";
-import Journey4 from "../../assets/about-history-4.webp";
-import Journey5 from "../../assets/about-history-5.webp";
+import GalleryImage from "../Gallery/GalleryImage";
+import Journey1 from "../../assets/optimized/about-history-1.webp";
+import Journey2 from "../../assets/optimized/about-history-2.webp";
+import Journey3 from "../../assets/optimized/about-history-3.webp";
+import Journey4 from "../../assets/optimized/about-history-4.webp";
+import Journey5 from "../../assets/optimized/about-history-5.webp";
 
 const journeyData = [
   {
@@ -11,6 +12,7 @@ const journeyData = [
     description:
       "Our journey began in 2009 with a simple vision: to create spaces that are beautiful, functional and deeply connected to the people who use them. Starting with small residential projects, we built our foundation through personalized service and attention to detail.",
     image: Journey1,
+    aspectRatio: 1.3333333333333333,
     alt: "Interior design workspace",
     side: "odd",
   },
@@ -21,6 +23,7 @@ const journeyData = [
     description:
       "As our experience grew, we expanded our design capabilities and began working on a wider range of residential spaces. This period helped us strengthen our understanding of space planning, materials, lighting and customized furniture solutions.",
     image: Journey2,
+    aspectRatio: 1.3333333333333333,
     alt: "Interior design studio",
     side: "even",
   },
@@ -31,6 +34,7 @@ const journeyData = [
     description:
       "By 2017, we had expanded into larger residential and commercial interior projects. With a growing team of designers, craftsmen and project professionals, we began offering complete solutions from initial concept to final execution.",
     image: Journey3,
+    aspectRatio: 1.3333333333333333,
     alt: "Design team collaboration",
     side: "odd",
   },
@@ -41,6 +45,7 @@ const journeyData = [
     description:
       "We embraced new design technologies, contemporary materials and advanced visualization methods. Our approach became more collaborative and transparent, allowing clients to experience their spaces through detailed layouts and 3D design before execution began.",
     image: Journey4,
+    aspectRatio: 1.3333333333333333,
     alt: "Modern interior design office",
     side: "even",
   },
@@ -51,6 +56,7 @@ const journeyData = [
     description:
       "Today, we continue to create thoughtful residential and commercial interiors that balance creativity, functionality and timeless appeal. With years of experience and a refined network of professionals, we remain committed to designing spaces that inspire everyday living.",
     image: Journey5,
+    aspectRatio: 1.3333333333333333,
     alt: "Interior design professionals",
     side: "odd",
   },
@@ -415,7 +421,7 @@ const OurHistory = () => {
                       }
                     `}
                 >
-                  <img
+                  <GalleryImage aspectRatio={item.aspectRatio}
                     src={item.image}
                     alt={item.alt}
                     loading="lazy"

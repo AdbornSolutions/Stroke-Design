@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import CommercialHero from "../components/Commercial Interior Design/CommercialHero";
 import CommercialImages from "../components/Commercial Interior Design/CommercialImages";
@@ -11,22 +11,22 @@ import {
 const Commercial = () => {
   return (
     <div>
-      <motion.div
+      <m.div
         initial="hidden"
         animate="visible"
         variants={fadeUp}
       >
         <CommercialHero />
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
         variants={fadeUp}
       >
         <CommercialImages />
-      </motion.div>
+      </m.div>
     </div>
   );
 };

@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
-import AmitParekhImage from "../../assets/Amit Parekh/image1.webp";
-import AnandChandakImage from "../../assets/Anand Chandak/Image1.webp";
-import DARSHANHouseImage from "../../assets/DARSHAN House/Image1.webp";
-import InteriorImage from "../../assets/INTERIOR/Image1.webp";
-import JainMandirImage from "../../assets/Jain Mandir Exterior and Interior/Image1.webp";
-import JaiswalTataCapitalImage from "../../assets/jaiswal tata capital/Image1.webp";
-import PrakashAmarshetiwarImage from "../../assets/Prakash Amarshetiwar/Image1.webp";
-import RoninBunglowImage from "../../assets/Ronin Bunglow/Image1.webp";
-import SwatibenShahImage from "../../assets/Swatiben Shah/Image1.webp";
+import AmitParekhImage from "../../assets/optimized/Amit Parekh/image1.webp";
+import AnandChandakImage from "../../assets/optimized/Anand Chandak/Image1.webp";
+import DARSHANHouseImage from "../../assets/optimized/DARSHAN House/Image1.webp";
+import InteriorImage from "../../assets/optimized/INTERIOR/Image1.webp";
+import JainMandirImage from "../../assets/optimized/Commercial/Image10.webp";
+import JaiswalTataCapitalImage from "../../assets/optimized/jaiswal tata capital/Image1.webp";
+import PrakashAmarshetiwarImage from "../../assets/optimized/Prakash Amarshetiwar/Image1.webp";
+import RoninBunglowImage from "../../assets/optimized/Ronin Bunglow/Image1.webp";
+import SwatibenShahImage from "../../assets/optimized/Renovation And Remodeling/Image1.webp";
 const projects = [
   {
     id: 1,

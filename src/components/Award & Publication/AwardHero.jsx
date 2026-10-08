@@ -1,4 +1,4 @@
-import awardHeroImage from "../../assets/about-hero.webp";
+import awardHeroImage from "../../assets/optimized/about-hero.webp";
 
 const AwardHero = () => {
   return (

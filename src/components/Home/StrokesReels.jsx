@@ -1,21 +1,30 @@
-import stroke1 from "../../assets/Reels/strokes-1.mp4";
-import stroke2 from "../../assets/Reels/strokes-2.mp4";
-import stroke3 from "../../assets/Reels/strokes-3.mp4";
-import stroke4 from "../../assets/Reels/strokes-4.mp4";
-import stroke5 from "../../assets/Reels/strokes-5.mp4";
-import stroke6 from "../../assets/Reels/strokes-6.mp4";
-import stroke7 from "../../assets/Reels/strokes-7.mp4";
-import stroke8 from "../../assets/Reels/strokes-8.mp4";
+import poster1 from "../../assets/Reels/posters/strokes-1.webp";
+import poster2 from "../../assets/Reels/posters/strokes-2.webp";
+import poster3 from "../../assets/Reels/posters/strokes-3.webp";
+import poster4 from "../../assets/Reels/posters/strokes-4.webp";
+import poster5 from "../../assets/Reels/posters/strokes-5.webp";
+import poster6 from "../../assets/Reels/posters/strokes-6.webp";
+import poster7 from "../../assets/Reels/posters/strokes-7.webp";
+import poster8 from "../../assets/Reels/posters/strokes-8.webp";
+import ViewportVideo from "../ViewportVideo";
+import stroke1 from "../../assets/Reels/optimized/strokes-1.mp4";
+import stroke2 from "../../assets/Reels/optimized/strokes-2.mp4";
+import stroke3 from "../../assets/Reels/optimized/strokes-3.mp4";
+import stroke4 from "../../assets/Reels/optimized/strokes-4.mp4";
+import stroke5 from "../../assets/Reels/optimized/strokes-5.mp4";
+import stroke6 from "../../assets/Reels/optimized/strokes-6.mp4";
+import stroke7 from "../../assets/Reels/optimized/strokes-7.mp4";
+import stroke8 from "../../assets/Reels/optimized/strokes-8.mp4";
 
 const videoItems = [
-  { id: 1, src: stroke1 },
-  { id: 2, src: stroke2 },
-  { id: 3, src: stroke3 },
-  { id: 4, src: stroke4 },
-  { id: 5, src: stroke5 },
-  { id: 6, src: stroke6 },
-  { id: 7, src: stroke7 },
-  { id: 8, src: stroke8 },
+  { id: 1, src: stroke1, poster: poster1 },
+  { id: 2, src: stroke2, poster: poster2 },
+  { id: 3, src: stroke3, poster: poster3 },
+  { id: 4, src: stroke4, poster: poster4 },
+  { id: 5, src: stroke5, poster: poster5 },
+  { id: 6, src: stroke6, poster: poster6 },
+  { id: 7, src: stroke7, poster: poster7 },
+  { id: 8, src: stroke8, poster: poster8 },
 ];
 
 const StrokesReels = () => {
@@ -230,13 +239,13 @@ const StrokesReels = () => {
               hover:-translate-y-[2px]
             "
           >
-            <video
+            <ViewportVideo
               src={video.src}
+              poster={video.poster}
               aria-label={`Strokes Design Studio reel ${video.id}`}
               muted
               playsInline
               preload="none"
-              loading="lazy"
               controls
               className="
                 absolute
