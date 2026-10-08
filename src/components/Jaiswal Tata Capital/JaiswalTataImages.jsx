@@ -161,16 +161,6 @@ const JaiswalTataImages = () => {
             xl:px-[48px]
           "
         >
-          {/* =================================================
-              DESKTOP GALLERY
-              ROW 1 → 3 IMAGES
-              ROW 2 → 4 IMAGES
-              ROW 3 → 2 IMAGES
-              ROW 4 → 3 IMAGES
-              ROW 5 → 4 IMAGES
-              ROW 6 → 3 IMAGES
-          ================================================== */}
-
           <div
             className="
               hidden
@@ -182,10 +172,6 @@ const JaiswalTataImages = () => {
               xl:gap-[22px]
             "
           >
-            {/* =========================
-                FIRST ROW - 3 IMAGES
-            ========================== */}
-
             {images.slice(0, 3).map((image) => (
               <div
                 key={image.id}
@@ -216,10 +202,6 @@ const JaiswalTataImages = () => {
                 />
               </div>
             ))}
-
-            {/* =========================
-                SECOND ROW - 4 IMAGES
-            ========================== */}
 
             {images.slice(3, 7).map((image) => (
               <div
@@ -253,10 +235,6 @@ const JaiswalTataImages = () => {
               </div>
             ))}
 
-            {/* =========================
-                THIRD ROW - 2 IMAGES
-            ========================== */}
-
             {images.slice(7, 9).map((image) => (
               <div
                 key={image.id}
@@ -288,10 +266,6 @@ const JaiswalTataImages = () => {
                 />
               </div>
             ))}
-
-            {/* =========================
-                FOURTH ROW - 3 IMAGES
-            ========================== */}
 
             {images.slice(9, 12).map((image) => (
               <div
@@ -325,10 +299,6 @@ const JaiswalTataImages = () => {
               </div>
             ))}
 
-            {/* =========================
-                FIFTH ROW - 4 IMAGES
-            ========================== */}
-
             {images.slice(12, 16).map((image) => (
               <div
                 key={image.id}
@@ -360,10 +330,6 @@ const JaiswalTataImages = () => {
                 />
               </div>
             ))}
-
-            {/* =========================
-                SIXTH ROW - 3 IMAGES
-            ========================== */}
 
             {images.slice(16, 19).map((image) => (
               <div
@@ -397,11 +363,6 @@ const JaiswalTataImages = () => {
               </div>
             ))}
           </div>
-
-          {/* =================================================
-              TABLET
-              3 COLUMNS
-          ================================================== */}
 
           <div
             className="
@@ -444,11 +405,6 @@ const JaiswalTataImages = () => {
               </div>
             ))}
           </div>
-
-          {/* =================================================
-              MOBILE
-              2 COLUMNS
-          ================================================== */}
 
           <div
             className="

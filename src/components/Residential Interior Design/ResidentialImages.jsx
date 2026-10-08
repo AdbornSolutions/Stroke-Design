@@ -111,14 +111,6 @@ const ResidentialImages = () => {
         "
       >
 
-        {/* =================================================
-            DESKTOP GALLERY
-            ROW 1 → 3 IMAGES
-            ROW 2 → 4 IMAGES
-            ROW 3 → 3 IMAGES
-            ROW 4 → 2 IMAGES
-        ================================================== */}
-
         <div
           className="
             hidden
@@ -130,10 +122,6 @@ const ResidentialImages = () => {
             xl:gap-[22px]
           "
         >
-
-          {/* =========================
-              FIRST ROW - 3 IMAGES
-          ========================== */}
 
           {images.slice(0, 3).map((image) => (
             <div
@@ -165,10 +153,6 @@ const ResidentialImages = () => {
               />
             </div>
           ))}
-
-          {/* =========================
-              SECOND ROW - 4 IMAGES
-          ========================== */}
 
           {images.slice(3, 7).map((image) => (
             <div
@@ -202,10 +186,6 @@ const ResidentialImages = () => {
             </div>
           ))}
 
-          {/* =========================
-              THIRD ROW - 3 IMAGES
-          ========================== */}
-
           {images.slice(7, 10).map((image) => (
             <div
               key={image.id}
@@ -237,10 +217,6 @@ const ResidentialImages = () => {
               />
             </div>
           ))}
-
-          {/* =========================
-              FOURTH ROW - 2 IMAGES
-          ========================== */}
 
           {images.slice(10, 12).map((image) => (
             <div
@@ -274,11 +250,6 @@ const ResidentialImages = () => {
             </div>
           ))}
         </div>
-
-        {/* =================================================
-            TABLET
-            3 COLUMNS
-        ================================================== */}
 
         <div
           className="
@@ -321,11 +292,6 @@ const ResidentialImages = () => {
             </div>
           ))}
         </div>
-
-        {/* =================================================
-            MOBILE
-            2 COLUMNS
-        ================================================== */}
 
         <div
           className="

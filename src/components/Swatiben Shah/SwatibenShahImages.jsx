@@ -9,9 +9,6 @@ import SwatibenImages6 from "../../assets/Swatiben Shah/Image6.webp";
 
 const SwatibenShahImages = () => {
   const images = [
-    // =========================
-    // SWATIBEN SHAH
-    // =========================
     {
       id: "swatiben-1",
       src: SwatibenImages1,
@@ -85,10 +82,6 @@ const SwatibenShahImages = () => {
             "
           >
 
-            {/* =========================
-                FIRST ROW - 3 IMAGES
-            ========================== */}
-
             {images.slice(0, 3).map((image) => (
               <div
                 key={image.id}
@@ -119,10 +112,6 @@ const SwatibenShahImages = () => {
                 />
               </div>
             ))}
-
-            {/* =========================
-                SECOND ROW - 3 IMAGES
-            ========================== */}
 
             {images.slice(3, 6).map((image) => (
               <div
@@ -156,11 +145,6 @@ const SwatibenShahImages = () => {
               </div>
             ))}
           </div>
-
-          {/* =================================================
-              TABLET
-              3 COLUMNS
-          ================================================== */}
 
           <div
             className="
@@ -203,11 +187,6 @@ const SwatibenShahImages = () => {
               </div>
             ))}
           </div>
-
-          {/* =================================================
-              MOBILE
-              2 COLUMNS
-          ================================================== */}
 
           <div
             className="

@@ -66,12 +66,6 @@ const RenovationImages = () => {
           xl:px-[48px]
         "
       >
-        {/* =================================================
-            DESKTOP GALLERY
-            ROW 1 → 3 IMAGES
-            ROW 2 → 3 IMAGES
-        ================================================== */}
-
         <div
           className="
             hidden
@@ -83,10 +77,6 @@ const RenovationImages = () => {
             xl:gap-[22px]
           "
         >
-          {/* =========================
-              FIRST ROW - 3 IMAGES
-          ========================== */}
-
           {images.slice(0, 3).map((image) => (
             <div
               key={image.id}
@@ -117,10 +107,6 @@ const RenovationImages = () => {
               />
             </div>
           ))}
-
-          {/* =========================
-              SECOND ROW - 3 IMAGES
-          ========================== */}
 
           {images.slice(3, 6).map((image) => (
             <div
@@ -154,11 +140,6 @@ const RenovationImages = () => {
             </div>
           ))}
         </div>
-
-        {/* =================================================
-            TABLET
-            3 COLUMNS
-        ================================================== */}
 
         <div
           className="
@@ -201,11 +182,6 @@ const RenovationImages = () => {
             </div>
           ))}
         </div>
-
-        {/* =================================================
-            MOBILE
-            2 COLUMNS
-        ================================================== */}
 
         <div
           className="

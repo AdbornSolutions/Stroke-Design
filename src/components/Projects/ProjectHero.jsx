@@ -3,10 +3,6 @@ import servicehero from "../../assets/about-hero.webp";
 const ProjectHero = () => {
   return (
     <section className="relative min-h-[511px] w-full overflow-hidden">
-      {/* =====================================================
-          BACKGROUND IMAGE
-      ===================================================== */}
-
       <img
         src={servicehero}
         alt="Services - Interior Design"
@@ -20,11 +16,6 @@ const ProjectHero = () => {
         "
       />
 
-      {/* =====================================================
-          OPTIONAL DARK OVERLAY
-          Very subtle - keeps the text readable
-      ===================================================== */}
-
       <div
         className="
           absolute
@@ -32,10 +23,6 @@ const ProjectHero = () => {
           bg-black/10
         "
       />
-
-      {/* =====================================================
-          CONTENT
-      ===================================================== */}
 
       <div
         className="
@@ -64,10 +51,6 @@ const ProjectHero = () => {
           xl:pb-[55px]
         "
       >
-        {/* ===============================================
-            PAGE TITLE
-        =============================================== */}
-
         <h1
           className="
             m-0
@@ -91,10 +74,6 @@ const ProjectHero = () => {
         >
           Projects
         </h1>
-
-        {/* ===============================================
-            BREADCRUMB
-        =============================================== */}
 
         <div
           className="

@@ -1,6 +1,8 @@
-import React from "react";
-
 import jainmandirimage1 from "../../assets/Jain Mandir Exterior and Interior/Image1.webp";
+import jainmandirimage10 from "../../assets/Jain Mandir Exterior and Interior/Image10.webp";
+import jainmandirimage11 from "../../assets/Jain Mandir Exterior and Interior/Image11.webp";
+import jainmandirimage12 from "../../assets/Jain Mandir Exterior and Interior/Image12.webp";
+import jainmandirimage13 from "../../assets/Jain Mandir Exterior and Interior/Image13.webp";
 import jainmandirimage2 from "../../assets/Jain Mandir Exterior and Interior/Image2.webp";
 import jainmandirimage3 from "../../assets/Jain Mandir Exterior and Interior/Image3.webp";
 import jainmandirimage4 from "../../assets/Jain Mandir Exterior and Interior/Image4.webp";
@@ -9,10 +11,6 @@ import jainmandirimage6 from "../../assets/Jain Mandir Exterior and Interior/Ima
 import jainmandirimage7 from "../../assets/Jain Mandir Exterior and Interior/Image7.webp";
 import jainmandirimage8 from "../../assets/Jain Mandir Exterior and Interior/Image8.webp";
 import jainmandirimage9 from "../../assets/Jain Mandir Exterior and Interior/Image9.webp";
-import jainmandirimage10 from "../../assets/Jain Mandir Exterior and Interior/Image10.webp";
-import jainmandirimage11 from "../../assets/Jain Mandir Exterior and Interior/Image11.webp";
-import jainmandirimage12 from "../../assets/Jain Mandir Exterior and Interior/Image12.webp";
-import jainmandirimage13 from "../../assets/Jain Mandir Exterior and Interior/Image13.webp";
 
 const JainMandirImages = () => {
   const images = [
@@ -118,15 +116,6 @@ const JainMandirImages = () => {
             xl:px-[48px]
           "
         >
-
-          {/* =================================================
-              DESKTOP GALLERY
-              ROW 1 → 4 IMAGES
-              ROW 2 → 3 IMAGES
-              ROW 3 → 4 IMAGES
-              ROW 4 → 2 IMAGES
-          ================================================== */}
-
           <div
             className="
               hidden
@@ -138,7 +127,6 @@ const JainMandirImages = () => {
               xl:gap-[22px]
             "
           >
-
             {images.slice(0, 4).map((image) => (
               <div
                 key={image.id}
@@ -234,10 +222,6 @@ const JainMandirImages = () => {
               </div>
             ))}
 
-            {/* =========================
-                FOURTH ROW - 2 IMAGES
-            ========================== */}
-
             {images.slice(11, 13).map((image) => (
               <div
                 key={image.id}
@@ -269,13 +253,7 @@ const JainMandirImages = () => {
                 />
               </div>
             ))}
-
           </div>
-
-          {/* =================================================
-              TABLET
-              3 COLUMNS
-          ================================================== */}
 
           <div
             className="
@@ -319,11 +297,6 @@ const JainMandirImages = () => {
             ))}
           </div>
 
-          {/* =================================================
-              MOBILE
-              2 COLUMNS
-          ================================================== */}
-
           <div
             className="
               grid
@@ -364,7 +337,6 @@ const JainMandirImages = () => {
               </div>
             ))}
           </div>
-
         </div>
       </section>
     </>

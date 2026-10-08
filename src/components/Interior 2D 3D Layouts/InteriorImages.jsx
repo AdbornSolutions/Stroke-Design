@@ -1,6 +1,7 @@
-import React from "react";
-
 import InteriorImage1 from "../../assets/Interior 2D3D Layouts/Image1.webp";
+import InteriorImage10 from "../../assets/Interior 2D3D Layouts/Image10.webp";
+import InteriorImage11 from "../../assets/Interior 2D3D Layouts/Image11.webp";
+import InteriorImage12 from "../../assets/Interior 2D3D Layouts/Image12.webp";
 import InteriorImage2 from "../../assets/Interior 2D3D Layouts/Image2.webp";
 import InteriorImage3 from "../../assets/Interior 2D3D Layouts/Image3.webp";
 import InteriorImage4 from "../../assets/Interior 2D3D Layouts/Image4.webp";
@@ -9,9 +10,6 @@ import InteriorImage6 from "../../assets/Interior 2D3D Layouts/Image6.webp";
 import InteriorImage7 from "../../assets/Interior 2D3D Layouts/Image7.webp";
 import InteriorImage8 from "../../assets/Interior 2D3D Layouts/Image8.webp";
 import InteriorImage9 from "../../assets/Interior 2D3D Layouts/Image9.webp";
-import InteriorImage10 from "../../assets/Interior 2D3D Layouts/Image10.webp";
-import InteriorImage11 from "../../assets/Interior 2D3D Layouts/Image11.webp";
-import InteriorImage12 from "../../assets/Interior 2D3D Layouts/Image12.webp";
 
 const InteriorImages = () => {
   const images = [
@@ -110,15 +108,6 @@ const InteriorImages = () => {
           xl:px-[48px]
         "
       >
-
-        {/* =================================================
-            DESKTOP GALLERY
-            ROW 1 → 3 IMAGES
-            ROW 2 → 4 IMAGES
-            ROW 3 → 3 IMAGES
-            ROW 4 → 2 IMAGES
-        ================================================== */}
-
         <div
           className="
             hidden
@@ -130,11 +119,6 @@ const InteriorImages = () => {
             xl:gap-[22px]
           "
         >
-
-          {/* =========================
-              FIRST ROW - 3 IMAGES
-          ========================== */}
-
           {images.slice(0, 3).map((image) => (
             <div
               key={image.id}
@@ -165,10 +149,6 @@ const InteriorImages = () => {
               />
             </div>
           ))}
-
-          {/* =========================
-              SECOND ROW - 4 IMAGES
-          ========================== */}
 
           {images.slice(3, 7).map((image) => (
             <div
@@ -234,10 +214,6 @@ const InteriorImages = () => {
             </div>
           ))}
 
-          {/* =========================
-              FOURTH ROW - 2 IMAGES
-          ========================== */}
-
           {images.slice(10, 12).map((image) => (
             <div
               key={image.id}
@@ -270,11 +246,6 @@ const InteriorImages = () => {
             </div>
           ))}
         </div>
-
-        {/* =================================================
-            TABLET
-            3 COLUMNS
-        ================================================== */}
 
         <div
           className="
@@ -318,11 +289,6 @@ const InteriorImages = () => {
           ))}
         </div>
 
-        {/* =================================================
-            MOBILE
-            2 COLUMNS
-        ================================================== */}
-
         <div
           className="
             grid
@@ -363,7 +329,6 @@ const InteriorImages = () => {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
