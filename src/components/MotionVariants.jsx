@@ -1,6 +1,7 @@
 export const viewport = {
   once: true,
-  amount: 0.15,
+  // Reveal long galleries as soon as their first row enters view.
+  amount: "some",
 };
 
 export const fadeUp = {
